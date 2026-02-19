@@ -265,6 +265,47 @@ export default function About() {
         </div>
       </section>
 
+      {/* See Us In Action — job site photos */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-4">See Us In Action</h2>
+            <p className="text-lg text-charcoal-600 max-w-2xl mx-auto">
+              From start to finish — real jobs, real craftsmanship, real Columbus homeowners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20241126_192222147.jpg" alt="DTE Roofing team on the job site" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/DTE IMAGE 1.webp" alt="DTE Roofing project in Columbus OH" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20240910_193642307.jpg" alt="DTE Roofing crew working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20241117_184811431.jpg" alt="DTE Roofing roof repair project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            {/* TODO: Replace placeholder with actual job site photo */}
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-200 flex items-center justify-center">
+              <div className="text-center text-charcoal-400">
+                <div className="text-3xl mb-1">📷</div>
+                <div className="text-sm font-medium">Photo coming soon</div>
+              </div>
+            </div>
+            {/* TODO: Replace placeholder with actual job site photo */}
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-200 flex items-center justify-center">
+              <div className="text-center text-charcoal-400">
+                <div className="text-3xl mb-1">📷</div>
+                <div className="text-sm font-medium">Photo coming soon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-primary-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight max-w-4xl mx-auto">

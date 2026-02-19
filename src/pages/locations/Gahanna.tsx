@@ -11,7 +11,7 @@ export default function Gahanna() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Gahanna, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Gahanna, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Gahanna, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers gahanna, roof repair gahanna, roof replacement gahanna, roofing company gahanna, storm damage gahanna, gutter services gahanna, roofer near me gahanna, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/gahanna"
       />
@@ -19,7 +19,7 @@ export default function Gahanna() {
         type="location"
         locationName="Gahanna"
         pageTitle="Roofers in Gahanna, OH | DTE Roofing"
-        pageDescription="DTE Roofing serves Gahanna, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Gahanna, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/gahanna"
       />
 
@@ -32,7 +32,7 @@ export default function Gahanna() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Gahanna, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Gahanna homeowners—from Creekside District to Old Gahanna, near John Glenn International Airport to Big Walnut Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Gahanna homeowners—from Creekside District to Old Gahanna, near John Glenn International Airport to Big Walnut Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Gahanna() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Gahanna</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Gahanna regularly on the northeast side of Columbus. From the vibrant <strong>Creekside District</strong> (home to Creekside Park and community events) to historic <strong>Old Gahanna</strong>, from neighborhoods near <strong>John Glenn Columbus International Airport</strong> to established areas along <strong>Big Walnut Creek</strong>, we understand Gahanna's "Herb Capital of Ohio" community character. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Gahanna regularly on the northeast side of Columbus. From the vibrant <strong>Creekside District</strong> (home to Creekside Park and community events) to historic <strong>Old Gahanna</strong>, from neighborhoods near <strong>John Glenn Columbus International Airport</strong> to established areas along <strong>Big Walnut Creek</strong>, we understand Gahanna's "Herb Capital of Ohio" community character. Our owners personally work with every customer—ensuring quality and direct communication on every project.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Gahanna features a diverse housing mix—from historic homes in Old Gahanna dating back decades, to mature 1970s-1980s subdivisions, to newer developments. This architectural diversity creates specific roofing challenges: wind-driven rain testing older flashing, mature tree debris clogging gutters, hail and thunderstorm damage common to Central Ohio, and freeze-thaw cycles requiring proper ventilation to prevent ice dams. We've worked throughout Gahanna's neighborhoods and understand what it takes to protect homes in this climate.
@@ -70,7 +70,7 @@ export default function Gahanna() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based in Columbus—serving Gahanna regularly",
                     "Great attention to detail on every project",
                     "Experience with wind-driven rain and flashing vulnerabilities",
@@ -119,7 +119,7 @@ export default function Gahanna() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Gahanna. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Gahanna—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"
@@ -337,7 +337,7 @@ export default function Gahanna() {
                 {[
                   {
                     title: "Owner-Led Inspections",
-                    description: "One of our owners personally inspects every roof and speaks with every customer"
+                    description: "Our owners personally oversee every project and work closely with every customer"
                   },
                   {
                     title: "Local Knowledge",

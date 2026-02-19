@@ -11,7 +11,7 @@ export default function Dublin() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Dublin, OH | DTE Roofing — Columbus HQ, Serving Dublin"
-        description="Looking for roofers in Dublin, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Dublin with detail-first roof repair & replacement. Owners speak with every customer. Call 614-971-6028."
+        description="Looking for roofers in Dublin, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Dublin with detail-first roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
         keywords="roofers dublin oh, roofers near dublin, best roofers in dublin, roof repair dublin, roof replacement dublin, storm damage dublin, gutter services dublin, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/dublin"
       />
@@ -19,7 +19,7 @@ export default function Dublin() {
         type="location"
         locationName="Dublin"
         pageTitle="Roofers in Dublin, OH | DTE Roofing (Columbus HQ)"
-        pageDescription="DTE Roofing serves Dublin, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Dublin, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/dublin"
       />
 
@@ -32,7 +32,7 @@ export default function Dublin() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Dublin, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Dublin homeowners—from Historic Dublin to Bridge Park to Muirfield Village. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve Dublin regularly with the same attention to detail our owners bring to every customer conversation.
+              Expert roof repair, replacement, and storm damage services for Dublin homeowners—from Historic Dublin to Bridge Park to Muirfield Village. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve Dublin regularly with the same attention to detail our owners bring to every project.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Dublin() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Best Roofers in Dublin, OH — Columbus-Based, Dublin-Trusted</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Dublin—from <strong>Bridge Park</strong> along the Scioto River to <strong>Historic Dublin</strong>, from <strong>Muirfield Village</strong> (home of the <strong>Memorial Tournament</strong>) to newer neighborhoods in every direction. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Dublin—from <strong>Bridge Park</strong> along the Scioto River to <strong>Historic Dublin</strong>, from <strong>Muirfield Village</strong> (home of the <strong>Memorial Tournament</strong>) to newer neighborhoods in every direction. Our owners are personally involved in every project—ensuring quality and clear communication from start to finish.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Dublin's roofing environment is unique. With a current population estimate around <strong>49,456 (2024)</strong>, Dublin has grown from a small historic crossroads into one of Central Ohio's most desirable communities. From Victorian-era homes in Historic Dublin to modern estates in Muirfield Village, from townhomes in Bridge Park to family homes near <strong>Coffman Park</strong>, each home demands a tailored roofing strategy. Whether it's ventilation for ice dam prevention, wind-driven rain protection on complex flashing, or quality oversight for new construction, we understand Dublin's housing diversity.
@@ -76,7 +76,7 @@ export default function Dublin() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    'Owners speak with every customer—no sales teams',
+                    'Owners personally involved in every project',
                     'Great attention to detail on every project',
                     'Clean, organized job sites with neighbor respect',
                     'Scheduling flexibility around Memorial Tournament, Irish Festival, and event weeks',
@@ -435,7 +435,7 @@ export default function Dublin() {
                   <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-charcoal-600 mt-4">
-                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our owners speak with every customer, so you'll get direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
+                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
                 </p>
               </details>
             </div>

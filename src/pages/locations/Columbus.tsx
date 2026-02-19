@@ -11,7 +11,7 @@ export default function Columbus() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Columbus, OH | DTE Roofing — Roof Repair & Replacement"
-        description="Looking for roofers in Columbus, OH? DTE Roofing is based at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Free inspections, detail-first repairs & replacements. Call 614-971-6028."
+        description="Looking for roofers in Columbus, OH? DTE Roofing is based at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Free inspections, detail-first repairs & replacements. Call 614-971-6028."
         keywords="roofers columbus, roofers columbus oh, roofing company columbus, roof repair columbus, roof replacement columbus, storm damage columbus, gutter services columbus, roofer near me columbus"
         canonical="https://www.dteroofingllc.com/locations/columbus"
       />
@@ -19,7 +19,7 @@ export default function Columbus() {
         type="location"
         locationName="Columbus"
         pageTitle="Roofers in Columbus, OH | DTE Roofing (Columbus HQ)"
-        pageDescription="DTE Roofing serves Columbus, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Detail-first roof repair, replacement, and storm damage help."
+        pageDescription="DTE Roofing serves Columbus, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Detail-first roof repair, replacement, and storm damage help."
         pageUrl="https://www.dteroofingllc.com/locations/columbus"
       />
 
@@ -51,7 +51,7 @@ export default function Columbus() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Columbus's Trusted Roofing Company</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                DTE Roofing is headquartered in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228. Founded by two brothers from Hilliard, we built our business on a simple principle: honest diagnostics and quality work. Our owners speak with every customer personally—no handoffs, no middlemen. We serve homeowners throughout Columbus and Franklin County with great attention to detail and the same care we would give our own homes.
+                DTE Roofing is headquartered in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228. Founded by two brothers from Hilliard, we built our business on a simple principle: honest diagnostics and quality work. Our owners are personally involved in every project—ensuring quality and clear communication from start to finish. We serve homeowners throughout Columbus and Franklin County with great attention to detail and the same care we would give our own homes.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Columbus weather demands quality roofing. From hot, humid summers that accelerate shingle aging to harsh winters with ice dams and freeze-thaw cycles, your roof faces constant challenges. We understand these local conditions and install roofs built to handle them for decades, with careful attention to flashing, ventilation, and proper installation details.
@@ -70,7 +70,7 @@ export default function Columbus() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer (no handoffs)",
+                    "Owners personally involved in every project",
                     "Great attention to detail on flashing, ventilation, and cleanup",
                     "Honest diagnostics—we fix only what is needed",
                     "Fast response times across all Columbus neighborhoods",
@@ -117,7 +117,7 @@ export default function Columbus() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof. No salespeople, no pressure—just honest assessments and fair pricing.
+                  Our owners personally oversee every roofing project—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

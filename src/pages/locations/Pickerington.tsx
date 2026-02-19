@@ -11,7 +11,7 @@ export default function Pickerington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Pickerington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Pickerington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Pickerington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers pickerington, roof repair pickerington, roof replacement pickerington, roofing company pickerington, storm damage pickerington, gutter services pickerington, roofer near me pickerington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/pickerington"
       />
@@ -19,7 +19,7 @@ export default function Pickerington() {
         type="location"
         locationName="Pickerington"
         pageTitle="Roofers in Pickerington, OH | DTE Roofing"
-        pageDescription="DTE Roofing serves Pickerington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Pickerington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/pickerington"
       />
 
@@ -32,7 +32,7 @@ export default function Pickerington() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Pickerington, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Pickerington homeowners—from Olde Pickerington Village to Sycamore Creek, Pickerington Ponds to Hill Road neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Pickerington homeowners—from Olde Pickerington Village to Sycamore Creek, Pickerington Ponds to Hill Road neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Pickerington() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Pickerington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. With easy access via <strong>I-270</strong> outerbelt, <strong>I-70</strong>, <strong>US-33</strong>, and <strong>OH-256</strong>, we reach Pickerington efficiently—from <strong>Olde Pickerington Village</strong> to <strong>Sycamore Creek</strong> neighborhoods, from <strong>Pickerington Ponds Metro Park</strong> areas to <strong>Hill Road</strong> and <strong>OH-256</strong> corridors. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. With easy access via <strong>I-270</strong> outerbelt, <strong>I-70</strong>, <strong>US-33</strong>, and <strong>OH-256</strong>, we reach Pickerington efficiently—from <strong>Olde Pickerington Village</strong> to <strong>Sycamore Creek</strong> neighborhoods, from <strong>Pickerington Ponds Metro Park</strong> areas to <strong>Hill Road</strong> and <strong>OH-256</strong> corridors. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Pickerington features diverse housing—established neighborhoods from the 1990s and 2000s alongside newer subdivisions throughout the north and south areas. This architectural variety creates specific roofing challenges: wind-driven rain stressing step flashing, valleys, and chimney flashing on older homes, hail and severe thunderstorms common to the east side of Columbus requiring careful inspection and documentation for insurance, mature tree debris near Sycamore Creek and wooded areas clogging gutters and causing overflow damage to fascia and soffit, and harsh winter freeze-thaw cycles that require proper ventilation and ice and water shield to prevent ice dams.
@@ -70,7 +70,7 @@ export default function Pickerington() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based in Columbus—serving Pickerington regularly",
                     "Great attention to detail on every project",
                     "Experience with wind-driven rain and flashing issues",
@@ -120,7 +120,7 @@ export default function Pickerington() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Pickerington. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Pickerington—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

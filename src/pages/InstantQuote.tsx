@@ -8,7 +8,7 @@ export default function InstantQuote() {
     <>
       <SEO
         title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Get an accurate roof replacement quote in 30 seconds. AI-powered estimates using satellite imagery. No inspection needed to get started."
+        description="Get an accurate roof replacement quote in 30 seconds. Satellite imagery estimates with no inspection needed to get started."
         keywords="instant roof quote, roof cost calculator, roof estimate, roof replacement cost, free roof quote"
         canonical="https://www.dteroofingllc.com/get-a-quote-consultation"
       />
@@ -24,7 +24,7 @@ export default function InstantQuote() {
                 Get Your Instant Roof Quote
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                AI-powered estimates in 30 seconds using satellite imagery. See your price range before we even visit.
+                Get an accurate estimate in 30 seconds using satellite imagery. See your price range before we even visit.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -70,7 +70,7 @@ export default function InstantQuote() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-primary-700 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                    <span>Our AI analyzes your roof using satellite imagery</span>
+                    <span>We use satellite imagery to analyze your roof</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-primary-700 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>

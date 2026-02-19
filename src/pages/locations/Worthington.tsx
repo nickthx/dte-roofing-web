@@ -11,7 +11,7 @@ export default function Worthington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Worthington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Worthington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Worthington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers worthington, roof repair worthington, roof replacement worthington, roofing company worthington, storm damage worthington, gutter services worthington, roofer near me worthington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/worthington"
       />
@@ -19,7 +19,7 @@ export default function Worthington() {
         type="location"
         locationName="Worthington"
         pageTitle="Roofers in Worthington, OH | DTE Roofing"
-        pageDescription="DTE Roofing serves Worthington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Worthington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/worthington"
       />
 
@@ -32,7 +32,7 @@ export default function Worthington() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Worthington, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Worthington homeowners—from Historic Old Worthington and Village Green to High Street corridor neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Worthington homeowners—from Historic Old Worthington and Village Green to High Street corridor neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Worthington() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Worthington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly north of downtown. With easy access via <strong>I-270</strong>, <strong>US-23</strong>, and the <strong>High Street corridor</strong>, we reach Worthington efficiently—from <strong>Historic Old Worthington</strong> and <strong>Village Green</strong> to <strong>Worthington Farmers Market</strong> areas, from <strong>Wilson Hill</strong> to neighborhoods near the <strong>Olentangy River corridor</strong>. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly north of downtown. With easy access via <strong>I-270</strong>, <strong>US-23</strong>, and the <strong>High Street corridor</strong>, we reach Worthington efficiently—from <strong>Historic Old Worthington</strong> and <strong>Village Green</strong> to <strong>Worthington Farmers Market</strong> areas, from <strong>Wilson Hill</strong> to neighborhoods near the <strong>Olentangy River corridor</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Worthington features distinctive housing—older homes with character and history alongside mid-century neighborhoods and newer construction. This architectural variety creates specific roofing challenges: chimney flashing and step flashing failures common in older homes with complex rooflines and multiple penetrations, mature tree canopy throughout much of Worthington dropping debris that clogs gutters and causes overflow damage to fascia and soffit, wind-driven rain and storm damage that can strip shingles and ridge caps requiring careful documentation for insurance, and harsh winter freeze-thaw cycles that demand proper ventilation and ice and water shield to prevent ice dams.
@@ -70,7 +70,7 @@ export default function Worthington() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based in Columbus—serving Worthington regularly",
                     "Great attention to detail on every project",
                     "Experience with older homes and chimney/step flashing",
@@ -120,7 +120,7 @@ export default function Worthington() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Worthington. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Worthington—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

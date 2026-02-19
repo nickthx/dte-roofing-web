@@ -38,6 +38,7 @@ import Worthington from './pages/locations/Worthington';
 import Delaware from './pages/locations/Delaware';
 import Powell from './pages/locations/Powell';
 import InstantQuote from './pages/InstantQuote';
+import Financing from './pages/Financing';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
             <Route path="/careers" element={<Navigate to="/contact" replace />} />
             <Route path="/book-a-consultation" element={<Navigate to="/contact" replace />} />
             <Route path="/cart" element={<Navigate to="/contact" replace />} />
+            <Route path="/financing" element={<Financing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/columbus" element={<Columbus />} />

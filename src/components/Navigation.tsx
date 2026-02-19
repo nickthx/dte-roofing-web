@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, Phone, Calculator } from 'lucide-react';
+import { ChevronDown, Menu, X, Phone, Calculator, DollarSign } from 'lucide-react';
 
 export default function Navigation() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -125,6 +125,10 @@ export default function Navigation() {
               <Calculator className="w-4 h-4" />
               Instant Quote
             </Link>
+            <Link to="/financing" className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-semibold inline-flex items-center gap-2">
+              <DollarSign className="w-4 h-4" />
+              Financing
+            </Link>
             <Link
               to="/contact"
               className="bg-charcoal-800 text-white px-6 py-2.5 rounded-lg hover:bg-charcoal-900 transition-colors font-semibold"
@@ -203,6 +207,14 @@ export default function Navigation() {
               >
                 <Calculator className="w-4 h-4" />
                 Instant Quote
+              </Link>
+              <Link
+                to="/financing"
+                className="bg-green-600 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition-colors font-semibold text-center flex items-center justify-center gap-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <DollarSign className="w-4 h-4" />
+                Financing
               </Link>
               <Link
                 to="/contact"

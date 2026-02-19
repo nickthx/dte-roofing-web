@@ -11,7 +11,7 @@ export default function Powell() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Powell, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Powell, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Powell, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers powell, roof repair powell, roof replacement powell, roofing company powell, storm damage powell, gutter services powell, roofer near me powell, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/powell"
       />
@@ -19,7 +19,7 @@ export default function Powell() {
         type="location"
         locationName="Powell"
         pageTitle="Roofers in Powell, OH | DTE Roofing"
-        pageDescription="DTE Roofing serves Powell, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Powell, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/powell"
       />
 
@@ -32,7 +32,7 @@ export default function Powell() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Powell, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Powell homeowners—from Downtown Powell and the Powell Rd corridor to Sawmill Parkway neighborhoods and Liberty Township border areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Powell homeowners—from Downtown Powell and the Powell Rd corridor to Sawmill Parkway neighborhoods and Liberty Township border areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,13 +54,13 @@ export default function Powell() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Powell</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Powell regularly to the northwest. With convenient access via <strong>Sawmill Parkway</strong>, <strong>US-23</strong>, and <strong>I-270</strong>, we reach Powell efficiently—from <strong>Downtown Powell</strong> and the village core to neighborhoods along the <strong>Powell Rd (OH-750) corridor</strong>, from <strong>Liberty Township border</strong> areas to communities near the <strong>Olentangy River corridor</strong> and the zoo area. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Powell regularly to the northwest. With convenient access via <strong>Sawmill Parkway</strong>, <strong>US-23</strong>, and <strong>I-270</strong>, we reach Powell efficiently—from <strong>Downtown Powell</strong> and the village core to neighborhoods along the <strong>Powell Rd (OH-750) corridor</strong>, from <strong>Liberty Township border</strong> areas to communities near the <strong>Olentangy River corridor</strong> and the zoo area. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Powell features newer subdivisions with complex rooflines, multiple dormers, and numerous roof penetrations where flashing details are critical for leak prevention. Many neighborhoods have architectural standards and HOA requirements that must be met for material selection and aesthetics. This combination of architectural complexity and community standards requires contractors who understand both technical roofing challenges and documentation processes. Common Powell roofing issues include: complex flashing at multiple penetration points on newer homes with intricate rooflines, wind-driven rain and storm damage stripping shingles and ridge caps requiring insurance documentation, winter freeze-thaw cycles demanding proper ventilation and ice and water shield to prevent ice dams, and tree cover throughout many areas causing gutter clogs and overflow damage to fascia and soffit.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Our detail-first approach means thorough cleanup on every job site, property protection appropriate for well-maintained Powell homes, and meticulous craftsmanship that reflects well on your property. If you're working with HOA architectural requirements, we understand the documentation and approval processes. Whether you need emergency storm repairs, honest diagnostics on repair vs replacement decisions, guidance on material upgrades, or a planned roof replacement that meets community standards, we treat your home with the care and professionalism it deserves. Our owners lead every estimate—no salespeople, just straight talk and quality workmanship.
+                Our detail-first approach means thorough cleanup on every job site, property protection appropriate for well-maintained Powell homes, and meticulous craftsmanship that reflects well on your property. If you're working with HOA architectural requirements, we understand the documentation and approval processes. Whether you need emergency storm repairs, honest diagnostics on repair vs replacement decisions, guidance on material upgrades, or a planned roof replacement that meets community standards, we treat your home with the care and professionalism it deserves. Our owners lead every estimate—straight talk and quality workmanship.
               </p>
 
               <div className="bg-primary-50 p-6 rounded-xl border-2 border-primary-200">
@@ -70,7 +70,7 @@ export default function Powell() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based in Columbus—serving Powell regularly",
                     "Great attention to detail on every project",
                     "Experience with complex rooflines and flashing details",
@@ -120,7 +120,7 @@ export default function Powell() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Powell. No salespeople, no pressure—just honest assessments and clear guidance.
+                  Our owners personally oversee every roofing project in Powell—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

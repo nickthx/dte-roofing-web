@@ -11,7 +11,7 @@ export default function Westerville() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Westerville, OH | DTE Roofing — Owner-Led Inspections, Columbus HQ"
-        description="Roofers serving Westerville, OH. DTE Roofing owners speak with every customer. Based at 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="Roofers serving Westerville, OH. DTE Roofing owners personally involved in every project. Based at 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers westerville, roof repair westerville, roof replacement westerville, roofing company westerville, storm damage westerville, gutter services westerville, roofers columbus, roofer near me westerville"
         canonical="https://www.dteroofingllc.com/locations/westerville"
       />
@@ -19,7 +19,7 @@ export default function Westerville() {
         type="location"
         locationName="Westerville"
         pageTitle="Roofers in Westerville, OH | DTE Roofing"
-        pageDescription="Serving Westerville, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="Serving Westerville, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/westerville"
       />
 
@@ -32,7 +32,7 @@ export default function Westerville() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Westerville, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Westerville homeowners—from Uptown Westerville to Huber Village, near Otterbein University to Hoover Reservoir areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Westerville homeowners—from Uptown Westerville to Huber Village, near Otterbein University to Hoover Reservoir areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Westerville() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Westerville's Trusted Roofing Professionals</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Westerville regularly—typically 15-30 minutes depending on traffic and route. From historic <strong>Uptown Westerville</strong> and <strong>State Street's</strong> vibrant corridor to established neighborhoods near <strong>Otterbein University</strong>, from <strong>Hoover Reservoir</strong> areas to <strong>Blendon Woods</strong> edges, we understand Westerville's community character and diverse housing stock. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Westerville regularly—typically 15-30 minutes depending on traffic and route. From historic <strong>Uptown Westerville</strong> and <strong>State Street's</strong> vibrant corridor to established neighborhoods near <strong>Otterbein University</strong>, from <strong>Hoover Reservoir</strong> areas to <strong>Blendon Woods</strong> edges, we understand Westerville's community character and diverse housing stock. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Founded in 1858, Westerville features remarkable architectural diversity—from Victorian-era homes in Uptown dating to the late 1800s, to mid-century ranches and colonials from the 1960s-70s, to newer subdivisions throughout. This mix of older housing stock with complex rooflines and mature trees creates specific roofing challenges: original flashing that may need updating, constant debris accumulation requiring gutter maintenance, moss growth from shade, and aging roofs from 1970s-1990s development cycles now reaching replacement age.
@@ -70,7 +70,7 @@ export default function Westerville() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based nearby—15-30 minutes from Westerville",
                     "Great attention to detail on every project",
                     "Experience with historic Uptown preservation and diverse architectural styles",
@@ -118,7 +118,7 @@ export default function Westerville() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Westerville. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Westerville—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

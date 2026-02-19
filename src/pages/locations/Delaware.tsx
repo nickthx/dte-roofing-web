@@ -11,7 +11,7 @@ export default function Delaware() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Delaware, OH | DTE Roofing — Based in Columbus, Serving Delaware (~30 Miles)"
-        description="Need roofers in Delaware, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Delaware (~30 miles) with detail-first roof repair & replacement. Owners speak with every customer. Call 614-971-6028."
+        description="Need roofers in Delaware, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Delaware (~30 miles) with detail-first roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
         keywords="roofers delaware oh, roofers near delaware, best roofers in delaware, roof repair delaware, roof replacement delaware, delaware ohio roofing contractor, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/delaware"
       />
@@ -19,7 +19,7 @@ export default function Delaware() {
         type="location"
         locationName="Delaware"
         pageTitle="Roofers in Delaware, OH | DTE Roofing (Columbus HQ at 615 Hilliard Rome Rd)"
-        pageDescription="DTE Roofing serves Delaware, OH (~30 miles) from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Delaware, OH (~30 miles) from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/delaware"
       />
 
@@ -32,7 +32,7 @@ export default function Delaware() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Delaware, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Delaware homeowners. Based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, we serve Delaware and all surrounding neighborhoods with the same attention to detail our owners bring to every customer conversation.
+              Expert roof repair, replacement, and storm damage services for Delaware homeowners. Based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, we serve Delaware and all surrounding neighborhoods with the same attention to detail our owners bring to every project.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Delaware() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Best Roofers in Delaware, OH — Columbus-Based, Delaware-Trusted</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Delaware (about 30 miles north). Whether you're near <strong>Historic Downtown Delaware</strong> along <strong>Sandusky Street</strong>, close to <strong>Ohio Wesleyan University (OWU)</strong>, or in one of the newer neighborhoods expanding north and east, we bring the same detail-first approach that sets DTE Roofing apart. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Delaware (about 30 miles north). Whether you're near <strong>Historic Downtown Delaware</strong> along <strong>Sandusky Street</strong>, close to <strong>Ohio Wesleyan University (OWU)</strong>, or in one of the newer neighborhoods expanding north and east, we bring the same detail-first approach that sets DTE Roofing apart. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Delaware's roofing environment is unique. With a current population estimate around <strong>46,521 (2024)</strong> and Delaware County projected to grow roughly <strong>85% from 2020 to 2050</strong>, the city is seeing rapid development alongside historic preservation. From Victorian-era homes Downtown to mid-century properties in Berkshire and Glenmoor, to brand-new builds in Liberty Township and Presidential Parkway, each home demands a tailored roofing strategy. Whether it's ventilation for ice dam prevention, wind-driven rain protection on older flashing, or quality oversight for new construction, we understand Delaware's housing diversity.
@@ -76,7 +76,7 @@ export default function Delaware() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    'Owners speak with every customer—no sales teams',
+                    'Owners personally involved in every project',
                     'Great attention to detail on every project',
                     'Clean, organized job sites with neighbor respect',
                     'Storm damage documentation for insurance claims',
@@ -435,7 +435,7 @@ export default function Delaware() {
                   <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-charcoal-600 mt-4">
-                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our owners speak with every customer, so you'll get direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
+                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
                 </p>
               </details>
             </div>

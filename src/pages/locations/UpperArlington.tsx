@@ -11,7 +11,7 @@ export default function UpperArlington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Upper Arlington, OH | DTE Roofing — Owner-Led Inspections, Columbus HQ"
-        description="Roofers serving Upper Arlington, OH. DTE Roofing owners speak with every customer. Based at 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="Roofers serving Upper Arlington, OH. Owners personally involved in every project. Based at 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers upper arlington, roof repair upper arlington, roof replacement upper arlington, roofing company upper arlington, storm damage upper arlington, gutter services upper arlington, roofers columbus, roofer near me upper arlington"
         canonical="https://www.dteroofingllc.com/locations/upper-arlington"
       />
@@ -19,7 +19,7 @@ export default function UpperArlington() {
         type="location"
         locationName="Upper Arlington"
         pageTitle="Roofers in Upper Arlington, OH | DTE Roofing"
-        pageDescription="Serving Upper Arlington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="Serving Upper Arlington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/upper-arlington"
       />
 
@@ -32,7 +32,7 @@ export default function UpperArlington() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Upper Arlington, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Upper Arlington homeowners—from South of Lane to North of Lane, Kingsdale to Tremont Center. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship to this prestigious community.
+              Expert roof repair, replacement, and storm damage services for Upper Arlington homeowners—from South of Lane to North of Lane, Kingsdale to Tremont Center. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship to this prestigious community.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function UpperArlington() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Upper Arlington's Trusted Roofing Professionals</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Upper Arlington regularly—typically 15-25 minutes depending on traffic and route. From the historic charm of South of Lane neighborhoods to North of Lane's established homes, from the <strong>Lane Avenue corridor</strong> to <strong>Kingsdale</strong> and <strong>Tremont Center</strong> areas, we understand Upper Arlington's distinctive community character and elevated standards. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Upper Arlington regularly—typically 15-25 minutes depending on traffic and route. From the historic charm of South of Lane neighborhoods to North of Lane's established homes, from the <strong>Lane Avenue corridor</strong> to <strong>Kingsdale</strong> and <strong>Tremont Center</strong> areas, we understand Upper Arlington's distinctive community character and elevated standards. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Founded in 1918 and fully developed by the 1960s, Upper Arlington features remarkable architectural diversity—from Tudor Revival and Colonial Revival homes in older sections dating to the 1920s-30s, to mid-century modern gems from the 1950s-60s, to transitional styles throughout. This architectural heritage demands roofing expertise that respects historical character while incorporating modern performance and efficiency. The community's mature tree canopy, while enhancing aesthetics and property values, creates specific roofing challenges: debris accumulation, moss growth from shade, and occasional branch damage.
@@ -70,7 +70,7 @@ export default function UpperArlington() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based nearby—15-25 minutes from Upper Arlington",
                     "Great attention to detail on every project",
                     "Experience with historic home preservation and diverse architectural styles",
@@ -118,7 +118,7 @@ export default function UpperArlington() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Upper Arlington. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Upper Arlington—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

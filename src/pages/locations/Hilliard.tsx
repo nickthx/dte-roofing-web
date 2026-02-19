@@ -11,7 +11,7 @@ export default function Hilliard() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Hilliard, OH | DTE Roofing — Near Hilliard, Owner-Led Inspections"
-        description="Roofers serving Hilliard, OH. Founded by Hilliard Davidson grads, DTE Roofing owners speak with every customer. Office at 615 Hilliard Rome Rd, Columbus, OH 43228. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="Roofers serving Hilliard, OH. Founded by Hilliard Davidson grads, DTE Roofing owners work with every customer. Office at 615 Hilliard Rome Rd, Columbus, OH 43228. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers hilliard, roof repair hilliard, roof replacement hilliard, roofing company hilliard, roofers near hilliard, storm damage hilliard, gutter services hilliard, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/hilliard"
       />
@@ -19,7 +19,7 @@ export default function Hilliard() {
         type="location"
         locationName="Hilliard"
         pageTitle="Roofers in Hilliard, OH | DTE Roofing"
-        pageDescription="Serving Hilliard, OH from our office on Hilliard Rome Rd (615 Hilliard Rome Rd, Columbus, OH 43228 mailing address). Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="Serving Hilliard, OH from our office on Hilliard Rome Rd (615 Hilliard Rome Rd, Columbus, OH 43228 mailing address). Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/hilliard"
       />
 
@@ -32,7 +32,7 @@ export default function Hilliard() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Hilliard, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Hilliard homeowners—from Old Hilliard to Britton Farms to Scioto Reserve. Founded by Hilliard Davidson graduates, our owners speak with every customer. Based minutes from Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228, we deliver detail-first craftsmanship to our neighbors.
+              Expert roof repair, replacement, and storm damage services for Hilliard homeowners—from Old Hilliard to Britton Farms to Scioto Reserve. Founded by Hilliard Davidson graduates, our owners work with every customer. Based minutes from Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228, we deliver detail-first craftsmanship to our neighbors.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -72,7 +72,7 @@ export default function Hilliard() {
                   {[
                     "Founded by Hilliard Davidson graduates—we are your neighbors",
                     "Office on Hilliard Rome Rd—fastest response times in town",
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Deep knowledge of Hilliard neighborhoods and housing styles",
                     "Experience with Hilliard HOA requirements and city permits",
                     "Honest diagnostics—we fix only what is needed"
@@ -116,7 +116,7 @@ export default function Hilliard() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  As Hilliard locals, one of our owners personally inspects every roof. No salespeople, no pressure—just honest assessments from your neighbors.
+                  As Hilliard locals, our owners personally oversee every roofing project—just honest assessments from your neighbors.
                 </p>
                 <Link
                   to="/contact"
@@ -355,8 +355,8 @@ export default function Hilliard() {
                     description: "Founded by Hilliard Davidson grads with our office on Hilliard Rome Road"
                   },
                   {
-                    title: "Owner-Led Inspections",
-                    description: "One of our owners personally inspects every roof and speaks with every customer"
+                    title: "Owner Involvement",
+                    description: "Our owners personally oversee every project and work closely with every customer"
                   },
                   {
                     title: "Honest Diagnostics",

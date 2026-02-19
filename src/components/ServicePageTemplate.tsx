@@ -182,6 +182,34 @@ export default function ServicePageTemplate({
               </div>
             </section>
 
+            {/* Our Recent Work — job site photos */}
+            <section>
+              <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
+                Our Recent Work
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {/* TODO: Replace placeholders with actual job site photos */}
+                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
+                  <div className="text-center text-charcoal-400">
+                    <div className="text-3xl mb-1">📷</div>
+                    <div className="text-xs font-medium">Photo coming soon</div>
+                  </div>
+                </div>
+                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
+                  <div className="text-center text-charcoal-400">
+                    <div className="text-3xl mb-1">📷</div>
+                    <div className="text-xs font-medium">Photo coming soon</div>
+                  </div>
+                </div>
+                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
+                  <div className="text-center text-charcoal-400">
+                    <div className="text-3xl mb-1">📷</div>
+                    <div className="text-xs font-medium">Photo coming soon</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <section>
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
                 Frequently Asked Questions

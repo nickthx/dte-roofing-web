@@ -11,7 +11,7 @@ export default function Reynoldsburg() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Reynoldsburg, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners speak with every customer. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
         keywords="roofers reynoldsburg, roof repair reynoldsburg, roof replacement reynoldsburg, roofing company reynoldsburg, storm damage reynoldsburg, gutter services reynoldsburg, roofer near me reynoldsburg, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/reynoldsburg"
       />
@@ -19,7 +19,7 @@ export default function Reynoldsburg() {
         type="location"
         locationName="Reynoldsburg"
         pageTitle="Roofers in Reynoldsburg, OH | DTE Roofing"
-        pageDescription="DTE Roofing serves Reynoldsburg, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves Reynoldsburg, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/reynoldsburg"
       />
 
@@ -32,7 +32,7 @@ export default function Reynoldsburg() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Reynoldsburg, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Reynoldsburg homeowners—from Livingston Ave corridors to Taylor Road, East Main Street to Blacklick Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners speak with every customer and deliver detail-first craftsmanship.
+              Expert roof repair, replacement, and storm damage services for Reynoldsburg homeowners—from Livingston Ave corridors to Taylor Road, East Main Street to Blacklick Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function Reynoldsburg() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Reynoldsburg</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Reynoldsburg regularly on the east and southeast side of Columbus. With easy access via <strong>I-270</strong> and <strong>I-70</strong>, we reach Reynoldsburg efficiently—from <strong>Livingston Ave</strong> neighborhoods to <strong>East Main Street</strong> corridors, from <strong>Taylor Road</strong> to <strong>Broad Street (US-40)</strong> areas, and communities near <strong>Blacklick Creek</strong> and <strong>Blacklick Woods Metro Park</strong>. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Reynoldsburg regularly on the east and southeast side of Columbus. With easy access via <strong>I-270</strong> and <strong>I-70</strong>, we reach Reynoldsburg efficiently—from <strong>Livingston Ave</strong> neighborhoods to <strong>East Main Street</strong> corridors, from <strong>Taylor Road</strong> to <strong>Broad Street (US-40)</strong> areas, and communities near <strong>Blacklick Creek</strong> and <strong>Blacklick Woods Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Reynoldsburg, known as the <strong>"Birthplace of the Tomato,"</strong> features diverse housing—from older ranch homes and colonials to newer developments throughout the east side. This architectural variety creates specific roofing challenges: wind-driven rain stressing older flashing around chimneys and dormers, hail and severe thunderstorms common to Central Ohio requiring careful inspection and documentation, mature tree debris clogging gutters and causing overflow damage to fascia and soffit, and harsh winter freeze-thaw cycles that require proper ventilation and ice and water shield to prevent ice dams.
@@ -70,7 +70,7 @@ export default function Reynoldsburg() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners speak with every customer—no salespeople",
+                    "Owners personally involved in every project",
                     "Based in Columbus—serving Reynoldsburg regularly",
                     "Great attention to detail on every project",
                     "Experience with wind-driven rain and flashing issues",
@@ -119,7 +119,7 @@ export default function Reynoldsburg() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  One of our owners personally inspects every roof in Reynoldsburg. No salespeople, no pressure—just honest assessments.
+                  Our owners personally oversee every roofing project in Reynoldsburg—just honest assessments and fair pricing.
                 </p>
                 <Link
                   to="/contact"

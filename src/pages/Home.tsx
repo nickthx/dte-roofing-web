@@ -109,7 +109,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-primary-700 flex-shrink-0 mt-1" />
-                  <p className="text-charcoal-700 font-medium">Hands-on owners at your inspection</p>
+                  <p className="text-charcoal-700 font-medium">Owner oversight on every project</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-primary-700 flex-shrink-0 mt-1" />
@@ -392,6 +392,63 @@ export default function Home() {
             <p className="text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
               We invite every homeowner to leave a review — it helps other families choose a roofer they can trust.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Projects Photo Grid */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">Our Recent Work</h2>
+            <p className="text-xl text-charcoal-600 max-w-2xl mx-auto">
+              See DTE Roofing in action — real projects, real results for Columbus homeowners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {/* Existing job site photos */}
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/DTE IMAGE 1.webp" alt="DTE Roofing job site — Columbus OH roofing project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/IMG_20240614_162239.jpg" alt="DTE Roofing crew on the job in Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20240223_174412521.jpg" alt="DTE Roofing roof replacement project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20240910_193642307.jpg" alt="DTE Roofing team working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20241117_184811431.jpg" alt="DTE Roofing project — storm damage repair Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img src="/PXL_20241123_193437816.jpg" alt="DTE Roofing completed roof installation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            {/* TODO: Replace placeholder below with actual job site photo */}
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
+              <div className="text-center text-charcoal-400">
+                <div className="text-4xl mb-2">📷</div>
+                <div className="text-sm font-medium">Photo coming soon</div>
+              </div>
+            </div>
+            {/* TODO: Replace placeholder below with actual job site photo */}
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center sm:col-span-2 lg:col-span-2">
+              <div className="text-center text-charcoal-400">
+                <div className="text-4xl mb-2">📷</div>
+                <div className="text-sm font-medium">Photo coming soon</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center bg-charcoal-800 text-white px-8 py-3 rounded-lg hover:bg-charcoal-900 transition-all font-semibold"
+            >
+              View Full Gallery
+            </Link>
           </div>
         </div>
       </section>

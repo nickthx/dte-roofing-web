@@ -11,7 +11,7 @@ export default function NewAlbany() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers New Albany, OH | DTE Roofing — Columbus HQ, Serving New Albany"
-        description="Looking for roofers in New Albany, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves New Albany with expert roof repair & replacement. Owners speak with every customer. Call 614-971-6028."
+        description="Looking for roofers in New Albany, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves New Albany with expert roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
         keywords="roofers new albany oh, roofers near new albany, best roofers in new albany, roof repair new albany, roof replacement new albany, storm damage new albany, gutter services new albany, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/new-albany"
       />
@@ -19,7 +19,7 @@ export default function NewAlbany() {
         type="location"
         locationName="New Albany"
         pageTitle="Roofers in New Albany, OH | DTE Roofing (Columbus HQ)"
-        pageDescription="DTE Roofing serves New Albany, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair and replacement with owners speaking to every customer."
+        pageDescription="DTE Roofing serves New Albany, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/new-albany"
       />
 
@@ -32,7 +32,7 @@ export default function NewAlbany() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers New Albany, OH | DTE Roofing</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for New Albany homeowners—from Village Center to Rose Run Park to New Albany Country Club. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve New Albany regularly with the same attention to detail our owners bring to every customer conversation.
+              Expert roof repair, replacement, and storm damage services for New Albany homeowners—from Village Center to Rose Run Park to New Albany Country Club. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve New Albany regularly with the same attention to detail our owners bring to every project.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -54,7 +54,7 @@ export default function NewAlbany() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roofers Columbus Serving New Albany's Premier Community</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve New Albany regularly—approximately 20 miles, roughly 25-35 minutes depending on route and traffic. From the <strong>Village Center / Market Square</strong> area to <strong>Rose Run Park</strong>, from the elegant estates of <strong>New Albany Country Club</strong> to family neighborhoods near <strong>Jeanne B. McCoy Community Center for the Arts</strong>, we understand New Albany's distinctive community standards. Our owners personally speak with every customer—no sales teams, no runaround—just direct communication and genuine care for your home.
+                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve New Albany regularly—approximately 20 miles, roughly 25-35 minutes depending on route and traffic. From the <strong>Village Center / Market Square</strong> area to <strong>Rose Run Park</strong>, from the elegant estates of <strong>New Albany Country Club</strong> to family neighborhoods near <strong>Jeanne B. McCoy Community Center for the Arts</strong>, we understand New Albany's distinctive community standards. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 New Albany's master-planned excellence demands careful attention. Developed primarily by The New Albany Company beginning in the 1990s, this community features rigorous architectural review processes, comprehensive design guidelines, and exceptional attention to aesthetic detail. Whether it's a historic home near Market Square or a modern estate in Hampstead, each property requires careful coordination with HOA standards, premium materials, and meticulous craftsmanship. We've successfully navigated New Albany's architectural review requirements and understand what's needed for compliant, high-quality installations.
@@ -73,7 +73,7 @@ export default function NewAlbany() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    'Owners speak with every customer—no sales teams',
+                    'Owners personally involved in every project',
                     'Great attention to detail on every project',
                     'Experience with New Albany HOAs and architectural review',
                     'Premium materials appropriate for luxury homes',
@@ -431,7 +431,7 @@ export default function NewAlbany() {
                   <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our owners speak with every customer, so you'll get direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics. Most inspections are scheduled within 2-3 days, and emergency situations get priority response.
+                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics. Most inspections are scheduled within 2-3 days, and emergency situations get priority response.
                 </p>
               </details>
             </div>
