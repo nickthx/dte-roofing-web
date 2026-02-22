@@ -381,7 +381,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place/DTE+Roofing/@39.9747532,-83.1279464,17z/data=!4m8!3m7!1s0x88388b12d7c38f87:0xd5db37a6e0a52af8!8m2!3d39.9747532!4d-83.1253715!9m1!1b1!16s%2Fg%2F11y3k5qw0y?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+              href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-lg hover:shadow-xl mb-4"
@@ -587,7 +587,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=DTE+Roofing+Columbus+OH"
+                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center justify-center shadow-md hover:shadow-lg"
@@ -595,7 +595,7 @@ export default function Home() {
                 View Our Reviews <ExternalLink className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=DTE+Roofing+Columbus+OH"
+                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-primary-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all font-semibold inline-flex items-center justify-center border-2 border-primary-700"

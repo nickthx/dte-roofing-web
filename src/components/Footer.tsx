@@ -91,7 +91,7 @@ export default function Footer() {
             </div>
             <div className="flex items-start gap-3 text-gray-400">
               <a
-                href="https://www.google.com/maps/place/DTE+Roofing/@39.9747532,-83.1279464,17z/data=!4m8!3m7!1s0x88388b12d7c38f87:0xd5db37a6e0a52af8!8m2!3d39.9747532!4d-83.1253715!9m1!1b1!16s%2Fg%2F11y3k5qw0y?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-white transition-colors group"
