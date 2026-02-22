@@ -35,7 +35,7 @@ export default function StormDamage() {
                   Recent storm in your area? We offer free storm damage inspections and work directly with
                   insurance companies to streamline your claim process.
                 </p>
-                <a href="tel:614-971-6028" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold">
+                <a href="tel:6149716028" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold">
                   <Phone className="w-4 h-4 mr-2" />
                   Call 614-971-6028 for Free Inspection
                 </a>

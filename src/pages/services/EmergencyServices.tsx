@@ -25,7 +25,7 @@ export default function EmergencyServices() {
               Fast, reliable emergency response when you need it most
             </p>
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-white text-red-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-bold text-lg inline-flex items-center justify-center shadow-xl"
             >
               <Phone className="mr-2 w-5 h-5" />
@@ -131,7 +131,7 @@ export default function EmergencyServices() {
                   and prevent further damage. Don't wait - call us now!
                 </p>
                 <a
-                  href="tel:614-971-6028"
+                  href="tel:6149716028"
                   className="bg-white text-primary-700 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all font-bold inline-flex items-center justify-center w-full"
                 >
                   <Phone className="mr-2 w-5 h-5" />
@@ -264,7 +264,7 @@ export default function EmergencyServices() {
             Don't wait - roof emergencies get worse quickly. Call us now for immediate assistance!
           </p>
           <a
-            href="tel:614-971-6028"
+            href="tel:6149716028"
             className="bg-white text-red-700 px-10 py-5 rounded-lg hover:bg-gray-100 transition-all font-bold text-xl inline-flex items-center justify-center shadow-xl"
           >
             <Phone className="mr-3 w-6 h-6" />
