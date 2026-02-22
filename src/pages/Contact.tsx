@@ -396,10 +396,10 @@ export default function Contact() {
                       <div>
                         <div className="font-semibold text-charcoal-900 mb-1">Email</div>
                         <a
-                          href="mailto:experience@dteroofing.com"
+                          href="mailto:experience@dteroofingllc.com"
                           className="text-primary-700 hover:text-primary-800 transition-colors break-all"
                         >
-                          experience@dteroofing.com
+                          experience@dteroofingllc.com
                         </a>
                         <p className="text-sm text-charcoal-600 mt-1">We respond within 24 hours</p>
                       </div>

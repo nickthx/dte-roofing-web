@@ -114,7 +114,7 @@ export default function Locations() {
               DTE Roofing proudly serves 13+ communities throughout the Columbus metropolitan area. From our Hilliard headquarters, we deliver fast, reliable roofing services to homeowners across Franklin, Delaware, and Fairfield counties.
             </p>
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-xl"
             >
               <Phone className="mr-2 w-5 h-5" />
@@ -245,7 +245,7 @@ export default function Locations() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:614-971-6028"
+                href="tel:6149716028"
                 className="bg-white text-primary-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-lg"
               >
                 <Phone className="mr-2 w-5 h-5" />

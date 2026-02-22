@@ -38,7 +38,7 @@ export default function Delaware() {
               ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
             </p>
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-xl"
             >
               <Phone className="mr-2 w-5 h-5" />
@@ -395,7 +395,7 @@ export default function Delaware() {
                   <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-charcoal-600 mt-4">
-                  We prioritize storm response. Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a>, and we'll schedule an inspection as quickly as possible—often within 24–48 hours. If you have active leaks, we offer emergency tarping to prevent further interior damage while we assess the full scope of repairs needed.
+                  We prioritize storm response. Call us at <a href="tel:6149716028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a>, and we'll schedule an inspection as quickly as possible—often within 24–48 hours. If you have active leaks, we offer emergency tarping to prevent further interior damage while we assess the full scope of repairs needed.
                 </p>
               </details>
 
@@ -435,7 +435,7 @@ export default function Delaware() {
                   <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-charcoal-600 mt-4">
-                  Call us at <a href="tel:614-971-6028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
+                  Call us at <a href="tel:6149716028" className="text-primary-700 hover:underline font-semibold">614-971-6028</a> or visit our <Link to="/contact" className="text-primary-700 hover:underline font-semibold">Contact page</Link>. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics.
                 </p>
               </details>
             </div>
@@ -474,7 +474,7 @@ export default function Delaware() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-lg"
             >
               <Phone className="mr-2 w-5 h-5" />

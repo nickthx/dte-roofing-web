@@ -54,7 +54,7 @@ export default function Home() {
               <RoofQuoteButton variant="secondary" />
             </div>
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="inline-flex items-center gap-2 text-white hover:text-primary-300 transition-colors font-semibold text-lg mb-8 md:hidden"
             >
               <Phone className="w-5 h-5" />

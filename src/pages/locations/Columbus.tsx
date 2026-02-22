@@ -35,7 +35,7 @@ export default function Columbus() {
               Your trusted local roofing contractor serving all Columbus neighborhoods with honest diagnostics and expert craftsmanship.
             </p>
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-xl"
             >
               <Phone className="mr-2 w-5 h-5" />
@@ -320,7 +320,7 @@ export default function Columbus() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:614-971-6028"
+              href="tel:6149716028"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-lg"
             >
               <Phone className="mr-2 w-5 h-5" />

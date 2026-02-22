@@ -218,7 +218,7 @@ export default function FAQ() {
                 </a>
 
                 <a
-                  href="mailto:experience@dteroofing.com"
+                  href="mailto:experience@dteroofingllc.com"
                   className="flex items-center justify-center gap-3 text-charcoal-700 hover:text-primary-700 transition-colors"
                 >
                   <div className="bg-primary-100 p-3 rounded-full">
@@ -226,7 +226,7 @@ export default function FAQ() {
                   </div>
                   <div className="text-left">
                     <div className="text-sm text-charcoal-500 font-medium">Email Us</div>
-                    <div className="font-bold text-lg">experience@dteroofing.com</div>
+                    <div className="font-bold text-lg">experience@dteroofingllc.com</div>
                   </div>
                 </a>
               </div>

@@ -220,9 +220,9 @@ export default function ServiceLeadForm() {
               <Phone className="w-4 h-4" />
               614-971-6028
             </a>
-            <a href="mailto:experience@dteroofing.com" className="flex items-center gap-2 text-primary-700 hover:text-primary-800 font-semibold transition-colors">
+            <a href="mailto:experience@dteroofingllc.com" className="flex items-center gap-2 text-primary-700 hover:text-primary-800 font-semibold transition-colors">
               <Mail className="w-4 h-4" />
-              experience@dteroofing.com
+              experience@dteroofingllc.com
             </a>
             <div className="flex items-start gap-2 text-charcoal-600 text-sm">
               <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
