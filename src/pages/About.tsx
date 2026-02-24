@@ -141,6 +141,40 @@ export default function About() {
                 </li>
               ))}
             </ul>
+
+            {/* Accreditation badges */}
+            <div className="mt-10 pt-8 border-t border-gray-200">
+              <p className="text-sm font-semibold text-charcoal-500 uppercase tracking-wide text-center mb-6">Recognized & Accredited By</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 shadow-sm">
+                  <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-extrabold text-sm leading-none">BBB</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-charcoal-900 text-sm leading-tight">BBB Accredited</p>
+                    <p className="text-charcoal-500 text-xs">Better Business Bureau</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 shadow-sm">
+                  <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-extrabold text-sm leading-none">ND</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-charcoal-900 text-sm leading-tight">Nextdoor Verified</p>
+                    <p className="text-charcoal-500 text-xs">Neighborhood Recommended</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 shadow-sm">
+                  <div className="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-extrabold text-sm leading-none">GAF</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-charcoal-900 text-sm leading-tight">GAF Certified</p>
+                    <p className="text-charcoal-500 text-xs">Factory Certified Contractor</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,6 +186,14 @@ export default function About() {
               <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-6">
                 Our Story & Mission
               </h2>
+            </div>
+
+            {/* Mission Statement */}
+            <div className="relative bg-primary-700 rounded-2xl px-8 py-10 mb-12 text-center shadow-xl">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-4">Our Mission</p>
+              <blockquote className="text-xl md:text-2xl font-semibold text-white leading-relaxed">
+                "To set the standard for the roofing industry by delivering quality you can see, transparency you can feel, and a company culture that lifts people higher — inside and outside our walls."
+              </blockquote>
             </div>
 
             <div className="space-y-6 text-lg text-charcoal-600 leading-relaxed">

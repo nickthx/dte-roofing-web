@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8">
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-5 gap-6 mb-8">
             <div className="flex items-start gap-3 text-gray-400">
               <Shield className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
               <div>
@@ -86,7 +86,7 @@ export default function Footer() {
               <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">GAF Certified</h5>
-                <p className="text-sm">Certified by leading manufacturers</p>
+                <p className="text-sm">Factory certified contractor</p>
               </div>
             </div>
             <div className="flex items-start gap-3 text-gray-400">
@@ -102,6 +102,24 @@ export default function Footer() {
                   <p className="text-sm">{reviewData?.totalReviews || 92} verified 5-star reviews and counting</p>
                 </div>
               </a>
+            </div>
+            <div className="flex items-start gap-3 text-gray-400">
+              <div className="w-6 h-6 bg-blue-700 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-extrabold text-xs leading-none">BBB</span>
+              </div>
+              <div>
+                <h5 className="font-bold text-white text-sm mb-1">BBB Accredited</h5>
+                <p className="text-sm">Better Business Bureau</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 text-gray-400">
+              <div className="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-extrabold text-xs leading-none">ND</span>
+              </div>
+              <div>
+                <h5 className="font-bold text-white text-sm mb-1">Nextdoor Verified</h5>
+                <p className="text-sm">Neighborhood recommended</p>
+              </div>
             </div>
           </div>
           <div className="text-center text-gray-400">

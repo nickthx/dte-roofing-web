@@ -76,6 +76,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mission Statement strip */}
+      <div className="bg-primary-700 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-3">Our Mission</p>
+          <p className="text-white text-lg md:text-xl font-semibold max-w-3xl mx-auto leading-relaxed">
+            "To set the standard for the roofing industry by delivering quality you can see, transparency you can feel, and a company culture that lifts people higher — inside and outside our walls."
+          </p>
+        </div>
+      </div>
+
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -507,6 +517,37 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-charcoal-900 mb-2">5-Star Rated</h3>
               <p className="text-charcoal-600">Highest customer satisfaction ratings in Columbus</p>
+            </div>
+          </div>
+
+          {/* Accreditation badges */}
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
+            <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm">
+              <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-extrabold text-sm leading-none">BBB</span>
+              </div>
+              <div>
+                <p className="font-bold text-charcoal-900 text-sm leading-tight">BBB Accredited</p>
+                <p className="text-charcoal-500 text-xs">Better Business Bureau</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm">
+              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-extrabold text-sm leading-none">ND</span>
+              </div>
+              <div>
+                <p className="font-bold text-charcoal-900 text-sm leading-tight">Nextdoor Verified</p>
+                <p className="text-charcoal-500 text-xs">Neighborhood Recommended</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm">
+              <div className="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-extrabold text-sm leading-none">GAF</span>
+              </div>
+              <div>
+                <p className="font-bold text-charcoal-900 text-sm leading-tight">GAF Certified</p>
+                <p className="text-charcoal-500 text-xs">Factory Certified Contractor</p>
+              </div>
             </div>
           </div>
 
