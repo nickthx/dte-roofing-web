@@ -45,7 +45,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img
-              src="/DTE-Roofing-Logo-two-Men.png"
+              src="/images/DTE-Roofing-Logo-two-Men.png"
               alt="DTE Roofing - Columbus Ohio Roofing Contractor"
               className="h-16 w-auto"
               width="120"

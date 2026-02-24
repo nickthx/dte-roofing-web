@@ -12,7 +12,7 @@ export const localBusinessSchema = {
   "url": `${CANONICAL_DOMAIN}/`,
   "telephone": "+1-614-971-6028",
   "priceRange": "$$",
-  "image": `${CANONICAL_DOMAIN}/DTE-Roofing-Logo-two-Men.png`,
+  "image": `${CANONICAL_DOMAIN}/images/DTE-Roofing-Logo-two-Men.png`,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "615 Hilliard Rome Rd",

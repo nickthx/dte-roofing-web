@@ -29,7 +29,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/hero-roofing-professional.jpg)',
+            backgroundImage: 'url(/images/hero-roofing-professional.jpg)',
           }}
           role="img"
           aria-label="DTE Roofing professional inspecting roof shingles at sunset in Columbus Ohio"
@@ -92,7 +92,7 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/DTE-Roofing-Logo-two-Men.png"
+                  src="/images/DTE-Roofing-Logo-two-Men.png"
                   alt="DTE Roofing founders Donovan and Mitchell inspecting roofs in Columbus OH"
                   className="w-full h-auto"
                   loading="lazy"
@@ -419,36 +419,38 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {/* Existing job site photos */}
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/DTE IMAGE 1.webp" alt="DTE Roofing job site — Columbus OH roofing project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/DTE IMAGE 1.webp" alt="DTE Roofing job site — Columbus OH roofing project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/IMG_20240614_162239.jpg" alt="DTE Roofing crew on the job in Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/IMG_20240614_162239.jpg" alt="DTE Roofing crew on the job in Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/PXL_20240223_174412521.jpg" alt="DTE Roofing roof replacement project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/PXL_20240223_174412521.jpg" alt="DTE Roofing roof replacement project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/PXL_20240910_193642307.jpg" alt="DTE Roofing team working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/PXL_20240910_193642307.jpg" alt="DTE Roofing team working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/PXL_20241117_184811431.jpg" alt="DTE Roofing project — storm damage repair Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/PXL_20241117_184811431.jpg" alt="DTE Roofing project — storm damage repair Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/PXL_20241123_193437816.jpg" alt="DTE Roofing completed roof installation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src="/images/PXL_20241123_193437816.jpg" alt="DTE Roofing completed roof installation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
-            {/* TODO: Replace placeholder below with actual job site photo */}
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
-              <div className="text-center text-charcoal-400">
-                <div className="text-4xl mb-2">📷</div>
-                <div className="text-sm font-medium">Photo coming soon</div>
-              </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <img
+                src="/images/imgi_51_AF1QipNEQox1l9cu2UpKo2JzxajYFTlkoM-p0B17M3t2=s762-k-no.jpg"
+                alt="DTE Roofing crew completing residential roof installation Columbus OH"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
-            {/* TODO: Replace placeholder below with actual job site photo */}
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center sm:col-span-2 lg:col-span-2">
-              <div className="text-center text-charcoal-400">
-                <div className="text-4xl mb-2">📷</div>
-                <div className="text-sm font-medium">Photo coming soon</div>
-              </div>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-2">
+              <img
+                src="/images/imgi_67_AF1QipMPUbX2SGZ3wTBW6EveelWPgh0YlCJ7bupnxMci=s762-k-no.jpg"
+                alt="DTE Roofing team working on roof replacement in Columbus Ohio"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
           </div>
 

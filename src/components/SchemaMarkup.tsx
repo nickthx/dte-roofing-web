@@ -26,7 +26,7 @@ const BUSINESS_INFO = {
   name: 'DTE Roofing LLC',
   legalName: 'DTE Roofing LLC',
   url: 'https://www.dteroofingllc.com',
-  logo: 'https://www.dteroofingllc.com/DTE-Roofing-Logo-two-Men.png',
+  logo: 'https://www.dteroofingllc.com/images/DTE-Roofing-Logo-two-Men.png',
   telephone: '+16149716028',
   priceRange: '$$',
   address: {

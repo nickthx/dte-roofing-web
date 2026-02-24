@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-8 mb-8">
           <div>
             <img
-              src="/DTE-Roofing-Logo-two-Men.png"
+              src="/images/DTE-Roofing-Logo-two-Men.png"
               alt="DTE Roofing - Professional Roofing Services in Columbus OH"
               className="h-12 w-auto mb-4 brightness-0 invert"
               loading="lazy"
