@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone, CheckCircle, Star, Shield, Award, ChevronRight } from 'lucide-react';
 import SEO from './SEO';
 import ServiceLeadForm from './ServiceLeadForm';
+import SidebarTrustBadges from './SidebarTrustBadges';
 import MobileStickyCall from './MobileStickyCall';
 import { useReviewData } from '../hooks/useReviewData';
 
@@ -330,8 +331,9 @@ export default function ServicePageTemplate({
           </div>
 
           <div className="lg:col-span-1">
-            <div className="lg:sticky lg:top-8" id="lead-form">
-              <ServiceLeadForm />
+            <div className="lg:sticky lg:top-8 space-y-6" id="lead-form">
+              <ServiceLeadForm defaultService={slug} />
+              <SidebarTrustBadges />
             </div>
           </div>
         </div>

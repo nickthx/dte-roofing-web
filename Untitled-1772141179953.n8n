@@ -1,0 +1,78 @@
+{
+  "updatedAt": "2026-02-26T21:28:39.648Z",
+  "createdAt": "2026-02-26T21:26:19.933Z",
+  "id": "THyvYfxi1tuO3sCT",
+  "name": "Untitled-1772141179953",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": null,
+  "versionId": "c6e257e8-bddd-445f-899a-9eda6a1e0c62",
+  "activeVersionId": null,
+  "versionCounter": 2,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-02-26T21:26:19.938Z",
+      "createdAt": "2026-02-26T21:26:19.938Z",
+      "role": "workflow:owner",
+      "workflowId": "THyvYfxi1tuO3sCT",
+      "projectId": "eBTNHk4EuvTpSoJA",
+      "project": {
+        "updatedAt": "2025-11-24T17:57:35.815Z",
+        "createdAt": "2025-11-24T17:48:11.663Z",
+        "id": "eBTNHk4EuvTpSoJA",
+        "name": "Nick Whit <whitty6417@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "032ee34d-e014-4e49-8e86-76b73737293b",
+        "projectRelations": [
+          {
+            "updatedAt": "2025-11-24T17:48:11.663Z",
+            "createdAt": "2025-11-24T17:48:11.663Z",
+            "userId": "032ee34d-e014-4e49-8e86-76b73737293b",
+            "projectId": "eBTNHk4EuvTpSoJA",
+            "user": {
+              "updatedAt": "2026-02-26T16:56:57.000Z",
+              "createdAt": "2025-11-24T17:48:11.163Z",
+              "id": "032ee34d-e014-4e49-8e86-76b73737293b",
+              "email": "whitty6417@gmail.com",
+              "firstName": "Nick",
+              "lastName": "Whit",
+              "personalizationAnswers": {
+                "version": "v4",
+                "personalization_survey_submitted_at": "2025-11-24T17:57:38.251Z",
+                "personalization_survey_n8n_version": "1.120.4"
+              },
+              "settings": {
+                "userActivated": true,
+                "easyAIWorkflowOnboarded": true,
+                "firstSuccessfulWorkflowId": "drkFMc2tfmoya60Q",
+                "userActivatedAt": 1764024070350,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1764528973779
+                }
+              },
+              "disabled": false,
+              "mfaEnabled": false,
+              "lastActiveAt": "2026-02-26",
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
