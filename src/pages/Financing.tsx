@@ -1,24 +1,102 @@
 import { useState } from 'react';
-import { CheckCircle, DollarSign, Shield, Clock, TrendingDown, Users } from 'lucide-react';
+import { CheckCircle, DollarSign, Shield, Clock, TrendingDown, Users, Loader2, AlertCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import { useLeadTracking } from '../hooks/useLeadTracking';
+import { validateEmail, validatePhone, validateRequired } from '../utils/formValidation';
+
+const WEBHOOK_URL = 'https://n8n.whitflow.com/webhook/dte-financing-submissions';
+
+const financingProducts = [
+  { value: 'Promotional Financing', label: 'Promotional Financing', tagline: '0% for 12–24 months' },
+  { value: 'Personal Loans', label: 'Personal Loans', tagline: 'Fixed rate, fixed term' },
+  { value: 'Secured Loans', label: 'Secured Loans', tagline: 'Lower rates, home equity' },
+  { value: 'Second Look Options', label: 'Second Look Options', tagline: 'For credit-challenged customers' },
+];
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  financingProduct?: string;
+}
 
 export default function Financing() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    financingProduct: '',
     projectDescription: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const tracking = useLeadTracking();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = (): FormErrors => {
+    const errs: FormErrors = {};
+    const nameErr = validateRequired(formData.name);
+    if (nameErr) errs.name = 'Name is required';
+    const emailErr = validateEmail(formData.email);
+    if (emailErr) errs.email = emailErr;
+    const phoneErr = validatePhone(formData.phone);
+    if (phoneErr) errs.phone = phoneErr;
+    if (!formData.financingProduct) errs.financingProduct = 'Please select a financing product';
+    return errs;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mirror the contact page pattern — in production, wire to Supabase
-    setSubmitted(true);
+    const formErrors = validate();
+    setErrors(formErrors);
+    if (Object.keys(formErrors).length > 0) return;
+
+    setIsSubmitting(true);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      const payload = {
+        ...formData,
+        source: 'financing-page',
+        currentPage: window.location.pathname,
+        pageTitle: document.title,
+        ...tracking,
+        formCompletedAt: new Date().toISOString(),
+        timestamp: new Date().toISOString(),
+        formVersion: '1.0',
+      };
+
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+      setSubmitStatus('success');
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      clearTimeout(timeout);
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  const handleProductSelect = (value: string) => {
+    setFormData(prev => ({ ...prev, financingProduct: value }));
+    if (errors.financingProduct) {
+      setErrors(prev => ({ ...prev, financingProduct: undefined }));
+    }
   };
 
   const products = [
@@ -174,7 +252,7 @@ export default function Financing() {
               </p>
             </div>
 
-            {submitted ? (
+            {submitStatus === 'success' ? (
               <div className="bg-green-50 border-2 border-green-200 rounded-xl p-10 text-center">
                 <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-charcoal-900 mb-2">We Got Your Request!</h3>
@@ -184,6 +262,37 @@ export default function Financing() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-gray-50 rounded-2xl p-8 border border-gray-200 space-y-5">
+                {/* Financing Product Selection */}
+                <div>
+                  <label className="block text-sm font-semibold text-charcoal-800 mb-2">
+                    Which financing option interests you? *
+                  </label>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {financingProducts.map((product) => (
+                      <button
+                        key={product.value}
+                        type="button"
+                        onClick={() => handleProductSelect(product.value)}
+                        className={`text-left p-4 rounded-lg border-2 transition-all ${
+                          formData.financingProduct === product.value
+                            ? 'border-green-500 bg-green-50 ring-1 ring-green-500'
+                            : 'border-gray-200 bg-white hover:border-green-300'
+                        }`}
+                      >
+                        <p className={`font-semibold text-sm ${
+                          formData.financingProduct === product.value ? 'text-green-700' : 'text-charcoal-800'
+                        }`}>
+                          {product.label}
+                        </p>
+                        <p className="text-xs text-charcoal-500 mt-0.5">{product.tagline}</p>
+                      </button>
+                    ))}
+                  </div>
+                  {errors.financingProduct && (
+                    <p className="text-red-600 text-sm mt-1">{errors.financingProduct}</p>
+                  )}
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-semibold text-charcoal-800 mb-1" htmlFor="name">
@@ -197,8 +306,11 @@ export default function Financing() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Jane Smith"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className={`w-full border rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                        errors.name ? 'border-red-400' : 'border-gray-300'
+                      }`}
                     />
+                    {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-charcoal-800 mb-1" htmlFor="phone">
@@ -212,8 +324,11 @@ export default function Financing() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="614-555-0100"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className={`w-full border rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                        errors.phone ? 'border-red-400' : 'border-gray-300'
+                      }`}
                     />
+                    {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
                   </div>
                 </div>
                 <div>
@@ -228,8 +343,11 @@ export default function Financing() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="jane@example.com"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className={`w-full border rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                      errors.email ? 'border-red-400' : 'border-gray-300'
+                    }`}
                   />
+                  {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-charcoal-800 mb-1" htmlFor="projectDescription">
@@ -245,11 +363,27 @@ export default function Financing() {
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
                   />
                 </div>
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <p className="text-sm">Something went wrong. Please try again or call us at (614) 971-6028.</p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-all font-bold text-lg shadow-md"
+                  disabled={isSubmitting}
+                  className="w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-all font-bold text-lg shadow-md disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  See If You Qualify
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    'See If You Qualify'
+                  )}
                 </button>
                 <p className="text-xs text-charcoal-500 text-center">
                   No commitment required. We'll reach out to discuss your options.
