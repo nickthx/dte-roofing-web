@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Shield, Clock, Award, CheckCircle, Star, ChevronRight, BadgeCheck, Search, FileText, Wrench, CheckCircle2, MapPin, ExternalLink, Home as HomeIcon } from 'lucide-react';
+import WorkCarousel from '../components/WorkCarousel';
 import SEO from '../components/SEO';
 import MobileStickyCall from '../components/MobileStickyCall';
 import RoofQuoteButton from '../components/RoofQuoteButton';
@@ -406,7 +407,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Projects Photo Grid */}
+      {/* Our Recent Work Carousel */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -416,42 +417,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {/* Existing job site photos */}
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/DTE IMAGE 1.webp" alt="DTE Roofing job site — Columbus OH roofing project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/IMG_20240614_162239.jpg" alt="DTE Roofing crew on the job in Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20240223_174412521.jpg" alt="DTE Roofing roof replacement project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20240910_193642307.jpg" alt="DTE Roofing team working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20241117_184811431.jpg" alt="DTE Roofing project — storm damage repair Columbus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20241123_193437816.jpg" alt="DTE Roofing completed roof installation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img
-                src="/images/imgi_51_AF1QipNEQox1l9cu2UpKo2JzxajYFTlkoM-p0B17M3t2=s762-k-no.jpg"
-                alt="DTE Roofing crew completing residential roof installation Columbus OH"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-2">
-              <img
-                src="/images/imgi_67_AF1QipMPUbX2SGZ3wTBW6EveelWPgh0YlCJ7bupnxMci=s762-k-no.jpg"
-                alt="DTE Roofing team working on roof replacement in Columbus Ohio"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            </div>
+          <div className="max-w-4xl mx-auto mb-8">
+            <WorkCarousel />
           </div>
 
           <div className="text-center">
