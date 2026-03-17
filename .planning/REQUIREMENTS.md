@@ -33,18 +33,18 @@ Requirements for milestone v1.1 — Home page carousel. Each maps to roadmap pha
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CARO-01 | — | Pending |
-| CARO-02 | — | Pending |
-| CARO-03 | — | Pending |
-| CARO-04 | — | Pending |
-| CARO-05 | — | Pending |
-| CARO-06 | — | Pending |
+| CARO-01 | Phase 1 | Pending |
+| CARO-02 | Phase 1 | Pending |
+| CARO-03 | Phase 1 | Pending |
+| CARO-04 | Phase 1 | Pending |
+| CARO-05 | Phase 1 | Pending |
+| CARO-06 | Phase 1 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 6 total
-- Mapped to phases: 0
-- Unmapped: 6 ⚠️
+- Mapped to phases: 6
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-17*
-*Last updated: 2026-03-17 after initial definition*
+*Last updated: 2026-03-17 after roadmap creation*

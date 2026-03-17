@@ -1,0 +1,32 @@
+# Roadmap: DTE Roofing Website
+
+## Milestones
+
+- 🚧 **v1.1 Home Carousel** - Phase 1 (in progress)
+
+## Phases
+
+### 🚧 v1.1 Home Carousel (In Progress)
+
+**Milestone Goal:** Replace the static "Our Recent Work" grid on the Home page with a smooth, interactive image carousel that presents project photos with titles and location labels.
+
+#### Phase 1: Carousel
+**Goal**: The Home page "Our Recent Work" section delivers a polished, fully interactive image carousel
+**Depends on**: Nothing (first phase)
+**Requirements**: CARO-01, CARO-02, CARO-03, CARO-04, CARO-05, CARO-06
+**Success Criteria** (what must be TRUE):
+  1. The "Our Recent Work" section auto-advances through project photos in a smooth carousel
+  2. User can manually navigate between images using prev/next arrow controls
+  3. Project photos sourced from existing `/public/images/` assets populate the carousel
+  4. The carousel layout is clean and fully usable on mobile, tablet, and desktop viewports
+  5. Each carousel image displays an overlaid project title and location label that match the site's charcoal/dark color scheme and spacing
+**Plans**: TBD
+
+Plans:
+- [ ] 01-01: TBD
+
+## Progress
+
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Carousel | v1.1 | 0/TBD | Not started | - |
