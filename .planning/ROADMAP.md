@@ -20,13 +20,13 @@
   3. Project photos sourced from existing `/public/images/` assets populate the carousel
   4. The carousel layout is clean and fully usable on mobile, tablet, and desktop viewports
   5. Each carousel image displays an overlaid project title and location label that match the site's charcoal/dark color scheme and spacing
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Extract shared project data, build Embla WorkCarousel component, replace Home page grid
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Carousel | v1.1 | 0/TBD | Not started | - |
+| 1. Carousel | v1.1 | 0/1 | Not started | - |
