@@ -2,531 +2,228 @@
 
 **Analysis Date:** 2026-03-21
 
+## Security Issues
+
+**Exposed Supabase Credentials:**
+- Issue: Supabase URL and anonymous API key are hardcoded in source code
+- Files: `src/lib/supabase.ts`
+- Impact: Keys are readable in compiled output, git history, and any public source code viewers. While anonymous keys have limited permissions, they enable unauthorized access patterns and should use environment variables
+- Risk Level: High
+- Fix approach: Move to environment variables (`.env.local`). Update Supabase initialization to read `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` from import.meta.env. Regenerate keys if committed to public repos.
+
+**Hardcoded Webhook URLs:**
+- Issue: n8n webhook URLs are hardcoded in component files
+- Files: `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx`
+- Impact: Webhooks are public and network-observable. Changing endpoints requires code changes and redeploy. URL pattern reveals internal infrastructure (n8n backend at whitflow.com)
+- Risk Level: Medium
+- Fix approach: Extract to environment variables (`VITE_WEBHOOK_FORM_URL`, `VITE_WEBHOOK_FINANCING_URL`). Create a centralized webhook config module at `src/config/webhooks.ts`.
+
+**No CSRF Protection:**
+- Issue: Form submissions (webhook calls) have no CSRF tokens or request signing
+- Files: `src/hooks/useMultiStepForm.ts` (line 107-112), `src/pages/Financing.tsx` (line 70-75)
+- Impact: Forms can be forged and submitted from other domains; webhook endpoint is unprotected against replay attacks
+- Risk Level: Medium
+- Fix approach: Implement request signing (HMAC) using a shared secret, or add CSRF token validation on the n8n side. Restrict webhook endpoint by IP whitelist if possible.
+
+**localStorage/sessionStorage Data Persistence:**
+- Issue: Session ID and landing page stored in browser storage without expiration or validation
+- Files: `src/hooks/useLeadTracking.ts` (lines 18-25, 28-35)
+- Impact: SessionStorage can be accessed via XSS, tracking data could be manipulated by browser extensions or malicious scripts
+- Risk Level: Low (non-sensitive data)
+- Fix approach: Consider server-side session management instead. If client-side storage needed, add data validation and short expiration times.
+
 ## Tech Debt
 
-### Hardcoded Supabase and Webhook Credentials (High Impact)
+**Duplicate Route Definitions:**
+- Issue: Two separate routes for the same service (gutter-services and gutters)
+- Files: `src/App.tsx` (lines 59-60)
+- Impact: Confusing URL structure, duplicate content for SEO, maintenance burden
+- Current state: Both `/services/gutter-services` and `/services/gutters` routes exist
+- Fix approach: Consolidate to single route path. If both needed for backwards compatibility, use redirect (already used for /faqs → /faq pattern on line 72). Remove GutterServices.tsx or Gutters.tsx component.
 
-**Issue:** API credentials embedded directly in source files without environment variable protection.
+**Repeated Form Validation Logic:**
+- Issue: Form validation duplicated across multiple forms (lead form, financing form)
+- Files: `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx` (both contain email/phone/name validation)
+- Impact: Inconsistent error messages, bug fixes must be applied in multiple places, validation logic drift
+- Fix approach: Consolidate validators into a shared validation module at `src/utils/formValidation.ts`. Create reusable FormErrors type. Both hooks/pages should import common validators.
 
-**Files:**
-- `src/lib/supabase.ts` (lines 3-4) - Supabase URL and anonymous key hardcoded
-- `src/hooks/useMultiStepForm.ts` (line 17) - n8n webhook URL hardcoded
-- `src/pages/Financing.tsx` (line 7) - n8n webhook URL hardcoded
+**Repeated Webhook Submission Code:**
+- Issue: Nearly identical fetch-with-timeout logic in two places
+- Files: `src/hooks/useMultiStepForm.ts` (lines 88-127), `src/pages/Financing.tsx` (lines 48-85)
+- Impact: Bug fixes, timeout changes, error handling improvements must be duplicated. Inconsistent behavior between forms.
+- Fix approach: Create `src/utils/submitToWebhook.ts` utility function. Both hooks and pages should call this shared function.
 
-**Impact:** Credentials exposed in version control and client bundle. If keys are rotated or endpoints change, code must be redeployed. Secrets accessible to frontend inspection. Cannot easily separate dev/staging/production environments.
+**Hardcoded Timeout Value:**
+- Issue: 10-second timeout hardcoded in two places (line 93 in useMultiStepForm, line 56 in Financing)
+- Files: `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx`
+- Impact: Timeout changes require code edits and redeploy. No flexibility for slow networks.
+- Fix approach: Create `src/config/api.ts` with `FORM_SUBMISSION_TIMEOUT_MS = 10000`. Import in both files.
 
-**Fix approach:**
-1. Move all credentials to Vite environment variables (`.env`, `.env.production`)
-2. Update `src/lib/supabase.ts` to read from `import.meta.env.VITE_SUPABASE_URL` and `import.meta.env.VITE_SUPABASE_ANON_KEY`
-3. Update webhook URLs in `useMultiStepForm.ts` and `Financing.tsx` to read from `import.meta.env.VITE_WEBHOOK_URL` and `import.meta.env.VITE_FINANCING_WEBHOOK_URL`
-4. Document required env vars in `.env.example`
+**Type Safety Issues:**
+- Issue: `any` type used in SchemaMarkup component
+- Files: `src/components/SchemaMarkup.tsx` (line 99: `const schema: any = {...}`)
+- Impact: Loses TypeScript safety on schema objects. Bugs in schema structure won't be caught at compile time.
+- Fix approach: Create `src/seo/schemaTypes.ts` with proper interfaces for Schema.org types (LocalBusiness, Organization, etc.). Replace `any` with specific types.
 
----
-
-### Unsafe HTML Rendering in Blog Posts (Security Risk)
-
-**Issue:** User-generated HTML from Supabase rendered directly with `dangerouslySetInnerHTML` without sanitization.
-
-**Files:** `src/pages/BlogPost.tsx` (line 154)
-
-**Problem:**
-```typescript
-<div dangerouslySetInnerHTML={{ __html: post.content_html }} />
-```
-
-If blog content in Supabase `blog_posts.content_html` is ever compromised or edited by untrusted users, XSS attacks become possible. No HTML validation or sanitization before rendering.
-
-**Current Mitigation:** Content is stored server-side in Supabase, reducing risk but not eliminating it.
-
-**Fix approach:**
-1. Install `dompurify` or `sanitize-html` package
-2. Sanitize content before rendering: `DOMPurify.sanitize(post.content_html)`
-3. Consider using a Markdown-to-React library instead of raw HTML if blog structure allows
-4. Document content creation security guidelines for admin/editors
-
----
-
-### Missing Environment Configuration File (Deployment Risk)
-
-**Issue:** No `.env.example` or environment setup documentation for developers/deployment.
-
-**Files:** Root directory lacks `.env.example`
-
-**Impact:** New developers don't know what env vars are required. Deployment to production fails silently if vars are missing. CI/CD pipelines cannot auto-configure.
-
-**Fix approach:**
-1. Create `.env.example` with placeholders:
-   ```
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=eyJhbGc...
-   VITE_WEBHOOK_URL=https://n8n.whitflow.com/webhook/dte-form-submissions
-   VITE_FINANCING_WEBHOOK_URL=https://n8n.whitflow.com/webhook/dte-financing-submissions
-   ```
-2. Update deployment docs to require copying `.env.example` → `.env.local`
-3. Add env validation on app startup with helpful error messages
-
----
-
-### Placeholder TODO in Production UI (Data Integrity Risk)
-
-**Issue:** "Photo coming soon" placeholders in service page galleries indicate incomplete feature in production.
-
-**Files:** `src/components/ServicePageTemplate.tsx` (line 192)
-
-**Problem:** All service pages using the template display three placeholder image boxes with "📷 Photo coming soon". This appears unfinished and hurts credibility. Users see incomplete content.
-
-**Fix approach:**
-1. Either add real project photos to `/public/images/` and pass them via `ServicePageProps`
-2. Or remove the gallery section entirely from template and conditionally render only if `photos` prop is provided
-3. Update all service pages to include actual project image paths
-
----
-
-## Known Bugs
-
-### Review Data Fallback Masking Real Issues (Low Impact but Problematic)
-
-**Issue:** When review data fails to load, fallback hardcoded value (92 reviews, 5.0 rating) is used silently.
-
-**Files:** `src/hooks/useReviewData.ts` (lines 71-79)
-
-**Problem:**
-```typescript
-catch (err) {
-  console.error('Failed to load reviews:', err);
-  setError(true);
-  setLoading(false);
-  setReviewData({
-    totalReviews: DEFAULT_REVIEW_COUNT,  // 92 - hardcoded fallback
-    averageRating: 5.0,
-    ratingBreakdown: { 5: DEFAULT_REVIEW_COUNT, 4: 0, 3: 0, 2: 0, 1: 0 },
-    // ...
-  });
-}
-```
-
-Errors are logged but component renders stale/potentially false data. If Supabase is down, users see "92 reviews" when the real count may be different. No visual indication that data is outdated.
-
-**Trigger:** Supabase connection loss, bad query, Google Sheets API timeout, network error
-
-**Fix approach:**
-1. Pass `error` state from hook to component consumers
-2. Display a subtle notice: "Review data temporarily unavailable"
-3. Consider caching review data in localStorage with TTL to serve stale-but-recent data instead of 92
-4. Add monitoring/alerting for review data fetch failures
-
----
-
-### Phone Number Format Inconsistency (Cosmetic)
-
-**Issue:** Phone input accepts `(614)-555-0123` format but contact form payload and webhook may not handle formatting consistently.
-
-**Files:**
-- `src/components/lead-form/steps/StepContact.tsx` (line 45)
-- `src/utils/formatPhone.ts` (assumed - not verified but imported)
-
-**Problem:** Form field applies `formatPhoneNumber()` transform with `maxLength={14}` assuming format like `(614)-555-0123`. If backend n8n webhook expects unformatted `6145550123`, parsing may fail silently. Different form fields (lead form vs financing form) might apply different formatting.
-
-**Fix approach:**
-1. Standardize on one phone format (recommended: unformatted `10-digit` for storage, formatted for display)
-2. Strip formatting before submitting to webhook: `phone: formData.phone.replace(/\D/g, '')`
-3. Document expected phone format in webhook endpoint
-
----
-
-## Security Considerations
-
-### Exposed Webhook URLs Allow Form Spam (Medium Risk)
-
-**Issue:** n8n webhook URLs are visible in frontend code and bundled JavaScript.
-
-**Files:**
-- `src/hooks/useMultiStepForm.ts` (line 17)
-- `src/pages/Financing.tsx` (line 7)
-
-**Risk:** Any bot/attacker can directly POST to webhook endpoints, flooding n8n with fake leads. No rate limiting on client side.
-
-**Current Mitigation:** n8n may have its own rate limiting; URL is difficult to guess but not secret.
-
-**Fix approach:**
-1. Implement rate limiting in frontend: track submissions per session, show cooldown if too many in short time
-2. Add reCAPTCHA v3 to form submission to block automated attacks
-3. Add webhook authentication: sign requests with a client secret (n8n can verify)
-4. Monitor n8n webhook logs for unusual submission patterns
-
----
-
-### Geolocation and Device Tracking in Leads (Privacy Concern)
-
-**Issue:** Tracking hook collects extensive user fingerprint data without explicit consent.
-
-**Files:** `src/hooks/useLeadTracking.ts` (lines 50-63)
-
-**Collected Data:**
-- Screen resolution, device type, user agent, session ID
-- Referrer, UTM parameters, landing page, page title
-- Session timing data
-
-**Problem:** Privacy policy may not mention this collection. GDPR/CCPA may require explicit opt-in before form submission. User agent and screen resolution combination can uniquely identify users.
-
-**Fix approach:**
-1. Add privacy notice on contact forms: "We collect usage data to improve your experience"
-2. Verify terms of service and privacy policy cover this tracking
-3. Consider reducing tracked data to only: utm_source, referrer, landing_page (remove device fingerprinting unless necessary)
-4. Add user consent checkbox or link to privacy policy before form submission
-
----
+**Disabled ESLint Rule Without Justification:**
+- Issue: react-hooks/exhaustive-deps disabled without explanation
+- Files: `src/components/lead-form/MultiStepLeadForm.tsx` (line 47)
+- Impact: Effect dependencies may be incomplete; component could fail to re-initialize when props change
+- Current behavior: Service pre-selection only runs once (intentional), but dependency array suggests it should respond to defaultService changes
+- Fix approach: Add comment explaining why dependency is intentionally omitted. Consider if this is the desired behavior (form should respond to page changes when visiting different service pages).
 
 ## Performance Bottlenecks
 
-### Large Location Pages with Repeated Content (Bundle Size, Render Performance)
+**Unoptimized Review Data Fetching:**
+- Issue: Google Sheets API called via public gviz endpoint with complex parsing
+- Files: `src/hooks/useReviewData.ts` (lines 53-56)
+- Impact: Slow fallback if Supabase fails. String slicing magic number (47, -2) is fragile. No caching beyond component lifetime.
+- Current approach: Try Supabase first, fall back to Google Sheets gviz endpoint
+- Fix approach: Cache review data in localStorage with 1-hour TTL. Consider moving sheet parsing to a server function. Add timeout to Google Sheets fetch.
 
-**Issue:** 10 location pages (Hilliard, Dublin, Columbus, etc.) are nearly identical with only location-specific text and SEO changes. Each is 480-500+ lines of nearly duplicate code.
+**Large Service/Location Page Files:**
+- Issue: Multiple pages over 600 lines each
+- Files: `src/pages/services/CommercialRoofing.tsx` (793 lines), `src/pages/services/Siding.tsx` (670 lines), `src/pages/Home.tsx` (645 lines)
+- Impact: Slower to edit, higher cognitive load, component responsibilities unclear
+- Fix approach: Break up large pages into smaller sub-components. Home.tsx could split into HeroSection.tsx, MissionSection.tsx, CarouselSection.tsx. Service pages already use template pattern (good), but template itself (`src/components/ServicePageTemplate.tsx`, 355 lines) could be split.
 
-**Files:**
-- `src/pages/locations/Hilliard.tsx` (487 lines)
-- `src/pages/locations/Dublin.tsx` (504 lines)
-- `src/pages/locations/NewAlbany.tsx` (500 lines)
-- And 7 more similar pages
-- Total: ~6200+ lines of duplicated location page code
+**No Image Lazy Loading:**
+- Issue: All images (carousel, gallery, project photos) loaded eagerly
+- Files: `src/components/WorkCarousel.tsx`, `src/pages/Gallery.tsx`, `src/data/projects.ts`
+- Impact: Initial page load includes all image downloads even if not in viewport
+- Fix approach: Add `loading="lazy"` to img tags. Consider using next/image equivalent for React or react-lazyload. Generate WebP variants and use srcset.
 
-**Impact:**
-- Increases bundle size significantly (same JSX duplicated 10x)
-- Harder to maintain: changes to location page layout require updates in all 10 files
-- Slow initial load if users visit multiple location pages
-
-**Fix approach:**
-1. Create `src/pages/LocationPageTemplate.tsx` similar to `ServicePageTemplate.tsx`
-2. Move all layout/structure to template; accept `locationData` prop with location-specific fields (name, description, services, FAQs)
-3. Create `src/data/locations.ts` with array of location configs
-4. Generate dynamic routes in `App.tsx` using a loop instead of hardcoding 10 Route elements
-5. Example:
-   ```typescript
-   const locations = [
-     { slug: 'hilliard', name: 'Hilliard', description: '...', ... },
-     { slug: 'dublin', name: 'Dublin', description: '...', ... },
-   ];
-
-   locations.map(loc => (
-     <Route
-       key={loc.slug}
-       path={`/locations/${loc.slug}`}
-       element={<LocationPageTemplate locationData={loc} />}
-     />
-   ))
-   ```
-
----
-
-### Synchronous Review Data Fetch on Every Page Load (Network Latency)
-
-**Issue:** `useReviewData` hook fetches review data from Supabase/Google Sheets on every component that uses it.
-
-**Files:** `src/hooks/useReviewData.ts` (line 25)
-
-**Problem:** Multiple components call this hook:
-- Home.tsx
-- ServicePageTemplate.tsx (used by 12+ service pages)
-- Location pages (10 pages)
-- Gallery, Reviews, etc.
-
-Each component that mounts triggers a new fetch. No caching across pages. If Google Sheets is slow, page load blocks.
-
-**Fix approach:**
-1. Cache review data in localStorage with TTL (e.g., 1 hour)
-2. Use Context API or global state to share fetched data across all components
-3. Fetch on app mount (in App.tsx) instead of per-component
-4. Add stale-while-revalidate: serve cached data immediately, fetch fresh data in background
-5. Example:
-   ```typescript
-   // App.tsx
-   useEffect(() => {
-     // Fetch once on app startup
-     fetchReviewData();
-   }, []);
-
-   // Then provide via context
-   <ReviewDataContext.Provider value={reviewData}>
-     <Routes>...</Routes>
-   </ReviewDataContext.Provider>
-   ```
-
----
+**No Code Splitting:**
+- Issue: All routes bundled into single JavaScript file
+- Files: `src/App.tsx` (all routes imported eagerly), vite.config.ts
+- Impact: First page load includes JS for all services, locations, pages (40+ components)
+- Fix approach: Use React Router lazy() for route splitting. Example: `const Services = lazy(() => import('./pages/Services'))`. Wrap in Suspense. This is critical for a 40+ route app.
 
 ## Fragile Areas
 
-### Form Validation Spread Across Multiple Locations (Maintenance Fragility)
+**Review Data Fallback Chain:**
+- Files: `src/hooks/useReviewData.ts`
+- Why fragile: Multiple fallback layers (Supabase → Google Sheets → hardcoded default). If Google Sheets API changes format, parsing fails silently and falls back to constant "92 reviews". No error boundary or user notification.
+- Safe modification: Update parsing logic carefully with error logging. Test fallback behavior in isolation. Consider separating concerns into smaller functions (parseGoogleSheetResponse, mergeReviewSources).
+- Test coverage gaps: No unit tests for fallback scenarios. Add tests for: Supabase unavailable, Google Sheets parsing fails, timeout scenario.
 
-**Issue:** Form validation logic duplicated and spread across multiple files without DRY pattern.
+**Form Submission State Machine:**
+- Files: `src/hooks/useMultiStepForm.ts` (lines 44-57)
+- Why fragile: Multiple interrelated state variables (currentStep, direction, submitStatus, isSubmitting). No single source of truth for form state. Possible race conditions in async submit callback.
+- Example: If user clicks submit while response pending, could enter invalid state (isSubmitting=false but currentStep=3)
+- Safe modification: Consider useReducer instead of multiple useState. Define explicit state transitions. Add invariant checks.
+- Test coverage gaps: No tests for rapid clicks, network retry behavior, timeout handling.
 
-**Files:**
-- `src/hooks/useMultiStepForm.ts` - `stepValidators` for multi-step form
-- `src/pages/Financing.tsx` - inline `validate()` function with nearly identical logic
-- `src/utils/formValidation.ts` - utility validators
-- Each form step has its own validation calls
+**Service Selection Mapping:**
+- Files: `src/components/lead-form/MultiStepLeadForm.tsx` (lines 31-43)
+- Why fragile: hardcoded serviceMap object maps URL slugs to form values. If service pages are added/renamed, map must be updated manually or service pre-selection fails silently.
+- Example: New service "roof-cleaning" won't auto-select form service
+- Safe modification: Generate map from a source of truth (services data structure). Or use a data attribute on service pages to specify form value.
+- Test coverage gaps: No tests verifying all service routes have mappings.
 
-**Problem:** If validation rules change (e.g., phone number format, required fields), must update multiple places. Easy to introduce inconsistency between forms.
-
-**Safe modification:**
-1. Create centralized `formValidationRules.ts`:
-   ```typescript
-   export const VALIDATION_RULES = {
-     name: { required: true, minLength: 2 },
-     email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-     phone: { required: true, minLength: 10 },
-   };
-   ```
-2. Both `useMultiStepForm` and Financing form import and use the same rules
-3. Test coverage: 100% of validation rules should have unit tests
-
----
-
-### Service Page Content Hard-coded in Each File (Content Update Risk)
-
-**Issue:** Service page content (FAQs, process steps, descriptions) is hard-coded in each service file.
-
-**Files:** All files in `src/pages/services/` (RoofRepair.tsx, RoofInstallation.tsx, etc.)
-
-**Problem:**
-- To update FAQ text shared across services, must edit multiple files
-- Content marketing team cannot update content without developer
-- No A/B testing or versioning of content
-
-**Safe modification:** Consider future refactor:
-1. Move service content to `src/data/services/` as data files
-2. Example: `src/data/services/roofRepair.ts`:
-   ```typescript
-   export const roofRepairConfig = {
-     serviceName: 'Roof Repair',
-     slug: 'roof-repair',
-     faqs: [{ question: '...', answer: '...' }],
-     processSteps: [...],
-   };
-   ```
-3. Service pages become thin wrappers that import config and pass to `ServicePageTemplate`
-4. Allows non-developers to edit content in data files
-
----
-
-### AbortController Timeout Not Guaranteed to Prevent Hanging Requests (Minor Reliability)
-
-**Issue:** 10-second timeout on webhook requests may not always prevent hung requests in slow networks.
-
-**Files:**
-- `src/hooks/useMultiStepForm.ts` (lines 92-93)
-- `src/pages/Financing.tsx` (lines 55-56)
-
-**Code:**
-```typescript
-const controller = new AbortController();
-const timeout = setTimeout(() => controller.abort(), 10000);
-```
-
-**Problem:** If network is extremely slow, even abort may not prevent the browser from hanging briefly. 10 seconds is long for user to wait with no feedback.
-
-**Fix approach:**
-1. Add user-facing timeout message: "Request taking longer than expected..."
-2. Consider shorter timeout (5 seconds) with retry option
-3. Add loading state that shows estimated time: "Submitting... (timeout in 5s)"
-4. Log timeout events for monitoring
-
----
-
-## Test Coverage Gaps
-
-### No Unit Tests for Form Validation (High Priority)
-
-**Issue:** Form validation logic exists but has no test coverage.
-
-**Files:**
-- `src/utils/formValidation.ts` - utility validators
-- `src/hooks/useMultiStepForm.ts` - step validators
-
-**Untested Functionality:**
-- Email validation edge cases (spaces, special chars, very long addresses)
-- Phone number validation (international formats, non-numeric)
-- Required field detection
-- Error message formatting
-
-**Risk:** Bug in validation could cause forms to fail silently or allow invalid data.
-
-**Priority:** High - validation is critical path for lead generation
-
----
-
-### No Integration Tests for Lead Form Submission (High Priority)
-
-**Issue:** Multi-step form submission to webhook is not tested end-to-end.
-
-**Files:** `src/hooks/useMultiStepForm.ts`, `src/components/lead-form/MultiStepLeadForm.tsx`
-
-**Untested Scenarios:**
-- Form submission success flow
-- Network error handling (webhook unreachable)
-- Timeout scenarios
-- Invalid form state submission blocked
-- Retry flow after error
-
-**Risk:** Form could silently fail to submit leads; users think they submitted but no lead reaches sales.
-
-**Priority:** High - directly impacts revenue
-
----
-
-### No Tests for Review Data Hook Fallback (Medium Priority)
-
-**Issue:** `useReviewData` hook error handling and fallback logic is untested.
-
-**Files:** `src/hooks/useReviewData.ts`
-
-**Untested Scenarios:**
-- Supabase fetch failure (fallback to Google Sheets)
-- Google Sheets fetch failure (fallback to hardcoded 92)
-- Invalid data format from either source
-- Cache invalidation
-
-**Risk:** If real review data fails to load, fake data could be served to customers.
-
----
-
-### No Tests for Environment-Dependent Code (Medium Priority)
-
-**Issue:** Hooks and components that access `window`, `localStorage`, `sessionStorage` are not tested.
-
-**Files:**
-- `src/hooks/useLeadTracking.ts` - uses `window.location`, `sessionStorage`, `window.innerWidth`
-- `src/components/ScrollToTop.tsx` - uses `window.scrollTo`
-
-**Risk:** Changes to tracking or scroll logic could break without test verification.
-
----
+**Webhook Endpoint Fragility:**
+- Files: `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx`
+- Why fragile: Hardcoded n8n endpoint URLs. If webhook URL changes, all forms break until code redeploy. No circuit breaker or graceful degradation.
+- Current behavior: If webhook fails, user sees error screen but lead is lost
+- Safe modification: Add retry logic with exponential backoff. Store failed submissions in localStorage temporarily. Add webhook health check.
+- Test coverage gaps: No tests for webhook failures, network timeouts.
 
 ## Scaling Limits
 
-### Session ID Storage Using SessionStorage (Low Risk, Single-Server Safe)
+**Single Webhook Endpoint Capacity:**
+- Current setup: All form submissions hit `https://n8n.whitflow.com/webhook/dte-form-submissions`
+- Limit: n8n free tier workflow execution limits (likely 500-1000/month). If marketing campaign succeeds, endpoint could be rate-limited.
+- Scaling path: Implement submission queue system (localStorage → service worker → batched webhook calls). Add analytics to monitor submission volume. Consider upgrading n8n or using dedicated CRM API (HubSpot, Pipedrive).
 
-**Issue:** Session ID stored in `sessionStorage` (client-side only) for lead tracking.
+**Supabase Connection Pool:**
+- Current usage: Review data fetching in useReviewData
+- Limit: Supabase free tier allows limited concurrent connections
+- Scaling path: Cache review data on client/CDN. Move blog queries to server-side rendering or static generation. Use Supabase replication for read replicas if production volume increases.
 
-**Files:** `src/hooks/useLeadTracking.ts` (lines 18-25)
-
-**Problem:** If user opens multiple tabs/windows, each gets a different session ID. If user switches devices or clears storage, session ID is lost. Analytics won't correlate the same user across sessions.
-
-**Current Capacity:** Works fine for current volume (single-tab typical usage).
-
-**Scaling Path:** If analytics become critical:
-1. Move to server-side session management (cookies + backend session store)
-2. Use persistent user ID (email/phone from form)
-3. Track with Google Analytics or Segment instead of custom session ID
-
----
-
-### Hardcoded Route Limits (Route Configuration Scalability)
-
-**Issue:** App.tsx contains 40+ hardcoded Route elements and imports. No dynamic route generation.
-
-**Files:** `src/App.tsx` (lines 50-93)
-
-**Problem:** Adding a new service or location page requires:
-1. Create new file in `src/pages/services/` or `src/pages/locations/`
-2. Import it in `App.tsx`
-3. Add Route element in Routes
-
-**Current Capacity:** ~50 routes (reasonable). If adding 50+ more routes, file becomes unmaintainable.
-
-**Scaling Path:**
-1. Use dynamic route generation with metadata files (see location page suggestion above)
-2. Consider file-based routing plugin (Vite has options) to auto-generate routes
-
----
+**Image Asset Management:**
+- Current approach: All images in `/public/images/` served statically
+- Limit: No image optimization, no CDN, no adaptive sizing
+- Scaling path: Implement image optimization pipeline (convert to WebP, generate multiple sizes). Deploy images to CDN (Vercel, Cloudflare). Use srcset for responsive images.
 
 ## Dependencies at Risk
 
-### Google Sheets as Backend (Fragility Risk)
+**Embla Carousel Dependency Chain:**
+- Package: embla-carousel-react 8.6.0, embla-carousel-autoplay 8.6.0
+- Risk: Two separate carousel libraries for same feature (WorkCarousel.tsx). If Embla API changes, requires migration effort.
+- Usage: `src/components/WorkCarousel.tsx` uses Embla
+- Impact: Carousel breaks on major version upgrade if API changes
+- Migration path: Already using modern Embla API. Consider consolidating if multiple carousels exist in future. Embla is actively maintained (low risk).
 
-**Issue:** Review data falls back to parsing Google Sheets JSON API response.
-
-**Files:** `src/hooks/useReviewData.ts` (lines 53-55)
-
-**Code:**
-```typescript
-const res = await fetch('https://docs.google.com/spreadsheets/d/1ZZ3-sLfyRXhls8tPGe6hxK_W5vEfkO0XnHCxbwBNtCY/gviz/tq?tqx=out:json&range=A2:D2');
-const text = await res.text();
-const parsed = JSON.parse(text.slice(47, -2));
-```
-
-**Risk:**
-- String slicing `text.slice(47, -2)` is fragile; if API response changes, parsing breaks
-- Google Sheets API is undocumented and unsupported by Google
-- Spreadsheet ID is hardcoded; if sheet is deleted/moved, fetches fail
-- No error handling for parsing failures
-
-**Fix approach:**
-1. Rely on Supabase as primary source (not fallback)
-2. If fallback is necessary, use supported API (e.g., Airtable, Firebase)
-3. Add try-catch around JSON.parse with error logging
-4. Document expected spreadsheet format and structure
-
----
-
-### Embla Carousel ESLint Exclusion (Hidden Dependency)
-
-**Issue:** `lucide-react` is excluded from Vite optimizeDeps but included in bundle.
-
-**Files:** `vite.config.ts` (line 8)
-
-**Code:**
-```typescript
-optimizeDeps: {
-  exclude: ['lucide-react'],
-},
-```
-
-**Problem:** Exclusion suggests lucide-react has compatibility issues with Vite optimization. This is unusual and could indicate:
-- Older/incompatible package version
-- Tree-shaking not working properly
-- Increased bundle size
-
-**Fix approach:**
-1. Verify reason for exclusion (check git history or comments)
-2. Try removing exclusion and run bundle size analysis
-3. If lucide-react is causing issues, consider alternative icon library (react-icons, heroicons)
-4. Update lucide-react to latest version
-
----
+**Supabase SDK Coupled to Client Code:**
+- Package: @supabase/supabase-js 2.57.4
+- Risk: SDK imported directly in components/hooks. If SDK major version changes, affects many files.
+- Files: `src/lib/supabase.ts`, `src/hooks/useReviewData.ts`
+- Impact: Breaking SDK upgrade could require refactoring across codebase
+- Migration path: Isolate Supabase usage to `src/lib/supabase.ts` only. All other code should use custom data-fetching hooks. This decouples business logic from SDK.
 
 ## Missing Critical Features
 
-### No Form Submission Confirmation Email (Lead Verification)
+**No Error Boundary:**
+- Problem: No error boundary component to catch React component errors
+- Blocks: If any page component throws during render, entire app crashes with white screen
+- Impact: Runtime errors propagate to user, no fallback UI
+- Recommendation: Create `src/components/ErrorBoundary.tsx` using class component. Wrap App component with it. Log errors to monitoring service.
 
-**Issue:** When user submits contact/lead form, no confirmation email is sent to user.
+**No Loading States for Async Data:**
+- Problem: useReviewData returns loading=true but not used in Display components
+- Files: Components using review data don't show loading skeleton or placeholder
+- Blocks: User sees "92 reviews" suddenly appear; jarring UX
+- Fix: Add loading UI in Review components. Use React Suspense or manual loading states.
 
-**Files:** `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx`
+**No Monitoring/Analytics:**
+- Problem: Form submissions, errors, and user interactions have no observability
+- Files: All form submission catches errors but only log to console
+- Blocks: Can't detect patterns of failed submissions, slow webhooks, or high error rates
+- Recommendation: Add error tracking (Sentry) and analytics (Plausible). Send errors/events to external service.
 
-**Problem:** User doesn't know if form actually submitted. If webhook silently fails, user has no indication. No way to verify user's email is correct.
+**No Offline Support:**
+- Problem: Forms lose data if network drops before submission
+- Impact: Users must re-enter form data
+- Fix approach: Add service worker to cache form state. Implement submission queue that retries when offline.
 
-**Fix approach:**
-1. After successful form submission, trigger confirmation email
-2. Update n8n webhook to send email on receipt
-3. Or add backend endpoint to send confirmation via `nodemailer` or Sendgrid
-4. Include in email: summary of submitted info, lead ID, next steps
+## Missing Test Coverage
+
+**Form Submission Logic:**
+- What's not tested: Webhook error scenarios, timeout handling, retry logic, race conditions
+- Files: `src/hooks/useMultiStepForm.ts`
+- Risk: Silent failures in form submission could go unnoticed. User submits form, gets error, tries again, data duplicated or lost.
+- Priority: High (core business flow)
+
+**Validation Rules:**
+- What's not tested: Edge cases in phone/email validation (international formats, special chars)
+- Files: `src/utils/formValidation.ts`
+- Risk: Users with unusual but valid phone formats (extensions, +1 country code) get rejected
+- Priority: Medium
+
+**Review Data Fetching:**
+- What's not tested: Supabase failure, Google Sheets parsing edge cases, timeout scenarios
+- Files: `src/hooks/useReviewData.ts`
+- Risk: Silent fallback to hardcoded "92 reviews" masks real data fetch failures
+- Priority: Medium
+
+**Service Page Template:**
+- What's not tested: Config validation, missing FAQ sections, null schema data
+- Files: `src/components/ServicePageTemplate.tsx`
+- Risk: Missing config properties could cause layout shifts or broken schema markup
+- Priority: Low (component is simple template)
+
+**SEO Meta Tags:**
+- What's not tested: Meta tags actually injected into DOM, canonical URLs correct
+- Files: `src/components/SEO.tsx`
+- Risk: SEO improvements won't be effective if meta tags not properly rendered
+- Priority: Medium (critical for business goals)
+
+**Route Mapping (Pre-selection):**
+- What's not tested: All 40+ service/location routes have correct service pre-selection
+- Files: `src/components/lead-form/MultiStepLeadForm.tsx` serviceMap
+- Risk: Users visiting some service pages see wrong pre-selected service in form
+- Priority: Medium
 
 ---
 
-### No Rate Limiting on Form Submissions (Lead Quality Risk)
-
-**Issue:** User can submit the same form repeatedly with no throttling or CAPTCHA.
-
-**Files:** `src/hooks/useMultiStepForm.ts`, `src/pages/Financing.tsx`
-
-**Problem:** Bots can flood webhook with fake leads. Same user can submit same form 100 times. No way to deduplicate leads.
-
-**Fix approach:**
-1. Client-side: Disable submit button for 5 seconds after submission
-2. Add reCAPTCHA v3 to form (invisible, score-based)
-3. Server-side: Implement webhook rate limiting by IP address
-4. Add duplicate detection in n8n workflow (same phone/email within 1 hour = skip)
-
----
-
-## Date: 2026-03-21
 *Concerns audit: 2026-03-21*

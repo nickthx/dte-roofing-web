@@ -4,161 +4,141 @@
 
 ## APIs & External Services
 
-**Quote Generation:**
-- Roofle - Instant roofing quote widget
-  - Widget: `https://app.roofle.com/roof-quote-pro-widget.js?id=zEGtbFpfjh6Snz6t4Tz23`
-  - Async script loaded in `index.html`
-  - Provides embedded quote tool accessible via dedicated InstantQuote page and button CTAs
-  - Status: Active integration, no SDK required
+**Quote & Lead Capture:**
+- Roofle - Instant roof quote widget
+  - SDK/Widget: Async script loaded from `https://app.roofle.com/roof-quote-pro-widget.js`
+  - Widget ID: `zEGtbFpfjh6Snz6t4Tz23` (configured in `index.html`)
+  - Integration: Embedded slideout quote widget on site
 
-**Automation & Webhook Processing:**
-- n8n (whitflow.com) - Lead form automation and workflow processing
-  - Primary webhook: `https://n8n.whitflow.com/webhook/dte-form-submissions`
-    - Used in: `src/hooks/useMultiStepForm.ts`
-    - Receives: Multi-step lead form data (service, urgency, address, contact info, tracking)
-  - Financing webhook: `https://n8n.whitflow.com/webhook/dte-financing-submissions`
-    - Used in: `src/pages/Financing.tsx`
-    - Receives: Financing inquiry data (product type, name, contact, project description)
-  - Timeout: 10000ms (10 seconds) via AbortController
-  - Method: POST with JSON payload
+**Automation & Webhooks:**
+- n8n (Whitflow) - Lead form automation and email workflow
+  - Lead Form Submissions: `https://n8n.whitflow.com/webhook/dte-form-submissions`
+    - Endpoint used in `src/hooks/useMultiStepForm.ts` (line 17)
+    - Timeout: 10 seconds with AbortController
+    - Payload includes form data, source, tracking data, and timestamps
+  - Financing Submissions: `https://n8n.whitflow.com/webhook/dte-financing-submissions`
+    - Endpoint used in `src/pages/Financing.tsx` (line 7)
+    - Timeout: 10 seconds with AbortController
+    - Payload includes financing product selection and tracking data
 
 ## Data Storage
 
-**Primary Database:**
-- Supabase (PostgreSQL backend)
-  - Client: `@supabase/supabase-js` 2.57.4
-  - Initialization: `src/lib/supabase.ts`
-  - URL: `https://ujasdbelviyamnwxjgth.supabase.co`
-  - Auth: Anonymous client key (public frontend key)
+**Databases:**
+- Supabase PostgreSQL - Dynamic content and review data
+  - Connection: `https://ujasdbelviyamnwxjgth.supabase.co`
+  - Client: @supabase/supabase-js 2.57.4 (initialized in `src/lib/supabase.ts`)
+  - Anon Key: Hardcoded in `src/lib/supabase.ts`
   - Tables accessed:
-    - `review_data` - Aggregated review metrics (total_reviews, average_rating, star counts)
-    - Blog posts table (schema defined in `src/lib/supabase.ts` BlogPost interface)
-
-**Review Data Fallback:**
-- Google Sheets (spreadsheet-based fallback)
-  - URL: `https://docs.google.com/spreadsheets/d/1ZZ3-sLfyRXhls8tPGe6hxK_W5vEfkO0XnHCxbwBNtCY/gviz/tq?tqx=out:json&range=A2:D2`
-  - Used in: `src/hooks/useReviewData.ts`
-  - Fallback: When Supabase unavailable, reads review count and rating from public Google Sheet
-  - Default fallback: 92 reviews, 5.0 rating
-  - Purpose: Display review metrics on website (used in Home page and testimonial sections)
+    - `review_data` - Review counts and ratings (queried in `src/hooks/useReviewData.ts`)
+      - Columns: `total_reviews`, `average_rating`, `five_star_count`, `four_star_count`, `three_star_count`, `two_star_count`, `one_star_count`, `updated_at`
+      - Used for displaying review statistics on site
+    - `blog_posts` (implied) - Blog content with fields: `id`, `title`, `slug`, `excerpt`, `content_html`, `tags`, `city`, `state`, `published_at`, `created_at`, `status`
 
 **File Storage:**
-- Hardcoded image assets in `/public/images/` (static)
-  - Logo: `/dte_favicon.png`
-  - Manifests: `/site.webmanifest`
-  - No dynamic file upload/storage integrated
+- Local filesystem only
+  - Static assets in `/public/images/` - Project photos, featured work carousel
+  - Favicons in `/public/` (dte_favicon.png)
+  - Web manifest in `/public/site.webmanifest`
 
 **Caching:**
-- Browser sessionStorage only:
-  - `dte_session_id` - Session tracking ID generated via `crypto.randomUUID()`
-  - `dte_landing_page` - First page user visited in session
-  - Used in: `src/hooks/useLeadTracking.ts`
+- None detected
 
 ## Authentication & Identity
 
 **Auth Provider:**
-- None (public/anonymous access)
-  - Supabase anon key used for read-only access to public tables
-  - No user authentication layer implemented
-  - Form submissions tracked via sessionId (not user accounts)
-
-**User Tracking:**
-- Custom session tracking without authentication:
-  - Session ID: Generated on first form interaction, stored in sessionStorage
-  - Tracking data captured: `src/hooks/useLeadTracking.ts`
-    - UTM parameters (source, medium, campaign, term, content)
-    - Referrer URL
-    - Landing page
-    - Device type (mobile/tablet/desktop)
-    - Screen resolution
-    - User agent
-    - Form start timestamp
-  - Sent with every form submission to n8n webhooks
+- Custom implementation - No dedicated auth provider (Supabase anon key for public read access only)
+  - Implementation: Supabase anon public client for reading review data and blog posts
+  - No user login system - Public-facing marketing site with public read access
 
 ## Monitoring & Observability
 
 **Error Tracking:**
-- None (no third-party error tracking service)
+- None detected - No error tracking service integrated (Sentry, Rollbar, etc.)
 
 **Logs:**
-- Browser console only (development and production):
-  - Example: `console.error('Failed to load reviews:', err)` in `src/hooks/useReviewData.ts`
-  - Errors logged on catch blocks in data fetching functions
-  - No log aggregation or external monitoring
-
-**Performance:**
-- No analytics integration (Google Analytics, etc. not configured)
+- Console logging only
+  - Error logging in `src/hooks/useReviewData.ts`: `console.error('Failed to load reviews:', err)`
+  - Development visibility only, minimal logging in production
 
 ## CI/CD & Deployment
 
 **Hosting:**
-- Vercel (production deployment platform)
-  - Configuration: `vercel.json`
-  - Behavior:
-    - All routes rewrites to `/index.html` for client-side routing
-    - /home redirects to / (permanent redirect)
-    - Static asset bundling via Vite
+- Vercel - Platform for deployment and hosting
+  - Configuration file: `vercel.json`
+  - Handles rewriting all routes to `index.html` for SPA routing
+  - Permanent redirect from `/home` to `/`
 
 **CI Pipeline:**
-- Not detected (no GitHub Actions, GitLab CI, or similar configured)
-- Manual deployment to Vercel via git push
-
-**Build Process:**
-- Vite development server (local dev): `npm run dev`
-- Vite production build: `npm run build` → outputs to `dist/`
-- Type checking: `npm run typecheck` (strict mode)
-- Linting: `npm run lint`
+- None detected - No GitHub Actions, GitLab CI, or other CI/CD automation in repo
 
 ## Environment Configuration
 
-**Required env vars:**
-- None currently enforced
-- All configuration is hardcoded in source:
-  - Supabase credentials in `src/lib/supabase.ts`
-  - Webhook URLs in `src/hooks/useMultiStepForm.ts` and `src/pages/Financing.tsx`
-  - Roofle widget ID in `index.html`
+**Hardcoded Configuration:**
+- Supabase credentials in source code (public anon key):
+  - URL: `https://ujasdbelviyamnwxjgth.supabase.co`
+  - Anon Key: Hardcoded in `src/lib/supabase.ts`
+- Webhook URLs hardcoded in source:
+  - `src/hooks/useMultiStepForm.ts` - n8n lead form endpoint
+  - `src/pages/Financing.tsx` - n8n financing endpoint
+- Roofle Widget ID hardcoded in `index.html`
 
-**Secrets location:**
-- Supabase anon key: `src/lib/supabase.ts` (line 4)
-  - Note: Anon keys are public-safe (frontend keys, not service role keys)
-- No other secrets detected in codebase
-
-**Recommended migration:**
-- Move hardcoded URLs to environment variables:
-  - VITE_SUPABASE_URL
-  - VITE_SUPABASE_ANON_KEY
-  - VITE_WEBHOOK_FORM_URL
-  - VITE_WEBHOOK_FINANCING_URL
-  - VITE_ROOFLE_WIDGET_ID
+**Environment Variables:**
+- Not currently used - All critical config is hardcoded
+- Deployment target (Vercel) supports env vars but none are configured in codebase
 
 ## Webhooks & Callbacks
 
 **Incoming:**
-- None (no webhook receivers implemented)
+- None - Application does not receive webhooks
 
 **Outgoing:**
-- n8n webhook for lead form submissions:
-  - Endpoint: `https://n8n.whitflow.com/webhook/dte-form-submissions`
-  - Trigger: User submits multi-step lead form (Service → Address → Contact Info → Confirmation)
-  - Payload includes: Form data, source page, tracking data, timestamps
-  - Used by: `src/hooks/useMultiStepForm.ts` (line 107-112)
+- Lead Form Webhook: `POST https://n8n.whitflow.com/webhook/dte-form-submissions`
+  - Trigger: User submits lead form with service request
+  - Payload includes:
+    - Form fields: service, urgency, address, name, phone, email, message
+    - Tracking: utm_source, utm_medium, utm_campaign, referrer, landingPage, deviceType
+    - Session: sessionId, landingPage, timestamp, currentPage
+    - Metadata: formVersion, formCompletedAt
+  - Response handling: Sets submitStatus to 'success' or 'error' based on HTTP response
 
-- n8n webhook for financing inquiries:
-  - Endpoint: `https://n8n.whitflow.com/webhook/dte-financing-submissions`
-  - Trigger: User submits financing form on `/financing` page
-  - Payload includes: Financing product, name, email, phone, project description, tracking
-  - Used by: `src/pages/Financing.tsx` (line 70-75)
+- Financing Webhook: `POST https://n8n.whitflow.com/webhook/dte-financing-submissions`
+  - Trigger: User submits financing inquiry form
+  - Payload includes:
+    - Form fields: name, email, phone, financingProduct, projectDescription
+    - Tracking: utm parameters, referrer, landingPage, deviceType
+    - Session: sessionId, timestamp, currentPage
+    - Metadata: formVersion, formCompletedAt
+  - Response handling: Sets submitStatus to 'success' or 'error' based on HTTP response
 
-## Third-Party CDN Resources
+## Third-Party CDNs
 
 **Google Fonts:**
-- Preconnected in `index.html` for performance
-- Actual font imports in `src/index.css` (if Tailwind default fonts not overridden)
+- Preconnected in `index.html` via `https://fonts.googleapis.com`
+- Used for custom typography (preconnect optimization)
 
-**Roofle Widget CDN:**
-- Widget script: `https://app.roofle.com/roof-quote-pro-widget.js?id=zEGtbFpfjh6Snz6t4Tz23`
-- Loads asynchronously in `index.html`
-- Provides embedded quote tool widget
+**Roofle CDN:**
+- Preconnected in `index.html` via `https://app.roofle.com`
+- Async script load for quote widget
+
+## Data Flow Summary
+
+1. **Review Data Flow:**
+   - First attempt: Query Supabase `review_data` table via `src/hooks/useReviewData.ts`
+   - Fallback: Parse Google Sheets JSON export from `https://docs.google.com/spreadsheets/d/1ZZ3-sLfyRXhls8tPGe6hxK_W5vEfkO0XnHCxbwBNtCY/gviz/tq?tqx=out:json&range=A2:D2`
+   - Final fallback: Default review count (92) if both sources fail
+   - Timeout: None specified for Google Sheets fallback
+
+2. **Lead Capture Flow:**
+   - User fills multi-step form (Service → Address → Contact Info) via `src/components/lead-form/`
+   - Form validates each step with validators in `src/hooks/useMultiStepForm.ts`
+   - On submission: POST to n8n webhook with form data + tracking data
+   - Response determines result page shown to user
+
+3. **Financing Inquiry Flow:**
+   - User selects financing product and submits form on `src/pages/Financing.tsx`
+   - Form validates required fields
+   - On submission: POST to separate n8n webhook with financing selection + tracking data
+   - Response determines success/error state
 
 ---
 
