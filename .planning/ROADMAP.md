@@ -28,11 +28,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Google Rich Results Test passes valid RoofingContractor JSON-LD on each of the 13 subpages, each with a unique @id and page-specific areaServed (primary city + 2-3 neighbors only)
   4. No non-page city names appear in any areaServed array across the entire site
   5. The /locations hub page H1 reads "Areas We Serve in Central Ohio" (not "Roofing Contractor Columbus OH") and the meta title matches
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md — Create locations.ts data file and refactor SchemaMarkup.tsx for per-page schema
+- [ ] 01-02-PLAN.md — Fix hub page H1/title/schema and wire locationSlug into all 13 subpages
 
 ### Phase 2: Internal Linking & Navigation
 **Goal**: Every location subpage is connected to its neighbors and the hub through visible navigation elements, and all 13 locations are discoverable from the footer
@@ -66,6 +66,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Architecture & Schema Fixes | 0/TBD | Not started | - |
+| 1. Data Architecture & Schema Fixes | 0/2 | Planning complete | - |
 | 2. Internal Linking & Navigation | 0/TBD | Not started | - |
 | 3. Hub Enhancements & Service Cross-Links | 0/TBD | Not started | - |
