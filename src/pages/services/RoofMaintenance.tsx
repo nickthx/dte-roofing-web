@@ -16,7 +16,7 @@ export default function RoofMaintenance() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Roof Maintenance</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Maintenance Columbus OH</h1>
             <p className="text-xl text-gray-200">
               Protect your investment and extend your roof's lifespan with regular maintenance
             </p>

@@ -16,7 +16,7 @@ export default function Gutters() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Seamless Gutter Systems</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Gutter Installation Columbus OH</h1>
             <p className="text-xl text-gray-200">
               Custom seamless gutters and gutter guard systems to protect your home
             </p>

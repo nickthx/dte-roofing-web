@@ -61,7 +61,7 @@ export default function Blog() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">DTE Roofing Blog</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofing Blog Columbus OH</h1>
             <p className="text-xl text-gray-200">
               Expert roofing tips, maintenance guides, and industry insights for Columbus homeowners
             </p>

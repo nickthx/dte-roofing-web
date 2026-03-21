@@ -30,7 +30,7 @@ export default function Dublin() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Dublin, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Dublin, OH | DTE Roofing</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Dublin OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Dublin homeowners—from Historic Dublin to Bridge Park to Muirfield Village. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve Dublin regularly with the same attention to detail our owners bring to every project.
             </p>

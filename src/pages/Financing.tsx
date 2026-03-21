@@ -147,7 +147,7 @@ export default function Financing() {
               <DollarSign className="w-10 h-10 text-green-400" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              DTE Consumer Credit Center
+              Roofing Financing Columbus OH
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Our financing platform. Your home, your budget.

@@ -30,7 +30,7 @@ export default function Columbus() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Columbus, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Columbus Roofers – Expert Roof Repair & Replacement</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Columbus OH Roofing Services</h1>
             <p className="text-xl text-gray-200 mb-6">
               Your trusted local roofing contractor serving all Columbus neighborhoods with honest diagnostics and expert craftsmanship.
             </p>

@@ -30,7 +30,7 @@ export default function Delaware() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Delaware, Ohio (~30 Miles from Columbus)</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Delaware, OH | DTE Roofing</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Delaware OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Delaware homeowners. Based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, we serve Delaware and all surrounding neighborhoods with the same attention to detail our owners bring to every project.
             </p>

@@ -30,7 +30,7 @@ export default function Pickerington() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Pickerington, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofers Pickerington, OH | DTE Roofing</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Pickerington OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Pickerington homeowners—from Olde Pickerington Village to Sycamore Creek, Pickerington Ponds to Hill Road neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>

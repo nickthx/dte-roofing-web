@@ -108,7 +108,7 @@ export default function Locations() {
               <span className="text-lg font-semibold text-primary-500">Serving Central Ohio</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Your Local Roofing Experts Across Central Ohio
+              Roofing Contractor Columbus OH
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               DTE Roofing proudly serves 13+ communities throughout the Columbus metropolitan area. From our Hilliard headquarters, we deliver fast, reliable roofing services to homeowners across Franklin, Delaware, and Fairfield counties.
