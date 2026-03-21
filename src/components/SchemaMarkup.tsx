@@ -28,6 +28,7 @@ const BUSINESS_INFO = {
   url: 'https://www.dteroofingllc.com',
   logo: 'https://www.dteroofingllc.com/images/DTE-Roofing-Logo-two-Men.png',
   telephone: '+16149716028',
+  email: 'experience@dteroofing.com',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -105,6 +106,7 @@ export default function SchemaMarkup({
       logo: BUSINESS_INFO.logo,
       image: BUSINESS_INFO.logo,
       telephone: BUSINESS_INFO.telephone,
+      email: BUSINESS_INFO.email,
       priceRange: BUSINESS_INFO.priceRange,
       address: BUSINESS_INFO.address,
       geo: BUSINESS_INFO.geo,

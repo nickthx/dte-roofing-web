@@ -5,246 +5,255 @@
 ## Naming Patterns
 
 **Files:**
-- Components: PascalCase (e.g., `Navigation.tsx`, `FormField.tsx`)
-- Pages: PascalCase (e.g., `Home.tsx`, `Services.tsx`)
-- Hooks: camelCase with `use` prefix (e.g., `useMultiStepForm.ts`, `useLeadTracking.ts`)
-- Utilities: camelCase (e.g., `formatPhone.ts`, `formValidation.ts`)
+- Components: PascalCase (e.g., `Navigation.tsx`, `FormField.tsx`, `ServicePageTemplate.tsx`)
+- Pages: PascalCase (e.g., `Home.tsx`, `Contact.tsx`, `RoofRepair.tsx`)
+- Hooks: camelCase with `use` prefix (e.g., `useMultiStepForm.ts`, `useReviewData.ts`, `useLeadTracking.ts`)
 - Data files: camelCase (e.g., `projects.ts`)
-- Directories: kebab-case for multi-word directories (e.g., `lead-form/`, `seo/`, `pages/services/`)
+- Config/util files: camelCase (e.g., `formValidation.ts`, `formatPhone.ts`)
+- Constants: camelCase or UPPER_SNAKE_CASE depending on usage
 
 **Functions:**
-- Component functions: PascalCase (e.g., `Navigation`, `FormField`, `StepService`)
-- Hook functions: camelCase with `use` prefix (e.g., `useMultiStepForm`, `useLeadTracking`)
-- Regular utility functions: camelCase (e.g., `formatPhoneNumber`, `validateEmail`, `validateRequired`, `getOrCreateSessionId`, `getLandingPage`, `getDeviceType`)
-- Internal helper functions: camelCase (e.g., `updateOrCreateMetaTag`, `scrollPrev`, `scrollNext`)
+- Component functions: PascalCase (e.g., `export default function Home()`, `export default function FormField()`)
+- Custom hooks: camelCase with `use` prefix (e.g., `export function useMultiStepForm()`, `export const useReviewData = ()`)
+- Utility functions: camelCase (e.g., `validateEmail()`, `validatePhone()`, `formatPhoneNumber()`, `getOrCreateSessionId()`)
+- Internal helper functions: camelCase (e.g., `updateOrCreateMetaTag()`, `getLandingPage()`, `getDeviceType()`)
 
 **Variables:**
-- Const declarations: camelCase (e.g., `formData`, `currentStep`, `isSubmitting`)
-- State variables: camelCase (e.g., `reviewData`, `isOpen`, `isSubmitting`)
-- Constants (all caps): UPPER_SNAKE_CASE (e.g., `WEBHOOK_URL`, `CANONICAL_DOMAIN`, `SERVICES`, `URGENCY_OPTIONS`)
-- Boolean variables: prefixed with `is`, `has`, `should` (e.g., `isSubmitting`, `isServicesOpen`, `isMobileMenuOpen`)
-- Refs: suffixed with `Ref` (e.g., `closeTimeoutRef`, `autoplay`, `emblaRef`)
+- State variables: camelCase (e.g., `formData`, `currentStep`, `reviewData`, `submitStatus`)
+- Regular variables: camelCase (e.g., `phoneNumber`, `stepValidators`, `errors`)
+- Boolean variables: prefixed with `is`, `has`, `should` (e.g., `isSubmitting`, `isOpen`, `multiline`)
 
 **Types:**
-- Interfaces: PascalCase with "Props" suffix for component props, "Data" suffix for data types (e.g., `FormFieldProps`, `LeadFormData`, `TrackingData`, `ReviewData`)
-- Type aliases: PascalCase (e.g., `FormErrors`, `BlogPost`)
-- Discriminant unions: PascalCase (e.g., `'forward' | 'backward'`, `'idle' | 'success' | 'error'`, `'mobile' | 'tablet' | 'desktop'`)
+- Interfaces: PascalCase with optional "Props" or "Data" suffix (e.g., `FormFieldProps`, `LeadFormData`, `ReviewData`, `ProcessStep`)
+- Type aliases: PascalCase (e.g., `FormErrors`, `Project`)
+- Discriminant unions: quoted strings in lowercase (e.g., `'forward' | 'backward'`, `'idle' | 'success' | 'error'`, `'mobile' | 'tablet' | 'desktop'`)
+
+**Constants:**
+- Module-level constants: camelCase or UPPER_SNAKE_CASE (e.g., `const DEFAULT_REVIEW_COUNT = 92`, `const WEBHOOK_URL = '...'`, `const CANONICAL_DOMAIN = "..."`)
+- Constants in step validators: referenced by step number (e.g., `stepValidators[0]`, `stepValidators[2]`)
+
+**Refs:**
+- Refs: suffixed with `Ref` (e.g., `dataRef`)
 
 ## Code Style
 
 **Formatting:**
-- No explicit formatter configured (no Prettier config found)
-- Indentation: 2 spaces (observed in vite.config.ts and component files)
-- Line length: Appears flexible, no strict limit observed
-- Semicolons: Used consistently
-- Trailing commas: Used in multi-line objects/arrays
+- Indentation: 2 spaces (observed in all source files)
+- Line length: Flexible, no strict limit enforced
+- Semicolons: Used consistently at end of statements
+- Trailing commas: Used in multi-line objects and arrays for consistency
+- No explicit formatter (no `.prettierrc` detected), but code maintains consistent style
 
 **Linting:**
 - Tool: ESLint with TypeScript support
-- Config file: `eslint.config.js`
-- Enabled rules:
-  - ESLint recommended rules
-  - TypeScript ESLint recommended rules
-  - React Hooks rules (enforces rules of hooks)
-  - React Refresh rules (only-export-components with allowConstantExport)
+- Config file: `eslint.config.js` with flat config format
+- Enabled plugins:
+  - `@eslint/js` - Core JavaScript rules
+  - `typescript-eslint` - TypeScript-specific rules with strict mode
+  - `eslint-plugin-react-hooks` - React hooks rules (enforces dependencies arrays)
+  - `eslint-plugin-react-refresh` - React refresh compatibility (warns on non-component exports)
 - Key rules:
-  - React components should only export components by default
-  - Constant exports from component files are allowed
-  - Follows React Hooks rules of hooks
+  - `react-hooks/exhaustive-deps` - Dependencies arrays must be complete
+  - `react-refresh/only-export-components` - Main exports must be components (allows const exports with allowConstantExport)
+  - `@typescript-eslint/no-unused-vars` - Enforced by TypeScript strict mode
 
-**Comments:**
-- Generally minimal comments; code is self-documenting
-- JSDoc-style blocks used for complex logic (e.g., `updateOrCreateMetaTag` in SEO.tsx)
-- Inline comments used sparingly for clarification:
-  - Example: `// Meta: description` in SEO.tsx
-  - Example: `// Pre-select service based on current page` in MultiStepLeadForm.tsx
-  - Example: `// Store landing page on first load` in useLeadTracking.ts
-- Comments typically explain "why" rather than "what" the code does
+**TypeScript Configuration:**
+- Strict mode: Enabled (`"strict": true`)
+- `noUnusedLocals`: Enabled - unused variables cause type errors
+- `noUnusedParameters`: Enabled - unused function parameters cause type errors
+- `noFallthroughCasesInSwitch`: Enabled - switch statements must have explicit break/return
+- Module target: ES2020, ESNext modules
+- JSX runtime: `react-jsx` (automatic JSX transform)
 
 ## Import Organization
 
 **Order:**
-1. React and React-related imports (React, hooks, Router components)
-2. Third-party libraries (lucide-react, embla-carousel)
-3. Internal components (relative imports from `./components/`)
-4. Internal hooks (relative imports from `./hooks/`)
-5. Internal utilities (relative imports from `./utils/`)
-6. Internal data (relative imports from `./data/`)
-7. SEO/constants (relative imports from `./seo/`)
-8. Type imports (using `import type` when importing only types)
-
-**Examples from codebase:**
-```typescript
-// App.tsx pattern
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Home from './pages/Home';
-// ... more component imports
-
-// Component pattern
-import { useRef, useCallback } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
-import { carouselProjects } from '../data/projects';
-
-// Hook pattern
-import { useState, useCallback } from 'react';
-import { validateRequired, validateEmail, validatePhone } from '../utils/formValidation';
-import { useLeadTracking } from './useLeadTracking';
-```
+1. React and third-party imports (`react`, `react-router-dom`, `lucide-react`)
+2. Local component imports (`../components/`, `../../components/`)
+3. Hook imports (`../hooks/`)
+4. Utility and library imports (`../utils/`, `../lib/`)
+5. Type-only imports (`import type`)
 
 **Path Aliases:**
-- No path aliases configured (no alias imports observed)
-- Relative imports used consistently
+- No path aliases configured (`baseUrl` not set in tsconfig)
+- Relative imports used consistently (e.g., `../hooks/`, `../../components/`)
+
+**Type Imports:**
+- Use `import type` for type-only imports to reduce runtime bundle size (observed in some files, should be applied consistently)
 
 ## Error Handling
 
 **Patterns:**
-- Try-catch with generic error handling and fallback values
-- Example in `useReviewData.ts`:
-  ```typescript
-  try {
-    // Attempt to fetch from Supabase
-    // Fall back to Google Sheets if needed
-  } catch (err) {
-    console.error('Failed to load reviews:', err);
-    setError(true);
-    // Use DEFAULT_REVIEW_COUNT fallback
-  }
-  ```
-- Form validation errors stored in state: `errors` object with field-level error messages
-- Network request errors handled with status checks:
-  ```typescript
-  if (!response.ok) throw new Error('Submission failed');
-  ```
-- Timeout handling: AbortController used for fetch requests with 10-second timeout
+- **Validation errors:** Field-level errors stored in state object mapping field names to error messages (e.g., `errors: FormErrors = {}` in `useMultiStepForm.ts`)
+- **Async errors:** Try-catch blocks with generic error handling; errors set to state (e.g., `catch (err) { console.error(...); setError(true); }`)
+- **Fetch errors:** Check response status (`if (!response.ok) throw new Error(...)`) and catch all exceptions
+- **Timeout handling:** AbortController with explicit timeout duration (e.g., 10000ms in lead form submission)
+- **Status tracking:** Submit operations use state like `submitStatus: 'idle' | 'success' | 'error'` to track submission state
+- **Fallback values:** Default/fallback values provided on error (e.g., `DEFAULT_REVIEW_COUNT = 92` when Supabase/Sheets fetch fails)
 
-**Error States:**
-- Form submissions: `submitStatus` tracks 'idle', 'success', 'error'
-- Async data loading: Separate loading/error state variables (e.g., `loading`, `error` in useReviewData)
-- User-facing errors: Display error messages from validation map to specific form fields
+Example from `useReviewData.ts`:
+```typescript
+try {
+  const { data: dbData, error: dbError } = await supabase
+    .from('review_data')
+    .select('*')
+    .limit(1)
+    .maybeSingle();
+  if (dbData && !dbError) {
+    setReviewData({ /* ... */ });
+    return;
+  }
+  // Fallback to Google Sheets
+} catch (err) {
+  console.error('Failed to load reviews:', err);
+  setError(true);
+  setReviewData({ /* default data */ });
+}
+```
 
 ## Logging
 
-**Framework:** `console.error()` (no structured logging library)
+**Framework:** Browser `console` object
 
 **Patterns:**
-- Error logging: `console.error('Failed to load reviews:', err)` in `useReviewData.ts`
+- Error logging only: `console.error()` used for exceptions and failed operations
+- Example: `console.error('Failed to load reviews:', err)` in error catch blocks
 - No info/warning/debug logging observed
-- Errors logged to console for development visibility
 - Minimal logging in production (error cases only)
 
-## Type Annotations
+## Comments
 
-**Pattern:**
-- All function parameters typed (TypeScript strict mode enabled)
-- All return types explicitly annotated on exported functions
-- Component props interfaces defined inline or at module level
-- Type imports use `import type` syntax:
-  ```typescript
-  import type { LeadFormData, FormErrors } from '../../../hooks/useMultiStepForm';
-  ```
+**When to Comment:**
+- Comments explain "why" rather than "what"
+- JSDoc-style blocks used for complex utility functions
+- Inline comments used sparingly for clarification
+- Section comments (e.g., `// Meta: description`) used to delineate logical blocks
+
+Example from `SEO.tsx`:
+```typescript
+// Helper for OG/Twitter tags
+const updateOrCreateMetaTag = (property: string, content: string) => {
+  // ...
+};
+
+// Open Graph
+updateOrCreateMetaTag('og:title', ogTitle || title);
+```
+
+**JSDoc/TSDoc:**
+- Used in utility functions and complex logic (e.g., `useMultiStepForm.ts`, `SEO.tsx`)
+- Not consistently applied throughout, but present for complex operations
 
 ## Function Design
 
 **Size:**
-- Small, focused functions (typically 20-50 lines)
-- Hooks kept concise with single responsibility
-- Utility functions kept to single operation (e.g., `formatPhoneNumber`, `validateEmail`)
+- Functions kept relatively small and focused (typically 15-60 lines)
+- Hooks stay concise with single responsibility
+- Utility functions perform single operations (e.g., `validateEmail()`, `formatPhoneNumber()`)
 
 **Parameters:**
-- Props passed as object destructuring (typical React pattern)
-- Example: `function Navigation() { const [isOpen, setIsOpen] = useState(false); }`
-- Callback props follow naming convention: `onNext`, `onBack`, `onSelect`, `onSubmit`, `onChange`
+- Props passed as object destructuring in component signatures (e.g., `export default function FormField({ label, name, type, ... })`)
+- Callback props use descriptive names: `onChange`, `onNext`, `onBack`, `onSubmit`, `onSelect`
+- Utility functions accept necessary primitives or objects (e.g., `validateEmail(email: string)`)
 
 **Return Values:**
-- Functions return typed values or void
-- Hooks return objects with named properties
-- Components return JSX or null
-- Utility functions return primitives (string, boolean) or objects
-
-## State Management
-
-**Pattern:**
-- React hooks only (useState, useRef, useEffect, useCallback)
-- No Redux, Context API, or other state library
-- State updates with setter functions from useState
-- Callback memoization with useCallback for event handlers
-- Refs used for non-state values that shouldn't trigger re-renders (e.g., timeouts, carousel refs)
-
-**Example pattern:**
-```typescript
-const [currentStep, setCurrentStep] = useState(0);
-const [errors, setErrors] = useState<FormErrors>({});
-const updateField = useCallback((name: keyof LeadFormData, value: string) => {
-  setFormData(prev => ({ ...prev, [name]: value }));
-}, [errors]);
-```
-
-## JSX Patterns
-
-**Component Structure:**
-- Single component per file (except index files)
-- Props destructured in function signature
-- Minimal inline styles (Tailwind CSS preferred)
-- Event handlers defined with arrow functions or useCallback
-- Conditional rendering with ternary operators or && operator
-
-**Example:**
-```typescript
-export default function FormField({
-  label,
-  name,
-  type = 'text',
-  value,
-  onChange,
-  error,
-}: FormFieldProps) {
-  const inputClass = `w-full px-4 py-3 rounded-lg border-2 ${
-    error ? 'border-red-500' : 'border-gray-300'
-  }`;
-
-  return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      {multiline ? (
-        <textarea ... />
-      ) : (
-        <input ... />
-      )}
-      {error && <p>{error}</p>}
-    </div>
-  );
-}
-```
+- Component functions return JSX or null
+- Hooks return objects with named properties (e.g., `useMultiStepForm()` returns `{ currentStep, formData, errors, ... }`)
+- Utility functions return primitives (string, boolean, number) or objects
+- Validator functions return errors object or null (e.g., `validateEmail()` returns `string | null`)
 
 ## Module Design
 
 **Exports:**
-- Components: `export default function ComponentName()`
-- Hooks: `export function useHookName()` or `export const useHookName = () => {}`
+- Components: `export default function ComponentName() { ... }`
+- Hooks: `export function useHookName() { ... }` or `export const useHookName = () => { ... }`
 - Data: `export const dataArray: Type[] = [...]`
-- Types: `export interface InterfaceName {}` or `export type TypeName = ...`
+- Types/Interfaces: `export interface InterfaceName {}` or `export type TypeName = ...`
 - Utilities: `export function utilityName()` or `export const utilityName = () => {}`
 
 **Barrel Files:**
 - Not used in this codebase
-- Direct imports from specific files preferred
+- Direct imports from specific files preferred (e.g., `import { useMultiStepForm } from '../hooks/useMultiStepForm'` not from index)
 
-**Constants:**
-- Defined at module level (above components)
-- Example: `const WEBHOOK_URL = '...'` in useMultiStepForm.ts
-- Example: `const SERVICES = [...]` in StepService.tsx
+**Single Responsibility:**
+- One component per file (except index.html)
+- Hook files contain single hook and related types/constants
+- Utility files contain related utility functions (e.g., `formValidation.ts` contains all form validators)
+- Data files contain related data exports (e.g., `projects.ts` contains Project interface and projects array)
 
-## Naming Edge Cases
+## Component Patterns
 
-**Map fields:**
-- Service mapping object: `serviceMap: Record<string, string>` (maps URL slugs to form values)
+**Props Pattern:**
+```typescript
+interface ComponentProps {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (value: string) => void;
+  error?: string;
+  required?: boolean;
+}
 
-**Destructuring:**
-- Consistent use of object destructuring for component props
-- Array destructuring for hooks: `const [state, setState] = useState(initialValue)`
+export default function Component({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  required = false,
+}: ComponentProps) {
+  // ...
+}
+```
+
+**State Management:**
+- React hooks only (useState, useRef, useEffect, useCallback)
+- No external state library (Redux, Zustand, Context API not used)
+- Form state: `{ fieldName: value }` object pattern
+- Error state: `{ fieldName: errorMessage }` object pattern with `Partial<Record<keyof DataType, string>>`
+
+**Conditional Rendering:**
+- Ternary operators for simple conditions: `{condition ? <A /> : <B />}`
+- `&&` operator for single branch: `{condition && <A />}`
+- Avoid nested ternaries
+
+**Event Handlers:**
+- Defined with arrow functions or useCallback for dependencies
+- Memoized with useCallback when passed to child components
+- Example: `onClick={() => scrollToForm()}` or `onClick={handleNext}`
+
+**Styling:**
+- Tailwind CSS utility classes preferred
+- Template literals for conditional classes: `` className={`base ${condition ? 'active' : ''}`} ``
+- Inline styles avoided (use Tailwind only)
+
+## Testing & Type Safety
+
+**Type Annotations:**
+- All function parameters must be typed (enforced by TypeScript strict mode)
+- All return types explicitly annotated on exported functions
+- Interface/Type definitions at module top level or inline for component props
+- Use `import type` for type-only imports
+
+**Example:**
+```typescript
+export interface LeadFormData {
+  service: string;
+  urgency: string;
+  address: string;
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
+
+export type FormErrors = Partial<Record<keyof LeadFormData, string>>;
+
+export function useMultiStepForm(formSource: string) {
+  // ... implementation
+  return { /* ... */ };
+}
+```
 
 ---
 

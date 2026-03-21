@@ -64,8 +64,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:experience@dteroofingllc.com" className="hover:text-white transition-colors">
-                  experience@dteroofingllc.com
+                <a href="mailto:experience@dteroofing.com" className="hover:text-white transition-colors">
+                  experience@dteroofing.com
                 </a>
               </li>
               <li>615 Hilliard Rome Rd<br />Columbus, OH 43228</li>

@@ -6,41 +6,69 @@
 
 ```
 dte-roofing-web/
-├── src/                           # Application source code
-│   ├── main.tsx                   # React entry point (DOM mount)
-│   ├── App.tsx                    # Router and layout setup
-│   ├── index.css                  # Global Tailwind styles
-│   ├── vite-env.d.ts              # Vite type definitions
+├── src/
+│   ├── main.tsx                      # React app entry point
+│   ├── App.tsx                       # Route definitions and layout wrapper
+│   ├── index.css                     # Tailwind CSS imports and custom styles
 │   │
-│   ├── pages/                     # Route-level page components
-│   │   ├── Home.tsx               # Homepage
-│   │   ├── About.tsx              # About page
-│   │   ├── Services.tsx           # Services index
-│   │   ├── Gallery.tsx            # Project gallery
-│   │   ├── Blog.tsx               # Blog listing
-│   │   ├── BlogPost.tsx           # Individual blog posts
-│   │   ├── Reviews.tsx            # Reviews/testimonials
-│   │   ├── FAQ.tsx                # FAQ page
-│   │   ├── Contact.tsx            # Contact/lead form
-│   │   ├── Locations.tsx          # Service areas index
-│   │   ├── InstantQuote.tsx       # Dedicated quote page
-│   │   ├── Financing.tsx          # Financing options
+│   ├── components/                   # Reusable UI components
+│   │   ├── Navigation.tsx            # Header nav, mobile menu, logo
+│   │   ├── Footer.tsx                # Footer with links, contact info
+│   │   ├── SEO.tsx                   # Meta tag injection (description, OG, canonical)
+│   │   ├── SchemaMarkup.tsx          # JSON-LD structured data wrapper
+│   │   ├── ServicePageTemplate.tsx   # Reusable service/location page layout
+│   │   ├── ServiceLeadForm.tsx       # Wrapper for MultiStepLeadForm with service config
+│   │   ├── MobileStickyCall.tsx      # Sticky phone CTA for mobile
+│   │   ├── ScrollToTop.tsx           # Auto-scroll to top on route change
+│   │   ├── WorkCarousel.tsx          # embla-carousel project gallery
+│   │   ├── SidebarTrustBadges.tsx    # "Trusted by" badges sidebar
+│   │   ├── RoofQuoteButton.tsx       # Roofle widget trigger button
 │   │   │
-│   │   ├── services/              # Service-specific pages (12 pages)
+│   │   └── lead-form/                # Multi-step form components
+│   │       ├── MultiStepLeadForm.tsx # Form orchestrator and step router
+│   │       ├── FormProgressBar.tsx   # Progress indicator (step 1-3)
+│   │       ├── FormField.tsx         # Text input wrapper with validation display
+│   │       ├── ServiceOptionCard.tsx # Service selection card (grid layout)
+│   │       ├── UrgencyPill.tsx       # Urgency button pills
+│   │       │
+│   │       └── steps/                # Individual form steps
+│   │           ├── StepService.tsx   # Service + urgency selection
+│   │           ├── StepAddress.tsx   # Property address input
+│   │           ├── StepContact.tsx   # Name, phone, email, message
+│   │           └── StepResult.tsx    # Success/error confirmation screen
+│   │
+│   ├── seo/                          # SEO configuration and schemas
+│   │   └── schemas.ts                # Schema object definitions (FAQSchema, ServiceSchema, etc.)
+│   │
+│   ├── pages/                        # Page components mapped to routes
+│   │   ├── Home.tsx                  # Hero, story, carousel, CTA
+│   │   ├── About.tsx                 # Company story and values
+│   │   ├── Services.tsx              # Services overview with links
+│   │   ├── Gallery.tsx               # Project photo gallery
+│   │   ├── Reviews.tsx               # Google reviews embed
+│   │   ├── Blog.tsx                  # Blog post listing
+│   │   ├── BlogPost.tsx              # Single blog post view (dynamic slug)
+│   │   ├── FAQ.tsx                   # Accordion FAQ page
+│   │   ├── Contact.tsx               # Contact form and info
+│   │   ├── Financing.tsx             # Financing options and calculator
+│   │   ├── InstantQuote.tsx          # Full-screen lead form entry point
+│   │   ├── Locations.tsx             # Location links overview
+│   │   │
+│   │   ├── services/                 # Service detail pages (template-based)
 │   │   │   ├── RoofRepair.tsx
 │   │   │   ├── RoofReplacement.tsx
 │   │   │   ├── RoofInstallation.tsx
 │   │   │   ├── RoofInspection.tsx
-│   │   │   ├── RoofMaintenance.tsx
-│   │   │   ├── PreventativeMaintenance.tsx
 │   │   │   ├── GutterServices.tsx
 │   │   │   ├── Gutters.tsx
 │   │   │   ├── EmergencyServices.tsx
 │   │   │   ├── StormDamage.tsx
+│   │   │   ├── RoofMaintenance.tsx
+│   │   │   ├── PreventativeMaintenance.tsx
 │   │   │   ├── Siding.tsx
 │   │   │   └── CommercialRoofing.tsx
 │   │   │
-│   │   └── locations/             # Location-specific pages (13 pages)
+│   │   └── locations/                # Location-specific pages (template-based)
 │   │       ├── Columbus.tsx
 │   │       ├── Hilliard.tsx
 │   │       ├── Dublin.tsx
@@ -55,324 +83,231 @@ dte-roofing-web/
 │   │       ├── Delaware.tsx
 │   │       └── Powell.tsx
 │   │
-│   ├── components/                # Reusable UI components
-│   │   ├── Navigation.tsx          # Header/nav bar
-│   │   ├── Footer.tsx              # Footer
-│   │   ├── SEO.tsx                 # Meta tag injection
-│   │   ├── SchemaMarkup.tsx        # Structured schema markup
-│   │   ├── ScrollToTop.tsx         # Scroll behavior
-│   │   ├── MobileStickyCall.tsx    # Mobile sticky call button
-│   │   ├── RoofQuoteButton.tsx     # CTA button
-│   │   ├── WorkCarousel.tsx        # Project carousel (Embla)
-│   │   ├── SidebarTrustBadges.tsx  # Trust signals widget
-│   │   ├── ServicePageTemplate.tsx # Template for service pages
-│   │   ├── ServiceLeadForm.tsx     # Form wrapper for service pages
-│   │   │
-│   │   ├── lead-form/             # Multi-step form components
-│   │   │   ├── MultiStepLeadForm.tsx   # Form orchestrator
-│   │   │   ├── FormProgressBar.tsx     # Progress indicator
-│   │   │   ├── FormField.tsx           # Input wrapper
-│   │   │   ├── ServiceOptionCard.tsx   # Service selector UI
-│   │   │   ├── UrgencyPill.tsx         # Urgency selector UI
-│   │   │   │
-│   │   │   └── steps/             # Form step components
-│   │   │       ├── StepService.tsx    # Service selection
-│   │   │       ├── StepAddress.tsx    # Address entry
-│   │   │       ├── StepContact.tsx    # Name/phone/email
-│   │   │       └── StepResult.tsx     # Success/error screen
-│   │   │
-│   │   ├── seo/                   # SEO-specific components
-│   │   │   └── SeoSchema.tsx       # Schema helper component
-│   │   │
-│   │   └── [other top-level components]
+│   ├── hooks/                        # Custom React hooks for state/logic
+│   │   ├── useMultiStepForm.ts       # Form state, validation, submission
+│   │   ├── useReviewData.ts          # Fetch review count from Supabase/Google Sheets
+│   │   └── useLeadTracking.ts        # Session and device tracking
 │   │
-│   ├── hooks/                     # Custom React hooks
-│   │   ├── useMultiStepForm.ts    # Form state/validation/submission
-│   │   ├── useReviewData.ts       # Fetch review count from Supabase/Sheets
-│   │   └── useLeadTracking.ts     # Capture UTM/device/session data
+│   ├── lib/                          # External library clients
+│   │   └── supabase.ts               # Supabase client + BlogPost interface
 │   │
-│   ├── lib/                       # Third-party integrations
-│   │   └── supabase.ts            # Supabase client + BlogPost interface
+│   ├── data/                         # Static data files
+│   │   └── projects.ts               # Project carousel data array
 │   │
-│   ├── utils/                     # Utility functions
-│   │   ├── formValidation.ts      # Email, phone, required validation
-│   │   └── formatPhone.ts         # Phone number formatting
-│   │
-│   ├── data/                      # Static data and constants
-│   │   └── projects.ts            # Project carousel data with types
-│   │
-│   └── seo/                       # SEO configuration
-│       ├── constants.ts           # CANONICAL_DOMAIN constant
-│       └── schemas.ts             # Schema.org JSON-LD definitions
+│   └── utils/                        # Utility functions
+│       ├── formValidation.ts         # validateRequired, validateEmail, validatePhone
+│       └── formatPhone.ts            # Format phone number as (XXX)-XXX-XXXX
 │
-├── public/                        # Static assets
-│   ├── images/                    # Project photos, hero images
-│   └── data/                      # Static data files (if any)
+├── public/                           # Static assets
+│   ├── images/                       # Project photos (referenced in projects.ts)
+│   ├── dte_favicon.png              # Favicon
+│   └── site.webmanifest             # PWA manifest
 │
-├── dist/                          # Built/compiled output (generated)
-│   ├── assets/
-│   ├── data/
-│   └── images/
-│
-├── supabase/                      # Supabase backend config
-│   ├── migrations/                # Database migrations
-│   └── functions/                 # Edge functions
-│       └── update-reviews/        # Review sync function
-│
-├── .planning/                     # GSD workflow docs
-│   ├── codebase/                  # Codebase analysis (this file)
-│   └── phases/                    # Implementation phases
-│
-├── Configuration Files
-│   ├── package.json               # Dependencies, build scripts
-│   ├── tsconfig.json              # TypeScript references
-│   ├── tsconfig.app.json          # App-specific TypeScript config
-│   ├── tsconfig.node.json         # Build tool TypeScript config
-│   ├── vite.config.ts             # Vite build config
-│   ├── tailwind.config.js         # Tailwind CSS customization
-│   ├── postcss.config.js          # PostCSS plugins
-│   ├── eslint.config.js           # ESLint rules
-│   └── vercel.json                # Vercel deployment config
-│
-└── Git & Doc Files
-    ├── .git/
-    ├── .gitignore
-    ├── LOCATION-PAGES-FINAL-DELIVERY.md
-    ├── NAVIGATION-DROPDOWN-FIX.md
-    └── PHOTO-EXPANSION-PLAN.md
+├── index.html                        # HTML entry point with Roofle widget script
+├── vite.config.ts                   # Vite build configuration
+├── tailwind.config.js               # Tailwind CSS configuration with custom colors
+├── postcss.config.js                # PostCSS plugins (Tailwind processing)
+├── eslint.config.js                 # ESLint rules for TypeScript and React
+├── tsconfig.json                    # TypeScript compiler configuration
+├── package.json                     # Dependencies and scripts
+├── package-lock.json                # Dependency lock file
+└── vercel.json                      # Vercel deployment config (rewrites, redirects)
 ```
 
 ## Directory Purposes
 
-**`src/pages/`:**
-- Purpose: Route-mapped page components; one file per route (with nested subdirectories for service and location pages)
-- Contains: Component exports matching route paths
-- Key files: `Home.tsx` (homepage), `About.tsx`, `Contact.tsx`
+**src/:**
+- Purpose: All application source code
+- Contains: TypeScript/TSX components, hooks, pages, utilities, configuration, data
 
-**`src/pages/services/`:**
-- Purpose: Service-specific landing pages (roof repair, replacement, gutters, etc.)
-- Contains: Individual service pages using ServicePageTemplate
-- Pattern: Each page passes config to template; config includes service name, problem statement, process steps, FAQs
+**src/components/:**
+- Purpose: Reusable, isolated UI components
+- Contains: Buttons, forms, layouts, headers, footers, carousels
+- Key files: `ServicePageTemplate.tsx` (core layout abstraction), `MultiStepLeadForm.tsx` (form orchestrator), `SEO.tsx` (meta injection)
 
-**`src/pages/locations/`:**
-- Purpose: City-specific service area pages (Columbus, Hilliard, Dublin, etc.)
-- Contains: 13 location pages for Ohio service areas
-- Pattern: Location pages follow same template pattern as services
+**src/components/lead-form/:**
+- Purpose: Multi-step lead form related components
+- Contains: Form wrapper, progress indicator, input fields, step components
+- Key files: `MultiStepLeadForm.tsx` (container), `steps/` folder (individual steps)
 
-**`src/components/`:**
-- Purpose: Reusable UI components, layout shells, form sections
-- Contains: Stateless presentational components and light-state components
-- Key files: `Navigation.tsx`, `Footer.tsx`, `ServicePageTemplate.tsx`
+**src/components/lead-form/steps/:**
+- Purpose: Individual step components for form flow
+- Contains: StepService (service selection), StepAddress (location), StepContact (contact info), StepResult (confirmation/error)
 
-**`src/components/lead-form/`:**
-- Purpose: Multi-step lead capture form components
-- Contains: Form orchestrator (MultiStepLeadForm), progress bar, input wrappers, step components
-- Pattern: Controlled components; state managed by parent MultiStepLeadForm via useMultiStepForm hook
+**src/components/seo/:**
+- Purpose: SEO-related utilities and helpers
+- Contains: Schema generation helpers, meta tag functions
 
-**`src/hooks/`:**
-- Purpose: Custom hooks for complex state, API calls, tracking
-- Key hooks: useMultiStepForm (form logic), useReviewData (API fetch), useLeadTracking (analytics)
-- Pattern: Hooks return data + handler functions; can be composed across multiple components
+**src/pages/:**
+- Purpose: Route-specific page compositions
+- Contains: Home, About, Services, Blog, Contact, and dynamic service/location pages
+- Key files: `ServicePageTemplate.tsx` is consumed by service pages via config wrapper pattern
 
-**`src/lib/`:**
-- Purpose: Third-party client initialization and type definitions
-- Contains: Supabase client config, BlogPost interface
-- Pattern: Single source of truth for external service setup
+**src/pages/services/:**
+- Purpose: Service detail pages (12 services)
+- Contains: One page per service (RoofRepair, Gutters, etc.)
+- Pattern: Each wraps `ServicePageTemplate` with service-specific config (name, slug, content, FAQs)
 
-**`src/utils/`:**
-- Purpose: Pure utility functions and validators
-- Contains: Form validation (email, phone, required), formatting functions
-- Pattern: No side effects; purely functional
+**src/pages/locations/:**
+- Purpose: Location-specific service pages (13 locations)
+- Contains: One page per location served (Columbus, Hilliard, Dublin, etc.)
+- Pattern: Each location page shows service availability, local content, and embedded lead form
 
-**`src/data/`:**
-- Purpose: Static application data with TypeScript interfaces
-- Contains: Project carousel data (projects array), Project interface
-- Pattern: Single file with type-safe data export; can be imported anywhere
+**src/hooks/:**
+- Purpose: Custom React hooks for state management and logic
+- Contains: Form state (useMultiStepForm), data fetching (useReviewData), tracking (useLeadTracking)
+- Key exports: Objects with state variables and handler functions
 
-**`src/seo/`:**
-- Purpose: SEO constants and structured data schemas
-- Contains: Canonical domain constant, Schema.org JSON-LD definitions
-- Pattern: Imported by components; decoupled from page logic
+**src/lib/:**
+- Purpose: Third-party service clients and configuration
+- Contains: Supabase client initialization, type definitions for database models
+- Key files: `supabase.ts` initializes Supabase client with URL and API key
+
+**src/data/:**
+- Purpose: Static data files (not fetched at runtime)
+- Contains: Project carousel images, project metadata
+- Key files: `projects.ts` exports TypeScript array with Project interface
+
+**src/utils/:**
+- Purpose: Pure utility functions
+- Contains: Form validation (email, phone, required), phone number formatting
+- Key files: `formValidation.ts` (3 validators), `formatPhone.ts` (phone formatter)
+
+**src/seo/:**
+- Purpose: SEO constants and schema definitions
+- Contains: Schema object templates for FAQs, services, locations, structured data markup
+- Pattern: Schemas are imported and used inline in components, then stringified to JSON-LD
+
+**public/:**
+- Purpose: Static assets served as-is by Vite
+- Contains: Images, favicon, PWA manifest, robots.txt (if present)
+- Key folder: `images/` contains all project photos referenced in `src/data/projects.ts`
 
 ## Key File Locations
 
 **Entry Points:**
-- `src/main.tsx`: DOM mount, React initialization
-- `src/App.tsx`: Router setup, route definitions, layout wrapper
-- `index.html`: HTML template (root div)
+- `src/main.tsx`: React DOM mount point; initializes React 18 with createRoot
+- `src/App.tsx`: Route definitions (40+ routes); layout wrapper (Navigation/Footer); form default service mapping
+- `index.html`: HTML shell; Roofle widget script async load; Favicon and preconnect tags
 
 **Configuration:**
-- `package.json`: Dependencies, scripts
-- `tsconfig.json`: TypeScript compiler options
-- `vite.config.ts`: Build and dev server config
-- `tailwind.config.js`: Tailwind CSS customization
-- `eslint.config.js`: Linting rules
+- `vite.config.ts`: Vite bundler config; lucide-react excluded from optimization
+- `tailwind.config.js`: Color scheme (charcoal-900, primary-700), custom spacing, font families
+- `tsconfig.json`: TypeScript settings; JSX preset; lib target
+- `eslint.config.js`: TypeScript ESLint with React hooks and refresh plugins
+- `vercel.json`: Deployment config; route rewrites for SPA; /home → / redirect
 
 **Core Logic:**
-- `src/hooks/useMultiStepForm.ts`: Form state machine
-- `src/hooks/useReviewData.ts`: API data fetching
-- `src/lib/supabase.ts`: Supabase client
+- `src/hooks/useMultiStepForm.ts`: Form state machine; step validators; webhook submission
+- `src/components/ServicePageTemplate.tsx`: Reusable service page layout; form sidebar; SEO setup
+- `src/components/lead-form/MultiStepLeadForm.tsx`: Form orchestrator; step routing; service mapping
 
-**Styling:**
-- `src/index.css`: Global Tailwind imports
-- `tailwind.config.js`: Custom colors, spacing, plugins
+**Testing:**
+- Not yet configured (no test files present)
+
+**API Integration:**
+- `src/lib/supabase.ts`: Supabase client configuration; BlogPost type definition
+- Webhook URLs: Hardcoded in `src/hooks/useMultiStepForm.ts` (n8n endpoint) and `src/pages/Financing.tsx`
 
 ## Naming Conventions
 
 **Files:**
-- Pages: PascalCase, e.g., `Home.tsx`, `RoofRepair.tsx`, `Columbus.tsx`
-- Components: PascalCase, e.g., `Navigation.tsx`, `FormField.tsx`, `WorkCarousel.tsx`
-- Hooks: Kebab-case with `use` prefix, e.g., `useMultiStepForm.ts`, `useReviewData.ts`
-- Utilities: Kebab-case, e.g., `formValidation.ts`, `formatPhone.ts`
-- Data/Config: Kebab-case or camelCase, e.g., `projects.ts`, `constants.ts`, `schemas.ts`
+- Components: PascalCase (e.g., `Navigation.tsx`, `FormField.tsx`)
+- Pages: PascalCase (e.g., `Home.tsx`, `Services.tsx`)
+- Hooks: camelCase with `use` prefix (e.g., `useMultiStepForm.ts`)
+- Utilities: camelCase (e.g., `formatPhone.ts`, `formValidation.ts`)
+- Data files: camelCase (e.g., `projects.ts`)
 
 **Directories:**
-- Feature directories: Kebab-case, e.g., `lead-form/`, `seo/`
-- Semantic grouping: `pages/`, `components/`, `hooks/`, `lib/`, `utils/`, `data/`, `seo/`
+- Multi-word: kebab-case (e.g., `lead-form/`, `seo/`, `pages/services/`)
+- Single word: lowercase (e.g., `hooks/`, `lib/`, `data/`, `utils/`, `pages/`)
 
-**Components:**
-- Props interfaces: `[ComponentName]Props`, e.g., `ServicePageProps`, `MultiStepLeadFormProps`
-- Exports: Named exports for utility/hook functions; default export for page/component React files
+**Exports:**
+- Default export for page/component files: `export default function ComponentName()`
+- Named exports for hooks: `export function useHookName()` or `export const useHookName = () => {}`
+- Named exports for utilities: `export function utilityName()` or `export const utilityName = () => {}`
+- Type exports: `export interface InterfaceName {}` or `export type TypeName = ...`
+- Constants: camelCase within files, UPPER_SNAKE_CASE for module-level constants (e.g., `WEBHOOK_URL`, `SERVICES`)
 
 ## Where to Add New Code
 
-**New Feature (service page, location page):**
-- Primary code: Create `.tsx` file in `src/pages/services/` or `src/pages/locations/`
-- Use ServicePageTemplate: Wrap with ServicePageTemplate, pass config object
-- SEO: Import SchemaMarkup, pass service/location config
-- Tests: No test directory detected; add manual QA steps
+**New Service Page:**
+1. Create `src/pages/services/ServiceName.tsx`
+2. Import `ServicePageTemplate` and `SchemaMarkup`
+3. Define config object with serviceName, slug, subheadline, content, FAQs, processSteps
+4. Pass config to ServicePageTemplate; wrap SchemaMarkup for structured data
+5. Add route to `src/App.tsx` with import and `<Route path="/services/slug">`
+6. Optionally add service to `src/components/lead-form/steps/StepService.tsx` SERVICES array
 
-**New Component/Module:**
-- If reusable across multiple pages: `src/components/[ComponentName].tsx`
-- If specific to lead form: `src/components/lead-form/[ComponentName].tsx`
-- If SEO-specific: `src/components/seo/[ComponentName].tsx`
-- Props: Define interface ending in `Props`, pass as React component props
+**New Location Page:**
+1. Create `src/pages/locations/LocationName.tsx`
+2. Follow same ServicePageTemplate pattern as service pages (can reuse template or extend)
+3. Import location-specific content (address, service list)
+4. Use SchemaMarkup with type="location" and locationName prop
+5. Add route to `src/App.tsx`
 
-**New Hook:**
-- Location: `src/hooks/[hookName].ts`
-- Pattern: Export function starting with `use`, return object with data/handlers
-- Example: `export function useMyHook(): { data: T, handler: () => void } { ... }`
+**New Component:**
+1. Create `src/components/ComponentName.tsx`
+2. Use PascalCase file name; export default function
+3. Define props interface inline or at module top with `Props` suffix
+4. Use Tailwind CSS classes (prefer utility classes over custom CSS)
+5. Import lucide-react icons if needed
+6. Place in appropriate subdirectory if related to other components (e.g., lead-form components in `src/components/lead-form/`)
 
-**New Utility:**
-- Location: `src/utils/[utilName].ts`
-- Pattern: Pure functions, no side effects
-- Example: `export function formatName(first: string, last: string): string { ... }`
+**New Utility Function:**
+1. Create `src/utils/functionName.ts`
+2. Keep function focused (single responsibility)
+3. Use camelCase function names
+4. Export named function; add TypeScript type annotations
+5. Example: validation functions in `src/utils/formValidation.ts`
 
-**New Static Data:**
-- Location: `src/data/[dataName].ts`
-- Pattern: Define interface, export typed array/object
-- Example: `export interface Service { ... }; export const services: Service[] = [...];`
+**New Custom Hook:**
+1. Create `src/hooks/useHookName.ts`
+2. Use `use` prefix per React conventions
+3. Return object with state variables and handler functions
+4. Use other hooks (useState, useEffect, useCallback) as needed
+5. Example: `useMultiStepForm` returns { formData, errors, updateField, nextStep, submit, ... }
 
-**New Route:**
-- Edit `src/App.tsx`: Add `<Route path="..." element={<Component />} />`
-- Create page component in `src/pages/[PageName].tsx`
-- Follow naming: PascalCase filenames, default export
+**Static Data:**
+1. Add to `src/data/fileName.ts` if application-wide (e.g., projects, constants)
+2. Export TypeScript array or object; define interface at top
+3. Example: `src/data/projects.ts` exports `projects: Project[]`
+
+**Adding a Page Route:**
+1. Create page component in appropriate folder (`src/pages/`, `src/pages/services/`, `src/pages/locations/`)
+2. Import page in `src/App.tsx`
+3. Add `<Route path="/path" element={<PageComponent />} />` to Routes list
+4. Update Navigation.tsx if route should appear in menu
 
 ## Special Directories
 
-**`public/`:**
-- Purpose: Static assets served directly (no processing)
-- Generated: No
-- Committed: Yes
-- Contains: Images, favicon, static data files
-- Access: From code via `/images/...` paths
-
-**`dist/`:**
-- Purpose: Build output (compiled, minified code)
-- Generated: Yes (by `npm run build`)
-- Committed: No
-- Contents: Bundled JS/CSS, assets, public files copied over
-
-**`.planning/`:**
-- Purpose: GSD workflow documents and phase plans
-- Generated: Yes (by GSD orchestrator)
-- Committed: Yes
-- Contains: Codebase analysis (ARCHITECTURE.md, STRUCTURE.md, etc.), phase implementation plans
-
-**`supabase/`:**
-- Purpose: Supabase backend configuration
-- Generated: No
-- Committed: Yes
-- Contains: Database migrations, edge functions (review sync)
-
-**`node_modules/`:**
+**node_modules/:**
 - Purpose: Installed npm dependencies
-- Generated: Yes (by `npm install`)
-- Committed: No
+- Generated: Yes (run `npm install`)
+- Committed: No (.gitignore)
 
-## File Patterns & Conventions
+**dist/:**
+- Purpose: Production build output from Vite
+- Generated: Yes (run `npm run build`)
+- Committed: No (.gitignore)
 
-**Page Files:**
-```typescript
-// src/pages/[PageName].tsx
-import { useReviewData } from '../hooks/useReviewData';
-import SEO from '../components/SEO';
+**public/images/:**
+- Purpose: Project photos and visual assets referenced in pages and carousels
+- Generated: No (manually added)
+- Committed: Yes (git-tracked)
+- Note: All project images must be pre-placed here; no dynamic image uploads
 
-export default function PageName() {
-  const { reviewData } = useReviewData();
+**src/components/seo/:**
+- Purpose: SEO schema and helper utilities
+- Generated: No
+- Committed: Yes
+- Note: Complementary to `src/seo/schemas.ts` (schema definitions)
 
-  return (
-    <>
-      <SEO title="..." description="..." />
-      <MobileStickyCall />
-      <div className="min-h-screen bg-white">
-        {/* Page content */}
-      </div>
-    </>
-  );
-}
-```
-
-**Service Page Pattern:**
-```typescript
-// src/pages/services/[ServiceName].tsx
-import ServicePageTemplate from '../../components/ServicePageTemplate';
-
-export default function ServiceName() {
-  return (
-    <ServicePageTemplate
-      serviceName="Service Name"
-      slug="service-slug"
-      subheadline="..."
-      metaDescription="..."
-      keywords="..."
-      problemPromise={<>HTML content</>}
-      whatWeDo={[...]}
-      processSteps={[...]}
-      faqs={[...]}
-    />
-  );
-}
-```
-
-**Hook Pattern:**
-```typescript
-// src/hooks/[hookName].ts
-import { useState, useCallback } from 'react';
-
-export function useMyHook() {
-  const [state, setState] = useState<Type>(initial);
-
-  const handler = useCallback(() => {
-    // Logic
-  }, [deps]);
-
-  return { state, handler };
-}
-```
-
-**Component Pattern:**
-```typescript
-// src/components/[ComponentName].tsx
-interface ComponentNameProps {
-  prop1: string;
-  prop2?: number;
-}
-
-export default function ComponentName({ prop1, prop2 }: ComponentNameProps) {
-  return <div>{prop1}</div>;
-}
-```
+**.planning/codebase/:**
+- Purpose: Analysis documents for GSD workflow (this directory)
+- Generated: Yes (by codebase mapper)
+- Committed: Yes (.gitignore ignores .planning/ but can be overridden)
+- Files: ARCHITECTURE.md, STRUCTURE.md, CONVENTIONS.md, TESTING.md, STACK.md, INTEGRATIONS.md, CONCERNS.md
 
 ---
 

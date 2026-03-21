@@ -2,60 +2,311 @@
 
 **Analysis Date:** 2026-03-21
 
-## Test Framework Status
+## Test Framework
 
-**Current State:** No testing framework configured or in use
+**Status:** Not detected
 
-**Test Files:**
-- No `.test.ts`, `.test.tsx`, `.spec.ts`, or `.spec.tsx` files found in `src/` directory
-- No test configuration files present (jest.config.js, vitest.config.js, etc.)
-- No testing dependencies in package.json
+- No test runner configured (Jest, Vitest, or Cypress not found in package.json)
+- No test configuration files (`jest.config.*`, `vitest.config.*`, `cypress.config.*`)
+- No test files (`*.test.ts`, `*.test.tsx`, `*.spec.ts`, `*.spec.tsx`) in source directory
+- No test directory structure (`src/__tests__/`, `tests/`, `e2e/`)
+- TypeScript strict mode enabled but no test type definitions detected
 
-**Development Dependencies:**
-- ESLint configured for static analysis
-- TypeScript enabled for type checking (`npm run typecheck`)
-- No Jest, Vitest, Testing Library, or similar testing frameworks installed
+**Development Practice:** Currently testing is manual/external. No automated test suite is in place.
 
-## Recommended Testing Setup
+## Run Commands
+
+Testing is not currently automated. Manual testing approaches:
+
+```bash
+npm run lint                # ESLint type checking
+npm run typecheck           # TypeScript type checking without emit
+npm run dev                 # Start dev server for manual testing
+npm run build               # Build for production
+npm run preview             # Preview production build locally
+```
+
+## Testing Recommendations
 
 **For Future Implementation:**
-- **Test Runner:** Vitest (recommended for Vite projects)
-- **Component Testing:** React Testing Library
-- **Assertion Library:** Vitest built-in or Chai/Expect
-- **Mocking:** Vitest mocking utilities
 
-## Code Quality Assurance
+**Unit Tests (Recommended First):**
+- Framework: Vitest (lighter than Jest, same API, better TypeScript support)
+- Assertion library: Vitest built-in or Chai
+- Target files for testing:
+  - `src/utils/formValidation.ts` - Validation logic
+  - `src/utils/formatPhone.ts` - Phone formatting
+  - `src/hooks/useMultiStepForm.ts` - Form state and step validation
+  - `src/hooks/useReviewData.ts` - Data fetching and fallback logic
+  - `src/hooks/useLeadTracking.ts` - Tracking data generation
 
-**Current Approach:**
+**Integration Tests (Secondary Priority):**
+- Test form submission flow end-to-end
+- Test SEO meta tag injection
+- Test schema markup generation
+- Test Supabase integration with mocked responses
+- Test webhook submission to n8n
 
-1. **Type Safety:**
-   - TypeScript strict mode enabled in `tsconfig.app.json`
-   - Settings include: `strict: true`, `noUnusedLocals: true`, `noUnusedParameters: true`, `noFallthroughCasesInSwitch: true`
-   - Run with: `npm run typecheck`
+**E2E Tests (Optional):**
+- Framework: Playwright or Cypress
+- Test critical user flows: form submission, page navigation, quote tool integration
 
-2. **Linting:**
-   - ESLint configured in `eslint.config.js`
-   - Run with: `npm run lint`
-   - Covers React Hooks rules, React Refresh patterns, and TypeScript best practices
+## Current Code Patterns for Testing
 
-3. **Static Analysis:**
-   - Built-in ESLint rules enforce code quality
-   - React Hooks rules prevent common mistakes
-   - Type checking prevents runtime errors
+**Validation Logic** (`src/utils/formValidation.ts`):
+```typescript
+export function validateRequired(value: string): string | null {
+  return value.trim() ? null : 'This field is required';
+}
 
-## Testing Patterns (If Tests Were Present)
+export function validateEmail(email: string): string | null {
+  if (!email.trim()) return 'Email is required';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) ? null : 'Please enter a valid email address';
+}
 
-**Component Structure for Testing:**
+export function validatePhone(phone: string): string | null {
+  if (!phone.trim()) return 'Phone number is required';
+  const digits = phone.replace(/\D/g, '');
+  return digits.length === 10 ? null : 'Please enter a valid 10-digit phone number';
+}
+```
 
-Based on component design in codebase, testing would follow these patterns:
+**Test approach:** Pure functions with clear input/output make these easy to unit test.
+
+Example test structure:
+```typescript
+describe('formValidation', () => {
+  describe('validateEmail', () => {
+    it('should return null for valid email', () => {
+      expect(validateEmail('test@example.com')).toBeNull();
+    });
+    it('should return error for invalid email', () => {
+      expect(validateEmail('invalid')).toBeTruthy();
+    });
+    it('should return error for empty string', () => {
+      expect(validateEmail('')).toBeTruthy();
+    });
+  });
+});
+```
+
+**Hook Testing** (`src/hooks/useMultiStepForm.ts`):
+```typescript
+export function useMultiStepForm(formSource: string) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useState<LeadFormData>({...});
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const updateField = useCallback((name: keyof LeadFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  }, [errors]);
+
+  const validateStep = useCallback((step: number): boolean => {
+    const validator = stepValidators[step];
+    if (!validator) return true;
+    const stepErrors = validator(formData);
+    setErrors(stepErrors);
+    return Object.keys(stepErrors).length === 0;
+  }, [formData]);
+
+  // ... more methods
+
+  return {
+    currentStep,
+    formData,
+    errors,
+    isSubmitting,
+    submitStatus,
+    updateField,
+    validateStep,
+    nextStep,
+    prevStep,
+    submit,
+    retry,
+  };
+}
+```
+
+**Test approach:** Use `@testing-library/react` and Vitest renderHook pattern:
+```typescript
+import { renderHook, act } from '@testing-library/react';
+import { useMultiStepForm } from './useMultiStepForm';
+
+describe('useMultiStepForm', () => {
+  it('should initialize with step 0', () => {
+    const { result } = renderHook(() => useMultiStepForm('test-source'));
+    expect(result.current.currentStep).toBe(0);
+  });
+
+  it('should validate required fields on step', async () => {
+    const { result } = renderHook(() => useMultiStepForm('test-source'));
+
+    act(() => {
+      result.current.nextStep(); // No service selected
+    });
+
+    expect(result.current.errors.service).toBeTruthy();
+    expect(result.current.currentStep).toBe(0); // Should not advance
+  });
+
+  it('should move to next step when validation passes', async () => {
+    const { result } = renderHook(() => useMultiStepForm('test-source'));
+
+    act(() => {
+      result.current.updateField('service', 'Roof Repair');
+      result.current.nextStep();
+    });
+
+    expect(result.current.currentStep).toBe(1);
+  });
+});
+```
+
+**Async Data Fetching** (`src/hooks/useReviewData.ts`):
+```typescript
+export const useReviewData = () => {
+  const [reviewData, setReviewData] = useState<ReviewData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchReviewData = async () => {
+      try {
+        const { data: dbData, error: dbError } = await supabase
+          .from('review_data')
+          .select('*')
+          .limit(1)
+          .maybeSingle();
+
+        if (dbData && !dbError) {
+          setReviewData({ /* ... */ });
+          setLoading(false);
+          return;
+        }
+
+        // Fallback to Google Sheets
+        const res = await fetch('https://docs.google.com/...');
+        // ... parse and set data
+      } catch (err) {
+        console.error('Failed to load reviews:', err);
+        setReviewData({ /* default */ });
+      }
+    };
+    fetchReviewData();
+  }, []);
+
+  return { reviewData, loading, error };
+};
+```
+
+**Test approach:** Mock Supabase and fetch, test fallback logic:
+```typescript
+import { renderHook, waitFor } from '@testing-library/react';
+import { useReviewData } from './useReviewData';
+import { supabase } from '../lib/supabase';
+import * as supabaseModule from '../lib/supabase';
+
+vi.mock('../lib/supabase');
+
+describe('useReviewData', () => {
+  it('should load review data from Supabase', async () => {
+    const mockData = { total_reviews: 100, average_rating: 5.0 /* ... */ };
+    vi.mocked(supabase.from).mockReturnValue({
+      select: vi.fn().mockReturnValue({
+        order: vi.fn().mockReturnValue({
+          limit: vi.fn().mockReturnValue({
+            maybeSingle: vi.fn().mockResolvedValue({ data: mockData, error: null }),
+          }),
+        }),
+      }),
+    });
+
+    const { result } = renderHook(() => useReviewData());
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+
+    expect(result.current.reviewData?.totalReviews).toBe(100);
+  });
+
+  it('should fallback to Google Sheets on Supabase error', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      text: () => Promise.resolve(`)]}')\n{"table":{"rows":[{"c":[null,{"v":92},{"v":5.0}]}]}}`),
+    });
+
+    vi.mocked(supabase.from).mockReturnValue({
+      select: vi.fn().mockReturnValue({
+        order: vi.fn().mockReturnValue({
+          limit: vi.fn().mockReturnValue({
+            maybeSingle: vi.fn().mockResolvedValue({ data: null, error: 'failed' }),
+          }),
+        }),
+      }),
+    });
+
+    const { result } = renderHook(() => useReviewData());
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+
+    expect(result.current.reviewData?.totalReviews).toBe(92);
+  });
+
+  it('should return default data on all errors', async () => {
+    global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
+    vi.mocked(supabase.from).mockReturnValue({
+      select: vi.fn().mockReturnValue({
+        order: vi.fn().mockReturnValue({
+          limit: vi.fn().mockReturnValue({
+            maybeSingle: vi.fn().mockResolvedValue({ data: null, error: 'failed' }),
+          }),
+        }),
+      }),
+    });
+
+    const { result } = renderHook(() => useReviewData());
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+      expect(result.current.error).toBe(true);
+    });
+
+    expect(result.current.reviewData?.totalReviews).toBe(92); // DEFAULT_REVIEW_COUNT
+  });
+});
+```
+
+## Mocking Strategy
+
+**What to Mock:**
+- External APIs: Supabase client, Google Sheets fetch
+- Network requests: Webhook submissions (fetch to n8n)
+- Browser APIs: `window.location`, `sessionStorage`, `screen` dimensions
+- Third-party hooks: useReviewData when testing form components
+
+**What NOT to Mock:**
+- Validation functions (pure, no side effects)
+- Formatting utilities (pure, no side effects)
+- Tailwind CSS (testing behavior, not styling)
+- React Router components (test with MemoryRouter wrapper)
+
+## Component Testing Patterns
+
+**Example: FormField Component** (`src/components/lead-form/FormField.tsx`):
 
 ```typescript
-// Example test structure for FormField component
-import { render, screen, fireEvent } from '@testing-library/react';
-import FormField from '../FormField';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import FormField from './FormField';
 
 describe('FormField', () => {
-  it('renders input with label', () => {
+  it('should render label and input', () => {
     render(
       <FormField
         label="Email"
@@ -64,252 +315,87 @@ describe('FormField', () => {
         onChange={() => {}}
       />
     );
+
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
   });
 
-  it('displays error message when error prop is provided', () => {
+  it('should display error message when provided', () => {
     render(
       <FormField
         label="Email"
         name="email"
         value=""
         onChange={() => {}}
-        error="Email is required"
+        error="Invalid email"
       />
     );
-    expect(screen.getByText('Email is required')).toBeInTheDocument();
+
+    expect(screen.getByText('Invalid email')).toBeInTheDocument();
+  });
+
+  it('should call onChange with new value on input change', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+
+    render(
+      <FormField
+        label="Email"
+        name="email"
+        value=""
+        onChange={onChange}
+      />
+    );
+
+    const input = screen.getByLabelText('Email');
+    await user.type(input, 'test@example.com');
+
+    expect(onChange).toHaveBeenCalledWith('test@example.com');
+  });
+
+  it('should render textarea for multiline input', () => {
+    render(
+      <FormField
+        label="Message"
+        name="message"
+        value=""
+        onChange={() => {}}
+        multiline
+      />
+    );
+
+    expect(screen.getByRole('textbox')).toBeInTheDocument();
   });
 });
 ```
 
-**Hook Testing Pattern:**
+## Coverage Goals
 
-Based on `useMultiStepForm` hook structure:
+**Recommended targets** (not currently enforced):
+- Unit tests: 80%+ coverage on utilities and hooks
+- Integration tests: Cover critical form submission flows
+- No coverage requirement on purely presentational components
 
-```typescript
-import { renderHook, act } from '@testing-library/react';
-import { useMultiStepForm } from '../useMultiStepForm';
-
-describe('useMultiStepForm', () => {
-  it('initializes with step 0', () => {
-    const { result } = renderHook(() => useMultiStepForm('test'));
-    expect(result.current.currentStep).toBe(0);
-  });
-
-  it('validates required fields before advancing', () => {
-    const { result } = renderHook(() => useMultiStepForm('test'));
-    act(() => {
-      result.current.nextStep();
-    });
-    expect(result.current.currentStep).toBe(0);
-    expect(result.current.errors.service).toBeDefined();
-  });
-});
-```
-
-**Utility Function Testing Pattern:**
-
-Based on validation and formatting utilities:
-
-```typescript
-import { validateEmail, validatePhone, formatPhoneNumber } from '../utils/formValidation';
-
-describe('Form Validation', () => {
-  describe('validateEmail', () => {
-    it('returns null for valid email', () => {
-      expect(validateEmail('test@example.com')).toBeNull();
-    });
-
-    it('returns error message for invalid email', () => {
-      expect(validateEmail('invalid')).toBeTruthy();
-    });
-
-    it('returns error for empty email', () => {
-      expect(validateEmail('')).toEqual('Email is required');
-    });
-  });
-
-  describe('formatPhoneNumber', () => {
-    it('formats phone number correctly', () => {
-      expect(formatPhoneNumber('6149716028')).toBe('(614)-971-6028');
-    });
-
-    it('handles partial input', () => {
-      expect(formatPhoneNumber('614')).toBe('614');
-    });
-  });
-});
-```
-
-## Areas That Would Benefit from Testing
-
-**High Priority:**
-
-1. **Form Validation Logic:**
-   - File: `src/utils/formValidation.ts`
-   - Test: Email regex, phone number length, required field checks
-   - Current: No tests - validation is critical for data quality
-
-2. **Multi-Step Form Hook:**
-   - File: `src/hooks/useMultiStepForm.ts`
-   - Test: Step transitions, validation before advancing, form submission with abort timeout
-   - Current: No tests - complex state management logic
-
-3. **Review Data Hook:**
-   - File: `src/hooks/useReviewData.ts`
-   - Test: Supabase fallback logic, Google Sheets parsing, error handling, DEFAULT_REVIEW_COUNT fallback
-   - Current: No tests - error path with fallbacks needs verification
-
-4. **Form Submission:**
-   - File: `src/hooks/useMultiStepForm.ts` (submit function)
-   - Test: Webhook POST request, timeout handling, success/error state tracking
-   - Current: No tests - external API integration critical
-
-**Medium Priority:**
-
-5. **Service Mapping:**
-   - File: `src/components/lead-form/MultiStepLeadForm.tsx`
-   - Test: Service name to form value mapping, default service pre-selection
-   - Current: No tests - incorrect mapping could cause bad data submission
-
-6. **Tracking Data Collection:**
-   - File: `src/hooks/useLeadTracking.ts`
-   - Test: SessionId persistence, landing page capture, device type detection
-   - Current: No tests - tracking data accuracy important for analytics
-
-## Validation Testing Approach
-
-**Current Validation Functions** (in `src/utils/formValidation.ts`):
-
-1. `validateRequired(value: string)` - checks for trimmed non-empty string
-2. `validateEmail(email: string)` - regex-based email validation
-3. `validatePhone(phone: string)` - checks for 10-digit phone number
-
-**Test Coverage Needed:**
-- Boundary conditions (empty strings, whitespace)
-- Valid/invalid formats
-- Edge cases (special characters, unicode)
-
-## Form Data Structure for Testing
-
-**LeadFormData interface** (from `src/hooks/useMultiStepForm.ts`):
-```typescript
-export interface LeadFormData {
-  service: string;
-  urgency: string;
-  address: string;
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
-}
-```
-
-**Test fixtures would include:**
-- Empty form state
-- Partially filled form
-- Valid complete form
-- Form with validation errors
-
-## Error Handling Test Patterns
-
-**Network Error Handling** (useReviewData.ts):
-```typescript
-// Test error path
-try {
-  // Supabase query fails
-  // Falls back to Google Sheets API
-  // If that fails, uses DEFAULT_REVIEW_COUNT
-} catch (err) {
-  console.error('Failed to load reviews:', err);
-  setError(true);
-  // Verify fallback values are set
-}
-```
-
-**Form Submission Error Path** (useMultiStepForm.ts):
-```typescript
-// Test timeout
-const controller = new AbortController();
-const timeout = setTimeout(() => controller.abort(), 10000);
-
-// Test response.ok check
-if (!response.ok) throw new Error('Submission failed');
-
-// Verify submitStatus is set to 'error'
-```
-
-## Type Safety Substituting for Tests
-
-**Current Strengths:**
-- TypeScript strict mode catches many errors at compile time
-- Component prop interfaces enforce correct usage
-- Function return types are explicit
-- Form data structure is typed
-
-**Example:**
-```typescript
-// Type system prevents invalid field names
-updateField('invalidFieldName', 'value'); // TS error: not in keyof LeadFormData
-```
-
-## Recommended Test Structure
-
-**When implementing tests, use this structure:**
+## Test Organization Structure
 
 ```
 src/
 ├── components/
-│   └── __tests__/
-│       ├── FormField.test.tsx
-│       ├── Navigation.test.tsx
-│       └── ...
+│   └── lead-form/
+│       ├── FormField.tsx
+│       └── FormField.test.tsx          # Co-located
 ├── hooks/
-│   └── __tests__/
-│       ├── useMultiStepForm.test.ts
-│       ├── useLeadTracking.test.ts
-│       └── useReviewData.test.ts
+│   ├── useMultiStepForm.ts
+│   └── useMultiStepForm.test.ts        # Co-located
 ├── utils/
-│   └── __tests__/
-│       └── formValidation.test.ts
-└── lib/
-    └── __tests__/
-        └── supabase.test.ts
+│   ├── formValidation.ts
+│   └── formValidation.test.ts          # Co-located
+└── __tests__/
+    ├── integration/
+    │   └── form-submission.test.ts     # Complex workflows
+    └── e2e/                             # Future E2E tests
 ```
 
-## Manual Testing Checklist
-
-**Since automated tests are not yet implemented, focus manual testing on:**
-
-1. **Form Submission Flow:**
-   - Fill multi-step form on service pages
-   - Verify webhook payload sent to `https://n8n.whitflow.com/webhook/dte-form-submissions`
-   - Check error state transitions on network failure
-
-2. **Validation:**
-   - Submit empty fields - should see error messages
-   - Enter invalid email - should see validation error
-   - Enter phone without 10 digits - should see validation error
-
-3. **Device Detection:**
-   - Test on mobile, tablet, desktop - useLeadTracking should detect device type
-   - Check sessionStorage for landing page and session ID persistence
-
-4. **Review Data Loading:**
-   - Verify review count displays on pages
-   - Test fallback if Supabase/Google Sheets unavailable
-   - Check DEFAULT_REVIEW_COUNT (92) displays as fallback
-
-5. **Form Pre-selection:**
-   - Navigate from service page to form - service should be pre-selected
-   - Verify serviceMap translates page slug to form value correctly
-
-## ESLint Run Command
-
-```bash
-npm run lint                 # Run linting checks
-npm run typecheck           # Run TypeScript type checking
-```
+**Test file naming:** `[module].test.ts` or `[module].spec.ts` (recommend `.test.ts` for consistency)
 
 ---
 
