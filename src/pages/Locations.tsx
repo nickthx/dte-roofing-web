@@ -88,16 +88,17 @@ export default function Locations() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Central Ohio Service Areas - DTE Roofing Locations | Columbus & Surrounding Cities"
+        title="Areas We Serve in Central Ohio | DTE Roofing Service Areas"
         description="DTE Roofing serves 13+ Central Ohio locations including Columbus, Hilliard, Dublin, New Albany, Westerville, Gahanna, and more. Find your local roofing experts."
         keywords="roofing Central Ohio, Columbus area roofer, roofing service areas, local roofing contractor, Ohio roofing locations"
         canonical="https://www.dteroofingllc.com/locations"
       />
       <SchemaMarkup
-        type="service"
-        serviceName="Roofing Services"
-        serviceDescription="Professional roofing services throughout Central Ohio including Columbus, Hilliard, Dublin, and surrounding communities."
-        areaServed={locations.map(loc => loc.name).join(', ')}
+        type="hub"
+        locationName="Central Ohio"
+        pageTitle="Areas We Serve in Central Ohio | DTE Roofing Service Areas"
+        pageDescription="DTE Roofing serves 13 Central Ohio communities including Columbus, Hilliard, Dublin, New Albany, Westerville, Gahanna, and more. Find your local roofing experts."
+        pageUrl="https://www.dteroofingllc.com/locations"
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -108,7 +109,7 @@ export default function Locations() {
               <span className="text-lg font-semibold text-primary-500">Serving Central Ohio</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Roofing Contractor Columbus OH
+              Areas We Serve in Central Ohio
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               DTE Roofing proudly serves 13+ communities throughout the Columbus metropolitan area. From our Hilliard headquarters, we deliver fast, reliable roofing services to homeowners across Franklin, Delaware, and Fairfield counties.
