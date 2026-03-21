@@ -41,6 +41,7 @@ export const localBusinessSchema = {
     }
   ],
   "sameAs": [
+    "https://www.google.com/maps/place/DTE+Roofing",
     "https://www.facebook.com/people/DTE-Roofing/61556271692460/",
     "https://www.instagram.com/dte_roofing/"
   ]

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useReviewData } from '../hooks/useReviewData';
+import { getAreaServedForLocation, LOCATIONS, type LocationConfig } from '../data/locations';
 
 interface FAQ {
   question: string;
@@ -13,10 +14,11 @@ interface Service {
 }
 
 interface SchemaMarkupProps {
-  type: 'home' | 'service' | 'faq' | 'location' | 'general';
+  type: 'home' | 'service' | 'faq' | 'location' | 'hub' | 'general';
   service?: Service;
   faqs?: FAQ[];
   locationName?: string;
+  locationSlug?: string;
   pageTitle?: string;
   pageDescription?: string;
   pageUrl?: string;
@@ -40,34 +42,17 @@ const BUSINESS_INFO = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 39.9612,
-    longitude: -83.1565
+    latitude: 39.9637153,
+    longitude: -83.1477371
   },
-  areaServed: [
-    { '@type': 'City', name: 'Columbus', '@id': 'https://en.wikipedia.org/wiki/Columbus,_Ohio' },
-    { '@type': 'City', name: 'Hilliard' },
-    { '@type': 'City', name: 'Dublin' },
-    { '@type': 'City', name: 'Grove City' },
-    { '@type': 'City', name: 'Westerville' },
-    { '@type': 'City', name: 'Reynoldsburg' },
-    { '@type': 'City', name: 'Gahanna' },
-    { '@type': 'City', name: 'Upper Arlington' },
-    { '@type': 'City', name: 'Worthington' },
-    { '@type': 'City', name: 'Delaware' },
-    { '@type': 'City', name: 'Powell' },
-    { '@type': 'City', name: 'Pickerington' },
-    { '@type': 'City', name: 'Canal Winchester' },
-    { '@type': 'City', name: 'Lancaster' },
-    { '@type': 'City', name: 'Newark' },
-    { '@type': 'City', name: 'Marysville' },
-    { '@type': 'City', name: 'Marion' },
-    { '@type': 'City', name: 'Circleville' },
-    { '@type': 'City', name: 'Chillicothe' },
-    { '@type': 'City', name: 'Springfield' },
-    { '@type': 'City', name: 'London' },
-    { '@type': 'City', name: 'West Jefferson' },
-    { '@type': 'City', name: 'Plain City' }
-  ],
+  areaServed: LOCATIONS.map((loc) => ({
+    '@type': 'City' as const,
+    'name': loc.cityName,
+    'containedInPlace': {
+      '@type': 'State' as const,
+      'name': 'Ohio'
+    }
+  })),
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -89,11 +74,21 @@ export default function SchemaMarkup({
   service,
   faqs,
   locationName,
+  locationSlug,
   pageTitle,
   pageDescription,
   pageUrl
 }: SchemaMarkupProps) {
   const { reviewData } = useReviewData();
+
+  const cityToAreaServed = (loc: LocationConfig) => ({
+    '@type': 'City' as const,
+    'name': loc.cityName,
+    'containedInPlace': {
+      '@type': 'State' as const,
+      'name': 'Ohio'
+    }
+  });
 
   const generateLocalBusinessSchema = () => {
     const schema: any = {
@@ -113,9 +108,22 @@ export default function SchemaMarkup({
       areaServed: BUSINESS_INFO.areaServed,
       openingHoursSpecification: BUSINESS_INFO.openingHoursSpecification,
       sameAs: [
-        'https://www.google.com/maps/place/DTE+Roofing'
+        'https://www.google.com/maps/place/DTE+Roofing',
+        'https://www.facebook.com/people/DTE-Roofing/61556271692460/',
+        'https://www.instagram.com/dte_roofing/'
       ]
     };
+
+    // Per-page areaServed and unique @id
+    if (type === 'location' && locationSlug) {
+      schema['@id'] = `${BUSINESS_INFO.url}/locations/${locationSlug}#business`;
+      schema.areaServed = getAreaServedForLocation(locationSlug).map(cityToAreaServed);
+    } else if (type === 'hub') {
+      schema['@id'] = `${BUSINESS_INFO.url}/locations#business`;
+      schema.areaServed = LOCATIONS.map(cityToAreaServed);
+    } else {
+      schema.areaServed = LOCATIONS.map(cityToAreaServed);
+    }
 
     if (reviewData) {
       schema.aggregateRating = {
@@ -194,12 +202,12 @@ export default function SchemaMarkup({
         name: pageTitle,
         item: pageUrl
       });
-    } else if (type === 'location' && locationName) {
+    } else if ((type === 'location' || type === 'hub') && locationName) {
       breadcrumbItems.push({
         '@type': 'ListItem',
         position: 2,
         name: 'Service Areas',
-        item: `${BUSINESS_INFO.url}/services`
+        item: `${BUSINESS_INFO.url}/locations`
       });
       breadcrumbItems.push({
         '@type': 'ListItem',
@@ -253,7 +261,7 @@ export default function SchemaMarkup({
   };
 
   const schemas = [
-  ...(['home', 'location', 'general'].includes(type) ? [generateLocalBusinessSchema()] : []),
+  ...(['home', 'location', 'hub', 'general'].includes(type) ? [generateLocalBusinessSchema()] : []),
   generateServiceSchema(),
   generateFAQSchema(),
   generateBreadcrumbSchema(),
@@ -288,7 +296,7 @@ export default function SchemaMarkup({
         }
       });
     };
-  }, [reviewData, type, service, faqs, pageUrl, pageTitle]);
+  }, [reviewData, type, service, faqs, pageUrl, pageTitle, locationSlug]);
 
   return null;
 }
