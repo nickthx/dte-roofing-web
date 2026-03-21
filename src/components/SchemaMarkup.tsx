@@ -111,7 +111,7 @@ export default function SchemaMarkup({
       areaServed: BUSINESS_INFO.areaServed,
       openingHoursSpecification: BUSINESS_INFO.openingHoursSpecification,
       sameAs: [
-        'https://www.google.com/maps/place/DTE+Roofing+LLC'
+        'https://www.google.com/maps/place/DTE+Roofing'
       ]
     };
 
@@ -251,7 +251,7 @@ export default function SchemaMarkup({
   };
 
   const schemas = [
-  ...(type === 'home' ? [generateLocalBusinessSchema()] : []),
+  ...(['home', 'location', 'general'].includes(type) ? [generateLocalBusinessSchema()] : []),
   generateServiceSchema(),
   generateFAQSchema(),
   generateBreadcrumbSchema(),

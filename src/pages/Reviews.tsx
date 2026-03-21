@@ -205,7 +205,7 @@ export default function Reviews() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
+                href="https://www.google.com/maps/place/DTE+Roofing/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-charcoal-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-bold text-lg inline-flex items-center justify-center shadow-xl"

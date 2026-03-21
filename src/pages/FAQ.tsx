@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
           question: 'Are you licensed and insured?',
-          answer: 'Yes, DTE Roofing LLC is fully licensed, bonded, and insured in Ohio. We carry comprehensive general liability insurance and workers\' compensation coverage to protect both our team and your property. We\'re happy to provide proof of insurance and our license information upon request.'
+          answer: 'Yes, DTE Roofing is fully licensed, bonded, and insured in Ohio. We carry comprehensive general liability insurance and workers\' compensation coverage to protect both our team and your property. We\'re happy to provide proof of insurance and our license information upon request.'
         }
       ]
     },
@@ -122,7 +122,7 @@ export default function FAQ() {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofing FAQ Columbus OH</h1>
             <p className="text-xl text-gray-200">
-              Find answers to common questions about roofing services, processes, and what to expect when working with DTE Roofing LLC
+              Find answers to common questions about roofing services, processes, and what to expect when working with DTE Roofing
             </p>
           </div>
         </div>

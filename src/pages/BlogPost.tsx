@@ -188,7 +188,7 @@ export default function BlogPostPage() {
                   Protect Your {post.city} Home Today
                 </h3>
                 <p className="text-gray-300 mb-8 text-lg max-w-2xl mx-auto">
-                  DTE Roofing LLC has been serving Central Ohio homeowners with honest, reliable roofing services. Get your FREE inspection and estimate today – no obligation, no pressure.
+                  DTE Roofing has been serving Central Ohio homeowners with honest, reliable roofing services. Get your FREE inspection and estimate today – no obligation, no pressure.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link

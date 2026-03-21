@@ -33,7 +33,7 @@ export default function About() {
                Roof Repair, Replacement, Inspections & Preventative Maintenance
               </h2>
               <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed">
-                At DTE Roofing LLC, we believe a roof is more than just shingles and nails—it's protection,
+                At DTE Roofing, we believe a roof is more than just shingles and nails—it's protection,
                 peace of mind, and a lasting investment in your home. Built on our core value of Dedication
                 to Excellence, we are committed to delivering top-tier roofing solutions with quality
                 workmanship and a customer-first approach.
@@ -230,7 +230,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">Meet Our Team</h2>
             <p className="text-xl text-charcoal-600 max-w-2xl mx-auto">
-              The dedicated professionals behind DTE Roofing LLC
+              The dedicated professionals behind DTE Roofing
             </p>
           </div>
 

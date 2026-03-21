@@ -391,7 +391,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
+              href="https://www.google.com/maps/place/DTE+Roofing/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold text-lg inline-flex items-center justify-center shadow-lg hover:shadow-xl mb-4"
@@ -523,20 +523,20 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Visit Our Location</h2>
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.5419919506203!2d-83.14945649272185!3d39.96345808424561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883897c3548f20bf%3A0xdd1da18d4d7ccf43!2sDTE%20Roofing!5e0!3m2!1sen!2sus!4v1763415438244!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.999330164663!2d-83.15021258867671!3d39.96376768296525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883897c3548f20bf%3A0xdd1da18d4d7ccf43!2sDTE%20Roofing!5e0!3m2!1sen!2sus!4v1774114841530!5m2!1sen!2sus"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="DTE Roofing LLC Location - 615 Hilliard Rome Rd, Columbus, OH 43228"
+                title="DTE Roofing - 615 Hilliard Rome Rd, Columbus, OH 43228"
                 className="w-full"
               />
             </div>
             <div className="mt-6 text-center">
               <a
-                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
+                href="https://www.google.com/maps/place/DTE+Roofing/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold transition-colors mb-4"
@@ -544,6 +544,22 @@ export default function Home() {
                 <MapPin className="w-5 h-5 mr-2" />
                 View on Google Maps
               </a>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <div itemScope itemType="https://schema.org/RoofingContractor" className="bg-gray-50 border border-gray-200 rounded-xl px-8 py-6 text-center">
+                <strong itemProp="name" className="text-xl font-bold text-charcoal-900 block mb-2">DTE Roofing</strong>
+                <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="text-charcoal-600">
+                  <span itemProp="streetAddress">615 Hilliard Rome Rd</span>,{' '}
+                  <span itemProp="addressLocality">Columbus</span>,{' '}
+                  <span itemProp="addressRegion">OH</span>{' '}
+                  <span itemProp="postalCode">43228</span>
+                </span>
+                <br />
+                <a href="tel:+16149716028" itemProp="telephone" className="text-primary-700 hover:text-primary-800 font-semibold text-lg mt-2 inline-block transition-colors">
+                  614-971-6028
+                </a>
+              </div>
             </div>
 
             <div className="mt-8">
@@ -596,7 +612,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
+                href="https://www.google.com/maps/place/DTE+Roofing/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center justify-center shadow-md hover:shadow-lg"
@@ -604,7 +620,7 @@ export default function Home() {
                 View Our Reviews <ExternalLink className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="https://www.google.com/maps/place/DTE+Roofing+LLC/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
+                href="https://www.google.com/maps/place/DTE+Roofing/@39.9637636,-83.1476323,17z/data=!3m1!4b1!4m6!3m5!1s0x883897c3548f20bf:0xdd1da18d4d7ccf43!8m2!3d39.9637636!4d-83.1476323!16s%2Fg%2F11vrcm8sdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-primary-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all font-semibold inline-flex items-center justify-center border-2 border-primary-700"
