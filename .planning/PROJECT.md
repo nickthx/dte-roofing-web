@@ -1,65 +1,130 @@
-# DTE Roofing Website
+# DTE Roofing — Local Authority & Service Area SEO Overhaul
 
 ## What This Is
 
-A marketing website for DTE Roofing LLC, a roofing company founded by two brothers in Hilliard, Ohio serving the Columbus metro area. The site drives leads through service pages, location pages, an instant quote tool (Roofle), financing info, and a contact/lead form backed by Supabase.
+A structural/technical SEO overhaul of the /locations hub and 13 location subpages on dteroofingllc.com. The existing content is strong and approved — this milestone fixes schema markup, internal linking, hub page structure, and footer coverage to establish proper local SEO authority across all service areas.
 
 ## Core Value
 
-Generate qualified roofing leads by building trust through professional presentation, real project photos, and verified reviews.
+Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, and page structure — without touching approved content.
 
 ## Requirements
 
 ### Validated
 
-<!-- Shipped and confirmed valuable. -->
-
-- ✓ Home page with hero, services, process, reviews, and project photos — v1
-- ✓ 11 service pages (installation, repair, replacement, gutters, siding, etc.) — v1
-- ✓ 13 location pages (Columbus metro area) — v1
-- ✓ Blog with posts — v1
-- ✓ Gallery page with filtering and lightbox — v1
-- ✓ Contact/lead form with Supabase backend — v1
-- ✓ Instant Quote via Roofle embed — v1
-- ✓ Financing page — v1
-- ✓ SEO metadata and schema markup — v1
-- ✓ Mobile sticky call button — v1
-- ✓ Home page "Our Recent Work" carousel with auto-advance, nav arrows, title/location overlays — v1.1
+- ✓ 13 location subpages with unique, high-quality localized content — existing
+- ✓ /locations hub page with links to all 13 subpages — existing
+- ✓ RoofingContractor JSON-LD schema on all 13 subpages — existing (needs fixing)
+- ✓ Service pages with lead capture forms — existing
+- ✓ Footer with location links — existing (incomplete)
+- ✓ SEO component with meta tag manipulation — existing
+- ✓ SchemaMarkup component for JSON-LD generation — existing
 
 ### Active
 
-<!-- Current scope. Building toward these. -->
-
-(None yet — next milestone TBD)
+- [ ] Hub page H1 differentiated from /locations/columbus (no cannibalization)
+- [ ] Hub page has its own RoofingContractor JSON-LD schema with all 13 cities
+- [ ] Each subpage has page-specific areaServed (primary city + 2-3 neighbors)
+- [ ] Each subpage has unique @id in schema
+- [ ] No non-page cities in any areaServed array (only the 13 with pages)
+- [ ] Breadcrumb / "back to hub" link on all 13 subpages
+- [ ] "Nearby Areas We Serve" cross-linking section on all 13 subpages
+- [ ] Footer lists all 13 locations (not just 5)
+- [ ] Service area map on /locations hub page
+- [ ] Service pages link to relevant location pages where natural
 
 ### Out of Scope
 
-<!-- Explicit boundaries. -->
-
-- Pulling new images from Google Business Profile — using existing downloaded images
-- Video content in carousel — photos only for now
+- Content rewrites — all page content is audited and approved
+- URL changes — no slugs or routing changes
+- NAP changes — address/phone/email are audited separately
+- New location pages — only the existing 13 are in scope
+- Adding back removed cities to areaServed — only when pages exist for them
 
 ## Context
 
-- React 18 + Vite + TypeScript + Tailwind CSS
-- Deployed on Vercel
-- ~30 project images already in `/public/images/`, many sourced from Google Business Profile
-- "Our Recent Work" section now uses Embla carousel (embla-carousel-react + embla-carousel-autoplay)
-- Shared project data extracted to `src/data/projects.ts` (used by both Home carousel and Gallery page)
+**Site:** dteroofingllc.com — React SPA (Vite + TypeScript + Tailwind), deployed on Vercel
+**Canonical NAP:**
+- Business Name: DTE Roofing
+- Legal Name: DTE Roofing LLC
+- Address: 615 Hilliard Rome Rd, Columbus, OH 43228
+- Phone: 614-971-6028
+- Email: experience@dteroofing.com
+
+**Current Issues Identified:**
+- Schema is generic/duplicated — same RoofingContractor block with same 23-city areaServed on every subpage
+- Hub page has ZERO schema
+- Hub page H1 "Roofing Contractor Columbus OH" cannibalizes /locations/columbus
+- No breadcrumb or "back to hub" links on subpages
+- Only 1 cross-link found between location pages (Dublin→Columbus)
+- Footer links to only 5 of 13 locations
+- New Albany may be missing from its own page's areaServed
+
+**The 13 Location Subpages:**
+1. /locations/columbus
+2. /locations/hilliard
+3. /locations/dublin
+4. /locations/new-albany
+5. /locations/upper-arlington
+6. /locations/westerville
+7. /locations/gahanna
+8. /locations/reynoldsburg
+9. /locations/grove-city
+10. /locations/pickerington
+11. /locations/worthington
+12. /locations/delaware
+13. /locations/powell
+
+**Neighbor Mapping (for areaServed and cross-links):**
+- Columbus: Hilliard, Dublin, Upper Arlington, Westerville, Gahanna, Reynoldsburg, Grove City, Worthington
+- Hilliard: Columbus, Dublin, Upper Arlington, Grove City
+- Dublin: Columbus, Hilliard, Powell, Worthington, Upper Arlington
+- New Albany: Columbus, Westerville, Gahanna
+- Upper Arlington: Columbus, Hilliard, Dublin, Worthington, Grove City
+- Westerville: Columbus, Powell, Gahanna, Worthington, New Albany
+- Gahanna: Columbus, Westerville, New Albany, Reynoldsburg
+- Reynoldsburg: Columbus, Gahanna, Pickerington
+- Grove City: Columbus, Hilliard, Pickerington
+- Pickerington: Columbus, Reynoldsburg, Grove City, Gahanna
+- Worthington: Columbus, Dublin, Powell, Westerville, Upper Arlington
+- Delaware: Powell, Westerville, Worthington
+- Powell: Dublin, Westerville, Delaware, Worthington
 
 ## Constraints
 
-- **Tech stack**: React + Tailwind CSS, no new heavy dependencies (prefer CSS/lightweight JS solutions)
-- **Images**: Use existing `/public/images/` assets only
-- **Design**: Must integrate cleanly with existing page aesthetic (charcoal/primary-700 color scheme)
+- **Content**: Do NOT rewrite or modify existing page content (paragraphs, testimonials, FAQs, service descriptions)
+- **URLs**: Do NOT change any URLs or slugs
+- **NAP**: Do NOT change business name, address, phone, or email anywhere
+- **Design**: All new elements must match existing Tailwind design (charcoal/primary-700 color scheme)
+- **Images**: Use existing /public/images/ assets only
+- **Dependencies**: No new heavy dependencies — prefer CSS/lightweight JS solutions
+- **Approval**: Complete each phase fully, verify, and get user approval before starting next phase
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Carousel over grid | User wants smooth, clean presentation; grid looks clunky | ✓ Good |
-| Embla Carousel library | Lightweight, composable, good React integration | ✓ Good |
-| Shared project data file | Extracted from Gallery to `src/data/projects.ts` for reuse | ✓ Good |
+| Page-specific areaServed (primary + 2-3 neighbors) | Avoids diluting local relevance with 23-city generic list | — Pending |
+| Remove 10 non-page cities from schema | Only cities with dedicated pages should be in areaServed | — Pending |
+| Hub H1 → "Areas We Serve in Central Ohio" | Stops cannibalization of /locations/columbus keyword | — Pending |
+| Unique @id per subpage schema | Prevents search engines treating all pages as same entity | — Pending |
+
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd:transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after v1.1 milestone completion*
+*Last updated: 2026-03-21 after initialization*
