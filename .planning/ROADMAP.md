@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Create locations.ts data file and refactor SchemaMarkup.tsx for per-page schema
+- [x] 01-01-PLAN.md — Create locations.ts data file and refactor SchemaMarkup.tsx for per-page schema
 - [ ] 01-02-PLAN.md — Fix hub page H1/title/schema and wire locationSlug into all 13 subpages
 
 ### Phase 2: Internal Linking & Navigation
