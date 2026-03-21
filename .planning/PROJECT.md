@@ -22,11 +22,11 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 
 ### Active
 
-- [ ] Hub page H1 differentiated from /locations/columbus (no cannibalization)
-- [ ] Hub page has its own RoofingContractor JSON-LD schema with all 13 cities
-- [ ] Each subpage has page-specific areaServed (primary city + 2-3 neighbors)
-- [ ] Each subpage has unique @id in schema
-- [ ] No non-page cities in any areaServed array (only the 13 with pages)
+- [x] Hub page H1 differentiated from /locations/columbus (no cannibalization) — Validated in Phase 1
+- [x] Hub page has its own RoofingContractor JSON-LD schema with all 13 cities — Validated in Phase 1
+- [x] Each subpage has page-specific areaServed (primary city + 2-3 neighbors) — Validated in Phase 1
+- [x] Each subpage has unique @id in schema — Validated in Phase 1
+- [x] No non-page cities in any areaServed array (only the 13 with pages) — Validated in Phase 1
 - [ ] Breadcrumb / "back to hub" link on all 13 subpages
 - [ ] "Nearby Areas We Serve" cross-linking section on all 13 subpages
 - [ ] Footer lists all 13 locations (not just 5)
@@ -104,10 +104,10 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Page-specific areaServed (primary + 2-3 neighbors) | Avoids diluting local relevance with 23-city generic list | — Pending |
-| Remove 10 non-page cities from schema | Only cities with dedicated pages should be in areaServed | — Pending |
-| Hub H1 → "Areas We Serve in Central Ohio" | Stops cannibalization of /locations/columbus keyword | — Pending |
-| Unique @id per subpage schema | Prevents search engines treating all pages as same entity | — Pending |
+| Page-specific areaServed (primary + 2-3 neighbors) | Avoids diluting local relevance with 23-city generic list | ✓ Phase 1 |
+| Remove 10 non-page cities from schema | Only cities with dedicated pages should be in areaServed | ✓ Phase 1 |
+| Hub H1 → "Areas We Serve in Central Ohio" | Stops cannibalization of /locations/columbus keyword | ✓ Phase 1 |
+| Unique @id per subpage schema | Prevents search engines treating all pages as same entity | ✓ Phase 1 |
 
 ## Evolution
 
@@ -127,4 +127,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after initialization*
+*Last updated: 2026-03-21 after Phase 1 completion*
