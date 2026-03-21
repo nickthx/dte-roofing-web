@@ -52,7 +52,7 @@ export default function GroveCity() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Grove City</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Gutter Installation & Siding in Grove City</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Grove City regularly on the southwest side of Columbus. With easy access via <strong>I-71</strong>, <strong>I-270</strong>, and <strong>US-62</strong>, we reach Grove City efficiently—from <strong>Historic Downtown Grove City and Broadway</strong> to <strong>Stringtown Road</strong> corridors, from <strong>Fryer Park</strong> neighborhoods to areas near <strong>Scioto Grove Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

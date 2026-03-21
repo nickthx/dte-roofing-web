@@ -52,7 +52,7 @@ export default function Worthington() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Worthington</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Roof Inspection, Storm Damage & Gutter Services in Worthington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly north of downtown. With easy access via <strong>I-270</strong>, <strong>US-23</strong>, and the <strong>High Street corridor</strong>, we reach Worthington efficiently—from <strong>Historic Old Worthington</strong> and <strong>Village Green</strong> to <strong>Worthington Farmers Market</strong> areas, from <strong>Wilson Hill</strong> to neighborhoods near the <strong>Olentangy River corridor</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

@@ -28,7 +28,7 @@ export default function RoofInstallation() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">New Roof Installation Services</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Asphalt Shingles, Metal Roofing, Ventilation Systems & Flashing Installation</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 A new roof is a significant investment that protects your property for decades. At DTE Roofing,
                 we specialize in professional roof installations using premium materials and proven techniques.

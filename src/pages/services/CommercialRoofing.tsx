@@ -28,7 +28,7 @@ export default function CommercialRoofing() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Commercial Roofing Solutions in Columbus, OH</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">TPO & EPDM Systems, Flat Roof Repair, Metal Roofing & Maintenance Programs</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus-area businesses</Link> trust DTE Roofing for their commercial
                 roofing needs. From small retail shops <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Hilliard</Link> to large industrial facilities <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Grove City</Link>,

@@ -139,7 +139,7 @@ export default function FAQ() {
                   <div className="bg-gradient-to-br from-primary-700 to-primary-800 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl mr-4 shadow-lg">
                     {section.icon}
                   </div>
-                  <h2 className="text-3xl font-bold text-charcoal-900">General Questions</h2>
+                  <h2 className="text-3xl font-bold text-charcoal-900">Roof Repair, Replacement, Insurance Claims & Maintenance FAQs</h2>
                 </div>
 
                 {/* FAQ Items */}

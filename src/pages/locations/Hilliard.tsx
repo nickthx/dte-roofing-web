@@ -52,7 +52,7 @@ export default function Hilliard() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Hilliard's Hometown Roofing Company</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Gutter Services in Hilliard</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 DTE Roofing is not just another contractor serving Hilliard—we are from here. Founders Donovan and Mitchell grew up in Hilliard and graduated from Hilliard Davidson High School. Our office at 615 Hilliard Rome Rd (Columbus mailing address, just off the west side) means we are minutes from anywhere in town, whether you are in Old Hilliard near the historic downtown and Center Street Market, the established neighborhoods off Cemetery Road, or the newer developments along Cosgray Road and Scioto Reserve.
               </p>

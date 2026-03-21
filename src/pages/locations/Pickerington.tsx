@@ -52,7 +52,7 @@ export default function Pickerington() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Pickerington</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Preventative Maintenance in Pickerington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. With easy access via <strong>I-270</strong> outerbelt, <strong>I-70</strong>, <strong>US-33</strong>, and <strong>OH-256</strong>, we reach Pickerington efficiently—from <strong>Olde Pickerington Village</strong> to <strong>Sycamore Creek</strong> neighborhoods, from <strong>Pickerington Ponds Metro Park</strong> areas to <strong>Hill Road</strong> and <strong>OH-256</strong> corridors. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

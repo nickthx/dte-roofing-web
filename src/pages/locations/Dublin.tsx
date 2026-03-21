@@ -52,7 +52,7 @@ export default function Dublin() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Best Roofers in Dublin, OH — Columbus-Based, Dublin-Trusted</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Roof Inspection, Siding & Gutter Services in Dublin</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Dublin—from <strong>Bridge Park</strong> along the Scioto River to <strong>Historic Dublin</strong>, from <strong>Muirfield Village</strong> (home of the <strong>Memorial Tournament</strong>) to newer neighborhoods in every direction. Our owners are personally involved in every project—ensuring quality and clear communication from start to finish.
               </p>

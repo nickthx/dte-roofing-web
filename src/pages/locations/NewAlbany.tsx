@@ -52,7 +52,7 @@ export default function NewAlbany() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roofers Columbus Serving New Albany's Premier Community</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Preventative Maintenance, Siding & Gutter Services in New Albany</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve New Albany regularly—approximately 20 miles, roughly 25-35 minutes depending on route and traffic. From the <strong>Village Center / Market Square</strong> area to <strong>Rose Run Park</strong>, from the elegant estates of <strong>New Albany Country Club</strong> to family neighborhoods near <strong>Jeanne B. McCoy Community Center for the Arts</strong>, we understand New Albany's distinctive community standards. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>

@@ -28,7 +28,7 @@ export default function GutterServices() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Why Gutters Matter</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Repair, Gutter Cleaning, Gutter Guard Installation & Downspout Services</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Properly functioning gutters are essential for protecting your property from water damage.
                 They channel water away from your foundation, prevent soil erosion, protect siding and windows,

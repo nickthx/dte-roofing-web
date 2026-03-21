@@ -52,7 +52,7 @@ export default function Westerville() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Westerville's Trusted Roofing Professionals</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Gutter Installation & Storm Damage in Westerville</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Westerville regularly—typically 15-30 minutes depending on traffic and route. From historic <strong>Uptown Westerville</strong> and <strong>State Street's</strong> vibrant corridor to established neighborhoods near <strong>Otterbein University</strong>, from <strong>Hoover Reservoir</strong> areas to <strong>Blendon Woods</strong> edges, we understand Westerville's community character and diverse housing stock. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

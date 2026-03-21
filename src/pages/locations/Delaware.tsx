@@ -52,7 +52,7 @@ export default function Delaware() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Best Roofers in Delaware, OH — Columbus-Based, Delaware-Trusted</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Emergency Roofing & Gutter Services in Delaware</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Delaware (about 30 miles north). Whether you're near <strong>Historic Downtown Delaware</strong> along <strong>Sandusky Street</strong>, close to <strong>Ohio Wesleyan University (OWU)</strong>, or in one of the newer neighborhoods expanding north and east, we bring the same detail-first approach that sets DTE Roofing apart. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>

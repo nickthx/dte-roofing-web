@@ -40,7 +40,7 @@ export default function RoofReplacement() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Complete Roof Replacement in Columbus, OH</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Full Tear-Off, Architectural Shingles, Metal Roofing & Ventilation Upgrades</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Serving homeowners throughout <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link>, DTE Roofing specializes in
                 installing beautiful, long-lasting roofs. We understand that a new roof is a

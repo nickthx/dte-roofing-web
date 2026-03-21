@@ -30,7 +30,7 @@ export default function About() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-6">
-               More Than a Roof — A Commitment to Excellence
+               Roof Repair, Replacement, Inspections & Preventative Maintenance
               </h2>
               <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed">
                 At DTE Roofing LLC, we believe a roof is more than just shingles and nails—it's protection,

@@ -45,7 +45,7 @@ export default function StormDamage() {
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Storm Damage Restoration in Columbus & Surrounding Areas</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Hail Damage Repair, Wind Damage Restoration, Insurance Claims & Emergency Tarping</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Central Ohio's unpredictable weather—from severe thunderstorms to damaging hail—can take a serious
                 toll on your roof. Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link>, DTE Roofing has helped

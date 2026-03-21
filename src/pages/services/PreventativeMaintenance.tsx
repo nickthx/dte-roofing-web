@@ -28,7 +28,7 @@ export default function PreventativeMaintenance() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-charcoal-900 mb-6">
-              Preventative Roof Maintenance for Columbus Homeowners
+              Seasonal Inspections, Debris Removal, Flashing Repair & Gutter Maintenance
             </h2>
             <p className="text-xl text-charcoal-600 leading-relaxed">
               Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard homeowners</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and Grove City, DTE Roofing helps local homeowners protect

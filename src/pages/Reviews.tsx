@@ -145,7 +145,7 @@ export default function Reviews() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-12 text-center">
-              Customer Testimonials
+              Roof Repair, Replacement, Storm Damage & Gutter Service Reviews
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">

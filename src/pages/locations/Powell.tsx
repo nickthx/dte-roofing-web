@@ -52,7 +52,7 @@ export default function Powell() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Powell</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Roof Inspection, Preventative Maintenance & Siding in Powell</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Powell regularly to the northwest. With convenient access via <strong>Sawmill Parkway</strong>, <strong>US-23</strong>, and <strong>I-270</strong>, we reach Powell efficiently—from <strong>Downtown Powell</strong> and the village core to neighborhoods along the <strong>Powell Rd (OH-750) corridor</strong>, from <strong>Liberty Township border</strong> areas to communities near the <strong>Olentangy River corridor</strong> and the zoo area. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

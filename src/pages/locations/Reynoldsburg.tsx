@@ -52,7 +52,7 @@ export default function Reynoldsburg() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Trusted Roofers in Reynoldsburg</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Siding Services in Reynoldsburg</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Reynoldsburg regularly on the east and southeast side of Columbus. With easy access via <strong>I-270</strong> and <strong>I-70</strong>, we reach Reynoldsburg efficiently—from <strong>Livingston Ave</strong> neighborhoods to <strong>East Main Street</strong> corridors, from <strong>Taylor Road</strong> to <strong>Broad Street (US-40)</strong> areas, and communities near <strong>Blacklick Creek</strong> and <strong>Blacklick Woods Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>

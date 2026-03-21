@@ -103,7 +103,7 @@ export default function ServicePageTemplate({
           <div className="lg:col-span-2 space-y-12">
             <section>
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
-                The Problem → Our Promise
+                Leak Repair, Shingle Replacement, Flashing Repair & Storm Damage Restoration
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-charcoal-700 leading-relaxed text-lg whitespace-pre-line">

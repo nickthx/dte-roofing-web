@@ -34,7 +34,7 @@ export default function Contact() {
             <div className="grid lg:grid-cols-5 gap-12">
               {/* Contact Form - Takes up 3 columns */}
               <div className="lg:col-span-3">
-                <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Get Your Free Estimate</h2>
+                <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Replacement, Storm Damage & Free Roofing Estimates</h2>
                 <p className="text-lg text-charcoal-600 mb-8">
                   Fill out the form below and we'll get back to you within 24 hours with a detailed estimate.
                 </p>

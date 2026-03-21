@@ -69,6 +69,9 @@ export default function Services() {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-12 text-center">
+            Residential Roofing, Commercial Roofing, Gutters & Siding Solutions
+          </h2>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:border-primary-700 transition-all hover:shadow-lg">

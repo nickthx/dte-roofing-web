@@ -52,7 +52,7 @@ export default function EmergencyServices() {
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">When to Call for Emergency Service</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Emergency Tarping, Leak Repair, Storm Damage Response & Temporary Repairs</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Some roofing issues require immediate attention to prevent further damage to your property.
                 Don't wait if you're experiencing any of these emergency situations:

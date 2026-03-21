@@ -185,7 +185,7 @@ export default function Financing() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-4">
-              Multiple Lenders. One Platform. Your Name on It.
+              Roof Replacement, Installation & Siding Financing Options
             </h2>
             <p className="text-lg text-charcoal-600">
               Behind the scenes, our Consumer Credit Center is powered by a lending ecosystem of multiple lenders and products. But you never see that complexity — you only see our platform offering you the most affordable solutions for your project.

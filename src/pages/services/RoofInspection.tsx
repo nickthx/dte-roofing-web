@@ -28,7 +28,7 @@ export default function RoofInspection() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Professional Roof Inspections in Columbus, OH</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Condition Assessments, Storm Damage Inspections & Insurance Claim Reports</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">central Ohio including Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin homeowners</Link>, and Grove City, DTE Roofing provides thorough, honest roof
                 inspections that help local homeowners make informed decisions about their biggest investment.

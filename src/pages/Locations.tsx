@@ -128,7 +128,7 @@ export default function Locations() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
-              Comprehensive Coverage Throughout Central Ohio
+              Roof Repair, Replacement, Storm Damage & Gutter Services Across Central Ohio
             </h2>
             <p className="text-lg text-charcoal-600 leading-relaxed">
               DTE Roofing has built a reputation for excellence across the Columbus metropolitan area. We understand the unique roofing challenges each community faces—from historic preservation requirements in established neighborhoods to storm protection needs in exposed areas. Our local expertise means we respond quickly, understand your community's specific needs, and deliver solutions that protect your home investment.
