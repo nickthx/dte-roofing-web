@@ -17,6 +17,7 @@ export default function NewAlbany() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="new-albany"
         locationName="New Albany"
         pageTitle="Roofers in New Albany, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves New Albany, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair and replacement with owners personally involved in every project."

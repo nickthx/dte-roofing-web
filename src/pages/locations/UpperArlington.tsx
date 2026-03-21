@@ -17,6 +17,7 @@ export default function UpperArlington() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="upper-arlington"
         locationName="Upper Arlington"
         pageTitle="Roofers in Upper Arlington, OH | DTE Roofing"
         pageDescription="Serving Upper Arlington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

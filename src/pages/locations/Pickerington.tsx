@@ -17,6 +17,7 @@ export default function Pickerington() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="pickerington"
         locationName="Pickerington"
         pageTitle="Roofers in Pickerington, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Pickerington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

@@ -17,6 +17,7 @@ export default function Worthington() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="worthington"
         locationName="Worthington"
         pageTitle="Roofers in Worthington, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Worthington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

@@ -17,6 +17,7 @@ export default function Reynoldsburg() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="reynoldsburg"
         locationName="Reynoldsburg"
         pageTitle="Roofers in Reynoldsburg, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Reynoldsburg, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

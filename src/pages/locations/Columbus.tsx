@@ -17,6 +17,7 @@ export default function Columbus() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="columbus"
         locationName="Columbus"
         pageTitle="Roofers in Columbus, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves Columbus, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Detail-first roof repair, replacement, and storm damage help."

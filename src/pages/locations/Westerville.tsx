@@ -17,6 +17,7 @@ export default function Westerville() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="westerville"
         locationName="Westerville"
         pageTitle="Roofers in Westerville, OH | DTE Roofing"
         pageDescription="Serving Westerville, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

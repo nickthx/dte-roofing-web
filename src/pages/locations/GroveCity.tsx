@@ -17,6 +17,7 @@ export default function GroveCity() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="grove-city"
         locationName="Grove City"
         pageTitle="Roofers in Grove City, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Grove City, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

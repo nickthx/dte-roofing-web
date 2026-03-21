@@ -17,6 +17,7 @@ export default function Dublin() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="dublin"
         locationName="Dublin"
         pageTitle="Roofers in Dublin, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves Dublin, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

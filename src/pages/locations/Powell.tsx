@@ -17,6 +17,7 @@ export default function Powell() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="powell"
         locationName="Powell"
         pageTitle="Roofers in Powell, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Powell, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."

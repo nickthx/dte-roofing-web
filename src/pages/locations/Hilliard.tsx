@@ -17,6 +17,7 @@ export default function Hilliard() {
       />
       <SchemaMarkup
         type="location"
+        locationSlug="hilliard"
         locationName="Hilliard"
         pageTitle="Roofers in Hilliard, OH | DTE Roofing"
         pageDescription="Serving Hilliard, OH from our office on Hilliard Rome Rd (615 Hilliard Rome Rd, Columbus, OH 43228 mailing address). Detail-first roof repair and replacement with owners personally involved in every project."
