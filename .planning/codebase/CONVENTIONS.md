@@ -1,190 +1,251 @@
 # Coding Conventions
 
-**Analysis Date:** 2026-03-07
+**Analysis Date:** 2026-03-21
 
 ## Naming Patterns
 
 **Files:**
-- React components: PascalCase (e.g., `src/components/ServicePageTemplate.tsx`, `src/pages/services/RoofRepair.tsx`)
-- Hooks: camelCase with `use` prefix (e.g., `src/hooks/useMultiStepForm.ts`, `src/hooks/useReviewData.ts`)
-- Utility functions: camelCase (e.g., `src/utils/formatPhone.ts`, `src/utils/formValidation.ts`)
-- Library/client files: camelCase (e.g., `src/lib/supabase.ts`)
-- SEO files: camelCase (e.g., `src/seo/constants.ts`, `src/seo/schemas.ts`)
+- Components: PascalCase (e.g., `Navigation.tsx`, `FormField.tsx`)
+- Pages: PascalCase (e.g., `Home.tsx`, `Services.tsx`)
+- Hooks: camelCase with `use` prefix (e.g., `useMultiStepForm.ts`, `useLeadTracking.ts`)
+- Utilities: camelCase (e.g., `formatPhone.ts`, `formValidation.ts`)
+- Data files: camelCase (e.g., `projects.ts`)
+- Directories: kebab-case for multi-word directories (e.g., `lead-form/`, `seo/`, `pages/services/`)
 
 **Functions:**
-- React components: PascalCase function declarations with `export default` (e.g., `export default function Navigation()`)
-- Hooks: camelCase with `use` prefix (e.g., `useMultiStepForm`, `useLeadTracking`)
-- Utility functions: camelCase (e.g., `validateEmail`, `formatPhoneNumber`)
-- Event handlers: camelCase with `handle` prefix (e.g., `handleMouseEnter`, `handleMouseLeave`)
-- Internal helpers: camelCase (e.g., `getOrCreateSessionId`, `getLandingPage`, `getDeviceType`)
+- Component functions: PascalCase (e.g., `Navigation`, `FormField`, `StepService`)
+- Hook functions: camelCase with `use` prefix (e.g., `useMultiStepForm`, `useLeadTracking`)
+- Regular utility functions: camelCase (e.g., `formatPhoneNumber`, `validateEmail`, `validateRequired`, `getOrCreateSessionId`, `getLandingPage`, `getDeviceType`)
+- Internal helper functions: camelCase (e.g., `updateOrCreateMetaTag`, `scrollPrev`, `scrollNext`)
 
 **Variables:**
-- Constants: UPPER_SNAKE_CASE for module-level constants (e.g., `WEBHOOK_URL`, `DEFAULT_REVIEW_COUNT`, `CANONICAL_DOMAIN`, `BUSINESS_INFO`, `SERVICES`, `URGENCY_OPTIONS`)
-- State variables: camelCase (e.g., `isServicesOpen`, `isMobileMenuOpen`, `currentStep`)
-- Boolean state: `is` prefix (e.g., `isSubmitting`, `isServicesOpen`)
+- Const declarations: camelCase (e.g., `formData`, `currentStep`, `isSubmitting`)
+- State variables: camelCase (e.g., `reviewData`, `isOpen`, `isSubmitting`)
+- Constants (all caps): UPPER_SNAKE_CASE (e.g., `WEBHOOK_URL`, `CANONICAL_DOMAIN`, `SERVICES`, `URGENCY_OPTIONS`)
+- Boolean variables: prefixed with `is`, `has`, `should` (e.g., `isSubmitting`, `isServicesOpen`, `isMobileMenuOpen`)
+- Refs: suffixed with `Ref` (e.g., `closeTimeoutRef`, `autoplay`, `emblaRef`)
 
-**Types/Interfaces:**
-- PascalCase (e.g., `LeadFormData`, `FormErrors`, `TrackingData`, `ReviewData`, `ServicePageProps`)
-- Props interfaces: `{ComponentName}Props` suffix (e.g., `MultiStepLeadFormProps`, `FormFieldProps`, `StepServiceProps`)
+**Types:**
+- Interfaces: PascalCase with "Props" suffix for component props, "Data" suffix for data types (e.g., `FormFieldProps`, `LeadFormData`, `TrackingData`, `ReviewData`)
+- Type aliases: PascalCase (e.g., `FormErrors`, `BlogPost`)
+- Discriminant unions: PascalCase (e.g., `'forward' | 'backward'`, `'idle' | 'success' | 'error'`, `'mobile' | 'tablet' | 'desktop'`)
 
 ## Code Style
 
 **Formatting:**
-- No Prettier config detected; relies on editor defaults
-- 2-space indentation
-- Single quotes for string literals
-- Semicolons at end of statements
-- Trailing commas in function parameters and object literals
+- No explicit formatter configured (no Prettier config found)
+- Indentation: 2 spaces (observed in vite.config.ts and component files)
+- Line length: Appears flexible, no strict limit observed
+- Semicolons: Used consistently
+- Trailing commas: Used in multi-line objects/arrays
 
 **Linting:**
-- ESLint flat config at `eslint.config.js`
-- Extends: `@eslint/js` recommended + `typescript-eslint` recommended
-- Plugins: `react-hooks` (recommended rules), `react-refresh` (warn on non-component exports)
-- One `eslint-disable-line` usage observed at `src/components/lead-form/MultiStepLeadForm.tsx:47` for `react-hooks/exhaustive-deps`
+- Tool: ESLint with TypeScript support
+- Config file: `eslint.config.js`
+- Enabled rules:
+  - ESLint recommended rules
+  - TypeScript ESLint recommended rules
+  - React Hooks rules (enforces rules of hooks)
+  - React Refresh rules (only-export-components with allowConstantExport)
+- Key rules:
+  - React components should only export components by default
+  - Constant exports from component files are allowed
+  - Follows React Hooks rules of hooks
 
-**TypeScript:**
-- Strict mode enabled in `tsconfig.app.json`
-- `noUnusedLocals: true`, `noUnusedParameters: true`, `noFallthroughCasesInSwitch: true`
-- Target: ES2020, Module: ESNext, JSX: react-jsx
-- No path aliases configured; all imports use relative paths
+**Comments:**
+- Generally minimal comments; code is self-documenting
+- JSDoc-style blocks used for complex logic (e.g., `updateOrCreateMetaTag` in SEO.tsx)
+- Inline comments used sparingly for clarification:
+  - Example: `// Meta: description` in SEO.tsx
+  - Example: `// Pre-select service based on current page` in MultiStepLeadForm.tsx
+  - Example: `// Store landing page on first load` in useLeadTracking.ts
+- Comments typically explain "why" rather than "what" the code does
 
 ## Import Organization
 
 **Order:**
-1. React imports (`import { useState, useEffect } from 'react'`)
-2. Third-party libraries (`react-router-dom`, `lucide-react`, `@supabase/supabase-js`)
-3. Internal components (`../components/SEO`, `./Navigation`)
-4. Internal hooks (`../hooks/useReviewData`)
-5. Internal utilities/constants (`../seo/constants`, `../utils/formValidation`)
-6. Types (imported inline via `import type` or standard import)
-7. CSS imports (`./index.css`) -- only in entry point `src/main.tsx`
+1. React and React-related imports (React, hooks, Router components)
+2. Third-party libraries (lucide-react, embla-carousel)
+3. Internal components (relative imports from `./components/`)
+4. Internal hooks (relative imports from `./hooks/`)
+5. Internal utilities (relative imports from `./utils/`)
+6. Internal data (relative imports from `./data/`)
+7. SEO/constants (relative imports from `./seo/`)
+8. Type imports (using `import type` when importing only types)
+
+**Examples from codebase:**
+```typescript
+// App.tsx pattern
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Home from './pages/Home';
+// ... more component imports
+
+// Component pattern
+import { useRef, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
+import { carouselProjects } from '../data/projects';
+
+// Hook pattern
+import { useState, useCallback } from 'react';
+import { validateRequired, validateEmail, validatePhone } from '../utils/formValidation';
+import { useLeadTracking } from './useLeadTracking';
+```
 
 **Path Aliases:**
-- None configured. Use relative paths only (e.g., `../../components/ServicePageTemplate`, `../hooks/useMultiStepForm`)
-
-## Component Patterns
-
-**Page Components:**
-- One default export per file: `export default function PageName() { ... }`
-- Located in `src/pages/` or `src/pages/{category}/`
-- Include `<SEO>` and `<SchemaMarkup>` components at the top of every page for SEO
-- Include `<MobileStickyCall />` at the top for mobile CTA
-- Wrap content in `<div className="min-h-screen bg-white">`
-- Use `useReviewData()` hook to display dynamic review counts
-
-**Service Pages:**
-- Use the `ServicePageTemplate` component from `src/components/ServicePageTemplate.tsx`
-- Pass structured data props: `serviceName`, `slug`, `subheadline`, `metaDescription`, `keywords`, `problemPromise`, `whatWeDo`, `processSteps`, `faqs`, `relatedServices`
-- Include `SchemaMarkup` with `type="service"` before the template
-
-**Location Pages:**
-- Self-contained JSX (no shared template yet)
-- Include `<SEO>`, `<SchemaMarkup type="location">`, and location-specific content
-- Follow same layout pattern: hero section, content sections, CTAs
-
-**Reusable Components:**
-- Props defined via TypeScript `interface` directly above the component
-- Default export only (no named exports alongside default)
-- Render `null` for invisible utility components (e.g., `SEO`, `ScrollToTop`, `SchemaMarkup`)
-
-## Tailwind CSS Usage
-
-**Custom Color Palette:** (defined in `tailwind.config.js`)
-- `primary-{shade}`: Red tones (700 = `#b91c1c` is the brand color)
-- `charcoal-{shade}`: Gray tones (900 = `#3d3d3d` for dark text)
-
-**Common Utility Patterns:**
-- Container: `container mx-auto px-4`
-- Section spacing: `py-12`, `py-16`, `py-20`
-- Cards: `bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary-600 transition-all`
-- Primary buttons: `bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-all font-semibold`
-- Text hierarchy: `text-charcoal-900` (headings), `text-charcoal-700` (body), `text-charcoal-600` (secondary)
-- Responsive breakpoints: `md:` and `lg:` prefixes for tablet/desktop
-- Hero sections: `bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white`
-
-**Icon Library:**
-- Use `lucide-react` for all icons
-- Standard sizing: `w-4 h-4` (inline), `w-5 h-5` (nav), `w-6 h-6` (features), `w-12 h-12` (large cards)
+- No path aliases configured (no alias imports observed)
+- Relative imports used consistently
 
 ## Error Handling
 
 **Patterns:**
-- Validation functions return `string | null` (null = valid): see `src/utils/formValidation.ts`
-- Form validation returns `FormErrors` (partial record of field names to error strings): see `src/hooks/useMultiStepForm.ts`
-- Async operations use try/catch with fallback defaults (e.g., `useReviewData` falls back to `DEFAULT_REVIEW_COUNT`)
-- Network requests use `AbortController` with 10-second timeout: see `src/hooks/useMultiStepForm.ts:92-93`
-- Errors logged to `console.error` only
+- Try-catch with generic error handling and fallback values
+- Example in `useReviewData.ts`:
+  ```typescript
+  try {
+    // Attempt to fetch from Supabase
+    // Fall back to Google Sheets if needed
+  } catch (err) {
+    console.error('Failed to load reviews:', err);
+    setError(true);
+    // Use DEFAULT_REVIEW_COUNT fallback
+  }
+  ```
+- Form validation errors stored in state: `errors` object with field-level error messages
+- Network request errors handled with status checks:
+  ```typescript
+  if (!response.ok) throw new Error('Submission failed');
+  ```
+- Timeout handling: AbortController used for fetch requests with 10-second timeout
 
-**Form Error Display:**
-- Inline error messages below fields using `<p className="text-sm text-red-600">` with `AlertCircle` icon
-- ARIA attributes: `aria-invalid` and `aria-describedby` on form inputs: see `src/components/lead-form/FormField.tsx`
-- Errors cleared when user updates the corresponding field
+**Error States:**
+- Form submissions: `submitStatus` tracks 'idle', 'success', 'error'
+- Async data loading: Separate loading/error state variables (e.g., `loading`, `error` in useReviewData)
+- User-facing errors: Display error messages from validation map to specific form fields
 
 ## Logging
 
-**Framework:** `console` (browser native)
+**Framework:** `console.error()` (no structured logging library)
 
 **Patterns:**
-- `console.error` for caught exceptions (e.g., `console.error('Failed to load reviews:', err)` in `src/hooks/useReviewData.ts:69`)
-- No structured logging framework
-- No debug/info level logging observed
+- Error logging: `console.error('Failed to load reviews:', err)` in `useReviewData.ts`
+- No info/warning/debug logging observed
+- Errors logged to console for development visibility
+- Minimal logging in production (error cases only)
 
-## Comments
+## Type Annotations
 
-**When to Comment:**
-- Block comments for complex UI behavior explanations (see `src/components/Navigation.tsx:68-75` dropdown fix documentation)
-- JSDoc-style block comments for component purpose documentation (see `src/components/ScrollToTop.tsx:4-22`)
-- Inline `// TODO:` comments for planned work (see `src/components/ServicePageTemplate.tsx:192`)
-
-**JSDoc/TSDoc:**
-- Sparingly used; only on utility modules (`src/seo/schemas.ts:1-3`, `src/seo/constants.ts:1-3`)
-- Not required on components or hooks
+**Pattern:**
+- All function parameters typed (TypeScript strict mode enabled)
+- All return types explicitly annotated on exported functions
+- Component props interfaces defined inline or at module level
+- Type imports use `import type` syntax:
+  ```typescript
+  import type { LeadFormData, FormErrors } from '../../../hooks/useMultiStepForm';
+  ```
 
 ## Function Design
 
-**Size:** Components are typically 30-350 lines. Large page components (Home, ServicePageTemplate) can reach 300+ lines of JSX.
+**Size:**
+- Small, focused functions (typically 20-50 lines)
+- Hooks kept concise with single responsibility
+- Utility functions kept to single operation (e.g., `formatPhoneNumber`, `validateEmail`)
 
 **Parameters:**
-- Components receive props via destructured interface objects
-- Hooks accept primitive configuration parameters (e.g., `formSource: string`)
-- Callbacks pass values directly, not events (e.g., `onChange: (value: string) => void` not `onChange: (e: ChangeEvent) => void`)
+- Props passed as object destructuring (typical React pattern)
+- Example: `function Navigation() { const [isOpen, setIsOpen] = useState(false); }`
+- Callback props follow naming convention: `onNext`, `onBack`, `onSelect`, `onSubmit`, `onChange`
 
 **Return Values:**
-- Components return JSX or `null`
-- Hooks return object with named properties (e.g., `{ reviewData, loading, error }`)
-- Validation functions return `string | null`
+- Functions return typed values or void
+- Hooks return objects with named properties
+- Components return JSX or null
+- Utility functions return primitives (string, boolean) or objects
+
+## State Management
+
+**Pattern:**
+- React hooks only (useState, useRef, useEffect, useCallback)
+- No Redux, Context API, or other state library
+- State updates with setter functions from useState
+- Callback memoization with useCallback for event handlers
+- Refs used for non-state values that shouldn't trigger re-renders (e.g., timeouts, carousel refs)
+
+**Example pattern:**
+```typescript
+const [currentStep, setCurrentStep] = useState(0);
+const [errors, setErrors] = useState<FormErrors>({});
+const updateField = useCallback((name: keyof LeadFormData, value: string) => {
+  setFormData(prev => ({ ...prev, [name]: value }));
+}, [errors]);
+```
+
+## JSX Patterns
+
+**Component Structure:**
+- Single component per file (except index files)
+- Props destructured in function signature
+- Minimal inline styles (Tailwind CSS preferred)
+- Event handlers defined with arrow functions or useCallback
+- Conditional rendering with ternary operators or && operator
+
+**Example:**
+```typescript
+export default function FormField({
+  label,
+  name,
+  type = 'text',
+  value,
+  onChange,
+  error,
+}: FormFieldProps) {
+  const inputClass = `w-full px-4 py-3 rounded-lg border-2 ${
+    error ? 'border-red-500' : 'border-gray-300'
+  }`;
+
+  return (
+    <div>
+      <label htmlFor={name}>{label}</label>
+      {multiline ? (
+        <textarea ... />
+      ) : (
+        <input ... />
+      )}
+      {error && <p>{error}</p>}
+    </div>
+  );
+}
+```
 
 ## Module Design
 
 **Exports:**
-- One `export default` per component file
-- Named exports for types/interfaces alongside default (e.g., `export interface LeadFormData` in `src/hooks/useMultiStepForm.ts`)
-- Named exports for utility functions (e.g., `export function validateEmail` in `src/utils/formValidation.ts`)
-- Named exports for constants (e.g., `export const CANONICAL_DOMAIN` in `src/seo/constants.ts`)
+- Components: `export default function ComponentName()`
+- Hooks: `export function useHookName()` or `export const useHookName = () => {}`
+- Data: `export const dataArray: Type[] = [...]`
+- Types: `export interface InterfaceName {}` or `export type TypeName = ...`
+- Utilities: `export function utilityName()` or `export const utilityName = () => {}`
 
 **Barrel Files:**
-- Not used. Import directly from the file.
+- Not used in this codebase
+- Direct imports from specific files preferred
 
-## SEO Conventions
+**Constants:**
+- Defined at module level (above components)
+- Example: `const WEBHOOK_URL = '...'` in useMultiStepForm.ts
+- Example: `const SERVICES = [...]` in StepService.tsx
 
-**Every page must include:**
-1. `<SEO>` component with `title`, `description`, `keywords`, and `canonical` props
-2. `<SchemaMarkup>` component with appropriate `type` and page metadata
-3. Canonical URLs use `CANONICAL_DOMAIN` constant from `src/seo/constants.ts`
+## Naming Edge Cases
 
-**Schema.org patterns:**
-- Business info centralized in `BUSINESS_INFO` constant in `src/components/SchemaMarkup.tsx`
-- Schema types: `RoofingContractor`, `Service`, `FAQPage`, `BreadcrumbList`, `WebPage`
-- Schemas injected via `useEffect` DOM manipulation (not SSR)
+**Map fields:**
+- Service mapping object: `serviceMap: Record<string, string>` (maps URL slugs to form values)
 
-## Routing Conventions
-
-**URL patterns:**
-- Services: `/services/{kebab-case-name}` (e.g., `/services/roof-repair`)
-- Locations: `/locations/{kebab-case-city}` (e.g., `/locations/grove-city`)
-- Redirects: Use `<Navigate to="/target" replace />` for legacy/alternate URLs
-- All routes defined in `src/App.tsx` -- no lazy loading
+**Destructuring:**
+- Consistent use of object destructuring for component props
+- Array destructuring for hooks: `const [state, setState] = useState(initialValue)`
 
 ---
 
-*Convention analysis: 2026-03-07*
+*Convention analysis: 2026-03-21*

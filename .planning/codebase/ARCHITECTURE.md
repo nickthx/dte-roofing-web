@@ -1,175 +1,167 @@
 # Architecture
 
-**Analysis Date:** 2026-03-07
+**Analysis Date:** 2026-03-21
 
 ## Pattern Overview
 
-**Overall:** Single-Page Application (SPA) with client-side routing
+**Overall:** Component-driven SPA (Single Page Application) with client-side routing
 
 **Key Characteristics:**
-- React SPA built with Vite, deployed on Vercel with SPA fallback rewrites
-- Client-side routing via React Router v7 (`BrowserRouter`)
-- No SSR/SSG — all rendering happens in the browser; SEO meta tags are injected via DOM manipulation in `useEffect`
-- Flat page-based architecture with no state management library (local component state only)
-- Supabase used as lightweight backend for blog posts and review data
-- Lead form submissions sent to external n8n webhook
+- React 18 with TypeScript for type-safe component development
+- React Router v7 for multi-page routing and navigation
+- Custom hook-based state management for form and data handling
+- Responsive Tailwind CSS styling with custom utility configuration
+- API integration via Supabase SDK for dynamic content and webhooks for lead capture
+- SEO-optimized with meta tag manipulation and structured schema markup in-component
 
 ## Layers
 
-**Entry Point / Shell:**
-- Purpose: Bootstrap React, define routes, wrap pages in shared layout
-- Location: `src/main.tsx`, `src/App.tsx`
-- Contains: Router setup, all route definitions, layout shell (Navigation + Footer)
-- Depends on: All page components, `src/components/Navigation.tsx`, `src/components/Footer.tsx`, `src/components/ScrollToTop.tsx`
-
-**Pages:**
-- Purpose: Full page components, one per route
-- Location: `src/pages/`
-- Contains: Page-level content, SEO component usage, SchemaMarkup injection
-- Depends on: Shared components, hooks, SEO utilities
-- Used by: `src/App.tsx` route definitions
-
-**Service Pages (Template-Driven):**
-- Purpose: SEO-optimized service landing pages using a shared template
-- Location: `src/pages/services/`
-- Contains: Data objects (FAQs, process steps, features) passed as props to `ServicePageTemplate`
-- Depends on: `src/components/ServicePageTemplate.tsx`, `src/components/SchemaMarkup.tsx`
-- Pattern: Each service page is a thin wrapper that passes content props to the template
-
-**Location Pages (Custom):**
-- Purpose: Geo-targeted landing pages for local SEO
-- Location: `src/pages/locations/`
-- Contains: Fully custom JSX per location (not template-driven)
-- Depends on: `src/components/SEO.tsx`, `src/components/SchemaMarkup.tsx`, `src/hooks/useReviewData.ts`
-
-**Shared Components:**
-- Purpose: Reusable UI elements used across pages
+**Presentation Layer (UI Components):**
+- Purpose: Display and user interaction
 - Location: `src/components/`
-- Contains: Navigation, Footer, SEO, SchemaMarkup, MobileStickyCall, RoofQuoteButton, SidebarTrustBadges, ServiceLeadForm, ServicePageTemplate
-- Depends on: Hooks, utilities, lucide-react icons
+- Contains: React components (Pages, Forms, Layout, Reusable UI)
+- Depends on: Hooks, utilities, styling (Tailwind)
+- Used by: React Router and parent components
 
-**Lead Form System:**
-- Purpose: Multi-step lead capture form with validation and webhook submission
-- Location: `src/components/lead-form/`
-- Contains: `MultiStepLeadForm.tsx` (orchestrator), step components (`StepService`, `StepAddress`, `StepContact`, `StepResult`), UI primitives (`FormField`, `FormProgressBar`, `ServiceOptionCard`, `UrgencyPill`)
-- Depends on: `src/hooks/useMultiStepForm.ts`, `src/hooks/useLeadTracking.ts`, `src/utils/formValidation.ts`
+**Pages/Route Layer:**
+- Purpose: Route-specific page compositions
+- Location: `src/pages/` and `src/pages/services/`, `src/pages/locations/`
+- Contains: Page components that map to routes, template-based service/location pages
+- Depends on: Presentation components, hooks, SEO utilities
+- Used by: React Router (App.tsx)
 
-**Hooks:**
-- Purpose: Custom React hooks for data fetching and form logic
+**State Management & Business Logic (Hooks):**
+- Purpose: Complex state handling, API calls, tracking
 - Location: `src/hooks/`
-- Contains: `useReviewData.ts` (fetches review stats from Supabase with Google Sheets fallback), `useMultiStepForm.ts` (form state machine), `useLeadTracking.ts` (UTM/session tracking)
-- Used by: Pages and components
+- Contains: Custom hooks (useMultiStepForm, useReviewData, useLeadTracking)
+- Depends on: Utils, lib (Supabase), external APIs
+- Used by: Components and pages
 
-**Utilities:**
-- Purpose: Pure helper functions
+**Data Layer:**
+- Purpose: Static data, type definitions, constants
+- Location: `src/data/` and `src/seo/`
+- Contains: Project carousel data, SEO constants, schema definitions
+- Depends on: None
+- Used by: Components, hooks, pages
+
+**Integration Layer:**
+- Purpose: Third-party service clients
+- Location: `src/lib/supabase.ts`
+- Contains: Supabase client initialization, blog post types
+- Depends on: Supabase SDK
+- Used by: Hooks (useReviewData)
+
+**Utility/Helper Layer:**
+- Purpose: Reusable functions and validators
 - Location: `src/utils/`
-- Contains: `formValidation.ts` (email, phone, required validators), `formatPhone.ts` (phone formatting)
-
-**SEO Layer:**
-- Purpose: Meta tag management and structured data injection
-- Location: `src/components/SEO.tsx`, `src/components/SchemaMarkup.tsx`, `src/seo/`
-- Contains: DOM-based meta tag updater (`SEO.tsx`), Schema.org JSON-LD generator (`SchemaMarkup.tsx`), constants (`src/seo/constants.ts`), schema definitions (`src/seo/schemas.ts`)
-- Pattern: Each page calls `<SEO />` for meta tags and `<SchemaMarkup />` for structured data
-
-**Supabase Backend:**
-- Purpose: Database and edge functions
-- Location: `src/lib/supabase.ts`, `supabase/`
-- Contains: Client initialization, edge function for review data updates, database migration
-- Tables: `review_data` (review statistics), `blog_posts` (blog content)
+- Contains: Form validation, phone formatting
+- Depends on: None
+- Used by: Hooks and components
 
 ## Data Flow
 
-**Review Data Flow:**
-1. `useReviewData` hook queries Supabase `review_data` table
-2. Falls back to Google Sheets API if Supabase returns no data
-3. Falls back to hardcoded default (92 reviews, 5.0 rating) on error
-4. Review counts are displayed in `ServicePageTemplate`, `Footer`, `Home`, location pages, and `SchemaMarkup`
-
 **Lead Form Submission Flow:**
-1. User fills multi-step form (Service -> Address -> Contact)
-2. `useMultiStepForm` hook manages state, per-step validation, and submission
-3. `useLeadTracking` captures UTM params, referrer, device type, session ID
-4. On submit, form data + tracking data POSTed to n8n webhook at `https://n8n.whitflow.com/webhook/dte-form-submissions`
-5. Success/error result shown on step 4
 
-**Blog Content Flow:**
-1. `Blog.tsx` queries Supabase `blog_posts` table for published posts
-2. `BlogPost.tsx` fetches individual post by slug
-3. Content stored as `content_html` (raw HTML rendered in browser)
+1. User lands on page with MultiStepLeadForm component (`src/components/lead-form/MultiStepLeadForm.tsx`)
+2. useMultiStepForm hook manages form state, validation, and submission logic
+3. Each step (Service, Address, Contact) is a separate component that updates form state via `updateField()`
+4. User submits → `submit()` validates final step
+5. Payload constructed with form data + tracking data (from useLeadTracking)
+6. POST to n8n webhook: `https://n8n.whitflow.com/webhook/dte-form-submissions`
+7. Success/Error result triggers StepResult component
+8. Tracking includes: UTM params, referrer, device type, session ID, landing page
 
-**State Management:**
-- No global state management library (no Redux, Zustand, Context, etc.)
-- All state is local to components via `useState`
-- Data fetching happens in individual components/hooks via `useEffect`
+**Review Data Fetch Flow:**
+
+1. Components using review count (Home, service pages) call useReviewData hook
+2. Hook attempts to fetch from Supabase `review_data` table
+3. If Supabase fails or no data: Falls back to Google Sheets API
+4. Default fallback: 92 reviews, 5.0 rating
+5. Data cached in component state until page reload
+
+**Page Rendering Flow:**
+
+1. main.tsx initializes React in DOM
+2. App.tsx sets up Router and wraps app with Navigation/Footer
+3. User navigates → Router matches path to Route component
+4. Route component renders page (Home.tsx, About.tsx, service pages)
+5. Page fetches review data via hook, renders SEO component, renders structured schema
+6. Components consume data, render based on props and state
 
 ## Key Abstractions
 
-**ServicePageTemplate:**
-- Purpose: Standardized service page layout with hero, problem/promise, process steps, FAQs, proof section, lead form sidebar
-- Location: `src/components/ServicePageTemplate.tsx`
-- Pattern: Receives all content as props (`ServicePageProps` interface); each service page passes unique content to the same template
-- Interface: `{ serviceName, slug, subheadline, metaDescription, keywords, problemPromise, whatWeDo, processSteps, faqs, relatedServices }`
+**ServicePageTemplate Component:**
+- Purpose: DRY pattern for 12+ service pages with identical structure
+- Examples: `src/pages/services/RoofRepair.tsx`, `src/pages/services/RoofInstallation.tsx`, `src/pages/services/Gutters.tsx`
+- Pattern: Service pages pass config object (serviceName, slug, content sections, FAQs) to template component which handles layout, SEO, schema generation
 
-**SchemaMarkup:**
-- Purpose: Generates and injects Schema.org JSON-LD based on page type
-- Location: `src/components/SchemaMarkup.tsx`
-- Pattern: Accepts `type` prop (`home`, `service`, `faq`, `location`, `general`) and generates appropriate schemas (LocalBusiness, Service, FAQ, Breadcrumb, WebPage)
-- Injects scripts into `document.head` via `useEffect`, cleans up on unmount
+**MultiStepLeadForm Hook:**
+- Purpose: Encapsulate complex multi-step form logic (state, validation, submission)
+- Location: `src/hooks/useMultiStepForm.ts`
+- Exports: Form data, errors, step navigation, submission handlers
+- Pattern: Custom hook exposes interface allowing components to be form-agnostic; stepValidators map validates each step
 
-**SEO Component:**
-- Purpose: Updates `<title>`, meta description, keywords, OG tags, canonical URL
-- Location: `src/components/SEO.tsx`
-- Pattern: DOM manipulation in `useEffect` — creates or updates meta tags directly since there is no SSR framework
+**SEO Components:**
+- Purpose: Meta tag injection and structured data markup
+- Examples: `SEO.tsx` (meta tags), `SchemaMarkup.tsx` (JSON-LD), `SeoSchema.tsx` (schema helpers)
+- Pattern: Effects-based meta manipulation at page/component mount time; schema objects defined in `src/seo/schemas.ts`
 
-**MultiStepLeadForm:**
-- Purpose: 4-step lead capture wizard
-- Location: `src/components/lead-form/MultiStepLeadForm.tsx`
-- Pattern: Step-based form with `useMultiStepForm` hook managing current step, validation, and submission. Each step is a separate component receiving form state and callbacks as props.
+**Project/Portfolio Data:**
+- Purpose: Centralized, type-safe carousel and gallery data
+- Location: `src/data/projects.ts`
+- Pattern: Static TypeScript array with Project interface; exported subsets (carouselProjects) for selective consumption
 
 ## Entry Points
 
-**Browser Entry:**
-- Location: `index.html` -> `src/main.tsx`
-- Triggers: Browser navigation to any URL
-- Responsibilities: Mounts React app into `#root` div, loads global CSS (`src/index.css`)
+**Application Entry (main.tsx):**
+- Location: `src/main.tsx`
+- Triggers: Browser page load
+- Responsibilities: DOM mounting, React initialization, StrictMode wrapping
 
-**Routing Entry:**
+**Router Entry (App.tsx):**
 - Location: `src/App.tsx`
-- Triggers: All client-side navigation
-- Responsibilities: Maps ~40 URL paths to page components, renders Navigation/Footer shell, handles redirects (e.g., `/home` -> `/`, `/team` -> `/services`)
+- Triggers: After React initialization
+- Responsibilities: Route definitions (40+ routes), layout wrapper (Nav/Footer), form service mapping via defaultService prop
 
-**Supabase Edge Function:**
-- Location: `supabase/functions/update-reviews/index.ts`
-- Triggers: HTTP GET (read reviews) or POST (update reviews) from external webhook
-- Responsibilities: CRUD operations on `review_data` table
+**Home Page (Home.tsx):**
+- Location: `src/pages/Home.tsx`
+- Triggers: Route "/"
+- Responsibilities: Hero section, mission statement, founder story, work carousel, CTA sections
 
-**External Widget:**
-- Location: `index.html` (script tag)
-- Triggers: Page load
-- Responsibilities: Loads Roofle roof-quote-pro slideout widget (`https://app.roofle.com/roof-quote-pro-widget.js`)
+**Service Pages (RoofRepair.tsx, etc.):**
+- Location: `src/pages/services/*.tsx`
+- Triggers: Routes like "/services/roof-repair"
+- Responsibilities: Wrap ServicePageTemplate with service-specific content config
+
+**Lead Form Entry Points:**
+- Locations: Embedded in Home, service pages, dedicated InstantQuote page
+- Trigger: User clicks "Get Quote" or dedicated form page
+- Responsibilities: Collect lead info, submit to webhook, display result
 
 ## Error Handling
 
-**Strategy:** Graceful degradation with fallback defaults
+**Strategy:** Client-side try-catch with fallback defaults; no centralized error boundary detected
 
 **Patterns:**
-- `useReviewData`: Three-tier fallback (Supabase -> Google Sheets -> hardcoded defaults). Errors logged to console, never shown to users.
-- `useMultiStepForm`: 10-second timeout on webhook POST via `AbortController`. Shows error state on step 4 with retry option.
-- Blog fetching: Errors logged to console; empty post list displayed on failure.
-- No global error boundary component exists.
+- Form validation: stepValidators check fields, setErrors on component state
+- API failures: useReviewData catches fetch errors, displays fallback review count (92)
+- Lead submission: Fetch wrapped in try-catch with 10s timeout; error sets submitStatus='error' and shows StepResult error screen
+- Webhook timeouts: AbortController with 10000ms timeout prevents hanging requests
 
 ## Cross-Cutting Concerns
 
-**Logging:** Console-only (`console.error` for data fetch failures). No structured logging or external error tracking.
+**Logging:** No explicit logging framework; console.error used in hooks (useReviewData)
 
-**Validation:** Custom validators in `src/utils/formValidation.ts` — required field, email regex, 10-digit phone number. Applied per-step in `useMultiStepForm`.
+**Validation:** Form validation via utility functions (validateRequired, validateEmail, validatePhone in `src/utils/formValidation.ts`); step-based validators in useMultiStepForm hook
 
-**Authentication:** None. The site is fully public. Supabase RLS allows anonymous reads. Service role key used only in edge functions (server-side).
+**Authentication:** None required (public site); Supabase anon key allows read-only DB access
 
-**SEO:** Every page uses `<SEO />` for meta tags and most use `<SchemaMarkup />` for structured data. Canonical URLs reference `https://www.dteroofingllc.com`.
+**SEO/Meta Management:** Programmatic meta tag injection via SEO component effects; JSON-LD schema injected via `<script type="application/ld+json">` in page templates
 
-**Responsive Design:** Tailwind responsive breakpoints (`md:`, `lg:`). Mobile-specific components: `MobileStickyCall.tsx` (sticky call button), mobile navigation menu, mobile bottom CTA bar on service pages.
+**Lead Tracking:** useLeadTracking hook captures UTM params, referrer, device type, session ID, landing page; bundled into form payload
+
+**Styling:** Global Tailwind CSS via `src/index.css`; custom color variables (--charcoal-900, --primary-700, etc.) defined in Tailwind config; no CSS modules or styled-components
 
 ---
 
-*Architecture analysis: 2026-03-07*
+*Architecture analysis: 2026-03-21*

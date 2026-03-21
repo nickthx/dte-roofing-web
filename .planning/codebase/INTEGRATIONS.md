@@ -1,135 +1,137 @@
 # External Integrations
 
-**Analysis Date:** 2026-03-07
+**Analysis Date:** 2026-03-21
 
 ## APIs & External Services
 
-**Roofle (Roof Quote Widget):**
-- Purpose: Instant satellite-based roof quote calculator
-- Widget ID: `zEGtbFpfjh6Snz6t4Tz23`
-- Two integration modes:
-  1. **Slideout widget** - Loaded globally via `index.html` script tag (`https://app.roofle.com/roof-quote-pro-widget.js`)
-  2. **Embedded widget** - Loaded in iframe via `public/roofle-embed.html` (`https://app.roofle.com/roof-quote-pro-embedded-widget.js`), rendered on `/get-a-quote-consultation` page (`src/pages/InstantQuote.tsx`)
-- Auth: None (public widget, keyed by widget ID in URL)
-- Preconnect configured in `index.html`: `https://app.roofle.com`
+**Form Processing & Workflow Automation:**
+- n8n (Whitflow) - Form submission webhooks for lead capture and workflow automation
+  - Lead form webhook: `https://n8n.whitflow.com/webhook/dte-form-submissions`
+    - Implementation: `src/hooks/useMultiStepForm.ts` (lines 17, 107-112)
+    - Receives: Service, urgency, address, contact info, tracking data, form source, device info
+  - Financing form webhook: `https://n8n.whitflow.com/webhook/dte-financing-submissions`
+    - Implementation: `src/pages/Financing.tsx` (line 7, 70-74)
+    - Receives: Financing product, name, email, phone, project description, tracking data
 
-**n8n Webhook (Form Submissions):**
-- Purpose: Receives all lead form submissions
-- Endpoint: `https://n8n.whitflow.com/webhook/dte-form-submissions`
-- Method: POST with JSON payload
-- Called from: `src/hooks/useMultiStepForm.ts` (line 107)
-- Payload includes: form data, UTM parameters, referrer, device type, session ID, landing page, timestamps
-- Auth: None (open webhook endpoint)
-- Timeout: 10 seconds with `AbortController`
+**Quote/Assessment Tools:**
+- Roofle - Roof measurement and quote widget
+  - Widget ID: `zEGtbFpfjh6Snz6t4Tz23`
+  - Integration: Async script in `index.html` (line 36)
+  - Provides: Interactive roof quote estimation interface
+  - Pre-connection: `https://app.roofle.com` in HTML head
 
-**Google Sheets (Fallback Review Data):**
-- Purpose: Fallback source for review counts when Supabase is unavailable
-- Spreadsheet: `https://docs.google.com/spreadsheets/d/1ZZ3-sLfyRXhls8tPGe6hxK_W5vEfkO0XnHCxbwBNtCY`
-- Access: Public read via Google Visualization API (`/gviz/tq?tqx=out:json`)
-- Called from: `src/hooks/useReviewData.ts` (line 53)
-- Data extracted: Total reviews count and average rating from row A2:D2
-- Auth: None (publicly shared sheet)
+**Maps & Location Services:**
+- Google Maps - Directions and location services
+  - Integration: Location pages use Google Maps Directions API links
+  - Endpoints in: `src/pages/locations/*.tsx` files
+  - Format: `https://www.google.com/maps/dir/?api=1&origin={origin}&destination={destination}`
+  - Example: `src/pages/locations/Columbus.tsx` - Directions from city to office (615 Hilliard Rome Rd, Columbus, OH 43228)
+  - Maps Business Profile: `https://www.google.com/maps/place/DTE+Roofing+LLC`
+
+**Google Sheets - Review Data (Fallback):**
+- Google Sheets API - Fallback source for review aggregation
+  - Spreadsheet ID: `1ZZ3-sLfyRXhls8tPGe6hxK_W5vEfkO0XnHCxbwBNtCY`
+  - Implementation: `src/hooks/useReviewData.ts` (line 53)
+  - Query: Range A2:D2 (total reviews, average rating)
+  - When used: Falls back when Supabase review_data table is unavailable
+  - Default fallback: 92 reviews at 5.0 rating
 
 ## Data Storage
 
-**Supabase (PostgreSQL):**
-- Project URL: `https://ujasdbelviyamnwxjgth.supabase.co`
-- Client: `@supabase/supabase-js` v2, initialized in `src/lib/supabase.ts`
-- Auth: Anon key (public, hardcoded in `src/lib/supabase.ts`)
-- RLS: Enabled on all tables
+**Databases:**
+- Supabase (PostgreSQL)
+  - Project URL: `https://ujasdbelviyamnwxjgth.supabase.co`
+  - Client: `@supabase/supabase-js` 2.57.4
+  - Initialized: `src/lib/supabase.ts`
+  - Tables:
+    - `review_data` - Stores aggregated review metrics (total_reviews, average_rating, star counts)
+    - `blog_posts` - Expected for blog functionality (schema in `src/lib/supabase.ts` BlogPost interface)
+  - Auth: Anon key (public key for read-only/client operations)
 
-**Tables:**
-
-| Table | Purpose | Read By | Write By |
-|-------|---------|---------|----------|
-| `review_data` | Stores review statistics (count, rating, star breakdown) | Frontend (`src/hooks/useReviewData.ts`), anon role | Edge Function (`supabase/functions/update-reviews/index.ts`), service_role |
-| `blog_posts` | Blog content (title, slug, excerpt, content_html, tags, city, state) | Frontend (`src/pages/Blog.tsx`, `src/pages/BlogPost.tsx`), anon role | Not written by app code |
-
-**Migration:** `supabase/migrations/20260104060111_create_review_data_table.sql`
+**Blog Content:**
+- Supabase database table: `blog_posts`
+  - Query implementation: `src/pages/Blog.tsx`, `src/pages/BlogPost.tsx`
+  - Fields: id, title, slug, excerpt, content_html, tags, city, state, published_at, created_at, status
+  - Use: Blog listing and individual post pages with routing via slug
 
 **File Storage:**
-- Local filesystem only via `public/images/` and `public/data/`
-- Static blog data fallback: `public/data/blog-posts.json`
-- No Supabase Storage or S3 integration
+- Local filesystem only - No cloud file storage configured
+- Static assets: Served from `public/` directory (favicon, manifest)
+- Image hosting: Assumed external (not configured in codebase - verify setup separately)
 
 **Caching:**
-- None - No client-side or server-side caching layer
-
-## Supabase Edge Functions
-
-**`update-reviews`** (`supabase/functions/update-reviews/index.ts`):
-- Runtime: Deno (Supabase Edge Functions)
-- Purpose: CRUD endpoint for review data
-- Methods: GET (read latest), POST (upsert review stats)
-- Auth: Uses `SUPABASE_SERVICE_ROLE_KEY` env var (server-side only)
-- CORS: Open (`*`)
-- Accepts optional `api_key` field in payload (not validated - appears unused)
+- Session storage only - Uses browser sessionStorage for:
+  - Session ID tracking: `dte_session_id` in `src/hooks/useLeadTracking.ts`
+  - Landing page capture: `dte_landing_page` in `src/hooks/useLeadTracking.ts`
+- No server-side caching layer detected
 
 ## Authentication & Identity
 
 **Auth Provider:**
-- None - No user authentication system
-- Supabase anon key used for public read access
-- No login, registration, or session management
+- Supabase Auth - Implicit (anon key allows public read access)
+  - No explicit login/authentication flow detected
+  - Anon key: Public key in `src/lib/supabase.ts` (hardcoded)
+  - RLS (Row Level Security): Not enforced in sample queries - public read access
+
+**User Tracking:**
+- Custom tracking via UTM parameters and session data
+  - Implementation: `src/hooks/useLeadTracking.ts`
+  - Captured: UTM source/medium/campaign/term/content, referrer, landing page, device type, screen resolution, user agent, session ID
+  - Passed to: Form webhooks (n8n) for lead attribution
 
 ## Monitoring & Observability
 
 **Error Tracking:**
-- None - No Sentry, LogRocket, or similar service
+- Not detected (no Sentry, Rollbar, or similar integration)
 
 **Logs:**
-- `console.error` only, used sparingly in catch blocks
-- No structured logging framework
-
-**Analytics:**
-- Google Search Console verified via `public/google8b9154de5f852879.html` and `public/google9705395f5d9904eb.html`
-- No Google Analytics, Plausible, or similar detected in codebase
-- UTM parameter tracking captured in lead form submissions (`src/hooks/useLeadTracking.ts`) and sent to n8n webhook
+- Console logging only (development via `console.error` in `src/hooks/useReviewData.ts`)
+- No application performance monitoring configured
+- Form submission errors logged to console on failure
 
 ## CI/CD & Deployment
 
 **Hosting:**
-- Vercel - SPA deployment
-- Config: `vercel.json` with SPA rewrite fallback and `/home -> /` redirect
-- Domain: `www.dteroofingllc.com`
+- Vercel - Static site hosting
+  - Configuration: `vercel.json`
+  - Rewrites: All requests routed to `index.html` for SPA routing
+  - Redirect: `/home` → `/` (permanent)
 
 **CI Pipeline:**
-- None detected - No GitHub Actions, Vercel build hooks, or CI config files
+- Not detected in codebase (likely configured in Vercel dashboard or GitHub)
 
 ## Environment Configuration
 
-**Required env vars (Supabase Edge Functions only):**
-- `SUPABASE_URL` - Supabase project URL (auto-injected in Edge Functions)
-- `SUPABASE_SERVICE_ROLE_KEY` - Service role key for write access (auto-injected in Edge Functions)
-
-**Client-side config:**
-- Supabase URL and anon key are hardcoded in `src/lib/supabase.ts` (not environment variables)
-- No `.env` files detected in repo
+**Required env vars:**
+- Currently not env-based (hardcoded in source files - security concern)
+- Should be externalized:
+  - `VITE_SUPABASE_URL` - Supabase project URL
+  - `VITE_SUPABASE_ANON_KEY` - Supabase anonymous key
+  - `VITE_N8N_WEBHOOK_FORM` - Lead form webhook URL
+  - `VITE_N8N_WEBHOOK_FINANCING` - Financing form webhook URL
+  - `VITE_ROOFLE_WIDGET_ID` - Roofle widget identifier
 
 **Secrets location:**
-- Supabase Edge Function secrets managed via Supabase dashboard
-- Vercel environment variables (if any) managed via Vercel dashboard
+- `.env` file is gitignored (listed in `.gitignore`)
+- Currently not implemented - credentials hardcoded in source
 
 ## Webhooks & Callbacks
 
 **Incoming:**
-- `supabase/functions/update-reviews` - POST endpoint accepts review data updates from external systems (e.g., review aggregator, manual trigger)
+- n8n webhooks receive form submissions (POST)
+  - Lead form: `https://n8n.whitflow.com/webhook/dte-form-submissions`
+  - Financing form: `https://n8n.whitflow.com/webhook/dte-financing-submissions`
+  - Payload format: JSON with form data, UTM params, device info, timestamps
 
 **Outgoing:**
-- Lead form submissions POST to `https://n8n.whitflow.com/webhook/dte-form-submissions` from `src/hooks/useMultiStepForm.ts`
+- Not detected (n8n may trigger outgoing webhooks internally, but frontend doesn't initiate them)
 
-## SEO Integrations
+## Third-Party Scripts
 
-**Schema.org Structured Data:**
-- `RoofingContractor` local business schema defined in `src/seo/schemas.ts`
-- Rendered by `src/components/SchemaMarkup.tsx` and `src/components/seo/SeoSchema.tsx`
-- Dynamic meta tags managed by `src/components/SEO.tsx` (imperative DOM manipulation)
-
-**Social Media Profiles:**
-- Facebook: `https://www.facebook.com/people/DTE-Roofing/61556271692460/`
-- Instagram: `https://www.instagram.com/dte_roofing/`
-- Referenced in `src/seo/schemas.ts` `sameAs` array
+**Third-party integrations loaded:**
+- Roofle quote widget: `https://app.roofle.com/roof-quote-pro-widget.js` (async)
+- Google Fonts: Preconnected at `https://fonts.googleapis.com`
 
 ---
 
-*Integration audit: 2026-03-07*
+*Integration audit: 2026-03-21*

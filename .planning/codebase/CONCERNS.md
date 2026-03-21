@@ -1,195 +1,304 @@
 # Codebase Concerns
 
-**Analysis Date:** 2026-03-07
+**Analysis Date:** 2026-03-21
 
 ## Tech Debt
 
-**Massive Code Duplication in Location Pages:**
-- Issue: 13 location pages (`src/pages/locations/*.tsx`) are ~470-504 lines each of nearly identical hand-written JSX. They differ only in city name, neighborhood references, and minor copy. None use the shared template pattern.
-- Files: `src/pages/locations/Dublin.tsx`, `src/pages/locations/Powell.tsx`, `src/pages/locations/Hilliard.tsx`, `src/pages/locations/Columbus.tsx`, `src/pages/locations/Delaware.tsx`, `src/pages/locations/Gahanna.tsx`, `src/pages/locations/GroveCity.tsx`, `src/pages/locations/NewAlbany.tsx`, `src/pages/locations/Pickerington.tsx`, `src/pages/locations/Reynoldsburg.tsx`, `src/pages/locations/UpperArlington.tsx`, `src/pages/locations/Westerville.tsx`, `src/pages/locations/Worthington.tsx`
-- Impact: Any layout change, CTA update, or design improvement must be replicated across all 13 files manually. High risk of inconsistency. Total ~6,300 lines that could be ~200 lines with a data-driven template.
-- Fix approach: Create a `LocationPageTemplate` component (similar to `src/components/ServicePageTemplate.tsx`), extract location-specific data into a config object per city, and render from the template.
+**Hardcoded Supabase Credentials:**
+- Issue: Supabase client configuration exposes API keys and credentials directly in source code
+- Files: `src/lib/supabase.ts`
+- Impact: Security vulnerability; API keys visible in version control and public repositories
+- Fix approach: Move credentials to environment variables (.env); use import.meta.env for Vite-based configuration
+- Severity: **HIGH** - Security risk
 
-**Inconsistent Service Page Architecture:**
-- Issue: Some service pages use `ServicePageTemplate` (e.g., `src/pages/services/RoofRepair.tsx`) while most are fully hand-written with duplicated layouts (e.g., `src/pages/services/RoofInstallation.tsx`, `src/pages/services/StormDamage.tsx`, `src/pages/services/Siding.tsx`, `src/pages/services/CommercialRoofing.tsx`). The hand-written ones are 300-793 lines each.
-- Files: `src/pages/services/RoofInstallation.tsx` (668 lines), `src/pages/services/CommercialRoofing.tsx` (793 lines), `src/pages/services/Siding.tsx` (670 lines), `src/pages/services/RoofReplacement.tsx` (627 lines), `src/pages/services/StormDamage.tsx`, `src/pages/services/EmergencyServices.tsx`, `src/pages/services/GutterServices.tsx`, `src/pages/services/Gutters.tsx`
-- Impact: Two parallel patterns for the same thing. Updating the CTA, layout, or lead form on hand-written pages requires per-file changes. `ServicePageTemplate` improvements do not propagate.
-- Fix approach: Migrate all service pages to use `ServicePageTemplate`, extending its props as needed. Remove hand-written duplicates.
+**Hardcoded External API URLs:**
+- Issue: Google Sheets API URL hardcoded in review data fetching logic
+- Files: `src/hooks/useReviewData.ts` (line 53)
+- Impact: Difficult to test, brittle dependency on specific Google Sheets document ID; URL exposed in bundle
+- Fix approach: Move to environment configuration with proper error handling fallback
+- Severity: **MEDIUM** - Maintainability and fragility
 
-**Duplicate Gutter Service Pages:**
-- Issue: Two separate pages for essentially the same service: `GutterServices` at `/services/gutter-services` and `Gutters` at `/services/gutters`. Both are hand-written with different layouts but overlapping content.
-- Files: `src/pages/services/GutterServices.tsx`, `src/pages/services/Gutters.tsx`
-- Impact: SEO keyword cannibalization, confusing navigation, duplicate maintenance burden. Navigation links to `/services/gutters` only.
-- Fix approach: Consolidate into one page at `/services/gutters` (the nav-linked route), redirect `/services/gutter-services` to it.
+**Large Monolithic Page Components:**
+- Issue: Location and service pages exceed 400-700 lines each without component decomposition
+- Files:
+  - `src/pages/services/CommercialRoofing.tsx` (793 lines)
+  - `src/pages/services/Siding.tsx` (670 lines)
+  - `src/pages/services/RoofInstallation.tsx` (668 lines)
+  - `src/pages/Home.tsx` (630 lines)
+  - All 13 location pages average 500+ lines each
+- Impact: Reduced readability, difficult testing, poor component reusability, bloated bundle size
+- Fix approach: Extract shared sections (hero, FAQ, services list, testimonials) into reusable components; create location/service data-driven page factory
+- Severity: **MEDIUM** - Code organization and maintainability
 
-**Duplicate Emergency/Storm Pages:**
-- Issue: `EmergencyServices` at `/services/emergency-services` and `StormDamage` at `/services/storm-damage` have significant content overlap. Navigation links to `StormDamage` only.
-- Files: `src/pages/services/EmergencyServices.tsx`, `src/pages/services/StormDamage.tsx`
-- Impact: SEO cannibalization, user confusion. Emergency services page is unreachable from navigation.
-- Fix approach: Merge emergency content into storm damage page, or differentiate clearly and add emergency to navigation.
+**Code Duplication Across 13 Location Pages:**
+- Issue: All location pages (Dublin, Hilliard, New Albany, etc.) share identical structure with only data differences
+- Files: `src/pages/locations/*.tsx` (6,221 total lines duplicated)
+- Impact: Maintenance nightmare—every change to structure requires editing 13 files; inconsistent updates; testing burden
+- Fix approach: Create reusable LocationPageTemplate component or factory function; move location-specific data to `src/data/locations.ts`
+- Severity: **HIGH** - Maintainability and scalability
 
-**Hardcoded Phone Numbers and Business Info:**
-- Issue: The phone number `614-971-6028` / `6149716028` appears hardcoded in 37 files across 152 occurrences. Business address is also hardcoded in multiple places.
-- Files: Nearly every page and component file in `src/pages/` and `src/components/`
-- Impact: Changing the phone number or address requires editing 37+ files. High risk of missing an instance.
-- Fix approach: Create a `src/constants/business.ts` file with phone, address, email, and other business info. Import everywhere.
-
-**Inconsistent Canonical URL Approach:**
-- Issue: Some pages use the `CANONICAL_DOMAIN` constant from `src/seo/constants.ts` (14 service pages, Home), while 23 other pages hardcode the full `https://www.dteroofingllc.com/...` canonical URL string directly.
-- Files: All `src/pages/locations/*.tsx`, `src/pages/About.tsx`, `src/pages/Contact.tsx`, `src/pages/Blog.tsx`, `src/pages/BlogPost.tsx`, `src/pages/Gallery.tsx`, `src/pages/FAQ.tsx`, `src/pages/Reviews.tsx`, `src/pages/Services.tsx`, `src/pages/InstantQuote.tsx`, `src/pages/Locations.tsx`, `src/pages/Financing.tsx`
-- Impact: If the domain changes, 23 files need manual updates. The constant exists but is not used consistently.
-- Fix approach: Replace all hardcoded canonical URLs with `${CANONICAL_DOMAIN}/path`.
-
-**Identical SEO Title Across 20 Pages:**
-- Issue: 20 pages share the exact same `<title>` tag: "BEST Roofer in Columbus -- if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me -- DTE Roofing is the place to be." This includes Blog, FAQ, Gallery, Contact, all service pages, and all pages using `ServicePageTemplate`.
-- Files: `src/components/ServicePageTemplate.tsx` (line 71 -- hardcodes this title, ignoring the `serviceName` prop), `src/pages/Blog.tsx`, `src/pages/Contact.tsx`, `src/pages/FAQ.tsx`, `src/pages/Gallery.tsx`, `src/pages/About.tsx`, `src/pages/Services.tsx`, `src/pages/Reviews.tsx`, `src/pages/InstantQuote.tsx`, all `src/pages/services/*.tsx` files
-- Impact: Major SEO problem. Google cannot differentiate pages by title. Click-through rates suffer because every SERP result shows the same title. The `ServicePageTemplate` hardcodes the title on line 71, completely ignoring the service-specific `serviceName` prop.
-- Fix approach: Give each page a unique, descriptive title. Fix `ServicePageTemplate` to use `serviceName` in the title (e.g., `${serviceName} Columbus OH | DTE Roofing`).
-
-**Supabase Credentials Hardcoded in Source:**
-- Issue: The Supabase URL and anon key are hardcoded directly in source code rather than loaded from environment variables.
-- Files: `src/lib/supabase.ts` (lines 3-4)
-- Impact: Credentials are committed to git and visible in the built JavaScript bundle. While anon keys are designed to be public, this pattern makes it impossible to use different Supabase projects for dev/staging/production without code changes.
-- Fix approach: Move to `import.meta.env.VITE_SUPABASE_URL` and `import.meta.env.VITE_SUPABASE_ANON_KEY` environment variables.
-
-**Unused `direction` State in Form Hook:**
-- Issue: `useMultiStepForm` tracks a `direction` state (`'forward' | 'backward'`) and returns it, but no consumer uses it for animation or any purpose.
-- Files: `src/hooks/useMultiStepForm.ts` (lines 45, 77, 83, 117, 121, 132)
-- Impact: Minor dead code. Could be cleaned up or used for step transition animations.
-- Fix approach: Remove `direction` state or implement transition animations.
-
-**Duplicate Schema Systems:**
-- Issue: Two separate schema markup systems exist: `src/components/SchemaMarkup.tsx` (dynamic, React-based) and `src/seo/schemas.ts` (static export). `SchemaMarkup.tsx` defines its own `BUSINESS_INFO` object that duplicates data from `src/seo/schemas.ts`. They have slightly different geo coordinates.
-- Files: `src/components/SchemaMarkup.tsx` (lines 25-84), `src/seo/schemas.ts`
-- Impact: Business info (address, hours, geo coords) maintained in two places with drift risk. Geo coordinates already differ between the two files.
-- Fix approach: Consolidate into a single source of truth for business schema data.
+**Inline Magic Numbers and Hardcoded Strings:**
+- Issue: Business details, phone numbers, addresses, rating numbers scattered throughout components
+- Files: `src/pages/Home.tsx`, all service pages, all location pages
+- Impact: Single source of truth violations; difficult to update company info globally
+- Fix approach: Centralize constants in `src/data/company.ts` (address, phone, hours, ratings); import everywhere needed
+- Severity: **MEDIUM** - Maintainability
 
 ## Known Bugs
 
-**ServicePageTemplate Hardcodes Wrong Title:**
-- Symptoms: Every page using `ServicePageTemplate` gets the same generic title regardless of the service being displayed.
-- Files: `src/components/ServicePageTemplate.tsx` (line 71)
-- Trigger: Visit any page using ServicePageTemplate (e.g., `/services/roof-repair`).
-- Workaround: None. The `serviceName` prop is available but not used in the SEO title.
+**Review Data Fallback Behavior:**
+- Symptoms: If Supabase query fails AND Google Sheets fetch fails, defaults to hardcoded 92 reviews and 5.0 rating
+- Files: `src/hooks/useReviewData.ts` (lines 69-79)
+- Trigger: Network outage, Google Sheets API changes, Supabase connection failure
+- Impact: Stale review counts displayed; users see outdated information
+- Current state: Error silently swallowed, error flag set but UI doesn't respond to it
+- Fix approach: Add explicit error handling UI; log errors for monitoring; consider caching with expiration timestamps
 
-**ServicePageTemplate "Our Recent Work" Section Shows Placeholders:**
-- Symptoms: Three placeholder boxes with camera emoji and "Photo coming soon" text appear on every ServicePageTemplate page.
-- Files: `src/components/ServicePageTemplate.tsx` (lines 186-212)
-- Trigger: Visit any page using ServicePageTemplate.
-- Workaround: None. The TODO on line 192 marks this as incomplete.
+**Missing Accessibility Attributes:**
+- Symptoms: Images lack comprehensive alt text; icons lack aria-labels; landmark roles missing
+- Files: All pages, especially `src/pages/Home.tsx`, location pages
+- Impact: Screen reader users cannot navigate effectively; fails WCAG 2.1 AA compliance; SEO impact
+- Trigger: Automated accessibility scanning tools; real user testing with screen readers
+- Fix approach: Audit all images for descriptive alt text; add aria-labels to interactive elements; use proper heading hierarchy
 
-**Google Sheets Fallback Uses Fragile Parsing:**
-- Symptoms: If Supabase is unreachable, the review data hook falls back to fetching from a Google Spreadsheet using a fragile `text.slice(47, -2)` parse of the Google Visualization API response.
-- Files: `src/hooks/useReviewData.ts` (lines 53-56)
-- Trigger: Supabase returns error or is unreachable.
-- Workaround: Falls back to hardcoded defaults (`DEFAULT_REVIEW_COUNT = 92`) if Google Sheets also fails. But the hardcoded 92 will become stale over time.
+**Inconsistent Environment Configuration:**
+- Symptoms: Some parts use hardcoded URLs, others expect environment variables; mixed patterns
+- Files: `src/lib/supabase.ts`, `src/hooks/useReviewData.ts`, `src/seo/constants.ts`
+- Impact: Production deployment confusion; difficult environment promotion
+- Fix approach: Create unified config system using .env.example template
 
 ## Security Considerations
 
-**XSS Risk via dangerouslySetInnerHTML:**
-- Risk: Blog post content loaded from Supabase is rendered directly via `dangerouslySetInnerHTML` without sanitization.
-- Files: `src/pages/BlogPost.tsx` (line 154)
-- Current mitigation: Content comes from Supabase which is admin-controlled. No user-generated content path exists currently.
-- Recommendations: Add DOMPurify sanitization before rendering. If a blog CMS or content pipeline is compromised, arbitrary scripts could execute on the site.
+**Exposed API Keys in Repository:**
+- Risk: Supabase anonymous key visible in `src/lib/supabase.ts`; accessible to anyone with repo access
+- Files: `src/lib/supabase.ts` (lines 3-4)
+- Current mitigation: Relying on Supabase's row-level security policies; anonymous key restricted to public tables only
+- Recommendations:
+  1. Immediately move to environment variables
+  2. Rotate exposed keys in Supabase dashboard
+  3. Add `.env` to `.gitignore` (verify it exists)
+  4. Implement GitHub secret scanning
+  5. Consider using Supabase client with server-side auth for sensitive operations
 
-**Form Submission to External Webhook:**
-- Risk: Lead form data (name, phone, email, address) is sent to an external n8n webhook (`https://n8n.whitflow.com/webhook/dte-form-submissions`) with no CSRF protection or rate limiting on the client side.
-- Files: `src/hooks/useMultiStepForm.ts` (line 17, lines 96-112)
-- Current mitigation: 10-second timeout via AbortController.
-- Recommendations: Add client-side rate limiting or honeypot field to prevent spam submissions. Ensure the n8n webhook has server-side validation.
+**Client-Side Data Exposure:**
+- Risk: All dynamic data (review counts, company info, pricing) exposed in client JavaScript
+- Files: All component files
+- Current mitigation: Read-only operations; no authentication required for public data
+- Recommendations: This is acceptable for public-facing data but ensure no sensitive business logic in client code
 
-**No Content Security Policy:**
-- Risk: The site loads third-party scripts (Roofle widget from `app.roofle.com`) and uses inline styles without a CSP header.
-- Files: `index.html` (line 36)
-- Current mitigation: None.
-- Recommendations: Add CSP headers via Vercel configuration to restrict script sources.
+**Google Sheets API Dependency:**
+- Risk: Direct public access to Google Sheets via query URL; could be throttled or blocked
+- Files: `src/hooks/useReviewData.ts` (line 53)
+- Current mitigation: Supabase fallback when sheets API unavailable
+- Recommendations: Consider private API endpoint instead; implement rate limiting
 
 ## Performance Bottlenecks
 
-**Multiple useReviewData Calls Per Page Load:**
-- Problem: Many pages call `useReviewData()` which triggers a Supabase query. `Home.tsx` uses it, `Footer.tsx` uses it (rendered on every page), `SchemaMarkup.tsx` uses it, and location/service pages use it. Each instance makes its own network request.
-- Files: `src/hooks/useReviewData.ts`, `src/components/Footer.tsx`, `src/components/SchemaMarkup.tsx`, `src/pages/Home.tsx`, all 13 location pages, `src/components/ServicePageTemplate.tsx`, `src/components/SidebarTrustBadges.tsx`
-- Cause: No caching, memoization, or React Context. Each `useReviewData()` call is an independent `useEffect` with its own fetch cycle.
-- Improvement path: Create a `ReviewDataProvider` context that fetches once and shares data to all consumers. Alternatively, use React Query or SWR with caching.
+**Large Bundle Size from Duplicated Page Content:**
+- Problem: 6,221 lines across 13 location pages creates ~700KB+ of duplicate code in production build
+- Files: All location pages in `src/pages/locations/`
+- Cause: No component extraction; full page code duplicated per location
+- Impact:
+  - Slower initial page load for users visiting multiple location pages
+  - Larger main bundle JavaScript
+  - Increased CPU usage during build
+- Improvement path:
+  1. Extract common layout into `LocationPageTemplate` component
+  2. Move data to `src/data/locations.ts` as array of location config objects
+  3. Use factory/template pattern to generate pages dynamically
+  4. Target: Reduce deployed code by 70-80%
 
-**SPA Without SSR/SSG -- Poor SEO Crawlability:**
-- Problem: This is a client-side rendered React SPA. All SEO metadata (title, description, canonical, schema markup) is set via `useEffect` DOM manipulation after JavaScript execution. Search engine crawlers that do not fully execute JS will see only the static `index.html` content.
-- Files: `src/components/SEO.tsx` (uses `useEffect` to set meta tags), `src/components/SchemaMarkup.tsx` (uses `useEffect` to inject JSON-LD), `index.html` (has only generic meta tags)
-- Cause: Vite SPA architecture without pre-rendering or SSR.
-- Improvement path: Add `vite-plugin-ssr` or migrate to a framework with SSG (Next.js, Astro). At minimum, add a pre-rendering step for static pages using `vite-ssg` or similar. Blog posts loaded from Supabase are especially impacted since their content is entirely JS-dependent.
+**Inefficient Review Data Fetching:**
+- Problem: Google Sheets API call happens on every page load; no caching
+- Files: `src/hooks/useReviewData.ts`
+- Cause: Hook called in multiple pages; Google JSON query runs every render
+- Impact: Network request per page visit; slow Time to First Byte on location pages
+- Improvement path:
+  1. Add localStorage caching with 24-hour expiration
+  2. Consider using Context API to share review data app-wide (fetch once)
+  3. Implement service worker for offline-capable caching
 
-**Large Bundle -- No Code Splitting:**
-- Problem: All 30+ page components are imported eagerly in `src/App.tsx`. Every route's code is loaded on initial page load regardless of which page the user visits.
-- Files: `src/App.tsx` (lines 1-41 -- all static imports)
-- Cause: No `React.lazy()` or dynamic imports used.
-- Improvement path: Convert route imports to `React.lazy()` with `<Suspense>` fallbacks. Location and service pages are ideal candidates since users visit only one at a time.
+**No Image Optimization:**
+- Problem: Project images in carousel likely not optimized or lazy-loaded
+- Files: `src/components/WorkCarousel.tsx`, `src/data/projects.ts`
+- Impact: Large uncompressed images; slow initial carousel render
+- Improvement path:
+  1. Implement Next.js Image component equivalent or Vite image plugin
+  2. Add lazy loading to carousel items
+  3. Use webp format with fallbacks
 
 ## Fragile Areas
 
-**SEO Component (DOM Manipulation):**
-- Files: `src/components/SEO.tsx`
-- Why fragile: Manipulates the DOM directly with `document.querySelector` and `document.createElement` inside `useEffect`. Does not clean up on unmount -- meta tags accumulate as users navigate. If a page does not set `canonical`, the previous page's canonical remains active.
-- Safe modification: Always test navigation between pages to verify meta tags update correctly. Consider a cleanup function in the useEffect return.
-- Test coverage: No tests exist.
-
-**Review Data Fallback Chain:**
+**Review Data Hook (useReviewData):**
 - Files: `src/hooks/useReviewData.ts`
-- Why fragile: Three-tier fallback (Supabase -> Google Sheets -> hardcoded 92) with the Google Sheets layer using a magic offset (`slice(47, -2)`) that could break if Google changes their Visualization API response format.
-- Safe modification: Test with Supabase unavailable to verify fallback still works. Update `DEFAULT_REVIEW_COUNT` periodically.
-- Test coverage: No tests exist.
+- Why fragile:
+  - Depends on external Google Sheets endpoint that could change without notice
+  - JSON parsing fragile (line 55 magic slice `[47, -2]` is brittle)
+  - No validation of response structure
+  - Silent fallback masks real errors
+- Safe modification:
+  - Add explicit error types and logging
+  - Parse response defensively
+  - Add schema validation (zod/yup)
+  - Test with network conditions (throttling, timeouts)
+- Test coverage: Likely none; needs unit tests for parsing logic
 
-**App.tsx Route Registration:**
-- Files: `src/App.tsx`
-- Why fragile: Every new page requires adding an import and a `<Route>` element manually. No dynamic route generation. Easy to add a page file without registering the route, or vice versa.
-- Safe modification: Always verify both the import and route are added together.
-- Test coverage: No tests exist.
+**SEO Components (SEO, SchemaMarkup):**
+- Files: `src/components/SEO.tsx`, `src/components/SchemaMarkup.tsx`, `src/components/seo/SeoSchema.tsx`
+- Why fragile:
+  - Hardcoded schema formats that must match Google's specifications exactly
+  - No validation of structured data against schema.org
+  - Multiple conflicting schema implementations (different pattern in different files)
+  - Missing some critical schema types
+- Safe modification:
+  - Validate output with Google Rich Results Test after changes
+  - Consolidate schema generation to single source
+  - Add schema validation library
+- Test coverage: No test files detected; should add schema validation tests
+
+**Location Page Generator Pattern (or lack thereof):**
+- Files: All 13 location pages: `src/pages/locations/{City}.tsx`
+- Why fragile:
+  - Each page manually maintains identical structure
+  - Changes to layout require 13 edits
+  - Easy to accidentally break one location page's layout
+  - Inconsistent data structures lead to bugs
+- Safe modification:
+  - Create LocationPageTemplate component first
+  - Create location data config objects
+  - Gradually refactor each page to use template
+  - Run visual regression tests before/after
+
+**Multi-Step Lead Form:**
+- Files: `src/components/lead-form/MultiStepLeadForm.tsx`, all step components
+- Why fragile:
+  - Form state management spans 5+ files
+  - useMultiStepForm hook holds mutable state
+  - No validation schema; business logic scattered
+  - No persistence between page navigation (loses form data on back button)
+- Safe modification:
+  - Add form validation library (zod/yup)
+  - Implement session storage persistence
+  - Consider moving to React Hook Form for better state management
+- Test coverage: Form lacks integration tests; should test happy path and error states
 
 ## Scaling Limits
 
-**Location Page Scaling:**
-- Current capacity: 13 location pages, each hand-coded at ~490 lines.
-- Limit: Adding a new location requires copying ~490 lines, modifying city-specific content, adding an import and route in `App.tsx`. Error-prone and slow.
-- Scaling path: Template-based approach with location data configs. Could potentially generate pages from a data source.
+**Static Location Pages (13 cities):**
+- Current capacity: Hardcoded support for exactly 13 Ohio cities
+- Limit: Adding new cities requires manual page creation + routing + navigation updates
+- Scaling path:
+  1. Move locations to database table or config file
+  2. Create dynamic routing in App.tsx
+  3. Update navigation to loop through locations array
+  4. Use LocationPageTemplate to reduce maintenance
 
-**Service Page Scaling:**
-- Current capacity: 12 service pages, mixed architecture.
-- Limit: Same manual process. Some use template, some do not.
-- Scaling path: Standardize on `ServicePageTemplate` for all services.
+**Review Data from Google Sheets:**
+- Current capacity: Single Google Sheets document; manual updates required
+- Limit: Google's query API has rate limits; Sheets not designed for this use case
+- Scaling path:
+  1. Move review data to Supabase table (already partially set up)
+  2. Implement backend API to fetch/update reviews
+  3. Set up scheduled job to sync from Google Reviews API if available
+
+**Import Statements Explosion:**
+- Current state: `src/App.tsx` imports all 13 location pages explicitly (lines 27-39)
+- Limit: Every new location requires code change + build; difficult to scale
+- Scaling path:
+  1. Implement dynamic imports for lazy loading
+  2. Use route-based code splitting automatically via build tool
+  3. Consider data-driven route generation
 
 ## Dependencies at Risk
 
-**Roofle Widget (Third-Party Dependency):**
-- Risk: The instant quote feature depends entirely on an externally loaded `app.roofle.com` script and an embedded iframe (`/roofle-embed.html`). Past commits show multiple fixes for Roofle loading reliability on Vercel.
-- Impact: If Roofle service goes down or changes their API, the instant quote page becomes non-functional.
-- Migration plan: No alternative. This is a business-critical third-party integration. Monitor uptime.
+**Supabase Integration (Partial):**
+- Risk: Mixed usage—review data table exists but not fully utilized; configuration exposed
+- Current usage: `src/lib/supabase.ts` created but only used in `useReviewData` hook
+- Impact: Unused dependency increases bundle; suggests incomplete migration or unclear architecture
+- Migration plan:
+  1. Either fully commit to Supabase for all backend operations
+  2. Or remove and replace with simpler solution (e.g., internal JSON API)
+  3. Audit what data Supabase should own (reviews, forms submissions, etc.)
 
-**Google Sheets as Data Fallback:**
-- Risk: Review data fallback uses a public Google Sheets URL with the Visualization API. Google could deprecate this endpoint or rate-limit it.
-- Impact: If both Supabase and Google Sheets fail, reviews show stale hardcoded count of 92.
-- Migration plan: Ensure Supabase is reliable enough to be the sole source. Remove Google Sheets fallback once Supabase is proven stable.
+**Google Sheets API (Unofficial):**
+- Risk: Using unofficial Google Visualization API query endpoint; could break with API changes
+- Current usage: Review data fetching in `useReviewData` hook
+- Impact: Site breaks if Google changes endpoint or rate limits requests
+- Migration plan:
+  1. Migrate to official Google Sheets API with service account
+  2. Or move data to proper backend database
+  3. Implement API layer to abstract from frontend
+
+**Embla Carousel (Limited Testing):**
+- Risk: Carousel is new addition; potential edge cases in mobile, keyboard navigation, accessibility
+- Current usage: `src/components/WorkCarousel.tsx` with autoplay plugin
+- Impact: Gallery carousel could break on certain devices/browsers
+- Mitigation: Add automated tests for carousel on different viewport sizes
 
 ## Missing Critical Features
 
-**No 404 / Catch-All Route:**
-- Problem: There is no `*` catch-all route in `src/App.tsx`. Visiting any undefined URL renders a blank page (Navigation + Footer with empty main content).
-- Blocks: Users who follow broken links or mistype URLs see no helpful guidance. Search engines may index these blank pages.
+**Error Boundaries:**
+- Problem: No React error boundaries; component errors crash entire app
+- Blocks: Robust production deployment
+- Recommendation: Add error boundary wrapper around major route sections
 
-**No Sitemap Generation:**
-- Problem: No `sitemap.xml` is generated or served. With 30+ pages including location and service landing pages, a sitemap is critical for SEO.
-- Blocks: Search engines may not discover all pages, especially deeper location and service pages.
+**Analytics & Conversion Tracking:**
+- Problem: No analytics integration detected; can't track form submissions or page visits
+- Blocks: Measuring lead generation effectiveness
+- Recommendation: Integrate Google Analytics 4 or Segment
 
-**No robots.txt:**
-- Problem: No `robots.txt` file exists in the `public/` directory.
-- Blocks: Search engines have no crawl directives.
+**Form Submission Backend:**
+- Problem: Lead form components exist but unclear where submissions go
+- Files: `src/components/lead-form/MultiStepLeadForm.tsx`
+- Blocks: Actually collecting leads
+- Recommendation: Implement backend endpoint and form submission handler
+
+**Email Notifications:**
+- Problem: No email service integrated for form notifications
+- Blocks: Team notification of new leads
+- Recommendation: Integrate SendGrid, AWS SES, or similar
+
+**Production Build Optimization:**
+- Problem: No evidence of minification, tree-shaking, or bundle analysis
+- Blocks: Performance on slower connections
+- Recommendation: Verify Vite production build settings
 
 ## Test Coverage Gaps
 
-**No Tests Exist:**
-- What's not tested: The entire application. Zero test files found. No test framework configured (no jest, vitest, or playwright in dependencies).
-- Files: All files in `src/`
-- Risk: Any refactoring (especially the recommended template consolidation) has no safety net. Form validation logic, review data fetching, SEO component behavior, and routing are all untested.
-- Priority: High. At minimum, add tests for `src/utils/formValidation.ts`, `src/hooks/useMultiStepForm.ts`, and `src/hooks/useReviewData.ts` before any major refactoring.
+**No Test Files Detected:**
+- What's not tested: All business logic, components, hooks, utilities
+- Files: No .test.ts, .spec.ts, .test.tsx, .spec.tsx files found in repo
+- Risk:
+  - Refactoring could break layouts without detection
+  - Component prop changes could break child renders
+  - Hook state changes could cause silent failures
+  - Data transformations in useReviewData could silently fail
+- Priority: **HIGH** - Any future refactoring (especially location page extraction) needs test coverage
+
+**Missing Component Tests:**
+- What's not tested:
+  - ServicePageTemplate rendering with different props
+  - LocationPageTemplate (to be created) structure
+  - Lead form state transitions and validation
+  - Review data hook parsing and error handling
+  - Navigation component active state
+- Recommendation: Set up vitest or Jest; create test files for:
+  1. All custom hooks
+  2. Reusable components (ServicePageTemplate, etc.)
+  3. Utility functions (form validation, data transformations)
+  4. API integration logic (Supabase, Google Sheets)
+
+**Missing Integration Tests:**
+- What's not tested:
+  - Multi-step form completion end-to-end
+  - Navigation flow through location pages
+  - SEO/Schema markup correctness
+- Recommendation: Use Playwright or Cypress for critical user journeys
+
+**Missing E2E Tests:**
+- What's not tested: Form submission to backend; complete lead capture flow
+- Blocks: Confident production deployment
 
 ---
 
-*Concerns audit: 2026-03-07*
+*Concerns audit: 2026-03-21*

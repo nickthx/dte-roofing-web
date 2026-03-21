@@ -2,31 +2,19 @@
 
 ## Milestones
 
-- 🚧 **v1.1 Home Carousel** - Phase 1 (in progress)
+- ✅ **v1.1 Home Carousel** — Phase 1 (shipped 2026-03-21)
 
 ## Phases
 
-### 🚧 v1.1 Home Carousel (In Progress)
+<details>
+<summary>✅ v1.1 Home Carousel (Phase 1) — SHIPPED 2026-03-21</summary>
 
-**Milestone Goal:** Replace the static "Our Recent Work" grid on the Home page with a smooth, interactive image carousel that presents project photos with titles and location labels.
+- [x] Phase 1: Carousel (1/1 plans) — completed 2026-03-21
 
-#### Phase 1: Carousel
-**Goal**: The Home page "Our Recent Work" section delivers a polished, fully interactive image carousel
-**Depends on**: Nothing (first phase)
-**Requirements**: CARO-01, CARO-02, CARO-03, CARO-04, CARO-05, CARO-06
-**Success Criteria** (what must be TRUE):
-  1. The "Our Recent Work" section auto-advances through project photos in a smooth carousel
-  2. User can manually navigate between images using prev/next arrow controls
-  3. Project photos sourced from existing `/public/images/` assets populate the carousel
-  4. The carousel layout is clean and fully usable on mobile, tablet, and desktop viewports
-  5. Each carousel image displays an overlaid project title and location label that match the site's charcoal/dark color scheme and spacing
-**Plans**: 1 plan
-
-Plans:
-- [ ] 01-01-PLAN.md — Extract shared project data, build Embla WorkCarousel component, replace Home page grid
+</details>
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Carousel | v1.1 | 0/1 | Not started | - |
+| 1. Carousel | v1.1 | 1/1 | Complete | 2026-03-21 |

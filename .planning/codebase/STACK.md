@@ -1,100 +1,100 @@
 # Technology Stack
 
-**Analysis Date:** 2026-03-07
+**Analysis Date:** 2026-03-21
 
 ## Languages
 
 **Primary:**
-- TypeScript ~5.5.3 - All application source code (`src/**/*.{ts,tsx}`)
-- TSX - React components and pages
+- TypeScript 5.5.3 - All application code, configuration, and components
+- JSX/TSX - React component markup in `src/components/` and `src/pages/`
 
 **Secondary:**
-- SQL - Supabase database migrations (`supabase/migrations/`)
-- HTML - Entry point (`index.html`) and embed pages (`public/roofle-embed.html`)
-- CSS - Tailwind-based styles (`src/index.css`)
+- JavaScript - Configuration files (vite.config.ts uses TS, but eslint.config.js, tailwind.config.js, postcss.config.js are JS)
+- HTML - Static markup in `index.html`
+- CSS - Tailwind utility classes and custom styles in `src/index.css`
 
 ## Runtime
 
 **Environment:**
-- Node.js (no `.nvmrc` or `.node-version` present; version unspecified)
-- Deno - Supabase Edge Functions runtime (`supabase/functions/`)
+- Node.js v24.11.0 (recommended)
+- Browser-based React application (ESM module format)
 
 **Package Manager:**
-- npm (implied by `package-lock.json` convention)
-- Lockfile: Not verified in repo root
+- npm 11.6.2
+- Lockfile: `package-lock.json` (present)
 
 ## Frameworks
 
 **Core:**
-- React 18.3.1 - UI framework, SPA architecture
-- React Router DOM 7.9.4 - Client-side routing with `BrowserRouter`
-- Vite 5.4.2 - Build tool and dev server
+- React 18.3.1 - UI library and component framework
+- React Router DOM 7.9.4 - Client-side routing, implemented in `src/App.tsx` with 30+ routes for services, locations, and pages
 
 **Styling:**
 - Tailwind CSS 3.4.1 - Utility-first CSS framework
-- PostCSS 8.4.35 - CSS processing pipeline
-- Autoprefixer 10.4.18 - Vendor prefix automation
+  - Config: `tailwind.config.js` (extends with custom colors: primary red palette, charcoal palette)
+  - PostCSS: 8.4.35 - Required processor for Tailwind
+  - Autoprefixer: 10.4.18 - Auto-prefixes CSS for browser compatibility
+
+**Build/Dev:**
+- Vite 5.4.2 - Build tool and dev server
+  - Config: `vite.config.ts` (React plugin enabled, lucide-react excluded from optimization)
+  - React plugin: @vitejs/plugin-react 4.3.1
+  - Dev command: `npm run dev`
+  - Build command: `npm run build`
+  - Preview command: `npm run preview`
 
 **Testing:**
-- None detected - No test framework, no test files, no test scripts
-
-**Linting:**
-- ESLint 9.9.1 - Flat config format (`eslint.config.js`)
-- typescript-eslint 8.3.0 - TypeScript-specific linting
-- eslint-plugin-react-hooks 5.1.0-rc.0 - React hooks rules
-- eslint-plugin-react-refresh 0.4.11 - Fast refresh validation
+- Not detected
 
 ## Key Dependencies
 
 **Critical:**
-- `@supabase/supabase-js` ^2.57.4 - Database client for blog posts and review data
-- `react-router-dom` ^7.9.4 - All page routing and navigation
-- `lucide-react` ^0.344.0 - Icon library used across all components
+- @supabase/supabase-js 2.57.4 - Database client for Supabase PostgreSQL backend
+  - Used in `src/lib/supabase.ts` for blog posts and review data queries
+  - Implements read operations from `review_data` table (ratings, reviews)
 
-**Infrastructure:**
-- `@vitejs/plugin-react` ^4.3.1 - Vite React plugin (JSX transform, HMR)
+**UI Components & Icons:**
+- lucide-react 0.344.0 - Icon library (excluded from Vite optimization)
+  - Used throughout components for CTAs, form icons, check marks, alerts
+
+**Carousel:**
+- embla-carousel-react 8.6.0 - Carousel/slider component library
+- embla-carousel-autoplay 8.6.0 - Auto-play plugin for embla
+
+**Form & Data:**
+- Native React hooks (useState, useCallback, useEffect) for form state and validation
+- Custom hooks: `useMultiStepForm`, `useLeadTracking`, `useReviewData` in `src/hooks/`
 
 ## Configuration
 
-**TypeScript:**
-- `tsconfig.json` - Project references setup, delegates to `tsconfig.app.json` and `tsconfig.node.json`
-- `tsconfig.app.json` - Application config: ES2020 target, strict mode, bundler module resolution, `noUnusedLocals` and `noUnusedParameters` enabled
-- Strict mode is ON
+**Environment:**
+- Client-side environment: Uses hardcoded Supabase credentials (not env-based currently)
+  - Supabase URL: `https://ujasdbelviyamnwxjgth.supabase.co`
+  - Supabase anon key: hardcoded in `src/lib/supabase.ts`
+- Webhook URLs: Hardcoded n8n endpoints in `src/hooks/useMultiStepForm.ts` and `src/pages/Financing.tsx`
+- Deployment config: `vercel.json` (redirects /home to /, rewrites all paths to index.html)
 
 **Build:**
-- `vite.config.ts` - Minimal config, React plugin, `lucide-react` excluded from optimizeDeps
-- `tailwind.config.js` - Custom color palette (`primary` red scale, `charcoal` gray scale)
-- `postcss.config.js` - Tailwind + Autoprefixer plugins
-- `eslint.config.js` - Flat config, ignores `dist/`, recommended rules + react-hooks
-
-**Deployment:**
-- `vercel.json` - SPA fallback rewrite (`/(.*) -> /index.html`), redirect `/home -> /` (301)
-
-**SEO/Static:**
-- `robots.txt` - Allow all crawlers, sitemap reference
-- `sitemap.xml` - Static sitemap in `public/`
-- `public/google*.html` - Google Search Console verification files (2 files)
-
-## Scripts
-
-```bash
-npm run dev          # Start Vite dev server
-npm run build        # Production build (vite build)
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-npm run typecheck    # TypeScript type checking (tsc --noEmit)
-```
+- TypeScript configs:
+  - `tsconfig.json` - Root config with references to app and node configs
+  - `tsconfig.app.json` - App compilation (target: ES2020, strict mode enabled, noUnusedLocals/noUnusedParameters enforced)
+  - `tsconfig.node.json` - Build tool compilation
+- Linting config: `eslint.config.js` (TypeScript ESLint with React hooks and refresh plugins)
 
 ## Platform Requirements
 
 **Development:**
-- Node.js (version unspecified)
-- npm
+- Node.js 24.11.0 or compatible LTS version
+- npm 11.6.2 or yarn
+- TypeScript knowledge for `src/` changes
+- Vite development server included in dependencies
 
 **Production:**
-- Vercel (SPA hosting with rewrite rules)
-- Supabase (PostgreSQL database + Edge Functions)
+- Deployment target: Vercel (via `vercel.json` configuration)
+- CDN for static assets (Vite handles bundling to `dist/`)
+- Roofle widget loaded via CDN: `https://app.roofle.com/roof-quote-pro-widget.js` (async script in index.html)
+- Google Fonts CDN preconnected in `index.html`
 
 ---
 
-*Stack analysis: 2026-03-07*
+*Stack analysis: 2026-03-21*

@@ -24,27 +24,28 @@ Generate qualified roofing leads by building trust through professional presenta
 - ✓ Financing page — v1
 - ✓ SEO metadata and schema markup — v1
 - ✓ Mobile sticky call button — v1
+- ✓ Home page "Our Recent Work" carousel with auto-advance, nav arrows, title/location overlays — v1.1
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Replace "Our Recent Work" grid with a clean carousel on Home page
+(None yet — next milestone TBD)
 
 ### Out of Scope
 
 <!-- Explicit boundaries. -->
 
 - Pulling new images from Google Business Profile — using existing downloaded images
-- Redesigning other sections of the Home page
-- Changes to the standalone Gallery page
+- Video content in carousel — photos only for now
 
 ## Context
 
 - React 18 + Vite + TypeScript + Tailwind CSS
 - Deployed on Vercel
 - ~30 project images already in `/public/images/`, many sourced from Google Business Profile
-- Current "Our Recent Work" section uses a static grid with uneven last row (1 + double-wide)
+- "Our Recent Work" section now uses Embla carousel (embla-carousel-react + embla-carousel-autoplay)
+- Shared project data extracted to `src/data/projects.ts` (used by both Home carousel and Gallery page)
 
 ## Constraints
 
@@ -56,7 +57,9 @@ Generate qualified roofing leads by building trust through professional presenta
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Carousel over grid | User wants smooth, clean presentation; grid looks clunky | — Pending |
+| Carousel over grid | User wants smooth, clean presentation; grid looks clunky | ✓ Good |
+| Embla Carousel library | Lightweight, composable, good React integration | ✓ Good |
+| Shared project data file | Extracted from Gallery to `src/data/projects.ts` for reuse | ✓ Good |
 
 ---
-*Last updated: 2026-03-17 after milestone v1.1 initialization*
+*Last updated: 2026-03-21 after v1.1 milestone completion*
