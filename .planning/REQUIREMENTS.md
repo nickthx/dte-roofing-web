@@ -7,19 +7,19 @@
 
 ### Schema Fixes
 
-- [ ] **SCHEMA-01**: Hub page (/locations) has RoofingContractor JSON-LD schema with correct NAP, hours, and 13-city areaServed
+- [x] **SCHEMA-01**: Hub page (/locations) has RoofingContractor JSON-LD schema with correct NAP, hours, and 13-city areaServed
 - [x] **SCHEMA-02**: Each of 13 subpages has page-specific areaServed (primary city + 2-3 geographic neighbors, only from the 13 with pages)
 - [x] **SCHEMA-03**: Each subpage schema has unique @id (e.g., `https://www.dteroofingllc.com/locations/hilliard#business`)
 - [x] **SCHEMA-04**: No non-page cities remain in any areaServed array (remove ~10 cities without pages)
 - [x] **SCHEMA-05**: Each subpage's primary city appears in its own areaServed array (including New Albany fix)
 - [x] **SCHEMA-06**: Breadcrumb schema on location subpages points to /locations (not /services)
 - [x] **SCHEMA-07**: Geo coordinates are consistent between SchemaMarkup.tsx and schemas.ts
-- [ ] **SCHEMA-08**: All JSON-LD is syntactically valid across all location pages
+- [x] **SCHEMA-08**: All JSON-LD is syntactically valid across all location pages
 
 ### Hub Page
 
-- [ ] **HUB-01**: Hub page H1 changed from "Roofing Contractor Columbus OH" to "Areas We Serve in Central Ohio"
-- [ ] **HUB-02**: Hub page meta title updated to match new H1 (e.g., "Areas We Serve in Central Ohio | DTE Roofing Service Areas")
+- [x] **HUB-01**: Hub page H1 changed from "Roofing Contractor Columbus OH" to "Areas We Serve in Central Ohio"
+- [x] **HUB-02**: Hub page meta title updated to match new H1 (e.g., "Areas We Serve in Central Ohio | DTE Roofing Service Areas")
 - [ ] **HUB-03**: Service area map visible on /locations hub page (Google Maps embed, SVG, or static image)
 
 ### Internal Linking
@@ -64,16 +64,16 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | DATA-01 | Phase 1 | Complete |
-| SCHEMA-01 | Phase 1 | Pending |
+| SCHEMA-01 | Phase 1 | Complete |
 | SCHEMA-02 | Phase 1 | Complete |
 | SCHEMA-03 | Phase 1 | Complete |
 | SCHEMA-04 | Phase 1 | Complete |
 | SCHEMA-05 | Phase 1 | Complete |
 | SCHEMA-06 | Phase 1 | Complete |
 | SCHEMA-07 | Phase 1 | Complete |
-| SCHEMA-08 | Phase 1 | Pending |
-| HUB-01 | Phase 1 | Pending |
-| HUB-02 | Phase 1 | Pending |
+| SCHEMA-08 | Phase 1 | Complete |
+| HUB-01 | Phase 1 | Complete |
+| HUB-02 | Phase 1 | Complete |
 | LINK-01 | Phase 2 | Pending |
 | LINK-02 | Phase 2 | Pending |
 | LINK-03 | Phase 2 | Pending |
