@@ -15,6 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Data Architecture & Schema Fixes** - Centralized location config, unique schema per page, hub page schema and H1 fix
 - [x] **Phase 2: Internal Linking & Navigation** - Breadcrumbs, nearby-area cross-links, full footer coverage
 - [x] **Phase 3: Hub Enhancements & Service Cross-Links** - Service area map on hub, service-to-location contextual links
+- [ ] **Phase 4: SSOT & Schema Cleanup** - Close DATA-01 SSOT gap on hub page, fix hub breadcrumb schema, resolve lint warnings, remove unused export
 
 ## Phase Details
 
@@ -61,13 +62,26 @@ Plans:
 - [x] 03-01-PLAN.md — Create ServiceAreaMap SVG component and add to /locations hub page
 - [x] 03-02-PLAN.md — Convert plain-text city names to location links on service pages for cross-link distribution
 
+### Phase 4: SSOT & Schema Cleanup
+**Goal**: Close all tech debt from milestone audit — hub page consumes centralized LOCATIONS data, hub breadcrumb schema is semantically correct, and no lint warnings or unused exports remain
+**Depends on**: Phase 3
+**Requirements**: DATA-01 (full closure), SCHEMA-06 (hub breadcrumb fix)
+**Gap Closure**: Closes gaps from v1.0-MILESTONE-AUDIT.md
+**Success Criteria** (what must be TRUE):
+  1. The /locations hub page city card grid is driven by `LOCATIONS` from `src/data/locations.ts` — no local duplicate array exists in Locations.tsx
+  2. The hub breadcrumb schema produces a 2-item chain `[Home → Service Areas]` (no self-referencing third item)
+  3. SchemaMarkup.tsx useEffect dependency array includes all referenced variables (`locationName`, `pageDescription`)
+  4. No unused exports remain in `src/data/locations.ts` (`getAllLocationSlugs` removed or consumed)
+**Plans**: 0 plans
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Architecture & Schema Fixes | 2/2 | Complete | 2026-03-21 |
 | 2. Internal Linking & Navigation | 2/2 | Complete | 2026-03-22 |
 | 3. Hub Enhancements & Service Cross-Links | 2/2 | Complete | 2026-03-23 |
+| 4. SSOT & Schema Cleanup | 0/0 | Pending | — |
