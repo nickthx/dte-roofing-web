@@ -55,10 +55,11 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. The /locations hub page displays a service area map (Google Maps embed, SVG, or static image) showing coverage across the 13 Central Ohio cities
   2. Each service page (/services/*) contains 2-3 contextual links to relevant location pages within existing content sections
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md — Create ServiceAreaMap SVG component and add to /locations hub page
+- [ ] 03-02-PLAN.md — Convert plain-text city names to location links on service pages for cross-link distribution
 
 ## Progress
 
@@ -69,4 +70,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Data Architecture & Schema Fixes | 0/2 | Planning complete | - |
 | 2. Internal Linking & Navigation | 0/2 | Planning complete | - |
-| 3. Hub Enhancements & Service Cross-Links | 0/TBD | Not started | - |
+| 3. Hub Enhancements & Service Cross-Links | 0/2 | Planning complete | - |
