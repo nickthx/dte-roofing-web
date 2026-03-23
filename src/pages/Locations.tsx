@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, ArrowRight, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
+import ServiceAreaMap from '../components/ServiceAreaMap';
 
 const locations = [
   {
@@ -121,6 +122,16 @@ export default function Locations() {
               Call 614-971-6028
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-2xl font-bold text-charcoal-900 mb-2">Our Service Area</h2>
+            <p className="text-charcoal-600">Serving 13 communities across Central Ohio</p>
+          </div>
+          <ServiceAreaMap />
         </div>
       </section>
 
