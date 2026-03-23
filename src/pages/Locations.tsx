@@ -3,87 +3,7 @@ import { MapPin, Phone, ArrowRight, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import ServiceAreaMap from '../components/ServiceAreaMap';
-
-const locations = [
-  {
-    name: 'Columbus',
-    slug: 'columbus',
-    description: 'Central Ohio\'s capital city',
-    highlight: 'Downtown & Surrounding Areas'
-  },
-  {
-    name: 'Hilliard',
-    slug: 'hilliard',
-    description: 'Our home base',
-    highlight: 'Fast Local Response'
-  },
-  {
-    name: 'Dublin',
-    slug: 'dublin',
-    description: 'Northwest Columbus suburbs',
-    highlight: 'Premier Neighborhoods'
-  },
-  {
-    name: 'New Albany',
-    slug: 'new-albany',
-    description: 'Upscale eastern community',
-    highlight: 'Luxury Home Specialists'
-  },
-  {
-    name: 'Upper Arlington',
-    slug: 'upper-arlington',
-    description: 'Prestigious western suburb',
-    highlight: 'Historic Home Experts'
-  },
-  {
-    name: 'Westerville',
-    slug: 'westerville',
-    description: 'Northeastern Columbus area',
-    highlight: 'Tree-Lined Communities'
-  },
-  {
-    name: 'Gahanna',
-    slug: 'gahanna',
-    description: 'City of Character',
-    highlight: 'Creek Corridor Specialists'
-  },
-  {
-    name: 'Reynoldsburg',
-    slug: 'reynoldsburg',
-    description: 'Eastern Franklin County',
-    highlight: 'Storm Protection Experts'
-  },
-  {
-    name: 'Grove City',
-    slug: 'grove-city',
-    description: 'Southwest Columbus suburbs',
-    highlight: 'Rapid Growth Area'
-  },
-  {
-    name: 'Pickerington',
-    slug: 'pickerington',
-    description: 'Southeast suburbs',
-    highlight: 'Dual-County Service'
-  },
-  {
-    name: 'Worthington',
-    slug: 'worthington',
-    description: 'Historic northern suburb',
-    highlight: 'Preservation Specialists'
-  },
-  {
-    name: 'Delaware',
-    slug: 'delaware',
-    description: 'Delaware County seat',
-    highlight: 'Northern Expansion'
-  },
-  {
-    name: 'Powell',
-    slug: 'powell',
-    description: 'Growing northern community',
-    highlight: 'Premium Developments'
-  }
-];
+import { LOCATIONS } from '../data/locations';
 
 export default function Locations() {
   return (
@@ -148,17 +68,17 @@ export default function Locations() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {locations.map((location, index) => (
+            {LOCATIONS.map((location) => (
               <Link
-                key={index}
+                key={location.slug}
                 to={`/locations/${location.slug}`}
                 className="group bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary-700 hover:shadow-xl transition-all duration-300"
-                aria-label={`View ${location.name} roofing services`}
+                aria-label={`View ${location.cityName} roofing services`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="text-2xl font-bold text-charcoal-900 group-hover:text-primary-700 transition-colors mb-1">
-                      {location.name}
+                      {location.cityName}
                     </h3>
                     <p className="text-sm text-charcoal-500 mb-2">{location.description}</p>
                   </div>
@@ -168,7 +88,7 @@ export default function Locations() {
                   <p className="text-sm font-semibold text-primary-700">{location.highlight}</p>
                 </div>
                 <div className="flex items-center text-primary-700 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                  View {location.name} Services
+                  View {location.cityName} Services
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </Link>
