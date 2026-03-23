@@ -32,7 +32,7 @@ Declared values (must be multiples of 4):
 | Token | Value | Usage |
 |-------|-------|-------|
 | xs | 4px | Icon-to-text gap in breadcrumb chevron spacing |
-| sm | 8px | Gap between breadcrumb segments, inner padding of footer links, breadcrumb bar vertical padding (py-2), footer area list vertical gap (gap-y-2) |
+| sm | 8px | Gap between breadcrumb segments, inner padding of footer links, breadcrumb bar vertical padding (py-2), footer area list vertical gap (gap-y-2), MapPin icon bottom margin (mb-2) |
 | md | 16px | Container horizontal padding (px-4), card inner padding, footer gap-y |
 | lg | 24px | Card padding (p-6), section heading bottom margin (mb-8) |
 | xl | 32px | Grid gap between nearby-area cards (gap-4 = 16px horizontal, gap-8 = 32px for section margins) |
@@ -130,7 +130,7 @@ Accent reserved for: breadcrumb hub link text, MapPin icons in nearby-area cards
 | Card text alignment | text-center |
 | Card transition | transition-all on hover |
 | Card group | `group` class for coordinated hover |
-| MapPin icon | w-6 h-6 text-primary-700 mx-auto mb-3 |
+| MapPin icon | w-6 h-6 text-primary-700 mx-auto mb-2 |
 | City name | font-bold text-charcoal-900, group-hover:text-primary-700 transition-colors |
 | Sub-link text | "View Services", text-sm text-primary-700 mt-2 inline-flex items-center |
 | ArrowRight icon | w-3 h-3 ml-1 (inline with "View Services") |
