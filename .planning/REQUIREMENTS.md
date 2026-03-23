@@ -24,9 +24,9 @@
 
 ### Internal Linking
 
-- [ ] **LINK-01**: All 13 subpages have visible breadcrumb or "← All Service Areas" link in main content (below hero, above first content section)
-- [ ] **LINK-02**: All 13 subpages have "Nearby Areas We Serve" section with 3-5 links to geographically adjacent location pages
-- [ ] **LINK-03**: Footer lists all 13 location pages (not just 5), with "All Service Areas →" link to /locations
+- [x] **LINK-01**: All 13 subpages have visible breadcrumb or "← All Service Areas" link in main content (below hero, above first content section)
+- [x] **LINK-02**: All 13 subpages have "Nearby Areas We Serve" section with 3-5 links to geographically adjacent location pages
+- [x] **LINK-03**: Footer lists all 13 location pages (not just 5), with "All Service Areas →" link to /locations
 - [ ] **LINK-04**: Service pages (/services/*) link to relevant location pages where contextually natural (2-3 links per service page)
 
 ### Data Architecture
@@ -74,9 +74,9 @@
 | SCHEMA-08 | Phase 1 | Complete |
 | HUB-01 | Phase 1 | Complete |
 | HUB-02 | Phase 1 | Complete |
-| LINK-01 | Phase 2 | Pending |
-| LINK-02 | Phase 2 | Pending |
-| LINK-03 | Phase 2 | Pending |
+| LINK-01 | Phase 2 | Complete |
+| LINK-02 | Phase 2 | Complete |
+| LINK-03 | Phase 2 | Complete |
 | LINK-04 | Phase 3 | Pending |
 | HUB-03 | Phase 3 | Pending |
 

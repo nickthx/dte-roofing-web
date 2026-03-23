@@ -45,7 +45,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Create LocationBreadcrumb and NearbyAreas components, wire into all 13 location pages
+- [x] 02-01-PLAN.md — Create LocationBreadcrumb and NearbyAreas components, wire into all 13 location pages
 - [ ] 02-02-PLAN.md — Update footer to list all 13 locations from LOCATIONS array
 
 ### Phase 3: Hub Enhancements & Service Cross-Links
