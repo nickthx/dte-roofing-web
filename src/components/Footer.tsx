@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Shield, Award, Star } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
+import { LOCATIONS } from '../data/locations';
 
 export default function Footer() {
   const { reviewData } = useReviewData();
@@ -45,14 +46,23 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold text-lg mb-4">Areas We Serve</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><Link to="/locations/hilliard" className="hover:text-white transition-colors">Hilliard</Link></li>
-              <li><Link to="/locations/dublin" className="hover:text-white transition-colors">Dublin</Link></li>
-              <li><Link to="/locations/columbus" className="hover:text-white transition-colors">Columbus</Link></li>
-              <li><Link to="/locations/westerville" className="hover:text-white transition-colors">Westerville</Link></li>
-              <li><Link to="/locations/powell" className="hover:text-white transition-colors">Powell</Link></li>
-              <li><Link to="/locations" className="hover:text-white transition-colors">All Service Areas →</Link></li>
-            </ul>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-400 text-sm">
+              {LOCATIONS.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/locations/${loc.slug}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {loc.cityName}
+                </Link>
+              ))}
+            </div>
+            <Link
+              to="/locations"
+              className="text-gray-400 hover:text-white transition-colors text-sm font-bold mt-4 inline-block"
+            >
+              All Service Areas &rarr;
+            </Link>
           </div>
 
           <div>
