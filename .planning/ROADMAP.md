@@ -12,9 +12,9 @@ This milestone fixes the structural SEO foundation of DTE Roofing's 13 location 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Data Architecture & Schema Fixes** - Centralized location config, unique schema per page, hub page schema and H1 fix
-- [ ] **Phase 2: Internal Linking & Navigation** - Breadcrumbs, nearby-area cross-links, full footer coverage
-- [ ] **Phase 3: Hub Enhancements & Service Cross-Links** - Service area map on hub, service-to-location contextual links
+- [x] **Phase 1: Data Architecture & Schema Fixes** - Centralized location config, unique schema per page, hub page schema and H1 fix
+- [x] **Phase 2: Internal Linking & Navigation** - Breadcrumbs, nearby-area cross-links, full footer coverage
+- [x] **Phase 3: Hub Enhancements & Service Cross-Links** - Service area map on hub, service-to-location contextual links
 
 ## Phase Details
 
@@ -46,7 +46,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Create LocationBreadcrumb and NearbyAreas components, wire into all 13 location pages
-- [ ] 02-02-PLAN.md — Update footer to list all 13 locations from LOCATIONS array
+- [x] 02-02-PLAN.md — Update footer to list all 13 locations from LOCATIONS array
 
 ### Phase 3: Hub Enhancements & Service Cross-Links
 **Goal**: The /locations hub page has a visual service area map, and service pages link naturally to relevant location pages to complete the internal linking mesh
@@ -58,8 +58,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Create ServiceAreaMap SVG component and add to /locations hub page
-- [ ] 03-02-PLAN.md — Convert plain-text city names to location links on service pages for cross-link distribution
+- [x] 03-01-PLAN.md — Create ServiceAreaMap SVG component and add to /locations hub page
+- [x] 03-02-PLAN.md — Convert plain-text city names to location links on service pages for cross-link distribution
 
 ## Progress
 
@@ -68,6 +68,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Architecture & Schema Fixes | 0/2 | Planning complete | - |
-| 2. Internal Linking & Navigation | 0/2 | Planning complete | - |
-| 3. Hub Enhancements & Service Cross-Links | 0/2 | Planning complete | - |
+| 1. Data Architecture & Schema Fixes | 2/2 | Complete | 2026-03-21 |
+| 2. Internal Linking & Navigation | 2/2 | Complete | 2026-03-22 |
+| 3. Hub Enhancements & Service Cross-Links | 2/2 | Complete | 2026-03-23 |

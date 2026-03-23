@@ -20,14 +20,14 @@
 
 - [x] **HUB-01**: Hub page H1 changed from "Roofing Contractor Columbus OH" to "Areas We Serve in Central Ohio"
 - [x] **HUB-02**: Hub page meta title updated to match new H1 (e.g., "Areas We Serve in Central Ohio | DTE Roofing Service Areas")
-- [ ] **HUB-03**: Service area map visible on /locations hub page (Google Maps embed, SVG, or static image)
+- [x] **HUB-03**: Service area map visible on /locations hub page (Google Maps embed, SVG, or static image)
 
 ### Internal Linking
 
 - [x] **LINK-01**: All 13 subpages have visible breadcrumb or "← All Service Areas" link in main content (below hero, above first content section)
 - [x] **LINK-02**: All 13 subpages have "Nearby Areas We Serve" section with 3-5 links to geographically adjacent location pages
 - [x] **LINK-03**: Footer lists all 13 location pages (not just 5), with "All Service Areas →" link to /locations
-- [ ] **LINK-04**: Service pages (/services/*) link to relevant location pages where contextually natural (2-3 links per service page)
+- [x] **LINK-04**: Service pages (/services/*) link to relevant location pages where contextually natural (2-3 links per service page)
 
 ### Data Architecture
 
@@ -77,8 +77,8 @@
 | LINK-01 | Phase 2 | Complete |
 | LINK-02 | Phase 2 | Complete |
 | LINK-03 | Phase 2 | Complete |
-| LINK-04 | Phase 3 | Pending |
-| HUB-03 | Phase 3 | Pending |
+| LINK-04 | Phase 3 | Complete |
+| HUB-03 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 16 total
