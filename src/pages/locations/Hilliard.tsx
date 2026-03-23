@@ -3,6 +3,8 @@ import { CheckCircle, ArrowRight, Phone, MapPin, Shield, Navigation } from 'luci
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
+import LocationBreadcrumb from '../../components/LocationBreadcrumb';
+import NearbyAreas from '../../components/NearbyAreas';
 
 export default function Hilliard() {
   const { reviewData } = useReviewData();
@@ -48,6 +50,8 @@ export default function Hilliard() {
           </div>
         </div>
       </section>
+
+      <LocationBreadcrumb cityName="Hilliard" />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -420,6 +424,8 @@ export default function Hilliard() {
               </div>
             </div>
           </div>
+
+          <NearbyAreas locationSlug="hilliard" />
 
           <div className="bg-gradient-to-br from-primary-700 to-primary-800 text-white p-8 rounded-xl">
             <div className="max-w-3xl mx-auto text-center">

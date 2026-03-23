@@ -3,6 +3,8 @@ import { CheckCircle, ArrowRight, Phone, MapPin, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
+import LocationBreadcrumb from '../../components/LocationBreadcrumb';
+import NearbyAreas from '../../components/NearbyAreas';
 
 export default function Columbus() {
   const { reviewData } = useReviewData();
@@ -45,6 +47,8 @@ export default function Columbus() {
           </div>
         </div>
       </section>
+
+      <LocationBreadcrumb cityName="Columbus" />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -279,6 +283,8 @@ export default function Columbus() {
               </p>
             </div>
           </div>
+
+          <NearbyAreas locationSlug="columbus" />
 
           <div className="bg-gradient-to-br from-primary-700 to-primary-800 text-white p-8 rounded-xl">
             <div className="max-w-3xl mx-auto text-center">

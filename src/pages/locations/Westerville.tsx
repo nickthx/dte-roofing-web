@@ -3,6 +3,8 @@ import { CheckCircle, ArrowRight, Phone, MapPin, Shield, Navigation } from 'luci
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
+import LocationBreadcrumb from '../../components/LocationBreadcrumb';
+import NearbyAreas from '../../components/NearbyAreas';
 
 export default function Westerville() {
   const { reviewData } = useReviewData();
@@ -48,6 +50,8 @@ export default function Westerville() {
           </div>
         </div>
       </section>
+
+      <LocationBreadcrumb cityName="Westerville" />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -414,6 +418,8 @@ export default function Westerville() {
               </div>
             </div>
           </div>
+
+          <NearbyAreas locationSlug="westerville" />
 
           <div className="bg-gradient-to-br from-primary-700 to-primary-800 text-white p-8 rounded-xl">
             <div className="max-w-3xl mx-auto text-center">
