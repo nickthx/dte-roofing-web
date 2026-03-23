@@ -42,10 +42,11 @@ Plans:
   1. Every location subpage displays a breadcrumb or "All Service Areas" link below the hero that navigates to /locations
   2. Every location subpage has a "Nearby Areas We Serve" section with 3-5 links to geographically adjacent location pages (matching the neighbor mapping from locations.ts)
   3. The site footer lists all 13 location pages with an "All Service Areas" link to /locations, visible on every page
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — Create LocationBreadcrumb and NearbyAreas components, wire into all 13 location pages
+- [ ] 02-02-PLAN.md — Update footer to list all 13 locations from LOCATIONS array
 
 ### Phase 3: Hub Enhancements & Service Cross-Links
 **Goal**: The /locations hub page has a visual service area map, and service pages link naturally to relevant location pages to complete the internal linking mesh
@@ -67,5 +68,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Architecture & Schema Fixes | 0/2 | Planning complete | - |
-| 2. Internal Linking & Navigation | 0/TBD | Not started | - |
+| 2. Internal Linking & Navigation | 0/2 | Planning complete | - |
 | 3. Hub Enhancements & Service Cross-Links | 0/TBD | Not started | - |
