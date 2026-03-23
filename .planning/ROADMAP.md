@@ -72,7 +72,10 @@ Plans:
   2. The hub breadcrumb schema produces a 2-item chain `[Home → Service Areas]` (no self-referencing third item)
   3. SchemaMarkup.tsx useEffect dependency array includes all referenced variables (`locationName`, `pageDescription`)
   4. No unused exports remain in `src/data/locations.ts` (`getAllLocationSlugs` removed or consumed)
-**Plans**: 0 plans
+**Plans**: 1 plan
+
+Plans:
+- [ ] 04-01-PLAN.md — Close all 4 tech debt items: SSOT migration, hub breadcrumb fix, useEffect deps, unused export removal
 
 ## Progress
 
@@ -84,4 +87,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Data Architecture & Schema Fixes | 2/2 | Complete | 2026-03-21 |
 | 2. Internal Linking & Navigation | 2/2 | Complete | 2026-03-22 |
 | 3. Hub Enhancements & Service Cross-Links | 2/2 | Complete | 2026-03-23 |
-| 4. SSOT & Schema Cleanup | 0/0 | Pending | — |
+| 4. SSOT & Schema Cleanup | 0/1 | Pending | — |
