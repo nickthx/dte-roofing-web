@@ -48,11 +48,11 @@ Exceptions: none
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body | 16px (text-base) | 400 (font-normal) | 1.5 (leading-relaxed) |
-| Label | 14px (text-sm) | 600 (font-semibold) | 1.25 (leading-tight) |
+| Label | 14px (text-sm) | 700 (font-bold) | 1.25 (leading-tight) |
 | Heading | 24px (text-2xl) | 700 (font-bold) | 1.2 |
 | Display | 32px (text-3xl) / 36px (text-4xl on md+) | 700 (font-bold) | 1.2 |
 
-Note: These match existing hub page patterns exactly. No new typographic values introduced.
+Weights used: 400 (normal body text) and 700 (labels, headings, display). Two weights only.
 
 ---
 
@@ -146,7 +146,7 @@ Pages with 2+ existing links (RoofRepair, RoofReplacement, RoofMaintenance, Emer
 
 **Link insertion rules:**
 1. Convert existing plain-text city names to `<Link>` elements (same visible text, now clickable)
-2. Use exact existing className: `"text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2"`
+2. Use exact className: `"text-primary-700 hover:text-primary-800 font-bold underline decoration-2 underline-offset-2"`
 3. Do NOT modify any surrounding paragraph text
 4. Do NOT add new sentences or paragraphs
 
@@ -184,7 +184,7 @@ Pages with 2+ existing links (RoofRepair, RoofReplacement, RoofMaintenance, Emer
 
 | State | Visual Treatment |
 |-------|-----------------|
-| Default | `text-primary-700 font-semibold underline decoration-2 underline-offset-2` |
+| Default | `text-primary-700 font-bold underline decoration-2 underline-offset-2` |
 | Hover | `text-primary-800` |
 | Focus | Browser default focus outline |
 | Visited | No custom visited styling (matches existing pattern) |
