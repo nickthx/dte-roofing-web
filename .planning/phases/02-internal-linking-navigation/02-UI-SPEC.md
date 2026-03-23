@@ -32,14 +32,14 @@ Declared values (must be multiples of 4):
 | Token | Value | Usage |
 |-------|-------|-------|
 | xs | 4px | Icon-to-text gap in breadcrumb chevron spacing |
-| sm | 8px | Gap between breadcrumb segments, inner padding of footer links |
+| sm | 8px | Gap between breadcrumb segments, inner padding of footer links, breadcrumb bar vertical padding (py-2), footer area list vertical gap (gap-y-2) |
 | md | 16px | Container horizontal padding (px-4), card inner padding, footer gap-y |
 | lg | 24px | Card padding (p-6), section heading bottom margin (mb-8) |
 | xl | 32px | Grid gap between nearby-area cards (gap-4 = 16px horizontal, gap-8 = 32px for section margins) |
 | 2xl | 48px | Not used in this phase |
 | 3xl | 64px | Nearby areas section bottom margin (mb-16) |
 
-Exceptions: Breadcrumb bar uses py-3 (12px vertical padding) -- this is the standard compact navigation bar height matching the site's existing nav density.
+No exceptions. All spacing values conform to the declared scale.
 
 ---
 
@@ -48,14 +48,18 @@ Exceptions: Breadcrumb bar uses py-3 (12px vertical padding) -- this is the stan
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body | 16px (text-base) | 400 (font-normal) | 1.5 |
-| Label / Breadcrumb text | 14px (text-sm) | 500 (font-medium) | 1.43 |
+| Breadcrumb hub link | 14px (text-sm) | 700 (font-bold) | 1.43 |
+| Breadcrumb current page | 14px (text-sm) | 400 (font-normal) | 1.43 |
 | Card label | 14px (text-sm) | 400 (font-normal) | 1.43 |
 | Section heading | 30px (text-3xl) | 700 (font-bold) | 1.2 |
 | Card city name | 16px (text-base) | 700 (font-bold) | 1.5 |
 | Footer column heading | 18px (text-lg) | 700 (font-bold) | 1.33 |
 | Footer link | 14px (text-sm) | 400 (font-normal) | 1.43 |
 
-Note: This phase introduces no new typography roles. All values match existing site patterns observed in Footer.tsx and location page content sections.
+Font sizes: 14px, 16px, 18px, 30px (4 sizes).
+Font weights: 400 (font-normal), 700 (font-bold) (2 weights).
+
+Note: Breadcrumb hub link uses font-bold (700) to make it feel like a strong navigation anchor. Current page city name uses font-normal (400) to create natural subordination without needing a third weight.
 
 ---
 
@@ -91,18 +95,18 @@ Accent reserved for: breadcrumb hub link text, MapPin icons in nearby-area cards
 |----------|-------|
 | Container background | bg-gray-50 |
 | Container border | border-b border-gray-200 |
-| Container padding | py-3 (12px vertical) |
+| Container padding | py-2 (8px vertical) |
 | Inner wrapper | container mx-auto px-4 |
 | Nav element | `<nav aria-label="Breadcrumb">` |
 | Layout | flex items-center gap-2 |
 | Hub link text | "All Service Areas" |
-| Hub link color | text-primary-700 hover:text-primary-800 font-medium |
+| Hub link color | text-primary-700 hover:text-primary-800 font-bold |
 | Separator icon | ChevronRight, w-4 h-4, text-gray-400 |
-| Current page text | cityName prop, text-charcoal-700 font-medium |
+| Current page text | cityName prop, text-charcoal-700 font-normal |
 | Transition | transition-colors on link hover |
 
 **Interaction states:**
-- Default: "All Service Areas" in primary-700, chevron in gray-400, city name in charcoal-700
+- Default: "All Service Areas" in primary-700 font-bold, chevron in gray-400, city name in charcoal-700 font-normal
 - Hover on link: text shifts to primary-800
 - Focus: browser default outline (do not suppress)
 
@@ -149,15 +153,15 @@ Accent reserved for: breadcrumb hub link text, MapPin icons in nearby-area cards
 |----------|-------|
 | Column heading | "Areas We Serve" (unchanged) |
 | Heading style | font-bold text-lg mb-4 (unchanged) |
-| List layout | grid grid-cols-2 gap-x-4 gap-y-1.5 (NEW: 2-column sub-grid) |
+| List layout | grid grid-cols-2 gap-x-4 gap-y-2 (NEW: 2-column sub-grid with 8px vertical gap) |
 | Link text size | text-sm (14px) |
 | Link color | text-gray-400 hover:text-white transition-colors |
-| "All Service Areas" link | Separate element below grid, text-sm font-medium, mt-3 inline-block |
+| "All Service Areas" link | Separate element below grid, text-sm font-bold, mt-3 inline-block |
 | Arrow indicator | HTML entity `&rarr;` appended to "All Service Areas" |
 | Data source | `LOCATIONS` array imported from `src/data/locations` |
 | Sort order | Array order from locations.ts (alphabetical or as defined) |
 
-**Rationale for 2-column sub-grid:** 13 cities + 1 "All Service Areas" link = 14 items. A single column would be ~2.5x taller than adjacent footer columns. Two columns of 7 items each keeps vertical height balanced. Reducing `space-y` from `space-y-2` (8px) to `gap-y-1.5` (6px) further compacts the list.
+**Rationale for 2-column sub-grid:** 13 cities + 1 "All Service Areas" link = 14 items. A single column would be ~2.5x taller than adjacent footer columns. Two columns of 7 items each keeps vertical height balanced. Using `gap-y-2` (8px) keeps the list compact while conforming to the declared spacing scale.
 
 ---
 
@@ -210,10 +214,10 @@ No shadcn or third-party registries are used in this project. All components are
 
 | Component | Default | Hover | Focus | Active | Disabled |
 |-----------|---------|-------|-------|--------|----------|
-| Breadcrumb link | primary-700 text | primary-800 text | browser outline | n/a | n/a |
+| Breadcrumb link | primary-700 text, font-bold | primary-800 text | browser outline | n/a | n/a |
 | Nearby card | gray-50 bg, gray-200 border | primary-50 bg, primary-700 border, primary-700 city text | browser outline | n/a | n/a |
 | Footer city link | gray-400 text | white text | browser outline | n/a | n/a |
-| Footer hub link | gray-400 text, font-medium | white text | browser outline | n/a | n/a |
+| Footer hub link | gray-400 text, font-bold | white text | browser outline | n/a | n/a |
 
 ---
 
