@@ -27,9 +27,9 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 - [x] Each subpage has page-specific areaServed (primary city + 2-3 neighbors) — Validated in Phase 1
 - [x] Each subpage has unique @id in schema — Validated in Phase 1
 - [x] No non-page cities in any areaServed array (only the 13 with pages) — Validated in Phase 1
-- [ ] Breadcrumb / "back to hub" link on all 13 subpages
-- [ ] "Nearby Areas We Serve" cross-linking section on all 13 subpages
-- [ ] Footer lists all 13 locations (not just 5)
+- [x] Breadcrumb / "back to hub" link on all 13 subpages — Validated in Phase 2
+- [x] "Nearby Areas We Serve" cross-linking section on all 13 subpages — Validated in Phase 2
+- [x] Footer lists all 13 locations (not just 5) — Validated in Phase 2
 - [ ] Service area map on /locations hub page
 - [ ] Service pages link to relevant location pages where natural
 
@@ -108,6 +108,8 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 | Remove 10 non-page cities from schema | Only cities with dedicated pages should be in areaServed | ✓ Phase 1 |
 | Hub H1 → "Areas We Serve in Central Ohio" | Stops cannibalization of /locations/columbus keyword | ✓ Phase 1 |
 | Unique @id per subpage schema | Prevents search engines treating all pages as same entity | ✓ Phase 1 |
+| LocationBreadcrumb + NearbyAreas components | Reusable components driven by locations.ts data for navigation hierarchy and cross-link mesh | ✓ Phase 2 |
+| Dynamic footer from LOCATIONS array | Ensures all 13 cities discoverable from every page, no hardcoded lists to maintain | ✓ Phase 2 |
 
 ## Evolution
 
@@ -127,4 +129,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after Phase 1 completion*
+*Last updated: 2026-03-23 after Phase 2 completion*
