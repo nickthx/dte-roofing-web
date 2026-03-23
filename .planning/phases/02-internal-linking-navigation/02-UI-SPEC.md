@@ -1,7 +1,7 @@
 ---
 phase: 2
 slug: internal-linking-navigation
-status: draft
+status: approved
 shadcn_initialized: false
 preset: none
 created: 2026-03-23
@@ -156,7 +156,7 @@ Accent reserved for: breadcrumb hub link text, MapPin icons in nearby-area cards
 | List layout | grid grid-cols-2 gap-x-4 gap-y-2 (NEW: 2-column sub-grid with 8px vertical gap) |
 | Link text size | text-sm (14px) |
 | Link color | text-gray-400 hover:text-white transition-colors |
-| "All Service Areas" link | Separate element below grid, text-sm font-bold, mt-3 inline-block |
+| "All Service Areas" link | Separate element below grid, text-sm font-bold, mt-4 inline-block |
 | Arrow indicator | HTML entity `&rarr;` appended to "All Service Areas" |
 | Data source | `LOCATIONS` array imported from `src/data/locations` |
 | Sort order | Array order from locations.ts (alphabetical or as defined) |
@@ -236,11 +236,11 @@ Breadcrumb is a single horizontal row at all breakpoints. No wrapping expected -
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS (FLAG: focal point owned by existing hero, non-blocking)
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS (FLAG: 14/16/18 close but semantically distinct, non-blocking)
+- [x] Dimension 5 Spacing: PASS (mt-3 → mt-4 fix applied)
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved (2026-03-23)
