@@ -202,7 +202,7 @@ export default function RoofInstallation() {
                       </li>
                     </ul>
                     <p className="text-charcoal-600 mt-4 italic">
-                      Best for: Budget-conscious homeowners in Grove City and Columbus seeking reliable protection
+                      Best for: Budget-conscious homeowners in <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link> and Columbus seeking reliable protection
                       with good value
                     </p>
                   </div>
@@ -476,7 +476,7 @@ export default function RoofInstallation() {
                     <p className="text-charcoal-600 text-sm leading-relaxed">
                       Square footage is the primary driver, but complexity matters significantly. A simple gable roof
                       costs less per square foot than a multi-level hip roof with dormers, valleys, and numerous
-                      penetrations common in older Grove City and Hilliard homes.
+                      penetrations common in older <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link> and Hilliard homes.
                     </p>
                   </div>
                   <div>
