@@ -112,6 +112,8 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 | Dynamic footer from LOCATIONS array | Ensures all 13 cities discoverable from every page, no hardcoded lists to maintain | ✓ Phase 2 |
 | SVG service area map on hub | Lightweight, accessible map showing 13 city positions with clickable links — no external deps | ✓ Phase 3 |
 | Plain-text to Link conversion for cross-links | Wraps existing city name mentions on service pages as links — adds linking without new content | ✓ Phase 3 |
+| Hub card grid consumes LOCATIONS SSOT | Eliminates local duplicate array — all location data in one file | ✓ Phase 4 |
+| Hub breadcrumb 2-item schema | Removes self-referencing third breadcrumb item on hub page | ✓ Phase 4 |
 
 ## Evolution
 
@@ -131,4 +133,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-23 after Phase 3 completion — all milestone v1.0 phases complete*
+*Last updated: 2026-03-23 after Phase 4 completion — all milestone v1.0 phases complete, tech debt resolved*
