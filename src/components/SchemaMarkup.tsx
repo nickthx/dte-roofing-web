@@ -202,7 +202,14 @@ export default function SchemaMarkup({
         name: pageTitle,
         item: pageUrl
       });
-    } else if ((type === 'location' || type === 'hub') && locationName) {
+    } else if (type === 'hub') {
+      breadcrumbItems.push({
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Service Areas',
+        item: `${BUSINESS_INFO.url}/locations`
+      });
+    } else if (type === 'location' && locationName) {
       breadcrumbItems.push({
         '@type': 'ListItem',
         position: 2,
@@ -296,7 +303,7 @@ export default function SchemaMarkup({
         }
       });
     };
-  }, [reviewData, type, service, faqs, pageUrl, pageTitle, locationSlug]);
+  }, [reviewData, type, service, faqs, pageUrl, pageTitle, locationSlug, locationName, pageDescription]);
 
   return null;
 }
