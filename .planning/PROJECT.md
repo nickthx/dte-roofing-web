@@ -30,8 +30,8 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 - [x] Breadcrumb / "back to hub" link on all 13 subpages — Validated in Phase 2
 - [x] "Nearby Areas We Serve" cross-linking section on all 13 subpages — Validated in Phase 2
 - [x] Footer lists all 13 locations (not just 5) — Validated in Phase 2
-- [ ] Service area map on /locations hub page
-- [ ] Service pages link to relevant location pages where natural
+- [x] Service area map on /locations hub page — Validated in Phase 3
+- [x] Service pages link to relevant location pages where natural — Validated in Phase 3
 
 ### Out of Scope
 
@@ -110,6 +110,8 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 | Unique @id per subpage schema | Prevents search engines treating all pages as same entity | ✓ Phase 1 |
 | LocationBreadcrumb + NearbyAreas components | Reusable components driven by locations.ts data for navigation hierarchy and cross-link mesh | ✓ Phase 2 |
 | Dynamic footer from LOCATIONS array | Ensures all 13 cities discoverable from every page, no hardcoded lists to maintain | ✓ Phase 2 |
+| SVG service area map on hub | Lightweight, accessible map showing 13 city positions with clickable links — no external deps | ✓ Phase 3 |
+| Plain-text to Link conversion for cross-links | Wraps existing city name mentions on service pages as links — adds linking without new content | ✓ Phase 3 |
 
 ## Evolution
 
@@ -129,4 +131,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-23 after Phase 2 completion*
+*Last updated: 2026-03-23 after Phase 3 completion — all milestone v1.0 phases complete*
