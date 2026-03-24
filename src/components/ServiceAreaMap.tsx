@@ -79,6 +79,7 @@ export default function ServiceAreaMap(): JSX.Element {
     mapInstance.current = map;
 
     const bounds = new google.maps.LatLngBounds();
+    let activeInfoWindow: google.maps.InfoWindow | null = null;
 
     CITIES.forEach((city) => {
       const position = { lat: city.lat, lng: city.lng };
@@ -114,7 +115,9 @@ export default function ServiceAreaMap(): JSX.Element {
       });
 
       marker.addListener('click', () => {
+        if (activeInfoWindow) activeInfoWindow.close();
         infoWindow.open(map, marker);
+        activeInfoWindow = infoWindow;
       });
     });
 
