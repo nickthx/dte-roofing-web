@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Shield, Award, Star } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 import { LOCATIONS } from '../data/locations';
+import BbbLogo from './logos/BbbLogo';
+import NextdoorLogo from './logos/NextdoorLogo';
 
 export default function Footer() {
   const { reviewData } = useReviewData();
@@ -114,18 +116,14 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-start gap-3 text-gray-400">
-              <div className="w-6 h-6 bg-blue-700 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-white font-extrabold text-xs leading-none">BBB</span>
-              </div>
+              <BbbLogo className="w-6 h-6 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">BBB Accredited</h5>
                 <p className="text-sm">Better Business Bureau</p>
               </div>
             </div>
             <div className="flex items-start gap-3 text-gray-400">
-              <div className="w-6 h-6 bg-green-600 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-white font-extrabold text-xs leading-none">ND</span>
-              </div>
+              <NextdoorLogo className="w-6 h-6 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">Nextdoor Verified</h5>
                 <p className="text-sm">Neighborhood recommended</p>

@@ -7,6 +7,8 @@ import RoofQuoteButton from '../components/RoofQuoteButton';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { useReviewData } from '../hooks/useReviewData';
 import { CANONICAL_DOMAIN } from '../seo/constants';
+import BbbLogo from '../components/logos/BbbLogo';
+import NextdoorLogo from '../components/logos/NextdoorLogo';
 
 export default function Home() {
   const { reviewData } = useReviewData();
@@ -491,18 +493,14 @@ export default function Home() {
           {/* Accreditation badges */}
           <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
             <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm">
-              <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-extrabold text-sm leading-none">BBB</span>
-              </div>
+              <BbbLogo className="w-10 h-10 flex-shrink-0" />
               <div>
                 <p className="font-bold text-charcoal-900 text-sm leading-tight">BBB Accredited</p>
                 <p className="text-charcoal-500 text-xs">Better Business Bureau</p>
               </div>
             </div>
             <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm">
-              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-extrabold text-sm leading-none">ND</span>
-              </div>
+              <NextdoorLogo className="w-10 h-10 flex-shrink-0" />
               <div>
                 <p className="font-bold text-charcoal-900 text-sm leading-tight">Nextdoor Verified</p>
                 <p className="text-charcoal-500 text-xs">Neighborhood Recommended</p>
