@@ -86,7 +86,7 @@ export default function Gallery() {
         <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofing Gallery Columbus OH</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">See the Work That Speaks for Itself</h1>
               <p className="text-xl text-gray-200">
                 Explore our portfolio of completed roofing projects across Columbus, Dublin, and Hilliard
               </p>

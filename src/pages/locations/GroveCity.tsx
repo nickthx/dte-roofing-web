@@ -33,7 +33,7 @@ export default function GroveCity() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Grove City, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Grove City OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Grove City's Reliable Roofer — No Runaround, Just Results</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Grove City homeowners—from Historic Downtown Broadway to Stringtown Road, Fryer Park to Scioto Grove areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>

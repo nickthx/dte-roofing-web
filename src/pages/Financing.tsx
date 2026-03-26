@@ -147,7 +147,7 @@ export default function Financing() {
               <DollarSign className="w-10 h-10 text-green-400" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Roofing Financing Columbus OH
+              A New Roof Shouldn't Break the Bank
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Our financing platform. Your home, your budget.

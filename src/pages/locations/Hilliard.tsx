@@ -33,7 +33,7 @@ export default function Hilliard() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Hilliard, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Hilliard OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Hilliard's Hometown Roofer — Born and Raised Here</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Hilliard homeowners—from Old Hilliard to Britton Farms to Scioto Reserve. Founded by Hilliard Davidson graduates, our owners work with every customer. Based minutes from Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228, we deliver detail-first craftsmanship to our neighbors.
             </p>

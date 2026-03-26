@@ -33,7 +33,7 @@ export default function NewAlbany() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving New Albany, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer New Albany OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">New Albany's Roofer — Quality Work, Honest Prices</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for New Albany homeowners—from Village Center to Rose Run Park to New Albany Country Club. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve New Albany regularly with the same attention to detail our owners bring to every project.
             </p>

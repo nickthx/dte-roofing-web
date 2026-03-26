@@ -33,7 +33,7 @@ export default function Powell() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Powell, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Powell OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Powell's Trusted Roofer — Just Down the Road</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Powell homeowners—from Downtown Powell and the Powell Rd corridor to Sawmill Parkway neighborhoods and Liberty Township border areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>

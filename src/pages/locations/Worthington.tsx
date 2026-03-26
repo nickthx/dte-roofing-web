@@ -33,7 +33,7 @@ export default function Worthington() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Worthington, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Worthington OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Worthington Homeowners Trust DTE With Their Roofs</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Worthington homeowners—from Historic Old Worthington and Village Green to High Street corridor neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>

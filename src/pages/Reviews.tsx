@@ -81,7 +81,7 @@ export default function Reviews() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofing Reviews Columbus OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Don't Take Our Word for It — Hear From Our Customers</h1>
             <p className="text-xl text-gray-200">
               Real reviews from real customers who trusted DTE Roofing with their homes
             </p>

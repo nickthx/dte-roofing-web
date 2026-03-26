@@ -17,7 +17,7 @@ export default function About() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofing Company Columbus OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Two Brothers, One Mission: Roofing Done Right</h1>
             <p className="text-xl text-gray-200">
               Building trust and excellence in roofing services since 2023
             </p>

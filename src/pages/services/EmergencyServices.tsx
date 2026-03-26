@@ -20,7 +20,7 @@ export default function EmergencyServices() {
               <AlertTriangle className="w-12 h-12" />
               <span className="text-xl font-semibold">24/7 EMERGENCY SERVICE</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Emergency Roofer Columbus OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Emergency? We're on Our Way</h1>
             <p className="text-xl text-gray-100 mb-6">
               Fast, reliable emergency response when you need it most
             </p>

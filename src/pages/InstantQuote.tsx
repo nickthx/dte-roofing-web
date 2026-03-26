@@ -22,7 +22,7 @@ export default function InstantQuote() {
                 <Calculator className="w-10 h-10" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Roof Quote Columbus OH
+                Get Your Roof Quote in Under 60 Seconds
               </h1>
               <p className="text-xl text-white/90 mb-8">
                 Get an accurate estimate in 30 seconds using satellite imagery. See your price range before we even visit.
