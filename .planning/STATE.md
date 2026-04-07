@@ -86,6 +86,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | x50 | Replace BBB and Nextdoor placeholder logos with official logos | 2026-03-26 | fd1170d | [x50-replace-bbb-and-nextdoor-placeholder-log](./quick/260325-x50-replace-bbb-and-nextdoor-placeholder-log/) |
+| 260407-lws | Tech SEO Phase A: apex 301, security headers, gutter-services 301, sitemap regen | 2026-04-07 | b3f4968 | [260407-lws-technical-seo-phase-a-vercel-json-301-re](./quick/260407-lws-technical-seo-phase-a-vercel-json-301-re/) |
 
 ## Session Continuity
 
