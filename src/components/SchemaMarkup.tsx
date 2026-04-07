@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useReviewData } from '../hooks/useReviewData';
 import { getAreaServedForLocation, LOCATIONS, type LocationConfig } from '../data/locations';
 
@@ -276,34 +276,13 @@ export default function SchemaMarkup({
 ].filter(Boolean);
 
 
-  useEffect(() => {
-    const scriptIds: string[] = [];
-
-    schemas.forEach((schema, index) => {
-      const scriptId = `schema-${type}-${index}`;
-      scriptIds.push(scriptId);
-
-      let scriptElement = document.getElementById(scriptId) as HTMLScriptElement;
-
-      if (!scriptElement) {
-        scriptElement = document.createElement('script');
-        scriptElement.id = scriptId;
-        scriptElement.type = 'application/ld+json';
-        document.head.appendChild(scriptElement);
-      }
-
-      scriptElement.textContent = JSON.stringify(schema, null, 2);
-    });
-
-    return () => {
-      scriptIds.forEach(id => {
-        const scriptElement = document.getElementById(id);
-        if (scriptElement) {
-          scriptElement.remove();
-        }
-      });
-    };
-  }, [reviewData, type, service, faqs, pageUrl, pageTitle, locationSlug, locationName, pageDescription]);
-
-  return null;
+  return (
+    <Helmet>
+      {schemas.map((schema, index) => (
+        <script key={`${type}-${index}`} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+    </Helmet>
+  );
 }

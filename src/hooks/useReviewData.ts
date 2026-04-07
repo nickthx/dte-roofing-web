@@ -18,7 +18,13 @@ interface ReviewData {
 }
 
 export const useReviewData = () => {
-  const [reviewData, setReviewData] = useState<ReviewData | null>(null);
+  const [reviewData, setReviewData] = useState<ReviewData | null>({
+    totalReviews: DEFAULT_REVIEW_COUNT,
+    averageRating: 5.0,
+    ratingBreakdown: { 5: DEFAULT_REVIEW_COUNT, 4: 0, 3: 0, 2: 0, 1: 0 },
+    lastUpdated: '',
+    businessName: 'DTE Roofing',
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -74,7 +80,7 @@ export const useReviewData = () => {
           totalReviews: DEFAULT_REVIEW_COUNT,
           averageRating: 5.0,
           ratingBreakdown: { 5: DEFAULT_REVIEW_COUNT, 4: 0, 3: 0, 2: 0, 1: 0 },
-          lastUpdated: new Date().toISOString(),
+          lastUpdated: '',
           businessName: 'DTE Roofing'
         });
       }
