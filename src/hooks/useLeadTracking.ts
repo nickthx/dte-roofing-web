@@ -46,6 +46,24 @@ export function useLeadTracking(): TrackingData {
   const dataRef = useRef<TrackingData | null>(null);
 
   if (!dataRef.current) {
+    // SSR guard: during prerender window is undefined — return a stub.
+    // Client hydration will re-populate on first render in the browser.
+    if (typeof window === 'undefined') {
+      return {
+        utm_source: null,
+        utm_medium: null,
+        utm_campaign: null,
+        utm_term: null,
+        utm_content: null,
+        referrer: '',
+        landingPage: '',
+        deviceType: 'desktop',
+        screenResolution: '',
+        userAgent: '',
+        sessionId: '',
+        formStartedAt: '',
+      };
+    }
     const params = new URLSearchParams(window.location.search);
     dataRef.current = {
       utm_source: params.get('utm_source'),

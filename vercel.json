@@ -1,6 +1,11 @@
 {
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/team", "destination": "/services", "statusCode": 301 },
+    { "source": "/faqs", "destination": "/faq", "statusCode": 301 },
+    { "source": "/careers", "destination": "/contact", "statusCode": 301 },
+    { "source": "/book-a-consultation", "destination": "/contact", "statusCode": 301 },
+    { "source": "/cart", "destination": "/contact", "statusCode": 301 },
     { "source": "/services/gutter-services", "destination": "/services/gutters", "statusCode": 301 },
     {
       "source": "/:path*",
