@@ -35,17 +35,18 @@ The v1.0 milestone built the schema, linking, and structural SEO foundation. A 2
   - 01-02-PLAN.md — Competitor GBP research via claude-in-chrome
 
 ### Phase 2: Service Pages Metadata (Batch B2)
-**Goal:** All 12 service pages have unique, descriptive titles, descriptions, and H1/H2 that reflect page intent and rank for their primary service keyword
+**Goal:** All 10 in-scope service pages (scope corrected from 12 during Phase 1 research — RoofRepair deferred to Phase 3a, GutterServices is a 301 orphan) have unique, descriptive titles, descriptions, and H1/H2 that reflect page intent and rank for their primary service keyword
 **Depends on:** Phase 1 (root cause + competitor data)
 **Requirements:** META-01, META-02, META-04, META-05, HEAD-02, HEAD-03
 **Success Criteria:**
-  1. All 12 `/services/*` pages have unique titles containing the service + Columbus region
-  2. All 12 have unique 140-200 char descriptions mentioning the service and city
-  3. All 12 have H1 in `Primary Service + Columbus, OH` format
-  4. All 12 have H2s listing secondary services sourced from Phase 1 competitor research
-  5. `npm run build && npm run lint` pass; prerendered `dist/services/*/index.html` contain the new titles/descriptions/headings
-**Plans:** 1 plan
-  - 02-01-PLAN.md — Draft copy for 12 service pages, user approval, atomic per-page commits
+  1. All 10 `/services/*` pages have unique titles containing the service + Columbus region
+  2. All 10 have unique 140-200 char descriptions mentioning the service and city
+  3. All 10 have H1 in `Primary Service + Columbus, OH` or `Primary Service + Central Ohio` format
+  4. All 10 have H2s listing secondary services sourced from Phase 1 competitor research
+  5. `npm run build && npm run lint && npm run typecheck` pass; prerendered `dist/services/*/index.html` contain the new titles/descriptions/headings
+**Plans:** 2 plans
+  - [ ] 02-01-PLAN.md — Draft copy for 10 service pages + user approval gate (6 decisions) + frozen approved packet
+  - [ ] 02-02-PLAN.md — Apply approved copy with 10 atomic per-page commits + optional prerender fix + build/lint/typecheck gate + batch verification
 
 ### Phase 3: Core Pages Metadata (Batch B3)
 **Goal:** 6 non-location/non-service pages have unique, accurate titles and descriptions matching their actual content
