@@ -1,30 +1,33 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: Milestone complete
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-03-23T21:33:53.908Z"
+milestone: v1.1
+milestone_name: per-page-seo-metadata-overhaul
+status: Defining requirements
+stopped_at: Milestone v1.1 initialized
+last_updated: "2026-04-08T00:00:00.000Z"
+phase_numbering: reset
 progress:
-  total_phases: 4
-  completed_phases: 3
-  total_plans: 5
-  completed_plans: 5
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-21)
+See: .planning/PROJECT.md (updated 2026-04-08)
 
 **Core value:** Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, and page structure.
-**Current focus:** Phase 04 — ssot-schema-cleanup
+**Current focus:** Milestone v1.1 — defining requirements and roadmap
 
 ## Current Position
 
-Phase: 04
-Plan: Not started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-04-08 — Milestone v1.1 started, v1.0 phases archived to .planning/milestones/v1.0-phases/
 
 ## Performance Metrics
 

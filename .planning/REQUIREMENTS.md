@@ -1,7 +1,50 @@
 # Requirements: DTE Roofing — Local Authority & Service Area SEO Overhaul
 
 **Defined:** 2026-03-21
+**Updated:** 2026-04-08 (milestone v1.1 added)
 **Core Value:** Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, and page structure.
+
+## v1.1 Requirements — Per-Page SEO Metadata Overhaul
+
+### Page Metadata (Titles & Descriptions)
+
+- [ ] **META-01**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<title>` baked into the static HTML — zero duplicates
+- [ ] **META-02**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<meta description>` baked into the static HTML — zero duplicates
+- [ ] **META-03**: Every page passes both `title` and `description` props to the `<SEO>` component (via per-page call or shared template, as root cause diagnosis dictates)
+- [ ] **META-04**: Titles reflect actual page intent — location pages include city + primary service keywords, service pages include service + Columbus region, core pages describe their actual content
+- [ ] **META-05**: Descriptions are 140-200 characters, include page-specific value prop, and avoid "BEST" / superlative language that triggers Google Helpful Content signals
+
+### Heading Structure (H1/H2 Rewrite)
+
+- [ ] **HEAD-01**: Every location page H1 follows the format `Primary Service Category + City` (e.g., "Roof Repair & Replacement in Hilliard, OH") — overrides the v1.0 "do not modify content" constraint for headings only
+- [ ] **HEAD-02**: Every service page H1 follows the format `Primary Service + Columbus Region` (e.g., "Roof Repair in Columbus, OH")
+- [ ] **HEAD-03**: Every location/service page has H2s listing secondary categories + most pertinent services, informed by competitor Google Business Profile research
+- [ ] **HEAD-04**: Competitor GBP Services/Categories scraped from top 3 competitors per city using `claude-in-chrome` MCP, stored in `.planning/research/v1.1-gbp-competitors.md`
+
+### `/blog` SSR Fix
+
+- [ ] **BLOG-01**: `/blog` ships non-empty `<title>` in prerendered HTML (currently empty)
+- [ ] **BLOG-02**: `/blog` ships non-empty `<h1>` in prerendered HTML (currently empty)
+- [ ] **BLOG-03**: Root cause identified and documented — likely Supabase data-fetching in useEffect causing SSR to render empty state
+
+### Verification & Quality Gates
+
+- [ ] **VERIFY-01**: Site-wide curl audit confirms 35 unique titles + 35 unique descriptions post-deploy
+- [ ] **VERIFY-02**: `on-page-seo-auditor` re-run scores title + description rows ≥8/10
+- [ ] **VERIFY-03**: `technical-seo-checker` overall health unchanged or improved (≥9/10 baseline from 2026-04-08 audit)
+- [ ] **VERIFY-04**: `npm run build && npm run lint && tsc --noEmit` all pass before deploy
+- [ ] **VERIFY-05**: Vercel production deploy succeeds; spot-checked via `claude-in-chrome` on 3 representative pages (one service, one location, `/blog`)
+
+## Out of Scope (v1.1)
+
+- Rewriting paragraph body content, FAQs, testimonials, or service descriptions (v1.0 constraint still applies outside of H1/H2)
+- URL or slug changes
+- NAP changes
+- Schema markup changes (already handled in v1.0 Phases 1 & 4)
+- New location pages or service pages
+- Adding new dependencies
+
+---
 
 ## v1 Requirements
 

@@ -8,6 +8,21 @@ A structural/technical SEO overhaul of the /locations hub and 13 location subpag
 
 Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, and page structure — without touching approved content.
 
+## Current Milestone: v1.1 — Per-Page SEO Metadata Overhaul
+
+**Goal:** Every prerendered page on dteroofingllc.com ships a unique, descriptive `<title>` and `<meta description>`, plus H1/H2 structured as `primary category + city` / `secondary categories + services` informed by competitor GBP research — eliminating the current site-wide duplicate-title and duplicate-description problem that nullifies per-page SEO.
+
+**Target features:**
+- Unique `<title>` on all 35 sitemap URLs (current: 21 share one 166-char default)
+- Unique `<meta description>` on all 35 sitemap URLs (current: all 35 share homepage description)
+- H1/H2 rewrite to primary+city / secondary+services format, driven by competitor GBP Services/Categories research
+- Fix `/blog` prerender — currently ships empty `<title>` and empty `<h1>`
+- Plumb `<SEO>` props correctly across all page components (diagnose shared-template vs per-page)
+
+**Batched execution plan:** 5 reviewable batches, each gated on user approval of drafted copy before edits land.
+
+**Constraint exception:** The v1.0 "do not modify content" rule is explicitly lifted for H1/H2 headings in this milestone only — at user direction.
+
 ## Requirements
 
 ### Validated
