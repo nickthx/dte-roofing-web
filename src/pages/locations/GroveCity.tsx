@@ -13,7 +13,7 @@ export default function GroveCity() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Grove City, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Grove City, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Grove City, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers grove city, roof repair grove city, roof replacement grove city, roofing company grove city, storm damage grove city, gutter services grove city, roofer near me grove city, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/grove-city"
       />
@@ -33,7 +33,7 @@ export default function GroveCity() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Grove City, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Grove City's Reliable Roofer — No Runaround, Just Results</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Grove City, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Grove City homeowners—from Historic Downtown Broadway to Stringtown Road, Fryer Park to Scioto Grove areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
@@ -57,7 +57,7 @@ export default function GroveCity() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Gutter Installation & Siding in Grove City</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Gutter Guards, Storm Damage & Hail Repair in Grove City</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Grove City regularly on the southwest side of Columbus. With easy access via <strong>I-71</strong>, <strong>I-270</strong>, and <strong>US-62</strong>, we reach Grove City efficiently—from <strong>Historic Downtown Grove City and Broadway</strong> to <strong>Stringtown Road</strong> corridors, from <strong>Fryer Park</strong> neighborhoods to areas near <strong>Scioto Grove Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
