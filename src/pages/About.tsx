@@ -9,8 +9,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Learn about DTE Roofing, Columbus's most trusted roofing company. Quality workmanship, honest service, and dedication to excellence."
+        title="About DTE Roofing | Family-Owned Roofer in Columbus, OH"
+        description="Learn about DTE Roofing, a family-owned roofing company serving Columbus and Central Ohio since 2023. Licensed, insured, and committed to honest, quality workmanship."
         keywords="about DTE Roofing, Columbus roofing company, local roofer, family-owned roofing business"
         canonical="https://www.dteroofingllc.com/about"
       />
