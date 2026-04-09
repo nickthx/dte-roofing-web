@@ -32,9 +32,10 @@ for (const route of PRERENDER_ROUTES) {
     .filter(Boolean)
     .join('\n    ');
 
-  // Strip the default <title> from the template so helmet's title wins,
-  // then inject all helmet head tags just before </head>.
+  // Strip the default <title> and <meta name="description"> from the template
+  // so helmet's title/description tags are the only ones in the head.
   let page = template.replace(/<title>[^<]*<\/title>/i, '');
+  page = page.replace(/<meta name="description"[^>]*>/i, '');
   page = page.replace('</head>', `    ${headTags}\n  </head>`);
 
   // Inject SSR body into the root container.
