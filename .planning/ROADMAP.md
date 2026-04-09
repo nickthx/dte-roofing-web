@@ -45,8 +45,8 @@ The v1.0 milestone built the schema, linking, and structural SEO foundation. A 2
   4. All 10 have H2s listing secondary services sourced from Phase 1 competitor research
   5. `npm run build && npm run lint && npm run typecheck` pass; prerendered `dist/services/*/index.html` contain the new titles/descriptions/headings
 **Plans:** 2 plans
-  - [ ] 02-01-PLAN.md — Draft copy for 10 service pages + user approval gate (6 decisions) + frozen approved packet
-  - [ ] 02-02-PLAN.md — Apply approved copy with 10 atomic per-page commits + optional prerender fix + build/lint/typecheck gate + batch verification
+  - [x] 02-01-PLAN.md — Draft copy for 10 service pages + user approval gate (6 decisions) + frozen approved packet
+  - [x] 02-02-PLAN.md — Apply approved copy with 10 atomic per-page commits + optional prerender fix + build/lint/typecheck gate + batch verification
 
 ### Phase 3: Core Pages Metadata (Batch B3)
 **Goal:** 6 non-location/non-service pages have unique, accurate titles and descriptions matching their actual content
