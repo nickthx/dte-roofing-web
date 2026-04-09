@@ -13,7 +13,7 @@ export default function Gahanna() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Gahanna, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Gahanna, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Gahanna, OH from our Columbus HQ with owner-led roof repair, commercial roofing, gutter installation, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers gahanna, roof repair gahanna, roof replacement gahanna, roofing company gahanna, storm damage gahanna, gutter services gahanna, roofer near me gahanna, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/gahanna"
       />
@@ -33,7 +33,7 @@ export default function Gahanna() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Gahanna, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Gahanna Roofing by a Team That Does Things Right</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Gahanna, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Gahanna homeowners—from Creekside District to Old Gahanna, near John Glenn International Airport to Big Walnut Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
@@ -57,7 +57,7 @@ export default function Gahanna() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Storm Damage, Emergency Roofing & Gutter Services in Gahanna</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Commercial Roofing, Gutter Installation, Storm Damage & Hail Repair in Gahanna</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Gahanna regularly on the northeast side of Columbus. From the vibrant <strong>Creekside District</strong> (home to Creekside Park and community events) to historic <strong>Old Gahanna</strong>, from neighborhoods near <strong>John Glenn Columbus International Airport</strong> to established areas along <strong>Big Walnut Creek</strong>, we understand Gahanna's "Herb Capital of Ohio" community character. Our owners personally work with every customer—ensuring quality and direct communication on every project.
               </p>
