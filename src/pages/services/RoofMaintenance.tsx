@@ -7,8 +7,8 @@ export default function RoofMaintenance() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Professional roof maintenance services in Columbus, OH. Extend your roof's lifespan with regular inspections, cleaning, and preventive care. Maintenance plans available. Call 614-971-6028."
+        title="Roof Maintenance & Tune-Ups in Central Ohio | DTE Roofing"
+        description="Roof maintenance and annual tune-ups across Central Ohio. Gutter cleaning, attic ventilation checks, minor repairs, and leak prevention. Maintenance plans. Call 614-971-6028."
         keywords="roof maintenance, preventive roof care, roof cleaning, annual roof inspection, maintenance program, Columbus roof maintenance"
         canonical={`${CANONICAL_DOMAIN}/services/roof-maintenance`}
       />
@@ -16,7 +16,7 @@ export default function RoofMaintenance() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Keep Your Roof Strong Year After Year</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Maintenance & Tune-Ups in Central Ohio</h1>
             <p className="text-xl text-gray-200">
               Protect your investment and extend your roof's lifespan with regular maintenance
             </p>
@@ -28,7 +28,7 @@ export default function RoofMaintenance() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Annual Inspections, Gutter Cleaning, Minor Repairs & Preventative Care</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Annual Roof Maintenance Checklist</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Regular roof maintenance is the key to maximizing your roof's lifespan and avoiding costly
                 emergency repairs. Whether you're <Link to="/locations/westerville" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Westerville</Link>, <Link to="/locations/powell" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Powell</Link>, or <Link to="/locations/gahanna" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">throughout Gahanna</Link>, just like your car needs oil changes, your roof needs regular care to
