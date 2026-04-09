@@ -7,8 +7,8 @@ export default function EmergencyServices() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="24/7 emergency roof repair in Columbus, OH. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now!"
+        title="24/7 Emergency Roof Repair in Central Ohio | DTE Roofing"
+        description="24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now."
         keywords="emergency roof repair, 24/7 roofing, storm damage, emergency leak repair, urgent roof repair, Columbus emergency roofing"
         canonical={`${CANONICAL_DOMAIN}/services/emergency-services`}
       />
@@ -20,7 +20,7 @@ export default function EmergencyServices() {
               <AlertTriangle className="w-12 h-12" />
               <span className="text-xl font-semibold">24/7 EMERGENCY SERVICE</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Emergency? We're on Our Way</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">24/7 Emergency Roofing in Central Ohio</h1>
             <p className="text-xl text-gray-100 mb-6">
               Fast, reliable emergency response when you need it most
             </p>
@@ -52,7 +52,7 @@ export default function EmergencyServices() {
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Emergency Tarping, Leak Repair, Storm Damage Response & Temporary Repairs</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">24/7 Emergency Roof Repair & Tarping</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Some roofing issues require immediate attention to prevent further damage to your property.
                 Don't wait if you're experiencing any of these emergency situations:
