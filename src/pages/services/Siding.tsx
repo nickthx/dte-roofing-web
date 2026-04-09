@@ -7,8 +7,8 @@ export default function Siding() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Professional siding installation and repair in Columbus, OH. Vinyl siding, LP Smart Siding, storm damage repair. Enhance curb appeal and protection. Free estimates. Call 614-971-6028."
+        title="Siding Installation & Repair in Central Ohio | DTE Roofing"
+        description="Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028."
         keywords="siding installation Columbus, vinyl siding, LP Smart Siding, siding repair, siding replacement, Columbus siding contractor"
         canonical={`${CANONICAL_DOMAIN}/services/siding`}
       />
@@ -16,7 +16,7 @@ export default function Siding() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Siding That Looks Great and Holds Up for Decades</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Siding Installation & Repair in Central Ohio</h1>
             <p className="text-xl text-gray-200">
               Transform your home's exterior with quality siding installation and repair
             </p>
@@ -28,7 +28,7 @@ export default function Siding() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Vinyl Siding, LP SmartSide, Siding Repair & Custom Trim Installation</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Vinyl Siding, Fiber Cement & Composite Siding Options</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">across Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and Grove City, DTE Roofing transforms
                 homes with professional siding installation and repair. Your siding does more than look good—it's
