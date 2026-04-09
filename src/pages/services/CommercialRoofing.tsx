@@ -7,8 +7,8 @@ export default function CommercialRoofing() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Expert commercial roofing services in Columbus, OH. TPO, EPDM, metal roofing. Minimal disruption, maintenance programs, emergency service. Licensed & insured. Call 614-971-6028."
+        title="Commercial Roofing Contractor Columbus, OH | DTE Roofing"
+        description="Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate."
         keywords="commercial roofing Columbus, business roofing, flat roof repair, TPO roofing, EPDM roofing, commercial roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
       />
@@ -16,7 +16,7 @@ export default function CommercialRoofing() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Commercial Roofing That Protects Your Business</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Commercial Roofing in Columbus, OH</h1>
             <p className="text-xl text-gray-200">
               Professional roofing solutions for businesses and commercial properties
             </p>
@@ -28,7 +28,7 @@ export default function CommercialRoofing() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">TPO & EPDM Systems, Flat Roof Repair, Metal Roofing & Maintenance Programs</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Commercial Flat Roof Systems: TPO, EPDM & Modified Bitumen</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus-area businesses</Link> trust DTE Roofing for their commercial
                 roofing needs. From small retail shops <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Hilliard</Link> to large industrial facilities <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Grove City</Link>,
