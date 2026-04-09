@@ -13,7 +13,7 @@ export default function Reynoldsburg() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Reynoldsburg, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, gutter installation & storm damage. Call 614-971-6028."
         keywords="roofers reynoldsburg, roof repair reynoldsburg, roof replacement reynoldsburg, roofing company reynoldsburg, storm damage reynoldsburg, gutter services reynoldsburg, roofer near me reynoldsburg, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/reynoldsburg"
       />
@@ -33,7 +33,7 @@ export default function Reynoldsburg() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Reynoldsburg, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Reynoldsburg OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Reynoldsburg, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Reynoldsburg homeowners—from Livingston Ave corridors to Taylor Road, East Main Street to Blacklick Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
@@ -57,7 +57,7 @@ export default function Reynoldsburg() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Siding Services in Reynoldsburg</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Commercial Roofing, Gutter Installation, Storm Damage & Metal Roofing in Reynoldsburg</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Reynoldsburg regularly on the east and southeast side of Columbus. With easy access via <strong>I-270</strong> and <strong>I-70</strong>, we reach Reynoldsburg efficiently—from <strong>Livingston Ave</strong> neighborhoods to <strong>East Main Street</strong> corridors, from <strong>Taylor Road</strong> to <strong>Broad Street (US-40)</strong> areas, and communities near <strong>Blacklick Creek</strong> and <strong>Blacklick Woods Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
