@@ -13,7 +13,7 @@ export default function NewAlbany() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers New Albany, OH | DTE Roofing — Columbus HQ, Serving New Albany"
-        description="Looking for roofers in New Albany, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves New Albany with expert roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
+        description="DTE Roofing serves New Albany, OH from our Columbus HQ with owner-led residential roof replacement, premium shingles, gutter systems & storm damage repair. Call 614-971-6028."
         keywords="roofers new albany oh, roofers near new albany, best roofers in new albany, roof repair new albany, roof replacement new albany, storm damage new albany, gutter services new albany, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/new-albany"
       />
@@ -33,7 +33,7 @@ export default function NewAlbany() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving New Albany, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">New Albany's Roofer — Quality Work, Honest Prices</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in New Albany, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for New Albany homeowners—from Village Center to Rose Run Park to New Albany Country Club. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve New Albany regularly with the same attention to detail our owners bring to every project.
             </p>
@@ -57,7 +57,7 @@ export default function NewAlbany() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Preventative Maintenance, Siding & Gutter Services in New Albany</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Premium Residential Roofing, Gutter Systems & Storm Damage Repair in New Albany</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve New Albany regularly—approximately 20 miles, roughly 25-35 minutes depending on route and traffic. From the <strong>Village Center / Market Square</strong> area to <strong>Rose Run Park</strong>, from the elegant estates of <strong>New Albany Country Club</strong> to family neighborhoods near <strong>Jeanne B. McCoy Community Center for the Arts</strong>, we understand New Albany's distinctive community standards. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>
