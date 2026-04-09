@@ -13,7 +13,7 @@ export default function Hilliard() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Hilliard, OH | DTE Roofing — Near Hilliard, Owner-Led Inspections"
-        description="Roofers serving Hilliard, OH. Founded by Hilliard Davidson grads, DTE Roofing owners work with every customer. Office at 615 Hilliard Rome Rd, Columbus, OH 43228. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing is right by Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228. Owner-led roof repair, replacement, gutters, siding & storm damage. Call 614-971-6028."
         keywords="roofers hilliard, roof repair hilliard, roof replacement hilliard, roofing company hilliard, roofers near hilliard, storm damage hilliard, gutter services hilliard, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/hilliard"
       />
@@ -33,7 +33,7 @@ export default function Hilliard() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Hilliard, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Hilliard's Hometown Roofer — Born and Raised Here</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Hilliard, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Hilliard homeowners—from Old Hilliard to Britton Farms to Scioto Reserve. Founded by Hilliard Davidson graduates, our owners work with every customer. Based minutes from Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228, we deliver detail-first craftsmanship to our neighbors.
             </p>
@@ -57,7 +57,7 @@ export default function Hilliard() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Gutter Services in Hilliard</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Services, Siding, Storm Damage & Insurance Claims in Hilliard</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 DTE Roofing is not just another contractor serving Hilliard—we are from here. Founders Donovan and Mitchell grew up in Hilliard and graduated from Hilliard Davidson High School. Our office at 615 Hilliard Rome Rd (Columbus mailing address, just off the west side) means we are minutes from anywhere in town, whether you are in Old Hilliard near the historic downtown and Center Street Market, the established neighborhoods off Cemetery Road, or the newer developments along Cosgray Road and Scioto Reserve.
               </p>
