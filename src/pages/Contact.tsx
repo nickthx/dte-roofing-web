@@ -11,8 +11,8 @@ export default function Contact() {
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Contact DTE Roofing for free estimates on roof repair, replacement & installation. Located at 615 Hilliard Rome Rd, Columbus OH. Call 614-971-6028. Fast response, 24/7 emergency service."
+        title="Contact DTE Roofing | Free Estimates in Columbus, OH"
+        description="Contact DTE Roofing for a free roofing estimate in Columbus and Central Ohio. Located at 615 Hilliard Rome Rd. Call 614-971-6028 or email for 24/7 emergency service."
         keywords="contact roofer Columbus, free roof estimate, Columbus roofing company, Hilliard roofer, emergency roof repair, roofing contractor near me"
         canonical="https://www.dteroofingllc.com/contact"
       />
