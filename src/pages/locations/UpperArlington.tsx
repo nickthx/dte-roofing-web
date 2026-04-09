@@ -13,7 +13,7 @@ export default function UpperArlington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Upper Arlington, OH | DTE Roofing — Owner-Led Inspections, Columbus HQ"
-        description="Roofers serving Upper Arlington, OH. Owners personally involved in every project. Based at 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Upper Arlington, OH from our Columbus HQ with owner-led roof repair, inspections, gutter services, hail damage & insurance claim help. Call 614-971-6028."
         keywords="roofers upper arlington, roof repair upper arlington, roof replacement upper arlington, roofing company upper arlington, storm damage upper arlington, gutter services upper arlington, roofers columbus, roofer near me upper arlington"
         canonical="https://www.dteroofingllc.com/locations/upper-arlington"
       />
@@ -33,7 +33,7 @@ export default function UpperArlington() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Upper Arlington, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Upper Arlington OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Upper Arlington, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Upper Arlington homeowners—from South of Lane to North of Lane, Kingsdale to Tremont Center. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship to this prestigious community.
             </p>
@@ -57,7 +57,7 @@ export default function UpperArlington() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Inspections & Storm Damage in Upper Arlington</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Inspection, Gutter Services, Hail Damage & Insurance Claims in Upper Arlington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Upper Arlington regularly—typically 15-25 minutes depending on traffic and route. From the historic charm of South of Lane neighborhoods to North of Lane's established homes, from the <strong>Lane Avenue corridor</strong> to <strong>Kingsdale</strong> and <strong>Tremont Center</strong> areas, we understand Upper Arlington's distinctive community character and elevated standards. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
