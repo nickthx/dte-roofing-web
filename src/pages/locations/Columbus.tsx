@@ -13,7 +13,7 @@ export default function Columbus() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Columbus, OH | DTE Roofing — Roof Repair & Replacement"
-        description="Looking for roofers in Columbus, OH? DTE Roofing is based at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Free inspections, detail-first repairs & replacements. Call 614-971-6028."
+        description="DTE Roofing is a Columbus, OH roofing contractor at 615 Hilliard Rome Rd, Columbus, OH 43228. Owner-led roof repair, replacement, storm damage & gutters. Call 614-971-6028."
         keywords="roofers columbus, roofers columbus oh, roofing company columbus, roof repair columbus, roof replacement columbus, storm damage columbus, gutter services columbus, roofer near me columbus"
         canonical="https://www.dteroofingllc.com/locations/columbus"
       />
@@ -33,7 +33,7 @@ export default function Columbus() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Columbus, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Columbus's Go-To Roofer — Right Here in Your Backyard</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Columbus, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Your trusted local roofing contractor serving all Columbus neighborhoods with honest diagnostics and expert craftsmanship.
             </p>
@@ -54,7 +54,7 @@ export default function Columbus() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Emergency Roofing in Columbus</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Storm Damage, Commercial Roofing, Gutter Installation & Metal Roofing in Columbus</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 DTE Roofing is headquartered in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228. Founded by two brothers from Hilliard, we built our business on a simple principle: honest diagnostics and quality work. Our owners are personally involved in every project—ensuring quality and clear communication from start to finish. We serve homeowners throughout Columbus and Franklin County with great attention to detail and the same care we would give our own homes.
               </p>
