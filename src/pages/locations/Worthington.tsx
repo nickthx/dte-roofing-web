@@ -13,7 +13,7 @@ export default function Worthington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Worthington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Worthington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Worthington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers worthington, roof repair worthington, roof replacement worthington, roofing company worthington, storm damage worthington, gutter services worthington, roofer near me worthington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/worthington"
       />
@@ -33,7 +33,7 @@ export default function Worthington() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Worthington, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Worthington Homeowners Trust DTE With Their Roofs</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Worthington, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Worthington homeowners—from Historic Old Worthington and Village Green to High Street corridor neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
@@ -57,7 +57,7 @@ export default function Worthington() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Roof Inspection, Storm Damage & Gutter Services in Worthington</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Gutter Guards, Storm Damage & Commercial Roofing in Worthington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly north of downtown. With easy access via <strong>I-270</strong>, <strong>US-23</strong>, and the <strong>High Street corridor</strong>, we reach Worthington efficiently—from <strong>Historic Old Worthington</strong> and <strong>Village Green</strong> to <strong>Worthington Farmers Market</strong> areas, from <strong>Wilson Hill</strong> to neighborhoods near the <strong>Olentangy River corridor</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
