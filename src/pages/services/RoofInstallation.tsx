@@ -7,8 +7,8 @@ export default function RoofInstallation() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Expert new roof installation services in Columbus, OH. Premium materials, skilled craftsmanship, and warranty protection. Residential & commercial installations. Free estimates. Call 614-971-6028."
+        title="New Roof Installation in Columbus, OH | DTE Roofing"
+        description="Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028."
         keywords="roof installation Columbus, new roof installation, residential roof installation, commercial roof installation, asphalt shingle installation, metal roof installation"
         canonical={`${CANONICAL_DOMAIN}/services/roof-installation`}
       />
@@ -16,7 +16,7 @@ export default function RoofInstallation() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">New Construction Roofing Built to Outlast the Weather</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">New Roof Installation in Columbus, OH</h1>
             <p className="text-xl text-gray-200">
               Expert new roof installations with premium materials and superior craftsmanship
             </p>
@@ -28,7 +28,7 @@ export default function RoofInstallation() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Asphalt Shingles, Metal Roofing, Ventilation Systems & Flashing Installation</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roofing Systems We Install (Asphalt, Metal, Flat)</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 A new roof is a significant investment that protects your property for decades. At DTE Roofing,
                 we specialize in professional roof installations using premium materials and proven techniques.
