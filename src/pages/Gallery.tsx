@@ -76,8 +76,8 @@ export default function Gallery() {
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
         <SEO
-          title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-          description="View our portfolio of completed roofing projects in Columbus, Dublin, and Hilliard OH. See quality roof installations, repairs, and commercial roofing work by DTE Roofing."
+          title="Roofing Project Gallery | DTE Roofing Columbus, OH"
+          description="Browse our portfolio of completed roof replacements, repairs, and commercial roofing projects across Columbus, Dublin, Hilliard, and Central Ohio. See the DTE Roofing difference."
           keywords="roofing gallery Columbus, roof installation photos, before after roofing, Columbus roofing projects, DTE Roofing portfolio"
           canonical="https://www.dteroofingllc.com/gallery"
         />
