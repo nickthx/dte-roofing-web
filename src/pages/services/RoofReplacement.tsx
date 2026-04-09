@@ -8,8 +8,8 @@ export default function RoofReplacement() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Expert roof replacement services in Columbus, OH. Complete tear-off and installation with premium materials. Financing available. Licensed & insured. Free estimates. Call 614-971-6028."
+        title="Roof Replacement in Columbus, OH | DTE Roofing"
+        description="Expert roof replacement in Columbus, OH. Full tear-off with asphalt, metal, or architectural shingles. Financing and GAF warranties available. Free estimates. Call 614-971-6028."
         keywords="roof replacement Columbus, complete roof replacement, tear off replacement, new roof, roof replacement cost, residential roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/roof-replacement`}
       />
@@ -28,7 +28,7 @@ export default function RoofReplacement() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Replacement Columbus OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Replacement in Columbus, OH</h1>
             <p className="text-xl text-gray-200">
               Transform your property with a new roof built to last decades
             </p>
@@ -40,7 +40,7 @@ export default function RoofReplacement() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Full Tear-Off, Architectural Shingles, Metal Roofing & Ventilation Upgrades</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Full Roof Replacement: Asphalt, Metal & Architectural Shingles</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Serving homeowners throughout <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link>, DTE Roofing specializes in
                 installing beautiful, long-lasting roofs. We understand that a new roof is a
@@ -199,7 +199,7 @@ export default function RoofReplacement() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Best Roofing Materials for Ohio Weather</h2>
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Roofing Materials for Ohio Weather</h2>
             <p className="text-lg text-charcoal-600 mb-8 leading-relaxed">
               Central Ohio's climate presents unique challenges for roofing materials. Our region experiences hot, humid
               summers with temperatures reaching the 90s, cold winters that can drop below zero, significant temperature
