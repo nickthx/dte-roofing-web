@@ -13,7 +13,7 @@ export default function Dublin() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Dublin, OH | DTE Roofing — Columbus HQ, Serving Dublin"
-        description="Looking for roofers in Dublin, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Dublin with detail-first roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
+        description="DTE Roofing serves Dublin, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, metal shingles & gutter services. Call 614-971-6028."
         keywords="roofers dublin oh, roofers near dublin, best roofers in dublin, roof repair dublin, roof replacement dublin, storm damage dublin, gutter services dublin, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/dublin"
       />
@@ -33,7 +33,7 @@ export default function Dublin() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Dublin, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Dublin Roofing Done Right by Your Columbus Neighbors</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Dublin, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Dublin homeowners—from Historic Dublin to Bridge Park to Muirfield Village. We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228 and serve Dublin regularly with the same attention to detail our owners bring to every project.
             </p>
@@ -57,7 +57,7 @@ export default function Dublin() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Replacement, Roof Inspection, Siding & Gutter Services in Dublin</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Commercial Roofing, Metal Shingles, Gutter Services & Storm Damage in Dublin</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Dublin—from <strong>Bridge Park</strong> along the Scioto River to <strong>Historic Dublin</strong>, from <strong>Muirfield Village</strong> (home of the <strong>Memorial Tournament</strong>) to newer neighborhoods in every direction. Our owners are personally involved in every project—ensuring quality and clear communication from start to finish.
               </p>
