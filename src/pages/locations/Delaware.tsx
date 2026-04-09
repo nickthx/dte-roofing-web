@@ -13,7 +13,7 @@ export default function Delaware() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Delaware, OH | DTE Roofing — Based in Columbus, Serving Delaware (~30 Miles)"
-        description="Need roofers in Delaware, OH? DTE Roofing (615 Hilliard Rome Rd, Columbus, OH 43228) serves Delaware (~30 miles) with detail-first roof repair & replacement. Owners personally involved in every project. Call 614-971-6028."
+        description="DTE Roofing (Columbus HQ) serves Delaware, OH with owner-led roof repair, replacement, storm & wind damage, leak repair and gutter installation. Call 614-971-6028."
         keywords="roofers delaware oh, roofers near delaware, best roofers in delaware, roof repair delaware, roof replacement delaware, delaware ohio roofing contractor, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/delaware"
       />
@@ -33,7 +33,7 @@ export default function Delaware() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Delaware, Ohio (~30 Miles from Columbus)</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Delaware OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Delaware, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Delaware homeowners. Based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, we serve Delaware and all surrounding neighborhoods with the same attention to detail our owners bring to every project.
             </p>
@@ -57,7 +57,7 @@ export default function Delaware() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Emergency Roofing & Gutter Services in Delaware</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Storm Damage, Wind Damage, Leak Repair & Gutter Installation in Delaware</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and routinely serve Delaware (about 30 miles north). Whether you're near <strong>Historic Downtown Delaware</strong> along <strong>Sandusky Street</strong>, close to <strong>Ohio Wesleyan University (OWU)</strong>, or in one of the newer neighborhoods expanding north and east, we bring the same detail-first approach that sets DTE Roofing apart. Our owners are personally involved in every project—ensuring quality and clear communication—just direct communication and genuine care for your home.
               </p>
