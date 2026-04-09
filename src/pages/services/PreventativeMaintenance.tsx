@@ -7,8 +7,8 @@ export default function PreventativeMaintenance() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Preventative roof maintenance in Columbus, OH. Catch problems early, extend roof lifespan, save money. Annual maintenance plans. Licensed professionals. Call 614-971-6028."
+        title="Preventative Roof Maintenance Columbus OH | DTE Roofing"
+        description="Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028."
         keywords="preventative maintenance, preventive roof care, roof maintenance program, annual roof service, proactive roof care"
         canonical={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
       />
@@ -16,7 +16,7 @@ export default function PreventativeMaintenance() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Stop Roof Problems Before They Start</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Preventative Roof Maintenance in Central Ohio</h1>
             <p className="text-xl text-gray-200">
               Proactive care to prevent problems and maximize your roof's lifespan
             </p>
@@ -28,7 +28,7 @@ export default function PreventativeMaintenance() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-charcoal-900 mb-6">
-              Seasonal Inspections, Debris Removal, Flashing Repair & Gutter Maintenance
+              Annual Preventative Maintenance Plans
             </h2>
             <p className="text-xl text-charcoal-600 leading-relaxed">
               Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard homeowners</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link>, and <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link>, DTE Roofing helps local homeowners protect
