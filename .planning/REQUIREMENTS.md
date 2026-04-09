@@ -8,11 +8,11 @@
 
 ### Page Metadata (Titles & Descriptions)
 
-- [ ] **META-01**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<title>` baked into the static HTML — zero duplicates
-- [ ] **META-02**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<meta description>` baked into the static HTML — zero duplicates
+- [x] **META-01**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<title>` baked into the static HTML — zero duplicates
+- [x] **META-02**: Every prerendered sitemap URL (35 pages) has a unique, descriptive `<meta description>` baked into the static HTML — zero duplicates
 - [ ] **META-03**: Every page passes both `title` and `description` props to the `<SEO>` component (via per-page call or shared template, as root cause diagnosis dictates)
-- [ ] **META-04**: Titles reflect actual page intent — location pages include city + primary service keywords, service pages include service + Columbus region, core pages describe their actual content
-- [ ] **META-05**: Descriptions are 140-200 characters, include page-specific value prop, and avoid "BEST" / superlative language that triggers Google Helpful Content signals
+- [x] **META-04**: Titles reflect actual page intent — location pages include city + primary service keywords, service pages include service + Columbus region, core pages describe their actual content
+- [x] **META-05**: Descriptions are 140-200 characters, include page-specific value prop, and avoid "BEST" / superlative language that triggers Google Helpful Content signals
 
 ### Heading Structure (H1/H2 Rewrite)
 
