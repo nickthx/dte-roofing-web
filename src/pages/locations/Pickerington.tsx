@@ -13,7 +13,7 @@ export default function Pickerington() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers Pickerington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Pickerington, OH from our Columbus HQ at 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Roof repair, replacement, storm damage, gutters. Call 614-971-6028."
+        description="DTE Roofing serves Pickerington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers pickerington, roof repair pickerington, roof replacement pickerington, roofing company pickerington, storm damage pickerington, gutter services pickerington, roofer near me pickerington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/pickerington"
       />
@@ -33,7 +33,7 @@ export default function Pickerington() {
               <MapPin className="w-6 h-6" />
               <span className="text-lg">Serving Pickerington, Ohio</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roofer Pickerington OH</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Pickerington, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
               Expert roof repair, replacement, and storm damage services for Pickerington homeowners—from Olde Pickerington Village to Sycamore Creek, Pickerington Ponds to Hill Road neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
@@ -57,7 +57,7 @@ export default function Pickerington() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Roof Repair, Roof Replacement, Storm Damage & Preventative Maintenance in Pickerington</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Storm Damage, Hail Damage & Insurance Claims in Pickerington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. With easy access via <strong>I-270</strong> outerbelt, <strong>I-70</strong>, <strong>US-33</strong>, and <strong>OH-256</strong>, we reach Pickerington efficiently—from <strong>Olde Pickerington Village</strong> to <strong>Sycamore Creek</strong> neighborhoods, from <strong>Pickerington Ponds Metro Park</strong> areas to <strong>Hill Road</strong> and <strong>OH-256</strong> corridors. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
               </p>
