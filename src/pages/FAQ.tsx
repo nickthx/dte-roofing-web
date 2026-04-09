@@ -104,8 +104,8 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Get answers to common roofing questions. Learn about costs, timelines, warranties, insurance claims, and more. Expert guidance from Columbus's trusted roofing contractor."
+        title="Roofing FAQs | Questions Answered by DTE Roofing Columbus"
+        description="Answers to common roofing questions about costs, timelines, warranties, insurance claims, and materials. Expert guidance from DTE Roofing in Columbus, OH. Call 614-971-6028."
         keywords="roofing FAQ, roof repair questions, roof cost, roofing warranty, insurance claims, how long does roof last, Columbus roofer FAQ"
         canonical="https://www.dteroofingllc.com/faq"
       />
