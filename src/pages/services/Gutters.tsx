@@ -7,8 +7,8 @@ export default function Gutters() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Professional seamless gutter installation in Columbus, OH. Custom fabricated gutters, gutter guards, repairs. Protect your foundation. Licensed & insured. Call 614-971-6028."
+        title="Gutter Installation & Repair in Columbus, OH | DTE Roofing"
+        description="Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028."
         keywords="gutters Columbus, seamless gutters, gutter installation, gutter guards, custom gutters, aluminum gutters"
         canonical={`${CANONICAL_DOMAIN}/services/gutters`}
       />
@@ -16,7 +16,7 @@ export default function Gutters() {
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Gutters That Actually Do Their Job</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Gutter Installation & Repair in Columbus, OH</h1>
             <p className="text-xl text-gray-200">
               Custom seamless gutters and gutter guard systems to protect your home
             </p>
@@ -28,7 +28,7 @@ export default function Gutters() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Seamless Gutter Installation, Gutter Guards, Downspout Extensions & Custom Colors</h2>
+              <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Seamless Gutter Installation in Central Ohio</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Serving <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus-area homes</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">families in Dublin</Link>, and Grove City, DTE Roofing specializes in custom seamless
                 gutter systems that protect your home from Ohio's heavy rains and seasonal weather. Unlike
