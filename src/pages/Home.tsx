@@ -41,7 +41,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
-              DTE Roofing - Central Ohio's Most Trusted Roofing Crew
+              DTE Roofing | Roofing Contractor in Columbus OH You Can Trust
             </h1>
             <div className="w-24 h-1 bg-primary-600 mb-6"></div>
             <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white drop-shadow-md font-light">
