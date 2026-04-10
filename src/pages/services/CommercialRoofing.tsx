@@ -528,7 +528,7 @@ export default function CommercialRoofing() {
               <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
                 <h3 className="text-xl font-bold text-charcoal-900 mb-4">Apartment Complexes & Multi-Family</h3>
                 <p className="text-charcoal-600 leading-relaxed mb-3">
-                  Property managers in Columbus and Hilliard depend on us for tenant-friendly roofing solutions. Apartment roofs require systems that minimize noise disruption during installation while providing lasting protection that maintains property value. TPO and EPDM systems offer cost-effective solutions across multiple buildings. Our <Link to="/services/roof-maintenance" className="text-primary-700 hover:text-primary-800 font-semibold">maintenance programs</Link> work perfectly for multi-property portfolios, providing regular inspections and preventing tenant complaints from leaks.
+                  Property managers in Columbus and Hilliard depend on us for tenant-friendly roofing solutions. Apartment roofs require systems that minimize noise disruption during installation while providing lasting protection that maintains property value. TPO and EPDM systems offer cost-effective solutions across multiple buildings. Our <Link to="/services/preventative-maintenance" className="text-primary-700 hover:text-primary-800 font-semibold">maintenance programs</Link> work perfectly for multi-property portfolios, providing regular inspections and preventing tenant complaints from leaks.
                 </p>
                 <p className="text-charcoal-600 text-sm italic">
                   Key consideration: Minimal tenant disruption and multi-building project efficiency

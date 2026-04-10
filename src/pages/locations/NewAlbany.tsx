@@ -110,7 +110,7 @@ export default function NewAlbany() {
                     { name: '24/7 Emergency Services', link: '/services/emergency-services' },
                     { name: 'Premium Gutter Systems', link: '/services/gutters' },
                     { name: 'Designer Siding Installation', link: '/services/siding' },
-                    { name: 'Preventative Maintenance Programs', link: '/services/roof-maintenance' },
+                    { name: 'Preventative Maintenance Programs', link: '/services/preventative-maintenance' },
                     { name: 'Architectural Review Board Assistance', link: '/contact' },
                     { name: 'Insurance Claim Management', link: '/contact' }
                   ].map((item, index) => (

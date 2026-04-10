@@ -19,7 +19,6 @@ import GutterServices from './pages/services/GutterServices';
 import Gutters from './pages/services/Gutters';
 import EmergencyServices from './pages/services/EmergencyServices';
 import StormDamage from './pages/services/StormDamage';
-import RoofMaintenance from './pages/services/RoofMaintenance';
 import PreventativeMaintenance from './pages/services/PreventativeMaintenance';
 import Siding from './pages/services/Siding';
 import CommercialRoofing from './pages/services/CommercialRoofing';
@@ -60,7 +59,7 @@ function App() {
             <Route path="/services/gutters" element={<Gutters />} />
             <Route path="/services/emergency-services" element={<EmergencyServices />} />
             <Route path="/services/storm-damage" element={<StormDamage />} />
-            <Route path="/services/roof-maintenance" element={<RoofMaintenance />} />
+            <Route path="/services/roof-maintenance" element={<Navigate to="/services/preventative-maintenance" replace />} />
             <Route path="/services/preventative-maintenance" element={<PreventativeMaintenance />} />
             <Route path="/services/siding" element={<Siding />} />
             <Route path="/services/commercial-roofing" element={<CommercialRoofing />} />

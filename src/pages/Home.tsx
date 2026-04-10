@@ -198,7 +198,7 @@ export default function Home() {
                 title: 'Maintenance Plans',
                 description: 'Annual inspections and tune-ups to extend roof life and prevent surprises.',
                 proof: 'Photo documentation',
-                link: '/services/roof-maintenance',
+                link: '/services/preventative-maintenance',
                 icon: CheckCircle2
               }
             ].map((service, index) => {

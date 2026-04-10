@@ -128,7 +128,7 @@ export default function Locations() {
                     { name: 'Roof Installation', link: '/services/roof-installation' },
                     { name: 'Storm Damage Repair', link: '/services/storm-damage' },
                     { name: 'Emergency Services', link: '/services/emergency-services' },
-                    { name: 'Maintenance Programs', link: '/services/roof-maintenance' }
+                    { name: 'Maintenance Programs', link: '/services/preventative-maintenance' }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />

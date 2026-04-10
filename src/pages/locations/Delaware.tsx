@@ -109,13 +109,13 @@ export default function Delaware() {
                     { name: 'Roof Repair', link: '/services/roof-repair' },
                     { name: 'Historic Home Roofing', link: '/services/roof-installation' },
                     { name: 'Roof Inspections', link: '/services/roof-inspection' },
-                    { name: 'Ice Dam Prevention', link: '/services/roof-maintenance' },
+                    { name: 'Ice Dam Prevention', link: '/services/preventative-maintenance' },
                     { name: '24/7 Emergency Services', link: '/services/emergency-services' },
                     { name: 'Storm Damage Repair', link: '/services/storm-damage' },
                     { name: 'Gutter Services', link: '/services/gutters' },
                     { name: 'Siding Installation', link: '/services/siding' },
                     { name: 'Insurance Claims', link: '/contact' },
-                    { name: 'Preventative Maintenance', link: '/services/roof-maintenance' }
+                    { name: 'Preventative Maintenance', link: '/services/preventative-maintenance' }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-1" />

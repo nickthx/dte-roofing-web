@@ -7,6 +7,7 @@
     { "source": "/book-a-consultation", "destination": "/contact", "statusCode": 301 },
     { "source": "/cart", "destination": "/contact", "statusCode": 301 },
     { "source": "/services/gutter-services", "destination": "/services/gutters", "statusCode": 301 },
+    { "source": "/services/roof-maintenance", "destination": "/services/preventative-maintenance", "statusCode": 301 },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "dteroofingllc.com" }],
