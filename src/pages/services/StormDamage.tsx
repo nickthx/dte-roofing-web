@@ -56,7 +56,7 @@ export default function StormDamage() {
                 Our team provides free storm damage inspections and works directly with your insurance company
                 to ensure you get a fair settlement. We document everything thoroughly, meet with adjusters on
                 your behalf, and handle all repairs professionally—so you can get back to normal life as quickly
-                as possible.
+                as possible. We proudly serve homeowners across <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and <Link to="/locations/westerville" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Westerville</Link>, along with other Central Ohio communities impacted by severe weather.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-8">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

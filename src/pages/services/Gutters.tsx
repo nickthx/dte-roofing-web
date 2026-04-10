@@ -39,7 +39,7 @@ export default function Gutters() {
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We use premium rust-resistant aluminum in a variety of colors to match your home's style.
                 Our professional installation ensures proper pitch and secure mounting for decades of reliable
-                performance, backed by our comprehensive workmanship warranty.
+                performance, backed by our comprehensive workmanship warranty. From <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> to <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Grove City</Link>, our gutter crews deliver custom solutions tailored to each home.
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-8">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

@@ -39,7 +39,7 @@ export default function RoofInspection() {
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Our experienced inspectors examine every aspect of your roofing system—from shingles to structure—
                 and provide detailed reports with photos, honest assessments, and clear recommendations. No
-                pressure, no surprises—just the facts you need to protect your home.
+                pressure, no surprises—just the facts you need to protect your home. Homeowners in <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and <Link to="/locations/powell" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Powell</Link> trust our inspectors for thorough, no-pressure roof evaluations.
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-8">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

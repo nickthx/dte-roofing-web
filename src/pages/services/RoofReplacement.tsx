@@ -106,6 +106,7 @@ export default function RoofReplacement() {
               One of the first questions homeowners ask is about cost. In <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and throughout Central Ohio,
               residential roof replacement typically ranges from $8,000 to $25,000 or more, depending on several key factors.
               Understanding these variables helps you budget appropriately and make informed decisions about your investment.
+              Homeowners in <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link> consistently choose DTE Roofing for reliable replacement work backed by comprehensive warranties.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">

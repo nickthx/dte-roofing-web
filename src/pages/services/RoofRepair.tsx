@@ -32,7 +32,7 @@ We personally inspect every roof, identify the root cause of your problem (not j
 {'\n\n'}
 COMMON ROOF REPAIRS IN COLUMBUS
 {'\n\n'}
-Central Ohio's weather puts unique stress on roofing systems. From severe summer storms to winter ice dams, Columbus-area homes face challenges that require specific repair expertise.
+Central Ohio's weather puts unique stress on roofing systems. From severe summer storms to winter ice dams, Columbus-area homes face challenges that require specific repair expertise. Our repair crews are especially active across <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Hilliard</Link>, where we've built a strong reputation for honest diagnostics and lasting repairs.
 {'\n\n'}
 Leak Repair: Roof leaks rarely happen where water appears inside your home. Water can travel along rafters and decking before becoming visible. Our leak detection process traces water back to its true entry point—often damaged flashing around chimneys or vents, worn valley areas, or compromised pipe boots. We address the source, not just the symptom, ensuring leaks don't return.
 {'\n\n'}
