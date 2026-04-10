@@ -84,7 +84,7 @@ export default function Footer() {
                   experience@dteroofing.com
                 </a>
               </li>
-              <li>615 Hilliard Rome Rd<br />Columbus, OH 43228</li>
+              <li>615 Hilliard Rome Rd, Columbus, OH 43228</li>
             </ul>
           </div>
         </div>
