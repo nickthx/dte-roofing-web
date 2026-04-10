@@ -42,7 +42,7 @@ export default function SEO({
       <meta name="twitter:description" content={finalOgDescription} />
 
       {canonical && <link rel="canonical" href={canonical} />}
-      {geoPlacename && <meta name="geo.placename" content={geoPlacename} />}
+      <meta name="geo.placename" content={geoPlacename || "Columbus, OH"} />
     </Helmet>
   );
 }
