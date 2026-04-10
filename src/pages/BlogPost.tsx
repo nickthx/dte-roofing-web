@@ -53,25 +53,45 @@ export default function BlogPostPage() {
     return `${minutes} min read`;
   };
 
+  const pageTitle = post ? `${post.title} | DTE Roofing Blog` : 'DTE Roofing Blog | Central Ohio Roofing Tips';
+  const pageDescription = post ? post.excerpt : 'Roofing tips, maintenance guides, and expert advice for Central Ohio homeowners from DTE Roofing.';
+  const pageCanonical = post ? `https://www.dteroofingllc.com/blog/${post.slug}` : undefined;
+  const pageKeywords = post ? (post.tags?.join(', ') || 'roofing, Columbus, Ohio') : 'roofing blog, Columbus, Ohio, roof tips';
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700"></div>
+      <div className="min-h-screen bg-white">
+        <SEO
+          title={pageTitle}
+          description={pageDescription}
+          keywords={pageKeywords}
+          canonical={pageCanonical}
+        />
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700"></div>
+        </div>
       </div>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold text-charcoal-900 mb-4">Post Not Found</h1>
-        <p className="text-charcoal-600 mb-8">The blog post you're looking for doesn't exist.</p>
-        <Link 
-          to="/blog" 
-          className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
-        </Link>
+      <div className="min-h-screen bg-white">
+        <SEO
+          title={pageTitle}
+          description={pageDescription}
+          keywords={pageKeywords}
+        />
+        <div className="flex flex-col items-center justify-center min-h-[60vh]">
+          <h1 className="text-3xl font-bold text-charcoal-900 mb-4">Post Not Found</h1>
+          <p className="text-charcoal-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <Link
+            to="/blog"
+            className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
+          </Link>
+        </div>
       </div>
     );
   }

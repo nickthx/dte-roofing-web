@@ -41,19 +41,11 @@ export default function Blog() {
     fetchPosts();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700"></div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
-        description="Expert roofing advice from DTE Roofing. Learn about roof maintenance, winter prep, signs you need a new roof, and more."
+        title="Roofing Tips & News | DTE Roofing Blog"
+        description="Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights from DTE Roofing."
         keywords="roofing blog, roof maintenance tips, Ohio roofing advice"
         canonical="https://www.dteroofingllc.com/blog"
       />
@@ -76,7 +68,11 @@ export default function Blog() {
               Roofing Tips, Maintenance Guides & Storm Damage Resources
             </h2>
 
-            {blogPosts.length === 0 ? (
+            {loading ? (
+              <div className="flex items-center justify-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700"></div>
+              </div>
+            ) : blogPosts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">No blog posts yet. Check back soon!</p>
               </div>
