@@ -51,7 +51,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
+        title="Roofing Services in Columbus, OH | DTE Roofing"
         description="Complete roofing services in Columbus, OH. Roof repair, replacement, installation, inspections, emergency services. Residential & commercial. Licensed professionals. Free estimates available."
         keywords="roofing services Columbus, roof repair services, roof replacement, roof installation, commercial roofing, residential roofing, emergency roof repair, roof inspection"
         canonical="https://www.dteroofingllc.com/services"

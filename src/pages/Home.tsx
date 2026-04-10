@@ -17,7 +17,7 @@ export default function Home() {
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
       <SEO
-       title="BEST Roofer in Columbus OH – Roof Repair & Replacement Near Me"
+       title="DTE Roofing | Columbus, OH Roof Repair & Replacement"
         description={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewData?.totalReviews || 92} five-star rating.`}
         keywords="roof inspection Columbus OH, Columbus roofing company, roof repair near me, roofing contractor Columbus, roof repair Columbus, roof replacement Columbus, residential roofing, commercial roofing, emergency roof repair"
         canonical={`${CANONICAL_DOMAIN}/`}

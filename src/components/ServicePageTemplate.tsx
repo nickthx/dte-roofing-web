@@ -68,7 +68,7 @@ export default function ServicePageTemplate({
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
         <SEO
-          title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
+          title={`${serviceName} in Columbus, OH | DTE Roofing`}
           description={metaDescription}
           keywords={keywords}
           canonical={`https://www.dteroofingllc.com/services/${slug}`}

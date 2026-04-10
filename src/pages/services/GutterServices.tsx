@@ -7,7 +7,7 @@ export default function GutterServices() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="BEST Roofer in Columbus – if you're looking for Honest Roofing Services near me or Expert Roof Repair & Replacement near me – DTE Roofing is the place to be."
+        title="Gutter Services in Columbus, OH | DTE Roofing"
         description="Professional gutter services in Columbus, OH. Seamless gutter installation, repairs, cleaning, and gutter guards. Protect your foundation. Free estimates. Call 614-971-6028."
         keywords="gutter services Columbus, gutter installation, gutter repair, gutter cleaning, seamless gutters, gutter guards, downspouts"
         canonical={`${CANONICAL_DOMAIN}/services/gutter-services`}
