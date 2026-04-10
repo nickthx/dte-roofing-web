@@ -16,6 +16,7 @@ export default function Westerville() {
         description="DTE Roofing serves Westerville, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, hail damage & attic ventilation. Call 614-971-6028."
         keywords="roofers westerville, roof repair westerville, roof replacement westerville, roofing company westerville, storm damage westerville, gutter services westerville, roofers columbus, roofer near me westerville"
         canonical="https://www.dteroofingllc.com/locations/westerville"
+        geoPlacename="Westerville, OH"
       />
       <SchemaMarkup
         type="location"

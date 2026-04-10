@@ -16,6 +16,7 @@ export default function Delaware() {
         description="DTE Roofing (Columbus HQ) serves Delaware, OH with owner-led roof repair, replacement, storm & wind damage, leak repair and gutter installation. Call 614-971-6028."
         keywords="roofers delaware oh, roofers near delaware, best roofers in delaware, roof repair delaware, roof replacement delaware, delaware ohio roofing contractor, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/delaware"
+        geoPlacename="Delaware, OH"
       />
       <SchemaMarkup
         type="location"

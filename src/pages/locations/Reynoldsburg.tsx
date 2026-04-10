@@ -16,6 +16,7 @@ export default function Reynoldsburg() {
         description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, gutter installation & storm damage. Call 614-971-6028."
         keywords="roofers reynoldsburg, roof repair reynoldsburg, roof replacement reynoldsburg, roofing company reynoldsburg, storm damage reynoldsburg, gutter services reynoldsburg, roofer near me reynoldsburg, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/reynoldsburg"
+        geoPlacename="Reynoldsburg, OH"
       />
       <SchemaMarkup
         type="location"

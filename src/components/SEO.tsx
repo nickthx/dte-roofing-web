@@ -8,6 +8,7 @@ interface SEOProps {
   ogDescription?: string;
   ogImage?: string;
   canonical?: string;
+  geoPlacename?: string;
 }
 
 export default function SEO({
@@ -18,6 +19,7 @@ export default function SEO({
   ogDescription,
   ogImage,
   canonical,
+  geoPlacename,
 }: SEOProps): JSX.Element {
   const finalOgTitle = ogTitle || title;
   const finalOgDescription = ogDescription || description;
@@ -40,6 +42,7 @@ export default function SEO({
       <meta name="twitter:description" content={finalOgDescription} />
 
       {canonical && <link rel="canonical" href={canonical} />}
+      {geoPlacename && <meta name="geo.placename" content={geoPlacename} />}
     </Helmet>
   );
 }

@@ -16,6 +16,7 @@ export default function NewAlbany() {
         description="DTE Roofing serves New Albany, OH from our Columbus HQ with owner-led residential roof replacement, premium shingles, gutter systems & storm damage repair. Call 614-971-6028."
         keywords="roofers new albany oh, roofers near new albany, best roofers in new albany, roof repair new albany, roof replacement new albany, storm damage new albany, gutter services new albany, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/new-albany"
+        geoPlacename="New Albany, OH"
       />
       <SchemaMarkup
         type="location"

@@ -16,6 +16,7 @@ export default function GroveCity() {
         description="DTE Roofing serves Grove City, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers grove city, roof repair grove city, roof replacement grove city, roofing company grove city, storm damage grove city, gutter services grove city, roofer near me grove city, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/grove-city"
+        geoPlacename="Grove City, OH"
       />
       <SchemaMarkup
         type="location"

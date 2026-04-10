@@ -16,6 +16,7 @@ export default function Hilliard() {
         description="DTE Roofing is right by Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228. Owner-led roof repair, replacement, gutters, siding & storm damage. Call 614-971-6028."
         keywords="roofers hilliard, roof repair hilliard, roof replacement hilliard, roofing company hilliard, roofers near hilliard, storm damage hilliard, gutter services hilliard, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/hilliard"
+        geoPlacename="Hilliard, OH"
       />
       <SchemaMarkup
         type="location"

@@ -16,6 +16,7 @@ export default function Pickerington() {
         description="DTE Roofing serves Pickerington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers pickerington, roof repair pickerington, roof replacement pickerington, roofing company pickerington, storm damage pickerington, gutter services pickerington, roofer near me pickerington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/pickerington"
+        geoPlacename="Pickerington, OH"
       />
       <SchemaMarkup
         type="location"

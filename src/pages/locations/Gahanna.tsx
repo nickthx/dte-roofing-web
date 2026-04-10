@@ -16,6 +16,7 @@ export default function Gahanna() {
         description="DTE Roofing serves Gahanna, OH from our Columbus HQ with owner-led roof repair, commercial roofing, gutter installation, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers gahanna, roof repair gahanna, roof replacement gahanna, roofing company gahanna, storm damage gahanna, gutter services gahanna, roofer near me gahanna, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/gahanna"
+        geoPlacename="Gahanna, OH"
       />
       <SchemaMarkup
         type="location"

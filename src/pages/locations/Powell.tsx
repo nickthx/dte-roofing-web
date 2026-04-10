@@ -16,6 +16,7 @@ export default function Powell() {
         description="DTE Roofing serves Powell, OH from our Columbus HQ with owner-led roof repair, replacement, roof inspections, gutter installation & storm damage help. Call 614-971-6028."
         keywords="roofers powell, roof repair powell, roof replacement powell, roofing company powell, storm damage powell, gutter services powell, roofer near me powell, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/powell"
+        geoPlacename="Powell, OH"
       />
       <SchemaMarkup
         type="location"

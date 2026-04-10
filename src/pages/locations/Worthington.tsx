@@ -16,6 +16,7 @@ export default function Worthington() {
         description="DTE Roofing serves Worthington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers worthington, roof repair worthington, roof replacement worthington, roofing company worthington, storm damage worthington, gutter services worthington, roofer near me worthington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/worthington"
+        geoPlacename="Worthington, OH"
       />
       <SchemaMarkup
         type="location"
