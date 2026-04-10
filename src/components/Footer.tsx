@@ -32,6 +32,10 @@ export default function Footer() {
               <li><Link to="/services/roof-repair" className="hover:text-white transition-colors">Roof Repair</Link></li>
               <li><Link to="/services/roof-inspection" className="hover:text-white transition-colors">Inspections</Link></li>
               <li><Link to="/services/emergency-services" className="hover:text-white transition-colors">Emergency Services</Link></li>
+              <li><Link to="/services/storm-damage" className="hover:text-white transition-colors">Storm Damage</Link></li>
+              <li><Link to="/services/gutters" className="hover:text-white transition-colors">Gutters</Link></li>
+              <li><Link to="/services/commercial-roofing" className="hover:text-white transition-colors">Commercial Roofing</Link></li>
+              <li><Link to="/services/preventative-maintenance" className="hover:text-white transition-colors">Preventative Maintenance</Link></li>
             </ul>
           </div>
 
