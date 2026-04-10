@@ -547,12 +547,9 @@ export default function Home() {
             <div className="mt-8 flex justify-center">
               <div itemScope itemType="https://schema.org/RoofingContractor" className="bg-gray-50 border border-gray-200 rounded-xl px-8 py-6 text-center">
                 <strong itemProp="name" className="text-xl font-bold text-charcoal-900 block mb-2">DTE Roofing</strong>
-                <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="text-charcoal-600">
-                  <span itemProp="streetAddress">615 Hilliard Rome Rd</span>,{' '}
-                  <span itemProp="addressLocality">Columbus</span>,{' '}
-                  <span itemProp="addressRegion">OH</span>{' '}
-                  <span itemProp="postalCode">43228</span>
-                </span>
+                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="text-charcoal-600">
+                  <span itemProp="streetAddress">615 Hilliard Rome Rd</span>, <span itemProp="addressLocality">Columbus</span>, <span itemProp="addressRegion">OH</span> <span itemProp="postalCode">43228</span>
+                </div>
                 <br />
                 <a href="tel:+16149716028" itemProp="telephone" className="text-primary-700 hover:text-primary-800 font-semibold text-lg mt-2 inline-block transition-colors">
                   614-971-6028
