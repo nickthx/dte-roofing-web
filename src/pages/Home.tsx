@@ -151,7 +151,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">Our Roofing Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">Roof Repair & Replacement Services in Columbus, OH</h2>
             <p className="text-xl text-charcoal-600 max-w-2xl mx-auto">
               Comprehensive roofing solutions for residential and commercial properties in Columbus, OH
             </p>
