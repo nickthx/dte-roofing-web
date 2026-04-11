@@ -4,8 +4,8 @@ milestone: v1.1
 milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
-last_updated: "2026-04-10"
-last_activity: 2026-04-10 -- Phase 5 execution complete, deployed to Vercel production
+last_updated: "2026-04-11"
+last_activity: 2026-04-11 -- Completed quick task 260411-kct: HSTS header + index.html static-head cleanup
 progress:
   total_phases: 5
   completed_phases: 5
@@ -96,9 +96,10 @@ None yet.
 | x50 | Replace BBB and Nextdoor placeholder logos with official logos | 2026-03-26 | fd1170d | [x50-replace-bbb-and-nextdoor-placeholder-log](./quick/260325-x50-replace-bbb-and-nextdoor-placeholder-log/) |
 | 260407-lws | Tech SEO Phase A: apex 301, security headers, gutter-services 301, sitemap regen | 2026-04-07 | b3f4968 | [260407-lws-technical-seo-phase-a-vercel-json-301-re](./quick/260407-lws-technical-seo-phase-a-vercel-json-301-re/) |
 | 260407-m8b | Tech SEO Phase B: prerender all routes (helmet refactor, SSG pipeline, Navigate→301) | 2026-04-07 | f144e2e | [260407-m8b-phase-b-prerender-react-router-routes-fo](./quick/260407-m8b-phase-b-prerender-react-router-routes-fo/) |
+| 260411-kct | Critical SEO header + index.html cleanup (HSTS + static head neutralization) | 2026-04-11 | 1ee0b31 | [260411-kct-critical-seo-header-index-html-cleanup-a](./quick/260411-kct-critical-seo-header-index-html-cleanup-a/) |
 
 ## Session Continuity
 
-Last activity: 2026-03-26 - Completed quick task x50: Replace BBB and Nextdoor placeholder logos with official logos
+Last activity: 2026-04-11 - Completed quick task 260411-kct: Critical SEO header + index.html cleanup
 Stopped at: Completed 03-01-PLAN.md
 Resume file: None
