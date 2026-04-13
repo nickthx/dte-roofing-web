@@ -13,10 +13,18 @@ interface Service {
   url?: string;
 }
 
+interface ReviewItem {
+  name: string;
+  rating: number;
+  date: string;
+  text: string;
+}
+
 interface SchemaMarkupProps {
   type: 'home' | 'service' | 'faq' | 'location' | 'hub' | 'general';
   service?: Service;
   faqs?: FAQ[];
+  reviews?: ReviewItem[];
   locationName?: string;
   locationSlug?: string;
   pageTitle?: string;
@@ -73,6 +81,7 @@ export default function SchemaMarkup({
   type,
   service,
   faqs,
+  reviews,
   locationName,
   locationSlug,
   pageTitle,
@@ -133,6 +142,22 @@ export default function SchemaMarkup({
         bestRating: '5',
         worstRating: '1'
       };
+    }
+
+    if (reviews && reviews.length > 0) {
+      schema.review = reviews.map(r => ({
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.name },
+        datePublished: r.date.includes('November 2025') ? '2025-11-01' :
+                       r.date.includes('September 2025') ? '2025-09-01' : '2025-01-01',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: r.rating.toString(),
+          bestRating: '5',
+          worstRating: '1'
+        },
+        reviewBody: r.text
+      }));
     }
 
     return schema;

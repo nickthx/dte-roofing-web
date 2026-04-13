@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Star, ChevronRight, MessageCircle, ExternalLink } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 
 export default function Reviews() {
   const { reviewData } = useReviewData();
@@ -75,6 +76,13 @@ export default function Reviews() {
         description="Read verified reviews from DTE Roofing customers across Columbus and Central Ohio. Real feedback on roof repairs, replacements, and installations from local homeowners."
         keywords="DTE Roofing reviews, Columbus roofing reviews, customer testimonials, five-star roofer"
         canonical="https://www.dteroofingllc.com/reviews"
+      />
+      <SchemaMarkup
+        type="general"
+        reviews={reviews}
+        pageTitle="DTE Roofing Reviews | Central Ohio Homeowners Speak Out"
+        pageDescription="Read verified reviews from DTE Roofing customers across Columbus and Central Ohio."
+        pageUrl="https://www.dteroofingllc.com/reviews"
       />
       <div className="min-h-screen bg-white">
       {/* Hero Section */}
