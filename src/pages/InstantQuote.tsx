@@ -73,9 +73,7 @@ export default function InstantQuote() {
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-8 text-center">
                 Instant Estimates for Roof Repair, Replacement & Storm Damage
               </h2>
-              <div ref={widgetRef}>
-                <div id="roof-quote-pro-embedded"></div>
-              </div>
+              <div ref={widgetRef}></div>
 
               <div className="mt-8 bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-charcoal-900 mb-3">How It Works</h3>
