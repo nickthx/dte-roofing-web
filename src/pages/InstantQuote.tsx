@@ -1,9 +1,27 @@
+import { useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
 import { Calculator, CheckCircle, Clock, Shield } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 
 export default function InstantQuote() {
   const { reviewData } = useReviewData();
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = widgetRef.current;
+    if (!container) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://app.roofle.com/roof-quote-pro-embedded-widget.js?id=zEGtbFpfjh6Snz6t4Tz23';
+    script.async = true;
+    container.appendChild(script);
+
+    return () => {
+      if (container.contains(script)) {
+        container.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -56,14 +74,9 @@ export default function InstantQuote() {
                 Instant Estimates for Roof Repair, Replacement & Storm Damage
               </h2>
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden min-h-[700px]">
-                <iframe
-                  src="/roofle-embed.html"
-                  title="Instant Roof Quote"
-                  width="100%"
-                  height="700"
-                  style={{ border: 'none', display: 'block' }}
-                  loading="eager"
-                />
+                <div ref={widgetRef}>
+                  <div id="roof-quote-pro-embedded"></div>
+                </div>
               </div>
 
               <div className="mt-8 bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
