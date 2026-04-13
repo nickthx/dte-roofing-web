@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, Award, Star } from 'lucide-react';
+import { Shield, Award, Star, Clock } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 import { LOCATIONS } from '../data/locations';
 import BbbLogo from './logos/BbbLogo';
@@ -85,6 +85,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>615 Hilliard Rome Rd, Columbus, OH 43228</li>
+              <li className="pt-2">
+                <div className="flex items-center gap-1.5 text-white font-semibold text-sm mb-1">
+                  <Clock className="w-4 h-4 text-primary-500" />
+                  Business Hours
+                </div>
+                <div className="text-sm space-y-0.5">
+                  <div>Mon – Fri: 8:00 AM – 6:00 PM</div>
+                  <div>Sat: 10:00 AM – 2:00 PM</div>
+                  <div>Sun: Closed</div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

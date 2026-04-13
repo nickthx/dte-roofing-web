@@ -550,10 +550,31 @@ export default function Home() {
                 <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="text-charcoal-600">
                   <span itemProp="streetAddress">615 Hilliard Rome Rd</span>, <span itemProp="addressLocality">Columbus</span>, <span itemProp="addressRegion">OH</span> <span itemProp="postalCode">43228</span>
                 </div>
-                <br />
-                <a href="tel:+16149716028" itemProp="telephone" className="text-primary-700 hover:text-primary-800 font-semibold text-lg mt-2 inline-block transition-colors">
+                <a href="tel:+16149716028" itemProp="telephone" className="text-primary-700 hover:text-primary-800 font-semibold text-lg mt-3 inline-block transition-colors">
                   614-971-6028
                 </a>
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <Clock className="w-5 h-5 text-primary-700" />
+                    <span className="font-bold text-charcoal-900">Business Hours</span>
+                  </div>
+                  <div className="text-sm text-charcoal-600 space-y-1">
+                    <div className="flex justify-between gap-6">
+                      <span>Mon – Fri</span>
+                      <span className="font-semibold text-charcoal-800">8:00 AM – 6:00 PM</span>
+                    </div>
+                    <div className="flex justify-between gap-6">
+                      <span>Saturday</span>
+                      <span className="font-semibold text-charcoal-800">10:00 AM – 2:00 PM</span>
+                    </div>
+                    <div className="flex justify-between gap-6">
+                      <span>Sunday</span>
+                      <span className="font-semibold text-charcoal-800">Closed</span>
+                    </div>
+                  </div>
+                  <meta itemProp="openingHours" content="Mo-Fr 08:00-18:00" />
+                  <meta itemProp="openingHours" content="Sa 10:00-14:00" />
+                </div>
               </div>
             </div>
 
