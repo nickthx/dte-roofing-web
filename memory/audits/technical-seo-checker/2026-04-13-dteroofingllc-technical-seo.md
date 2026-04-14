@@ -8,7 +8,7 @@ score: 8.8/10
 
 # Technical SEO Audit — dteroofingllc.com (2026-04-13)
 
-**Verdict:** Infrastructure is strong. Prerendering is already shipped (quick task `260407-m8b`, `scripts/prerender.mjs` + `vite build --ssr`), sitemap is git-log driven, security headers are excellent. Remaining gaps are narrow: missing social-share meta tags, an unresolved `/blog/:slug` rewrite, and a 308-vs-301 canonicalization detail.
+**Verdict:** Infrastructure is strong. Prerendering is already shipped (quick task `260407-m8b`, `scripts/prerender.mjs` + `vite build --ssr`), sitemap is git-log driven, security headers are excellent. Remaining gaps are narrow: missing social-share meta tags and polish items (LCP preload, sitemap image entries).
 
 ## Scores
 
@@ -42,15 +42,27 @@ In both `src/components/SEO.tsx:28-47` and `index.html:12-23`:
 
 **Fix:** add these to `SEO.tsx` with sensible defaults (hero image as fallback), and add a static baseline in `index.html` for first-paint bots that render pre-helmet.
 
-### P1 — `/blog/:slug` rewrite not serving
-`vercel.json:33-35` declares `{ "source": "/blog/:slug", "destination": "/index.html" }` but `/blog/test-post` returns **404** from Vercel. Either the rewrite is being short-circuited by a missing prerender of `/index.html` as a route, or the destination needs to match a prerendered HTML file. Investigate: does the blog section have any live posts? If blog isn't active, consider removing the rewrite or noindexing the path.
-
-### P2 — Naked→www redirect sends 308
-`vercel.json:11-16` specifies `statusCode: 301` but curl shows **308 Permanent Redirect**. Google treats both as permanent, but Vercel may be overriding. Switch to `"permanent": true` (Vercel's preferred syntax) for guaranteed 308, or use config-level domain redirect for 301.
-
 ### P2 — Polish
 - Add `<link rel="preload">` for hero LCP image on `/` and location pages.
 - Add `image:image` entries to sitemap for service + location pages.
+
+## Closed Items
+
+### ✅ `/blog/:slug` rewrite — Resolved (rewrite removed) 2026-04-13
+`vercel.json` previously declared `{ "source": "/blog/:slug", "destination": "/index.html" }` but the rewrite was both broken (404s) and obsolete:
+- `public/data/blog-posts.json` is `[]` — no posts exist
+- `scripts/prerender.mjs:22` has `if (route.includes(':')) continue;` — dynamic routes are intentionally skipped
+- SPA fallback would not serve meaningful content anyway (prerender pipeline is the intended render path)
+
+**Resolution:** `rewrites` key removed entirely from `vercel.json` (quick task `260413-tz5`). When blog activates, extend `scripts/prerender.mjs` to generate per-slug static pages from `blog-posts.json` — do NOT reintroduce the SPA fallback.
+
+### ✅ Naked→www sends 308 — Accepted (working as intended) 2026-04-13
+`vercel.json:14` declares `statusCode: 301` but Vercel sends **308 Permanent Redirect**. Root cause: Vercel's platform-level apex→primary-domain redirect takes precedence over `vercel.json` redirects.
+
+**Disposition:** Accepted. No code change.
+- Google treats 301 and 308 identically for SEO — zero ranking impact
+- 308 is semantically more correct (preserves HTTP method on redirect)
+- Overriding the platform default would require removing the apex domain from Vercel project settings, which is not worth the operational risk for a semantics-only improvement
 
 ## What's Already Solved (do not re-open)
 
