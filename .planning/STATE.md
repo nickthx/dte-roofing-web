@@ -4,8 +4,8 @@ milestone: v1.1
 milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
-last_updated: "2026-04-11"
-last_activity: 2026-04-11 -- Completed quick task 260411-m0s: Permissions-Policy + CSP enforcing
+last_updated: "2026-04-13"
+last_activity: 2026-04-13 -- Completed quick task 260413-t5b: Update sitemap.xml lastmod to reflect content changes from footer/home overhaul commit
 progress:
   total_phases: 5
   completed_phases: 5
@@ -98,9 +98,10 @@ None yet.
 | 260407-m8b | Tech SEO Phase B: prerender all routes (helmet refactor, SSG pipeline, Navigate→301) | 2026-04-07 | f144e2e | [260407-m8b-phase-b-prerender-react-router-routes-fo](./quick/260407-m8b-phase-b-prerender-react-router-routes-fo/) |
 | 260411-kct | Critical SEO header + index.html cleanup (HSTS + static head neutralization) | 2026-04-11 | 1ee0b31 | [260411-kct-critical-seo-header-index-html-cleanup-a](./quick/260411-kct-critical-seo-header-index-html-cleanup-a/) |
 | 260411-m0s | Security headers batch 2 (Permissions-Policy + CSP enforcing) | 2026-04-11 | 678e0f3 | [260411-m0s-security-headers-batch-2-add-permissions](./quick/260411-m0s-security-headers-batch-2-add-permissions/) |
+| 260413-t5b | Refresh sitemap.xml home lastmod after footer/home overhaul | 2026-04-13 | a74d83f | [260413-t5b-update-sitemap-xml-lastmod-to-reflect-co](./quick/260413-t5b-update-sitemap-xml-lastmod-to-reflect-co/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-11 - Completed quick task 260411-m0s: Permissions-Policy + CSP enforcing
+Last activity: 2026-04-13 - Completed quick task 260413-t5b: Refresh sitemap.xml home lastmod
 Stopped at: Completed 03-01-PLAN.md
 Resume file: None
