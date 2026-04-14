@@ -29,8 +29,5 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/blog/:slug", "destination": "/index.html" }
-  ]
+  "trailingSlash": false
 }
