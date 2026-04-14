@@ -5,7 +5,7 @@ milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
 last_updated: "2026-04-13"
-last_activity: 2026-04-13 -- Completed quick task 260413-t5b: Update sitemap.xml lastmod to reflect content changes from footer/home overhaul commit
+last_activity: 2026-04-13 -- Completed quick task 260413-tb5: Add missing social meta tags (og:image, og:url, twitter:image, twitter:site) to SEO.tsx + index.html
 progress:
   total_phases: 5
   completed_phases: 5
@@ -99,9 +99,10 @@ None yet.
 | 260411-kct | Critical SEO header + index.html cleanup (HSTS + static head neutralization) | 2026-04-11 | 1ee0b31 | [260411-kct-critical-seo-header-index-html-cleanup-a](./quick/260411-kct-critical-seo-header-index-html-cleanup-a/) |
 | 260411-m0s | Security headers batch 2 (Permissions-Policy + CSP enforcing) | 2026-04-11 | 678e0f3 | [260411-m0s-security-headers-batch-2-add-permissions](./quick/260411-m0s-security-headers-batch-2-add-permissions/) |
 | 260413-t5b | Refresh sitemap.xml home lastmod after footer/home overhaul | 2026-04-13 | a74d83f | [260413-t5b-update-sitemap-xml-lastmod-to-reflect-co](./quick/260413-t5b-update-sitemap-xml-lastmod-to-reflect-co/) |
+| 260413-tb5 | Add missing social meta tags (og:image, og:url, twitter:image, twitter:site) to SEO.tsx + index.html | 2026-04-13 | c5cc9a2 | [260413-tb5-add-missing-social-meta-tags-og-image-og](./quick/260413-tb5-add-missing-social-meta-tags-og-image-og/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-13 - Completed quick task 260413-t5b: Refresh sitemap.xml home lastmod
+Last activity: 2026-04-13 - Completed quick task 260413-tb5: Add missing social meta tags to SEO.tsx + index.html
 Stopped at: Completed 03-01-PLAN.md
 Resume file: None
