@@ -1,12 +1,31 @@
 #!/usr/bin/env node
 // Sitemap generator for dteroofingllc.com
-// Mirrors routes from src/App.tsx. Run via `npm run generate-sitemap`.
+// Mirrors routes from src/App.tsx.
+//
+// Workflow:
+//   1. When routes change, run `npm run generate-sitemap` locally.
+//   2. Commit the regenerated public/sitemap.xml to git.
+//   3. On Vercel, this script exits early — the committed file is what ships.
+//
+// Why skip on Vercel: Vercel uses shallow git clones, which makes `git log`
+// return inaccurate dates for files outside the shallow window. Running the
+// generator there would overwrite the committed sitemap with broken (uniform)
+// lastmod values. The committed file is the source of truth in production.
 
 import { execSync } from 'node:child_process';
 import { writeFileSync, existsSync, statSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ROUTES } from '../src/routes.config.mjs';
+
+if (process.env.VERCEL === '1') {
+  console.log(
+    '[generate-sitemap] Skipping regeneration on Vercel — ' +
+      'using committed public/sitemap.xml as source of truth. ' +
+      '(Vercel shallow clones break git-history-based lastmod.)'
+  );
+  process.exit(0);
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -26,22 +45,6 @@ function probeGit() {
     gitAvailable = true;
   } catch {
     gitAvailable = false;
-    return;
-  }
-  try {
-    const shallow = execSync('git rev-parse --is-shallow-repository', {
-      cwd: ROOT,
-      encoding: 'utf8',
-    }).trim();
-    if (shallow === 'true') {
-      console.warn(
-        'WARNING: Running in a shallow git clone. Some files may fall back to ' +
-          'filesystem mtime, which will produce inaccurate lastmod values. ' +
-          'Set VERCEL_DEEP_CLONE=1 or prepend `git fetch --unshallow` to the build command.'
-      );
-    }
-  } catch {
-    // non-fatal — we already have git availability confirmed
   }
 }
 
