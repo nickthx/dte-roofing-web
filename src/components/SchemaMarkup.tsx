@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useReviewData } from '../hooks/useReviewData';
+import reviewStats from '../data/review-stats.json';
 import { getAreaServedForLocation, LOCATIONS, type LocationConfig } from '../data/locations';
 
 interface FAQ {
@@ -88,8 +88,6 @@ export default function SchemaMarkup({
   pageDescription,
   pageUrl
 }: SchemaMarkupProps) {
-  const { reviewData } = useReviewData();
-
   const cityToAreaServed = (loc: LocationConfig) => ({
     '@type': 'City' as const,
     'name': loc.cityName,
@@ -134,15 +132,13 @@ export default function SchemaMarkup({
       schema.areaServed = LOCATIONS.map(cityToAreaServed);
     }
 
-    if (reviewData) {
-      schema.aggregateRating = {
-        '@type': 'AggregateRating',
-        ratingValue: reviewData.averageRating.toString(),
-        reviewCount: reviewData.totalReviews.toString(),
-        bestRating: '5',
-        worstRating: '1'
-      };
-    }
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: reviewStats.averageRating.toString(),
+      reviewCount: reviewStats.reviewCount.toString(),
+      bestRating: reviewStats.bestRating.toString(),
+      worstRating: reviewStats.worstRating.toString()
+    };
 
     if (reviews && reviews.length > 0) {
       schema.review = reviews.map(r => ({
