@@ -101,10 +101,11 @@ None yet.
 | 260413-t5b | Refresh sitemap.xml home lastmod after footer/home overhaul | 2026-04-13 | a74d83f | [260413-t5b-update-sitemap-xml-lastmod-to-reflect-co](./quick/260413-t5b-update-sitemap-xml-lastmod-to-reflect-co/) |
 | 260413-tb5 | Add missing social meta tags (og:image, og:url, twitter:image, twitter:site) to SEO.tsx + index.html | 2026-04-13 | c5cc9a2 | [260413-tb5-add-missing-social-meta-tags-og-image-og](./quick/260413-tb5-add-missing-social-meta-tags-og-image-og/) |
 | 260413-tz5 | Remove dead /blog/:slug rewrite from vercel.json; close 308 audit item | 2026-04-13 | cde9d55 | [260413-tz5-remove-dead-blog-slug-rewrite-from-verce](./quick/260413-tz5-remove-dead-blog-slug-rewrite-from-verce/) |
-| 260503-og1 | Add og:image:width/height/type/alt + twitter:image:alt to SEO.tsx + index.html | 2026-05-03 | (pending) | [260503-og1-add-og-image-dimensions-and-alt-tags](./quick/260503-og1-add-og-image-dimensions-and-alt-tags/) |
+| 260503-og1 | Add og:image:width/height/type/alt + twitter:image:alt to SEO.tsx + index.html | 2026-05-03 | dec36dd | [260503-og1-add-og-image-dimensions-and-alt-tags](./quick/260503-og1-add-og-image-dimensions-and-alt-tags/) |
+| 260503-og2 | Dedupe og:* and twitter:* tags from index.html shell; drop dead twitter:site | 2026-05-03 | (pending) | [260503-og2-remove-duplicate-og-tags-from-index-html](./quick/260503-og2-remove-duplicate-og-tags-from-index-html/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-13 - Completed quick task 260413-tz5: Remove dead /blog/:slug rewrite; close 308 audit item
-Stopped at: Completed 03-01-PLAN.md
+Last activity: 2026-05-03 - Completed quick task 260503-og2: Dedupe og:* and twitter:* tags; drop dead twitter:site
+Stopped at: Completed 260503-og2-SUMMARY.md
 Resume file: None

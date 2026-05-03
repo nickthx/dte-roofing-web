@@ -13,7 +13,6 @@ interface SEOProps {
   ogImageAlt?: string;
   canonical?: string;
   geoPlacename?: string;
-  twitterSite?: string;
   preloadImage?: string;
 }
 
@@ -27,7 +26,6 @@ export default function SEO({
   ogImageAlt,
   canonical,
   geoPlacename,
-  twitterSite,
   preloadImage,
 }: SEOProps): JSX.Element {
   const finalOgTitle = ogTitle || title;
@@ -58,7 +56,6 @@ export default function SEO({
       <meta name="twitter:description" content={finalOgDescription} />
       <meta name="twitter:image" content={finalOgImage} />
       <meta name="twitter:image:alt" content={finalOgImageAlt} />
-      {twitterSite && <meta name="twitter:site" content={twitterSite} />}
 
       {canonical && <link rel="canonical" href={canonical} />}
       <meta name="geo.placename" content={geoPlacename || "Columbus, OH"} />
