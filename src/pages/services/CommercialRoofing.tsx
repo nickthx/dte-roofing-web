@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Building2, Clock, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function CommercialRoofing() {
@@ -11,6 +12,17 @@ export default function CommercialRoofing() {
         description="Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate."
         keywords="commercial roofing Columbus, business roofing, flat roof repair, TPO roofing, EPDM roofing, commercial roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Commercial Roofing",
+          description: "Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate.",
+          url: "/services/commercial-roofing"
+        }}
+        pageTitle="Commercial Roofing Contractor Columbus, OH | DTE Roofing"
+        pageDescription="Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate."
+        pageUrl={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

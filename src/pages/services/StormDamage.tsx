@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Phone, Cloud, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function StormDamage() {
@@ -11,6 +12,17 @@ export default function StormDamage() {
         description="Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028."
         keywords="storm damage repair, hail damage, wind damage, storm roof repair, insurance claims, Columbus storm damage"
         canonical={`${CANONICAL_DOMAIN}/services/storm-damage`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Storm Damage Repair",
+          description: "Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028.",
+          url: "/services/storm-damage"
+        }}
+        pageTitle="Storm Damage Roof Repair in Central Ohio | DTE Roofing"
+        pageDescription="Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/storm-damage`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

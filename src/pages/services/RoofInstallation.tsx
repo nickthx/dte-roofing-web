@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Shield, Award, Clock } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function RoofInstallation() {
@@ -11,6 +12,17 @@ export default function RoofInstallation() {
         description="Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028."
         keywords="roof installation Columbus, new roof installation, residential roof installation, commercial roof installation, asphalt shingle installation, metal roof installation"
         canonical={`${CANONICAL_DOMAIN}/services/roof-installation`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "New Roof Installation",
+          description: "Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028.",
+          url: "/services/roof-installation"
+        }}
+        pageTitle="New Roof Installation in Columbus, OH | DTE Roofing"
+        pageDescription="Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/roof-installation`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, ClipboardCheck, Camera, FileText } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function RoofInspection() {
@@ -11,6 +12,17 @@ export default function RoofInspection() {
         description="Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028."
         keywords="roof inspection Columbus, roof inspection service, home inspection, pre-purchase inspection, insurance roof inspection, annual roof inspection"
         canonical={`${CANONICAL_DOMAIN}/services/roof-inspection`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Free Roof Inspection",
+          description: "Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028.",
+          url: "/services/roof-inspection"
+        }}
+        pageTitle="Free Roof Inspection in Central Ohio | DTE Roofing"
+        pageDescription="Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/roof-inspection`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

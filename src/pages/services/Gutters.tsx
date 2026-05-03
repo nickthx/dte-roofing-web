@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Shield, Droplets, Home } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function Gutters() {
@@ -11,6 +12,17 @@ export default function Gutters() {
         description="Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028."
         keywords="gutters Columbus, seamless gutters, gutter installation, gutter guards, custom gutters, aluminum gutters"
         canonical={`${CANONICAL_DOMAIN}/services/gutters`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Gutter Installation & Repair",
+          description: "Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028.",
+          url: "/services/gutters"
+        }}
+        pageTitle="Gutter Installation & Repair in Columbus, OH | DTE Roofing"
+        pageDescription="Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/gutters`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

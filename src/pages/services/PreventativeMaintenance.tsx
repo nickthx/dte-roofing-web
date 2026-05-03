@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Shield, TrendingUp, DollarSign } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function PreventativeMaintenance() {
@@ -11,6 +12,17 @@ export default function PreventativeMaintenance() {
         description="Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028."
         keywords="preventative maintenance, preventive roof care, roof maintenance program, annual roof service, proactive roof care"
         canonical={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Preventative Maintenance",
+          description: "Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028.",
+          url: "/services/preventative-maintenance"
+        }}
+        pageTitle="Preventative Roof Maintenance Columbus OH | DTE Roofing"
+        pageDescription="Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

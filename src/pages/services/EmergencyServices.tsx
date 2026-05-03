@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Phone, Clock, AlertTriangle } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function EmergencyServices() {
@@ -11,6 +12,17 @@ export default function EmergencyServices() {
         description="24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now."
         keywords="emergency roof repair, 24/7 roofing, storm damage, emergency leak repair, urgent roof repair, Columbus emergency roofing"
         canonical={`${CANONICAL_DOMAIN}/services/emergency-services`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Emergency Roofing Services",
+          description: "24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now.",
+          url: "/services/emergency-services"
+        }}
+        pageTitle="24/7 Emergency Roof Repair in Central Ohio | DTE Roofing"
+        pageDescription="24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now."
+        pageUrl={`${CANONICAL_DOMAIN}/services/emergency-services`}
       />
 
       <section className="relative bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white py-20">

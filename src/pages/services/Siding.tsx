@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Home, Palette, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 export default function Siding() {
@@ -11,6 +12,17 @@ export default function Siding() {
         description="Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028."
         keywords="siding installation Columbus, vinyl siding, LP Smart Siding, siding repair, siding replacement, Columbus siding contractor"
         canonical={`${CANONICAL_DOMAIN}/services/siding`}
+      />
+      <SchemaMarkup
+        type="service"
+        service={{
+          name: "Siding Installation & Repair",
+          description: "Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028.",
+          url: "/services/siding"
+        }}
+        pageTitle="Siding Installation & Repair in Central Ohio | DTE Roofing"
+        pageDescription="Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028."
+        pageUrl={`${CANONICAL_DOMAIN}/services/siding`}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
