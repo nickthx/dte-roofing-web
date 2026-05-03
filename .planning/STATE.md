@@ -5,7 +5,7 @@ milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
 last_updated: "2026-05-03"
-last_activity: 2026-05-03 -- Completed quick task 260503-h1-hotfix: Decouple SchemaMarkup from useReviewData via build-time JSON
+last_activity: 2026-05-03 -- Completed quick task 260503-h1-rollout: Add Service schema to 8 remaining service pages; bump reviewCount to 102
 progress:
   total_phases: 5
   completed_phases: 5
@@ -105,9 +105,10 @@ None yet.
 | 260503-og2 | Dedupe og:* and twitter:* tags from index.html shell; drop dead twitter:site | 2026-05-03 | 1084d33 | [260503-og2-remove-duplicate-og-tags-from-index-html](./quick/260503-og2-remove-duplicate-og-tags-from-index-html/) |
 | 260503-h1-pilot | Add RoofingContractor schema to service pages (whitelist 'service'); archive dead GutterServices/RoofMaintenance routes to /dead-code/ | 2026-05-03 | ab19287 | inline (no plan dir) |
 | 260503-h1-hotfix | Decouple SchemaMarkup from useReviewData via build-time review-stats.json; fixes Rich Results "multiple aggregate ratings" error from Helmet SSR/hydration drift | 2026-05-03 | 491e3c3 | inline (no plan dir) |
+| 260503-h1-rollout | Add `<SchemaMarkup type="service">` to 8 remaining service pages (inspection, installation, gutters, emergency-services, storm-damage, commercial-roofing, preventative-maintenance, siding); bump review-stats.json reviewCount 95→102 | 2026-05-03 | 2c1f729 | inline (no plan dir) |
 
 ## Session Continuity
 
-Last activity: 2026-05-03 - Completed quick task 260503-h1-hotfix: Decouple SchemaMarkup from useReviewData via build-time JSON
-Stopped at: Completed 260503-h1-hotfix; Vercel deployed 491e3c3
+Last activity: 2026-05-03 - Completed quick task 260503-h1-rollout: Add Service schema to 8 remaining service pages; bump reviewCount to 102
+Stopped at: Completed 260503-h1-rollout; Vercel deployed 2c1f729
 Resume file: None
