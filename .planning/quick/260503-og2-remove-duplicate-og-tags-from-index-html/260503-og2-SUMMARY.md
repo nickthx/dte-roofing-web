@@ -3,7 +3,7 @@ quick_id: 260503-og2
 description: Remove duplicate og:* / twitter:* tags from index.html shell; drop dead twitter:site
 date: 2026-05-03
 commits:
-  - (pending) fix(seo): dedupe og:* and twitter:* tags, drop dead twitter:site (260503-og2)
+  - 1084d33 fix(seo): dedupe og:* and twitter:* tags, drop dead twitter:site (260503-og2)
 status: complete
 ---
 
