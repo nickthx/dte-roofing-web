@@ -7,4 +7,3 @@ Sitemap: https://www.dteroofingllc.com/sitemap.xml
 
 # Prevent crawling of utility pages if any
 Disallow: /api/
-Disallow: /_redirects

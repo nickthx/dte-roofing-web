@@ -169,7 +169,7 @@ export default function SchemaMarkup({
     return {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      '@id': `${BUSINESS_INFO.url}${service.url || ''}#service`,
+      '@id': `${service.url ? `${BUSINESS_INFO.url}${service.url}` : (pageUrl || BUSINESS_INFO.url)}#service`,
       name: service.name,
       description: service.description,
       provider: {

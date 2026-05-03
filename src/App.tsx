@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -15,7 +15,6 @@ import RoofInstallation from './pages/services/RoofInstallation';
 import RoofRepair from './pages/services/RoofRepair';
 import RoofReplacement from './pages/services/RoofReplacement';
 import RoofInspection from './pages/services/RoofInspection';
-import GutterServices from './pages/services/GutterServices';
 import Gutters from './pages/services/Gutters';
 import EmergencyServices from './pages/services/EmergencyServices';
 import StormDamage from './pages/services/StormDamage';
@@ -50,16 +49,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/team" element={<Navigate to="/services" replace />} />
             <Route path="/services/roof-installation" element={<RoofInstallation />} />
             <Route path="/services/roof-repair" element={<RoofRepair />} />
             <Route path="/services/roof-replacement" element={<RoofReplacement />} />
             <Route path="/services/roof-inspection" element={<RoofInspection />} />
-            <Route path="/services/gutter-services" element={<GutterServices />} />
             <Route path="/services/gutters" element={<Gutters />} />
             <Route path="/services/emergency-services" element={<EmergencyServices />} />
             <Route path="/services/storm-damage" element={<StormDamage />} />
-            <Route path="/services/roof-maintenance" element={<Navigate to="/services/preventative-maintenance" replace />} />
             <Route path="/services/preventative-maintenance" element={<PreventativeMaintenance />} />
             <Route path="/services/siding" element={<Siding />} />
             <Route path="/services/commercial-roofing" element={<CommercialRoofing />} />
@@ -68,10 +64,6 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/faqs" element={<Navigate to="/faq" replace />} />
-            <Route path="/careers" element={<Navigate to="/contact" replace />} />
-            <Route path="/book-a-consultation" element={<Navigate to="/contact" replace />} />
-            <Route path="/cart" element={<Navigate to="/contact" replace />} />
             <Route path="/financing" element={<Financing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<Locations />} />
