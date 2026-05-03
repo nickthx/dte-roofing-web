@@ -293,7 +293,7 @@ export default function SchemaMarkup({
   };
 
   const schemas = [
-  ...(['home', 'location', 'hub', 'general'].includes(type) ? [generateLocalBusinessSchema()] : []),
+  ...(['home', 'location', 'hub', 'general', 'service'].includes(type) ? [generateLocalBusinessSchema()] : []),
   generateServiceSchema(),
   generateFAQSchema(),
   generateBreadcrumbSchema(),
