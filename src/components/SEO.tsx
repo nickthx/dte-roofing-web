@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const DEFAULT_OG_IMAGE = 'https://www.dteroofingllc.com/images/hero-roofing-professional.jpg';
+const DEFAULT_OG_IMAGE_ALT = 'DTE Roofing — professional roofing services in Central Ohio';
 
 interface SEOProps {
   title: string;
@@ -9,6 +10,7 @@ interface SEOProps {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   canonical?: string;
   geoPlacename?: string;
   twitterSite?: string;
@@ -22,6 +24,7 @@ export default function SEO({
   ogTitle,
   ogDescription,
   ogImage,
+  ogImageAlt,
   canonical,
   geoPlacename,
   twitterSite,
@@ -30,6 +33,7 @@ export default function SEO({
   const finalOgTitle = ogTitle || title;
   const finalOgDescription = ogDescription || description;
   const finalOgImage = ogImage || DEFAULT_OG_IMAGE;
+  const finalOgImageAlt = ogImageAlt || DEFAULT_OG_IMAGE_ALT;
 
   return (
     <Helmet>
@@ -42,6 +46,10 @@ export default function SEO({
       <meta property="og:description" content={finalOgDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={finalOgImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:alt" content={finalOgImageAlt} />
       {canonical && <meta property="og:url" content={canonical} />}
 
       {/* Twitter */}
@@ -49,6 +57,7 @@ export default function SEO({
       <meta name="twitter:title" content={finalOgTitle} />
       <meta name="twitter:description" content={finalOgDescription} />
       <meta name="twitter:image" content={finalOgImage} />
+      <meta name="twitter:image:alt" content={finalOgImageAlt} />
       {twitterSite && <meta name="twitter:site" content={twitterSite} />}
 
       {canonical && <link rel="canonical" href={canonical} />}
