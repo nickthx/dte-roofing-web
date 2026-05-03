@@ -12,6 +12,7 @@ interface SEOProps {
   canonical?: string;
   geoPlacename?: string;
   twitterSite?: string;
+  preloadImage?: string;
 }
 
 export default function SEO({
@@ -24,6 +25,7 @@ export default function SEO({
   canonical,
   geoPlacename,
   twitterSite,
+  preloadImage,
 }: SEOProps): JSX.Element {
   const finalOgTitle = ogTitle || title;
   const finalOgDescription = ogDescription || description;
@@ -51,6 +53,15 @@ export default function SEO({
 
       {canonical && <link rel="canonical" href={canonical} />}
       <meta name="geo.placename" content={geoPlacename || "Columbus, OH"} />
+
+      {preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage}
+          {...({ fetchpriority: 'high' } as Record<string, string>)}
+        />
+      )}
     </Helmet>
   );
 }
