@@ -1,8 +1,8 @@
 {
-  "reviewCount": 102,
+  "reviewCount": 103,
   "averageRating": 5,
   "bestRating": 5,
   "worstRating": 1,
-  "lastUpdated": "2026-05-03",
+  "lastUpdated": "2026-05-08",
   "_comment": "Updated weekly by n8n workflow CSykgVSWffnede1W. Do not edit by hand unless n8n is offline. The website schema reads this file at build time; the on-page UI continues to read useReviewData for live values."
 }
