@@ -3,6 +3,45 @@ import ServicePageTemplate from '../../components/ServicePageTemplate';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import reviewStats from '../../data/review-stats.json';
 
+const faqs = [
+  {
+    question: 'How much does roof repair cost in Columbus?',
+    answer: 'Roof repair costs vary based on the extent of damage, materials needed, and accessibility. Minor repairs like replacing a few shingles typically range from $300-$800, while more extensive repairs involving flashing or decking can range from $1,000-$3,000. We provide detailed written estimates before starting any work so you know exactly what to expect. Call us at 614-971-6028 for a free inspection and accurate quote.'
+  },
+  {
+    question: 'How quickly can you repair my roof?',
+    answer: 'For emergency situations like active leaks, we offer same-day or next-day service to prevent further damage. Most standard repairs are completed within 1-3 days, depending on weather conditions and the scope of work. We prioritize quick response times while never sacrificing quality.'
+  },
+  {
+    question: 'Do you offer warranties on repairs?',
+    answer: 'Yes! All our repairs come with comprehensive workmanship warranties. The specific warranty length depends on the type of repair, but typically ranges from 2-5 years. We also use materials backed by manufacturer warranties. We stand behind our work completely.'
+  },
+  {
+    question: 'Should I repair or replace my roof?',
+    answer: 'This depends on several factors: the age of your roof, extent of damage, and overall condition. If your roof is under 15 years old and damage is localized, repair is usually the best option. For roofs over 20 years old with widespread issues, replacement may be more cost-effective long-term. We always provide honest recommendations—we will never sell you a replacement if repairs will solve the problem.'
+  },
+  {
+    question: 'Will you help with insurance claims?',
+    answer: 'Absolutely. For storm damage, we work directly with your insurance company, providing detailed documentation, photos, and estimates to support your claim. We have extensive experience with the claims process and can help ensure you receive fair coverage for necessary repairs.'
+  },
+  {
+    question: 'Can you match my existing shingles?',
+    answer: 'In most cases, yes. We carry a wide range of shingles from leading manufacturers and can usually find an exact or very close match to your existing roof. For older roofs where exact matches are no longer available, we source the closest possible match to ensure repairs blend seamlessly.'
+  },
+  {
+    question: 'Can you repair a roof in winter?',
+    answer: 'Yes, we perform roof repairs year-round in Columbus, including winter months. However, winter repairs require special considerations. Temperatures below 40°F affect shingle adhesive properties, so we use cold-weather installation techniques and specialized materials when necessary. For emergency leaks causing active water damage, we respond regardless of weather conditions to prevent further harm to your home. Non-urgent repairs may be temporarily weatherproofed until spring when conditions are ideal for permanent repairs. We assess each situation individually and provide honest recommendations about timing. If you need emergency service during winter, our emergency services team is available to protect your home.'
+  },
+  {
+    question: 'How long do roof repairs last?',
+    answer: 'When done properly with quality materials, roof repairs should last as long as the surrounding original roofing—typically 10-20+ years depending on your roof\'s age and condition. The longevity of repairs depends on several factors: the quality of materials used, proper installation techniques, the severity of Central Ohio weather exposure, and regular maintenance. Minor shingle replacements and flashing repairs performed correctly should match your roof\'s remaining lifespan. We use premium materials and proven techniques to ensure repairs don\'t become recurring problems. All our work includes comprehensive workmanship warranties, demonstrating our confidence in repair longevity. Regular inspections every few years help identify small issues before they become major problems, extending both repair and roof lifespan.'
+  },
+  {
+    question: 'Should I repair or replace before selling my home?',
+    answer: 'This depends on your roof\'s condition, the local Columbus market, and your selling timeline. If your roof has minor damage that\'s visible or known to buyers, repairs are usually the cost-effective choice. Most home inspectors will flag roof issues, and buyers often request repairs or price reductions. Addressing problems proactively gives you control over costs and prevents last-minute negotiations. However, if your roof is over 20 years old or has widespread issues, potential buyers may factor full replacement into their offers anyway. In that case, you might negotiate the price rather than investing in extensive repairs. For homes in competitive Columbus neighborhoods like Dublin and Hilliard, a new or well-maintained roof can be a strong selling point that justifies premium pricing. We provide honest assessments for homeowners preparing to sell, helping you understand whether minor repairs, major repairs, or full replacement makes the most financial sense for your situation. Consider scheduling a pre-listing roof inspection to understand exactly what buyers\' inspectors will find, allowing you to address issues strategically.'
+  }
+];
+
 export default function RoofRepair() {
   return (
     <>
@@ -16,6 +55,7 @@ export default function RoofRepair() {
         pageTitle="Roof Repair Columbus OH - Expert Leak & Storm Damage Repair"
         pageDescription={`Honest roof repair by hands-on experts in Columbus. ${reviewStats.reviewCount}+ five-star reviews. Book a free inspection today.`}
         pageUrl="https://www.dteroofingllc.com/services/roof-repair"
+        faqs={faqs}
       />
       <ServicePageTemplate
         serviceName="Roof Repair"
@@ -146,44 +186,7 @@ For <Link to="/locations/hilliard" className="text-primary-700 hover:text-primar
           description: 'We perform a final inspection to verify quality, clean up the job site completely, and provide you with workmanship warranty documentation.'
         }
       ]}
-      faqs={[
-        {
-          question: 'How much does roof repair cost in Columbus?',
-          answer: 'Roof repair costs vary based on the extent of damage, materials needed, and accessibility. Minor repairs like replacing a few shingles typically range from $300-$800, while more extensive repairs involving flashing or decking can range from $1,000-$3,000. We provide detailed written estimates before starting any work so you know exactly what to expect. Call us at 614-971-6028 for a free inspection and accurate quote.'
-        },
-        {
-          question: 'How quickly can you repair my roof?',
-          answer: 'For emergency situations like active leaks, we offer same-day or next-day service to prevent further damage. Most standard repairs are completed within 1-3 days, depending on weather conditions and the scope of work. We prioritize quick response times while never sacrificing quality.'
-        },
-        {
-          question: 'Do you offer warranties on repairs?',
-          answer: 'Yes! All our repairs come with comprehensive workmanship warranties. The specific warranty length depends on the type of repair, but typically ranges from 2-5 years. We also use materials backed by manufacturer warranties. We stand behind our work completely.'
-        },
-        {
-          question: 'Should I repair or replace my roof?',
-          answer: 'This depends on several factors: the age of your roof, extent of damage, and overall condition. If your roof is under 15 years old and damage is localized, repair is usually the best option. For roofs over 20 years old with widespread issues, replacement may be more cost-effective long-term. We always provide honest recommendations—we will never sell you a replacement if repairs will solve the problem.'
-        },
-        {
-          question: 'Will you help with insurance claims?',
-          answer: 'Absolutely. For storm damage, we work directly with your insurance company, providing detailed documentation, photos, and estimates to support your claim. We have extensive experience with the claims process and can help ensure you receive fair coverage for necessary repairs.'
-        },
-        {
-          question: 'Can you match my existing shingles?',
-          answer: 'In most cases, yes. We carry a wide range of shingles from leading manufacturers and can usually find an exact or very close match to your existing roof. For older roofs where exact matches are no longer available, we source the closest possible match to ensure repairs blend seamlessly.'
-        },
-        {
-          question: 'Can you repair a roof in winter?',
-          answer: 'Yes, we perform roof repairs year-round in Columbus, including winter months. However, winter repairs require special considerations. Temperatures below 40°F affect shingle adhesive properties, so we use cold-weather installation techniques and specialized materials when necessary. For emergency leaks causing active water damage, we respond regardless of weather conditions to prevent further harm to your home. Non-urgent repairs may be temporarily weatherproofed until spring when conditions are ideal for permanent repairs. We assess each situation individually and provide honest recommendations about timing. If you need emergency service during winter, our emergency services team is available to protect your home.'
-        },
-        {
-          question: 'How long do roof repairs last?',
-          answer: 'When done properly with quality materials, roof repairs should last as long as the surrounding original roofing—typically 10-20+ years depending on your roof\'s age and condition. The longevity of repairs depends on several factors: the quality of materials used, proper installation techniques, the severity of Central Ohio weather exposure, and regular maintenance. Minor shingle replacements and flashing repairs performed correctly should match your roof\'s remaining lifespan. We use premium materials and proven techniques to ensure repairs don\'t become recurring problems. All our work includes comprehensive workmanship warranties, demonstrating our confidence in repair longevity. Regular inspections every few years help identify small issues before they become major problems, extending both repair and roof lifespan.'
-        },
-        {
-          question: 'Should I repair or replace before selling my home?',
-          answer: 'This depends on your roof\'s condition, the local Columbus market, and your selling timeline. If your roof has minor damage that\'s visible or known to buyers, repairs are usually the cost-effective choice. Most home inspectors will flag roof issues, and buyers often request repairs or price reductions. Addressing problems proactively gives you control over costs and prevents last-minute negotiations. However, if your roof is over 20 years old or has widespread issues, potential buyers may factor full replacement into their offers anyway. In that case, you might negotiate the price rather than investing in extensive repairs. For homes in competitive Columbus neighborhoods like Dublin and Hilliard, a new or well-maintained roof can be a strong selling point that justifies premium pricing. We provide honest assessments for homeowners preparing to sell, helping you understand whether minor repairs, major repairs, or full replacement makes the most financial sense for your situation. Consider scheduling a pre-listing roof inspection to understand exactly what buyers\' inspectors will find, allowing you to address issues strategically.'
-        }
-      ]}
+      faqs={faqs}
       relatedServices={[
         { name: 'Roof Inspection', link: '/services/roof-inspection' },
         { name: 'Roof Replacement', link: '/services/roof-replacement' },

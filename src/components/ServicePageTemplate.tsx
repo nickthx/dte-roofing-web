@@ -51,19 +51,6 @@ export default function ServicePageTemplate({
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <>
       <MobileStickyCall />
@@ -74,10 +61,6 @@ export default function ServicePageTemplate({
           keywords={keywords}
           canonical={`https://www.dteroofingllc.com/services/${slug}`}
         />
-
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
 
       <section className="bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
