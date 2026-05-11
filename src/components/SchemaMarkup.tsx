@@ -146,7 +146,6 @@ export default function SchemaMarkup({
       provider: {
         '@id': `${BUSINESS_INFO.url}#business`
       },
-      areaServed: BUSINESS_INFO.areaServed,
       serviceType: service.name,
       offers: {
         '@type': 'Offer',

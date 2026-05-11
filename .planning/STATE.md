@@ -5,7 +5,7 @@ milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
 last_updated: "2026-05-11"
-last_activity: 2026-05-11 -- Completed quick task 260511-hb1: stop home hero from referencing empty stub image
+last_activity: 2026-05-11 -- Completed quick task 260511-as1: remove redundant areaServed from Service schema
 progress:
   total_phases: 5
   completed_phases: 5
@@ -110,6 +110,7 @@ None yet.
 | 260511-rs1 | Defer Roofle slideout widget via RoofleSlideout.tsx: remove `<script>` from index.html, lazy-inject after `requestIdleCallback` (3000ms timeout) with 1500ms setTimeout fallback for Safari. Preconnect kept. InstantQuote.tsx (embedded variant) untouched. | 2026-05-11 | 92a67e3 | inline (no plan dir) |
 | 260511-rv1 | Remove synthetic-date Review[] block from JSON-LD on /reviews; AggregateRating (sourced from review-stats.json) preserved. Delete unused ReviewItem interface + reviews prop from SchemaMarkup; drop reviews prop from Reviews.tsx call site. Visible testimonial UI unchanged. | 2026-05-11 | 7a6b8c2 | inline (no plan dir) |
 | 260511-hb1 | Stop home hero from referencing empty stub `/images/hero-roofing-professional.jpg`: drop `preloadImage` prop on `<SEO>` (kills `<link rel="preload">` for an empty file) and delete the misleading `role="img"` background-image div from Home.tsx hero. Gradient + darkening overlay preserved (matches all 33 other routes). | 2026-05-11 | 270777f | inline (no plan dir) |
+| 260511-as1 | Remove redundant `areaServed: BUSINESS_INFO.areaServed` from `generateServiceSchema` in SchemaMarkup.tsx. Service node still references its provider via `@id` → `#business`, and the RoofingContractor block on the same page already emits a per-page-scoped areaServed (13-city on hub/home/service, location-subset on /locations/<city>). Saves ~1 KB of JSON-LD per service page with no SEO regression. | 2026-05-11 | _pending_ | inline (no plan dir) |
 
 ### Parking Lot (Path B — content work, out of scope here)
 
@@ -117,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last activity: 2026-05-11 - Completed quick task 260511-hb1: stop preloading empty hero stub; remove placeholder bg-image div
-Stopped at: Home hero is gradient-only (consistent with 33 other routes); DEFAULT_OG_IMAGE parked as Path B content work
+Last activity: 2026-05-11 - Completed quick task 260511-as1: remove redundant areaServed from Service schema
+Stopped at: Service nodes on 9 service pages no longer inline 13-city areaServed; provider @id preserves the relationship; RoofingContractor on every page still emits its own per-page-scoped areaServed
 Resume file: None
