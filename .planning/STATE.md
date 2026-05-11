@@ -106,7 +106,7 @@ None yet.
 | 260503-h1-pilot | Add RoofingContractor schema to service pages (whitelist 'service'); archive dead GutterServices/RoofMaintenance routes to /dead-code/ | 2026-05-03 | ab19287 | inline (no plan dir) |
 | 260503-h1-hotfix | Decouple SchemaMarkup from useReviewData via build-time review-stats.json; fixes Rich Results "multiple aggregate ratings" error from Helmet SSR/hydration drift | 2026-05-03 | 491e3c3 | inline (no plan dir) |
 | 260503-h1-rollout | Add `<SchemaMarkup type="service">` to 8 remaining service pages (inspection, installation, gutters, emergency-services, storm-damage, commercial-roofing, preventative-maintenance, siding); bump review-stats.json reviewCount 95→102 | 2026-05-03 | 2c1f729 | inline (no plan dir) |
-| 260511-fq1 | Consolidate service-page FAQPage schema via SchemaMarkup; remove broken inline `<script>{JSON.stringify(faqSchema)}</script>` from ServicePageTemplate that rendered HTML-entity-escaped JSON-LD (only RoofRepair.tsx affected — sole consumer of the template) | 2026-05-11 | TBD | inline (no plan dir) |
+| 260511-fq1 | Consolidate service-page FAQPage schema via SchemaMarkup; remove broken inline `<script>{JSON.stringify(faqSchema)}</script>` from ServicePageTemplate that rendered HTML-entity-escaped JSON-LD (only RoofRepair.tsx affected — sole consumer of the template) | 2026-05-11 | 771158b | inline (no plan dir) |
 
 ## Session Continuity
 
