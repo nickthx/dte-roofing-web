@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import reviewStats from '../data/review-stats.json';
 
-const DEFAULT_REVIEW_COUNT = 92;
+const DEFAULT_REVIEW_COUNT = reviewStats.reviewCount;
+const DEFAULT_AVERAGE_RATING = reviewStats.averageRating;
 
 interface ReviewData {
   totalReviews: number;
@@ -20,7 +22,7 @@ interface ReviewData {
 export const useReviewData = () => {
   const [reviewData, setReviewData] = useState<ReviewData | null>({
     totalReviews: DEFAULT_REVIEW_COUNT,
-    averageRating: 5.0,
+    averageRating: DEFAULT_AVERAGE_RATING,
     ratingBreakdown: { 5: DEFAULT_REVIEW_COUNT, 4: 0, 3: 0, 2: 0, 1: 0 },
     lastUpdated: '',
     businessName: 'DTE Roofing',
@@ -62,7 +64,7 @@ export const useReviewData = () => {
         const row = parsed.table.rows[0].c;
 
         const totalReviews = row[1]?.v || DEFAULT_REVIEW_COUNT;
-        const averageRating = row[2]?.v || 5.0;
+        const averageRating = row[2]?.v || DEFAULT_AVERAGE_RATING;
 
         setReviewData({
           totalReviews: totalReviews,
@@ -78,7 +80,7 @@ export const useReviewData = () => {
         setLoading(false);
         setReviewData({
           totalReviews: DEFAULT_REVIEW_COUNT,
-          averageRating: 5.0,
+          averageRating: DEFAULT_AVERAGE_RATING,
           ratingBreakdown: { 5: DEFAULT_REVIEW_COUNT, 4: 0, 3: 0, 2: 0, 1: 0 },
           lastUpdated: '',
           businessName: 'DTE Roofing'
