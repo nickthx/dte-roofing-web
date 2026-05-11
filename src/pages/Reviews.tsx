@@ -80,7 +80,6 @@ export default function Reviews() {
       />
       <SchemaMarkup
         type="general"
-        reviews={reviews}
         pageTitle="DTE Roofing Reviews | Central Ohio Homeowners Speak Out"
         pageDescription="Read verified reviews from DTE Roofing customers across Columbus and Central Ohio."
         pageUrl="https://www.dteroofingllc.com/reviews"

@@ -108,9 +108,10 @@ None yet.
 | 260503-h1-rollout | Add `<SchemaMarkup type="service">` to 8 remaining service pages (inspection, installation, gutters, emergency-services, storm-damage, commercial-roofing, preventative-maintenance, siding); bump review-stats.json reviewCount 95→102 | 2026-05-03 | 2c1f729 | inline (no plan dir) |
 | 260511-fq1 | Consolidate service-page FAQPage schema via SchemaMarkup; remove broken inline `<script>{JSON.stringify(faqSchema)}</script>` from ServicePageTemplate that rendered HTML-entity-escaped JSON-LD (only RoofRepair.tsx affected — sole consumer of the template) | 2026-05-11 | 771158b | inline (no plan dir) |
 | 260511-rs1 | Defer Roofle slideout widget via RoofleSlideout.tsx: remove `<script>` from index.html, lazy-inject after `requestIdleCallback` (3000ms timeout) with 1500ms setTimeout fallback for Safari. Preconnect kept. InstantQuote.tsx (embedded variant) untouched. | 2026-05-11 | 92a67e3 | inline (no plan dir) |
+| 260511-rv1 | Remove synthetic-date Review[] block from JSON-LD on /reviews; AggregateRating (sourced from review-stats.json) preserved. Delete unused ReviewItem interface + reviews prop from SchemaMarkup; drop reviews prop from Reviews.tsx call site. Visible testimonial UI unchanged. | 2026-05-11 | TBD | inline (no plan dir) |
 
 ## Session Continuity
 
-Last activity: 2026-05-11 - Completed quick task 260511-rs1: Defer Roofle slideout widget via requestIdleCallback
-Stopped at: Slideout widget no longer in prerendered HTML (0 hits in dist/**/*.html); injected client-side after idle on every route
+Last activity: 2026-05-11 - Completed quick task 260511-rv1: Remove synthetic-date Review[] from JSON-LD; keep AggregateRating
+Stopped at: /reviews no longer ships fake datePublished values; AggregateRating preserved on all 27 routes
 Resume file: None
