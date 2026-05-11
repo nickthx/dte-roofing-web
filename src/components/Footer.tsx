@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Shield, Award, Star, Clock } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
+import reviewStats from '../data/review-stats.json';
 import { LOCATIONS } from '../data/locations';
 import BbbLogo from './logos/BbbLogo';
 import NextdoorLogo from './logos/NextdoorLogo';
@@ -126,7 +127,7 @@ export default function Footer() {
                 <Star className="w-6 h-6 text-yellow-400 fill-yellow-400 flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                 <div>
                   <h5 className="font-bold text-white text-sm mb-1">Five-Star Reputation</h5>
-                  <p className="text-sm">{reviewData?.totalReviews || 92} verified 5-star reviews and counting</p>
+                  <p className="text-sm">{reviewData?.totalReviews || reviewStats.reviewCount} verified 5-star reviews and counting</p>
                 </div>
               </a>
             </div>

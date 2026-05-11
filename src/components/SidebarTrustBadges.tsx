@@ -1,5 +1,6 @@
 import { Star, Shield, Award, Phone, Mail, MapPin } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
+import reviewStats from '../data/review-stats.json';
 
 export default function SidebarTrustBadges() {
   const { reviewData } = useReviewData();
@@ -9,7 +10,7 @@ export default function SidebarTrustBadges() {
       <div className="flex flex-col gap-3 text-sm">
         <div className="flex items-center gap-2 text-charcoal-700">
           <Star className="w-5 h-5 text-yellow-400 fill-yellow-400 flex-shrink-0" />
-          <span className="font-semibold">{reviewData?.totalReviews || 92} Five-Star Reviews</span>
+          <span className="font-semibold">{reviewData?.totalReviews || reviewStats.reviewCount} Five-Star Reviews</span>
         </div>
         <div className="flex items-center gap-2 text-charcoal-700">
           <Shield className="w-5 h-5 text-primary-600 flex-shrink-0" />

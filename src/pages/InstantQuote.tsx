@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
 import { Calculator, CheckCircle, Clock, Shield } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
+import reviewStats from '../data/review-stats.json';
 
 export default function InstantQuote() {
   const { reviewData } = useReviewData();
@@ -110,7 +111,7 @@ export default function InstantQuote() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span>{reviewData?.totalReviews || 92}+ Five-Star Reviews</span>
+                    <span>{reviewData?.totalReviews || reviewStats.reviewCount}+ Five-Star Reviews</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600" />

@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Phone, MapPin, Shield, Navigation } from 'luci
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
+import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
@@ -39,7 +40,7 @@ export default function Reynoldsburg() {
               Expert roof repair, replacement, and storm damage services for Reynoldsburg homeowners—from Livingston Ave corridors to Taylor Road, East Main Street to Blacklick Creek areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
+              ⭐ {reviewData?.totalReviews || reviewStats.reviewCount} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
             </p>
             <a
               href="tel:6149716028"
@@ -448,7 +449,7 @@ export default function Reynoldsburg() {
                   <div className="text-gray-100">Google Rating</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">{reviewData?.totalReviews || 92}</div>
+                  <div className="text-4xl font-bold mb-2">{reviewData?.totalReviews || reviewStats.reviewCount}</div>
                   <div className="text-gray-100">Verified Reviews</div>
                 </div>
                 <div>

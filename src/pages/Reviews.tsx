@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Star, ChevronRight, MessageCircle, ExternalLink } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
+import reviewStats from '../data/review-stats.json';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 
@@ -52,8 +53,8 @@ export default function Reviews() {
   ];
 
   const averageRating = reviewData?.averageRating || 5.0;
-  const totalReviews = reviewData?.totalReviews || 92;
-  const fiveStarCount = reviewData?.ratingBreakdown[5] || 92;
+  const totalReviews = reviewData?.totalReviews || reviewStats.reviewCount;
+  const fiveStarCount = reviewData?.ratingBreakdown[5] || reviewStats.reviewCount;
   const fiveStarPercentage = 100;
 
   const renderStars = (rating: number) => {

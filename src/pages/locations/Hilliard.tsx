@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Phone, MapPin, Shield, Navigation } from 'luci
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
+import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
@@ -39,7 +40,7 @@ export default function Hilliard() {
               Expert roof repair, replacement, and storm damage services for Hilliard homeowners—from Old Hilliard to Britton Farms to Scioto Reserve. Founded by Hilliard Davidson graduates, our owners work with every customer. Based minutes from Hilliard at 615 Hilliard Rome Rd, Columbus, OH 43228, we deliver detail-first craftsmanship to our neighbors.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              ⭐ {reviewData?.totalReviews || 92} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
+              ⭐ {reviewData?.totalReviews || reviewStats.reviewCount} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
             </p>
             <a
               href="tel:6149716028"
@@ -443,7 +444,7 @@ export default function Hilliard() {
                   <div className="text-gray-100">Google Rating</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">{reviewData?.totalReviews || 92}</div>
+                  <div className="text-4xl font-bold mb-2">{reviewData?.totalReviews || reviewStats.reviewCount}</div>
                   <div className="text-gray-100">Verified Reviews</div>
                 </div>
                 <div>
