@@ -22,7 +22,6 @@ export default function Home() {
         description={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewStats.reviewCount} five-star rating.`}
         keywords="roof inspection Columbus OH, Columbus roofing company, roof repair near me, roofing contractor Columbus, roof repair Columbus, roof replacement Columbus, residential roofing, commercial roofing, emergency roof repair"
         canonical={`${CANONICAL_DOMAIN}/`}
-        preloadImage="/images/hero-roofing-professional.jpg"
       />
       <SchemaMarkup
         type="home"
@@ -31,14 +30,6 @@ export default function Home() {
         pageUrl={`${CANONICAL_DOMAIN}/`}
       />
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-32 md:py-40 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/images/hero-roofing-professional.jpg)',
-          }}
-          role="img"
-          aria-label="DTE Roofing professional inspecting roof shingles at sunset in Columbus Ohio"
-        ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">

@@ -4,8 +4,8 @@ milestone: v1.1
 milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
-last_updated: "2026-05-03"
-last_activity: 2026-05-03 -- Completed quick task 260503-h1-rollout: Add Service schema to 8 remaining service pages; bump reviewCount to 102
+last_updated: "2026-05-11"
+last_activity: 2026-05-11 -- Completed quick task 260511-hb1: stop home hero from referencing empty stub image
 progress:
   total_phases: 5
   completed_phases: 5
@@ -109,9 +109,14 @@ None yet.
 | 260511-fq1 | Consolidate service-page FAQPage schema via SchemaMarkup; remove broken inline `<script>{JSON.stringify(faqSchema)}</script>` from ServicePageTemplate that rendered HTML-entity-escaped JSON-LD (only RoofRepair.tsx affected — sole consumer of the template) | 2026-05-11 | 771158b | inline (no plan dir) |
 | 260511-rs1 | Defer Roofle slideout widget via RoofleSlideout.tsx: remove `<script>` from index.html, lazy-inject after `requestIdleCallback` (3000ms timeout) with 1500ms setTimeout fallback for Safari. Preconnect kept. InstantQuote.tsx (embedded variant) untouched. | 2026-05-11 | 92a67e3 | inline (no plan dir) |
 | 260511-rv1 | Remove synthetic-date Review[] block from JSON-LD on /reviews; AggregateRating (sourced from review-stats.json) preserved. Delete unused ReviewItem interface + reviews prop from SchemaMarkup; drop reviews prop from Reviews.tsx call site. Visible testimonial UI unchanged. | 2026-05-11 | 7a6b8c2 | inline (no plan dir) |
+| 260511-hb1 | Stop home hero from referencing empty stub `/images/hero-roofing-professional.jpg`: drop `preloadImage` prop on `<SEO>` (kills `<link rel="preload">` for an empty file) and delete the misleading `role="img"` background-image div from Home.tsx hero. Gradient + darkening overlay preserved (matches all 33 other routes). | 2026-05-11 | _pending_ | inline (no plan dir) |
+
+### Parking Lot (Path B — content work, out of scope here)
+
+- **DEFAULT_OG_IMAGE points at empty stub** (`src/components/SEO.tsx:3` → `https://www.dteroofingllc.com/images/hero-roofing-professional.jpg`). Used as `og:image` + `twitter:image` fallback on all 34 prerendered routes — social-share previews are likely broken (empty body, 200 OK). Fix requires sourcing/optimizing a real hero image, not a code change. Stub file in `public/images/` retained intentionally so the URL doesn't 404 until real image lands.
 
 ## Session Continuity
 
-Last activity: 2026-05-11 - Completed quick task 260511-rv1: Remove synthetic-date Review[] from JSON-LD; keep AggregateRating
-Stopped at: /reviews no longer ships fake datePublished values; AggregateRating preserved on all 27 routes
+Last activity: 2026-05-11 - Completed quick task 260511-hb1: stop preloading empty hero stub; remove placeholder bg-image div
+Stopped at: Home hero is gradient-only (consistent with 33 other routes); DEFAULT_OG_IMAGE parked as Path B content work
 Resume file: None
