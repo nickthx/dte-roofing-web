@@ -19,7 +19,7 @@ export default function Home() {
       <div className="min-h-screen bg-white">
       <SEO
        title="Roof Repair and Replacement in Columbus, OH | DTE Roofing"
-        description={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewStats.reviewCount} five-star rating.`}
+        description={`DTE Roofing — owner-led roof repair, replacement, gutters, siding & storm damage in Columbus, OH. ${reviewStats.reviewCount}+ five-star reviews. Free inspections: 614-971-6028.`}
         keywords="roof inspection Columbus OH, Columbus roofing company, roof repair near me, roofing contractor Columbus, roof repair Columbus, roof replacement Columbus, residential roofing, commercial roofing, emergency roof repair"
         canonical={`${CANONICAL_DOMAIN}/`}
       />

@@ -59,9 +59,10 @@ export default function RoofRepair() {
       />
       <ServicePageTemplate
         serviceName="Roof Repair"
+        headline="Roof Repair in Columbus, OH — Honest Repairs That Last"
         slug="roof-repair"
         subheadline="Honest diagnostics by hands-on experts."
-        metaDescription={`Honest roof repair by hands-on experts in Columbus. ${reviewStats.reviewCount}+ five-star reviews. Book a free inspection today.`}
+        metaDescription={`Roof repair in Columbus, OH by DTE Roofing — leak fixes, shingle replacement, flashing & storm damage. ${reviewStats.reviewCount}+ five-star reviews. Free inspection: 614-971-6028.`}
         keywords="roof repair Columbus OH, Columbus roofing company, roof repair near me, emergency roof repair Columbus, leak repair Columbus, storm damage repair, shingle replacement Columbus, roofing contractor Columbus"
       problemPromise={<>Every homeowner dreads finding a water stain on their ceiling or discovering missing shingles after a storm. Too many Columbus roofers will try to sell you a full replacement when a targeted repair would solve the problem—or worse, slap on a quick patch that fails in six months.
 {'\n\n'}

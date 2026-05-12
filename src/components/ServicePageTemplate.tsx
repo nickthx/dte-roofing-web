@@ -20,6 +20,7 @@ interface FAQ {
 
 interface ServicePageProps {
   serviceName: string;
+  headline?: string;
   slug: string;
   subheadline: string;
   metaDescription: string;
@@ -33,6 +34,7 @@ interface ServicePageProps {
 
 export default function ServicePageTemplate({
   serviceName,
+  headline,
   slug,
   subheadline,
   metaDescription,
@@ -66,7 +68,7 @@ export default function ServicePageTemplate({
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              Honest Roof Repairs That Actually Last
+              {headline ?? 'Honest Roof Repairs That Actually Last'}
             </h1>
             <div className="w-20 h-1 bg-primary-600 mb-6"></div>
             <p className="text-xl md:text-2xl mb-8 text-gray-200 font-light">
