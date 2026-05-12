@@ -229,7 +229,7 @@ export default function Contact() {
                   Worthington
                 </Link>
                 <Link to="/locations" className="text-primary-700 hover:text-primary-800 font-bold hover:underline transition-colors">
-                  View All Areas →
+                  View All Central Ohio Service Areas →
                 </Link>
               </div>
             </div>
