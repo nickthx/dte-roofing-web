@@ -5,7 +5,7 @@ milestone_name: — Per-Page SEO Metadata Overhaul
 status: complete
 stopped_at: Milestone v1.1 complete
 last_updated: "2026-05-11"
-last_activity: 2026-05-11 -- Completed quick task 260511-mh1: rewrite roof-repair + home meta descriptions; add geo-led H1 to roof-repair via new headline prop on ServicePageTemplate
+last_activity: 2026-05-11 -- Completed quick task 260511-tp1: trim Columbus title (60ch), Powell description (159ch); replace "View All Areas" anchor text site-wide
 progress:
   total_phases: 5
   completed_phases: 5
@@ -113,6 +113,7 @@ None yet.
 | 260511-as1 | Remove redundant `areaServed: BUSINESS_INFO.areaServed` from `generateServiceSchema` in SchemaMarkup.tsx. Service node still references its provider via `@id` → `#business`, and the RoofingContractor block on the same page already emits a per-page-scoped areaServed (13-city on hub/home/service, location-subset on /locations/<city>). Saves ~1 KB of JSON-LD per service page with no SEO regression. | 2026-05-11 | fe5ad64 | inline (no plan dir) |
 | 260511-pf1 | Add FAQPage JSON-LD to /locations/powell by lifting the 10 hardcoded `<details>` FAQ blocks into a `powellFaqs` array, mapping the visible UI over it (DRY), and passing `faqs={powellFaqs}` to the existing `<SchemaMarkup type="location">` invocation. Prerendered output now emits a valid FAQPage with 10 Question/Answer entries; visible accordion unchanged; other 12 location pages have no FAQ content and are out of scope (audit item C2, Powell-only first pass). | 2026-05-11 | aa5d279 | inline (no plan dir) |
 | 260511-mh1 | On-page audit I1/I2/I3: rewrite /services/roof-repair meta description (96→157 chars, adds leak fixes/shingle replacement/flashing/storm damage/phone) and home meta description (124→153 chars, leads with services + gutters/siding/storm damage/phone + free-inspections CTA). Add geo-led H1 to /services/roof-repair ("Roof Repair in Columbus, OH — Honest Repairs That Last") via a new optional `headline` prop on ServicePageTemplate; original copy preserved as a `??` fallback so future consumers can't regress. SchemaMarkup `pageDescription` left intact. | 2026-05-11 | 3c3b0c4 | inline (no plan dir) |
+| 260511-tp1 | On-page audit P1/P2/P3 polish trio: trim /locations/columbus title 62→60 chars ("Roofers in Columbus, OH \| Repair & Replacement \| DTE Roofing", brand at tail); trim /locations/powell meta description 162→159 chars (drop "Call " prefix per Home convention; drop duplicate "roof " before "inspections"); replace generic "View All Areas →" anchor text with "View All Central Ohio Service Areas →" site-wide (Home.tsx + Contact.tsx, 2 occurrences). Zero schema/canonical/regression impact. | 2026-05-11 | c1aa992 | inline (no plan dir) |
 
 ### Parking Lot (Path B — content work, out of scope here)
 
@@ -120,6 +121,6 @@ None yet.
 
 ## Session Continuity
 
-Last activity: 2026-05-11 - Completed quick task 260511-mh1: rewrite roof-repair + home meta descriptions; add geo-led H1 to roof-repair
-Stopped at: /services/roof-repair meta description is 157 chars and surfaces leak fixes / shingle replacement / flashing / storm damage / phone; H1 is "Roof Repair in Columbus, OH — Honest Repairs That Last" via new optional `headline` prop on ServicePageTemplate (original copy preserved as `??` fallback). Home (`/`) meta description is 153 chars and leads with services + gutters/siding/storm damage + phone CTA. Three on-page audit items (I1/I2/I3) closed.
+Last activity: 2026-05-11 - Completed quick task 260511-tp1: trim Columbus title + Powell description; replace "View All Areas" anchor text site-wide
+Stopped at: /locations/columbus title now 60 chars (Roofers in Columbus, OH | Repair & Replacement | DTE Roofing); /locations/powell description now 159 chars (dropped "Call " prefix and the duplicate "roof " before "inspections"); 2 instances of "View All Areas →" anchor replaced with "View All Central Ohio Service Areas →" (Home.tsx and Contact.tsx). Three polish items (P1/P2/P3) closed. Remaining open audit items: C1 (Columbus content expansion), P4 (locations hub word count), P5 (Home H1 reorder — needs owner input), I4/I5 (image SEO + filename SEO), and the Roof Repair title-tag extension surfaced in audit analysis.
 Resume file: None
