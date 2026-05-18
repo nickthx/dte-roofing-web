@@ -20,6 +20,7 @@ interface FAQ {
 
 interface ServicePageProps {
   serviceName: string;
+  title: string;
   headline?: string;
   slug: string;
   subheadline: string;
@@ -33,7 +34,8 @@ interface ServicePageProps {
 }
 
 export default function ServicePageTemplate({
-  serviceName,
+  serviceName: _serviceName,
+  title,
   headline,
   slug,
   subheadline,
@@ -58,7 +60,7 @@ export default function ServicePageTemplate({
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
         <SEO
-          title={`${serviceName} in Columbus, OH | DTE Roofing`}
+          title={title}
           description={metaDescription}
           keywords={keywords}
           canonical={`https://www.dteroofingllc.com/services/${slug}`}

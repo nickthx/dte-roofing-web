@@ -45,8 +45,8 @@ export default function Blog() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofing Tips & News | DTE Roofing Blog"
-        description="Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights from DTE Roofing."
-        keywords="roofing blog, roof maintenance tips, Ohio roofing advice"
+        description="Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights."
+        keywords="roofing blog, roof maintenance tips, Ohio roofing advice, Columbus roofing blog"
         canonical="https://www.dteroofingllc.com/blog"
       />
       

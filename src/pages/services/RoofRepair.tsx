@@ -59,6 +59,7 @@ export default function RoofRepair() {
       />
       <ServicePageTemplate
         serviceName="Roof Repair"
+        title="Roof Repair in Columbus, OH | DTE Roofing"
         headline="Roof Repair in Columbus, OH — Honest Repairs That Last"
         slug="roof-repair"
         subheadline="Honest diagnostics by hands-on experts."
