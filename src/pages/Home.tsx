@@ -29,8 +29,16 @@ export default function Home() {
         pageDescription={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewStats.reviewCount} five-star rating.`}
         pageUrl={`${CANONICAL_DOMAIN}/`}
       />
-      <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-32 md:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+      <section className="relative bg-charcoal-900 text-white py-32 md:py-40 overflow-hidden">
+        <img
+          src="/images/hero-roofing-professional.jpg"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+          {...({ fetchpriority: 'high' } as Record<string, string>)}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
