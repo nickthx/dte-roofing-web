@@ -1,45 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, User, Tag } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
-import { supabase } from '../lib/supabase';
-
-interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content_html: string;
-  tags: string[];
-  city: string;
-  state: string;
-  published_at: string;
-  created_at: string;
-  status: string;
-}
+import { getPublishedPosts, formatPostDate } from '../data/blogPosts';
 
 export default function Blog() {
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchPosts() {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('status', 'published')
-        .order('published_at', { ascending: false });
-
-      if (error) {
-        console.error('Error fetching posts:', error);
-      } else {
-        setBlogPosts(data || []);
-      }
-      setLoading(false);
-    }
-
-    fetchPosts();
-  }, []);
+  const blogPosts = getPublishedPosts();
 
   return (
     <div className="min-h-screen bg-white">
@@ -49,7 +14,7 @@ export default function Blog() {
         keywords="roofing blog, roof maintenance tips, Ohio roofing advice, Columbus roofing blog"
         canonical="https://www.dteroofingllc.com/blog"
       />
-      
+
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
@@ -68,11 +33,7 @@ export default function Blog() {
               Roofing Tips, Maintenance Guides & Storm Damage Resources
             </h2>
 
-            {loading ? (
-              <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700"></div>
-              </div>
-            ) : blogPosts.length === 0 ? (
+            {blogPosts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">No blog posts yet. Check back soon!</p>
               </div>
@@ -96,11 +57,7 @@ export default function Blog() {
                       <div className="flex items-center gap-4 mb-4 text-sm text-charcoal-600">
                         <div className="flex items-center">
                           <Calendar className="w-4 h-4 mr-2 text-primary-700" />
-                          <span>{new Date(post.published_at).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                          })}</span>
+                          <span>{formatPostDate(post.published_at)}</span>
                         </div>
                       </div>
 
@@ -130,7 +87,7 @@ export default function Blog() {
                           <User className="w-4 h-4 mr-2 text-charcoal-500" />
                           <span className="font-medium">DTE Roofing</span>
                         </div>
-                        <Link 
+                        <Link
                           to={`/blog/${post.slug}`}
                           className="bg-primary-700 text-white px-6 py-2 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center text-sm shadow-md hover:shadow-lg"
                         >

@@ -13,8 +13,17 @@ interface Service {
   url?: string;
 }
 
+interface BlogMeta {
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  image: string;
+  url: string;
+}
+
 interface SchemaMarkupProps {
-  type: 'home' | 'service' | 'faq' | 'location' | 'hub' | 'general';
+  type: 'home' | 'service' | 'faq' | 'location' | 'hub' | 'general' | 'blog';
   service?: Service;
   faqs?: FAQ[];
   locationName?: string;
@@ -22,6 +31,7 @@ interface SchemaMarkupProps {
   pageTitle?: string;
   pageDescription?: string;
   pageUrl?: string;
+  blog?: BlogMeta;
 }
 
 const BUSINESS_INFO = {
@@ -77,7 +87,8 @@ export default function SchemaMarkup({
   locationSlug,
   pageTitle,
   pageDescription,
-  pageUrl
+  pageUrl,
+  blog
 }: SchemaMarkupProps) {
   const cityToAreaServed = (loc: LocationConfig) => ({
     '@type': 'City' as const,
@@ -217,6 +228,19 @@ export default function SchemaMarkup({
         name: locationName,
         item: pageUrl
       });
+    } else if (type === 'blog') {
+      breadcrumbItems.push({
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${BUSINESS_INFO.url}/blog`
+      });
+      breadcrumbItems.push({
+        '@type': 'ListItem',
+        position: 3,
+        name: pageTitle,
+        item: pageUrl
+      });
     } else {
       breadcrumbItems.push({
         '@type': 'ListItem',
@@ -230,6 +254,40 @@ export default function SchemaMarkup({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: breadcrumbItems
+    };
+  };
+
+  const generateBlogPostingSchema = () => {
+    if (type !== 'blog' || !blog) return null;
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: blog.headline,
+      description: blog.description,
+      image: blog.image,
+      datePublished: blog.datePublished,
+      dateModified: blog.dateModified || blog.datePublished,
+      author: {
+        '@type': 'Organization',
+        name: BUSINESS_INFO.name,
+        url: BUSINESS_INFO.url
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: BUSINESS_INFO.name,
+        logo: {
+          '@type': 'ImageObject',
+          url: BUSINESS_INFO.logo
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': blog.url
+      },
+      about: {
+        '@id': `${BUSINESS_INFO.url}#business`
+      }
     };
   };
 
@@ -265,6 +323,7 @@ export default function SchemaMarkup({
   const schemas = [
   ...(['home', 'location', 'hub', 'general', 'service'].includes(type) ? [generateLocalBusinessSchema()] : []),
   generateServiceSchema(),
+  generateBlogPostingSchema(),
   generateFAQSchema(),
   generateBreadcrumbSchema(),
   generateWebPageSchema()

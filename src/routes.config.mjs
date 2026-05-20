@@ -30,6 +30,7 @@ export const ROUTES = [
   { path: '/gallery', source: 'src/pages/Gallery.tsx', changefreq: 'monthly', priority: '0.6', prerender: true },
   { path: '/reviews', source: 'src/pages/Reviews.tsx', changefreq: 'weekly', priority: '0.8', prerender: true },
   { path: '/blog', source: 'src/pages/Blog.tsx', changefreq: 'weekly', priority: '0.6', prerender: true },
+  { path: '/blog/signs-you-need-a-new-roof', source: 'src/data/blogPosts.tsx', changefreq: 'monthly', priority: '0.6', prerender: true },
   { path: '/faq', source: 'src/pages/FAQ.tsx', changefreq: 'monthly', priority: '0.7', prerender: true },
   { path: '/financing', source: 'src/pages/Financing.tsx', changefreq: 'monthly', priority: '0.7', prerender: true },
   { path: '/contact', source: 'src/pages/Contact.tsx', changefreq: 'monthly', priority: '0.9', prerender: true },
