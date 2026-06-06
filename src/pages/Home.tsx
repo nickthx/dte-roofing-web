@@ -5,6 +5,8 @@ import SEO from '../components/SEO';
 import MobileStickyCall from '../components/MobileStickyCall';
 import RoofQuoteButton from '../components/RoofQuoteButton';
 import SchemaMarkup from '../components/SchemaMarkup';
+import LazyMapEmbed from '../components/LazyMapEmbed';
+import Picture from '../components/Picture';
 import { useReviewData } from '../hooks/useReviewData';
 import reviewStats from '../data/review-stats.json';
 import { CANONICAL_DOMAIN } from '../seo/constants';
@@ -22,6 +24,7 @@ export default function Home() {
         description={`DTE Roofing — owner-led roof repair, replacement, gutters, siding & storm damage in Columbus, OH. ${reviewStats.reviewCount}+ five-star reviews. Free inspections: 614-971-6028.`}
         keywords="roof inspection Columbus OH, Columbus roofing company, roof repair near me, roofing contractor Columbus, roof repair Columbus, roof replacement Columbus, residential roofing, commercial roofing, emergency roof repair"
         canonical={`${CANONICAL_DOMAIN}/`}
+        preloadImage="/images/hero-roofing-professional.webp"
       />
       <SchemaMarkup
         type="home"
@@ -30,13 +33,15 @@ export default function Home() {
         pageUrl={`${CANONICAL_DOMAIN}/`}
       />
       <section className="relative bg-charcoal-900 text-white py-32 md:py-40 overflow-hidden">
-        <img
+        <Picture
           src="/images/hero-roofing-professional.jpg"
-          alt=""
-          aria-hidden="true"
-          decoding="async"
+          alt="Aerial view of a completed DTE Roofing architectural shingle roof replacement on a Columbus, OH home"
           className="absolute inset-0 w-full h-full object-cover"
-          {...({ fetchpriority: 'high' } as Record<string, string>)}
+          width={1200}
+          height={630}
+          loading="eager"
+          fetchPriority="high"
+          avif={false}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -95,13 +100,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Picture
                   src="/images/DTE-Roofing-Logo-two-Men.png"
                   alt="DTE Roofing founders Donovan and Mitchell inspecting roofs in Columbus OH"
                   className="w-full h-auto"
                   loading="lazy"
-                  width="800"
-                  height="600"
+                  width={500}
+                  height={277}
+                  avif={false}
                 />
               </div>
             </div>
@@ -521,16 +527,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Visit Our Location</h2>
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <iframe
+              <LazyMapEmbed
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.999330164663!2d-83.15021258867671!3d39.96376768296525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883897c3548f20bf%3A0xdd1da18d4d7ccf43!2sDTE%20Roofing!5e0!3m2!1sen!2sus!4v1774114841530!5m2!1sen!2sus"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
                 title="DTE Roofing - 615 Hilliard Rome Rd, Columbus, OH 43228"
-                className="w-full"
+                height={450}
               />
             </div>
             <div className="mt-6 text-center">
