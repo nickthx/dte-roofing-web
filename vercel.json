@@ -8,6 +8,8 @@
     { "source": "/cart", "destination": "/contact", "statusCode": 301 },
     { "source": "/services/gutter-services", "destination": "/services/gutters", "statusCode": 301 },
     { "source": "/services/roof-maintenance", "destination": "/services/preventative-maintenance", "statusCode": 301 },
+    { "source": "/best-asphalt-shingle-brands-on-the-market-today", "destination": "/blog/asphalt-vs-metal-roofing-ohio", "statusCode": 301 },
+    { "source": "/my-claim-got-denied-or-partially-approved-what-should-i-do-next", "destination": "/blog/hail-damage-roof-insurance-claim-ohio", "statusCode": 301 },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "dteroofingllc.com" }],
