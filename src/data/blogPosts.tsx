@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
 import type { ReactNode } from 'react';
+import { roofReplacementCostColumbus } from './posts/roof-replacement-cost-columbus-ohio';
+import { asphaltVsMetalRoofingOhio } from './posts/asphalt-vs-metal-roofing-ohio';
+import { hailDamageInsuranceClaimOhio } from './posts/hail-damage-roof-insurance-claim-ohio';
+import { howLongDoesARoofLastOhio } from './posts/how-long-does-a-roof-last-ohio';
+import { roofRepairVsReplacement } from './posts/roof-repair-vs-replacement';
+import { columbusRoofingContractor } from './posts/what-to-look-for-columbus-roofing-contractor';
 
 export interface BlogFAQ {
   question: string;
@@ -277,7 +283,15 @@ const signsYouNeedANewRoof: BlogPost = {
   ],
 };
 
-export const blogPosts: BlogPost[] = [signsYouNeedANewRoof];
+export const blogPosts: BlogPost[] = [
+  signsYouNeedANewRoof,
+  columbusRoofingContractor,
+  roofRepairVsReplacement,
+  howLongDoesARoofLastOhio,
+  hailDamageInsuranceClaimOhio,
+  asphaltVsMetalRoofingOhio,
+  roofReplacementCostColumbus,
+];
 
 export function getPublishedPosts(): BlogPost[] {
   return blogPosts
