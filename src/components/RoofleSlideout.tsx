@@ -38,7 +38,6 @@ export default function RoofleSlideout() {
     pollingRef.current = true;
     injectScript();
     const startedAt = Date.now();
-    let openAttempts = 0;
     const poll = window.setInterval(() => {
       const rq = window.RoofQuotePro;
       const widgetReady = document.getElementById('quick-quote-button-wrapper') !== null;
@@ -49,19 +48,20 @@ export default function RoofleSlideout() {
         setLoading(false);
       }
       // …and after a click, retry open() until the widget confirms it opened.
-      // open() exists before the widget finishes initializing — a single early
-      // call gets swallowed (verified on production), so re-call until
-      // isSlideOutWidgetOpened flips true (max ~5s of attempts).
+      // open() exists long before the widget can actually open (its slideout
+      // iframe cold-loads for many seconds); early calls are silently
+      // swallowed — verified on production — and isSlideOutWidgetOpened stays
+      // undefined until the first successful open. So keep re-calling until
+      // the flag flips true or the window expires.
       if (apiReady && clickedRef.current && !openedRef.current) {
-        if (rq!.isSlideOutWidgetOpened === true || openAttempts >= 16) {
+        if (rq!.isSlideOutWidgetOpened === true) {
           openedRef.current = true;
         } else {
-          openAttempts++;
           rq!.open!();
         }
       }
       const done = apiReady && (!clickedRef.current || openedRef.current);
-      if (done || Date.now() - startedAt > 20000) {
+      if (done || Date.now() - startedAt > 30000) {
         // On timeout without even a launcher (offline/blocked), keep the
         // placeholder so a click can retry.
         window.clearInterval(poll);
