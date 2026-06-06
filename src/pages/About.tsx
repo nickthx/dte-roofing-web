@@ -4,13 +4,14 @@ import MobileStickyCall from '../components/MobileStickyCall';
 import SEO from '../components/SEO';
 import BbbLogo from '../components/logos/BbbLogo';
 import NextdoorLogo from '../components/logos/NextdoorLogo';
+import Picture from '../components/Picture';
 
 export default function About() {
   return (
     <>
       <SEO
         title="About DTE Roofing | Family-Owned Roofer in Columbus, OH"
-        description="Learn about DTE Roofing, a family-owned roofing company serving Columbus and Central Ohio since 2023. Licensed, insured, and committed to honest, quality workmanship."
+        description="Meet DTE Roofing, a family-owned roofing company serving Columbus and Central Ohio. Licensed, insured, and built on honest, quality workmanship."
         keywords="about DTE Roofing, Columbus roofing company, local roofer, family-owned roofing business"
         canonical="https://www.dteroofingllc.com/about"
       />
@@ -235,11 +236,12 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-48 h-48 rounded-lg mb-6 mx-auto overflow-hidden">
-                <img
-                  src="/images/Screenshot 2025-11-17 204715.png"
+                <Picture
+                  src="/images/donovan-davis-dte-roofing.jpg"
                   alt="Donovan Davis - DTE Roofing Owner inspecting roof shingles"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  avif={false}
                 />
               </div>
               <h3 className="text-2xl font-bold text-charcoal-900 mb-2 text-center">Donovan Davis</h3>
@@ -258,11 +260,12 @@ export default function About() {
 
             <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-48 h-48 rounded-lg mb-6 mx-auto overflow-hidden">
-                <img
-                  src="/images/Screenshot 2025-11-17 204702.png"
+                <Picture
+                  src="/images/mitchell-davis-dte-roofing.jpg"
                   alt="Mitchell Davis - DTE Roofing Owner performing roof inspection"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  avif={false}
                 />
               </div>
               <h3 className="text-2xl font-bold text-charcoal-900 mb-2 text-center">Mitchell Davis</h3>
@@ -281,11 +284,12 @@ export default function About() {
 
             <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-48 h-48 rounded-lg mb-6 mx-auto overflow-hidden">
-                <img
-                  src="/images/Screenshot 2025-11-17 204544.png"
+                <Picture
+                  src="/images/andrew-watts-dte-roofing.jpg"
                   alt="Andrew Watts - DTE Roofing Consultant on residential roof"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  avif={false}
                 />
               </div>
               <h3 className="text-2xl font-bold text-charcoal-900 mb-2 text-center">Andrew Watts</h3>
@@ -317,28 +321,28 @@ export default function About() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20241126_192222147.jpg" alt="DTE Roofing team on the job site" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <Picture src="/images/gahanna-premium-designer-shingles.jpg" alt="DTE Roofing team on the job site" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/DTE IMAGE 1.webp" alt="DTE Roofing project in Columbus OH" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <Picture src="/images/dte-roofing-job-site-columbus.jpg" alt="DTE Roofing project in Columbus OH" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20240910_193642307.jpg" alt="DTE Roofing crew working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <Picture src="/images/dublin-premium-asphalt-shingles.jpg" alt="DTE Roofing crew working on residential roof" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img src="/images/PXL_20241117_184811431.jpg" alt="DTE Roofing roof repair project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <Picture src="/images/powell-architectural-shingle-design.jpg" alt="DTE Roofing roof repair project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img
-                src="/images/imgi_81_AF1QipMuTYobensZy6QrqXX1V5y281GMsqqLepuVrZWs=s762-k-no.jpg"
+              <Picture
+                src="/images/dte-roofing-shingle-installation-columbus.jpg"
                 alt="DTE Roofing professionals installing new shingles on Columbus home"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
             </div>
             <div className="aspect-video overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <img
-                src="/images/imgi_93_AF1QipOu4xiP-Z7D2Q4LZIE0tOw4saa3L3J_vdZehUpC=s762-k-no.jpg"
+              <Picture
+                src="/images/dte-roofing-completed-project-central-ohio.jpg"
                 alt="DTE Roofing completed roofing project Central Ohio"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"

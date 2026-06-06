@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import MobileStickyCall from '../components/MobileStickyCall';
 import { projects } from '../data/projects';
+import Picture from '../components/Picture';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -77,7 +78,7 @@ export default function Gallery() {
       <div className="min-h-screen bg-white">
         <SEO
           title="Roofing Project Gallery | DTE Roofing Columbus, OH"
-          description="Browse our portfolio of completed roof replacements, repairs, and commercial roofing projects across Columbus, Dublin, Hilliard, and Central Ohio. See the DTE Roofing difference."
+          description="Browse completed roof replacements, repairs, and commercial projects across Columbus, Dublin, Hilliard, and Central Ohio from DTE Roofing."
           keywords="roofing gallery Columbus, roof installation photos, before after roofing, Columbus roofing projects, DTE Roofing portfolio"
           canonical="https://www.dteroofingllc.com/gallery"
         />
@@ -137,7 +138,7 @@ export default function Gallery() {
                 >
                   {/* Image Container */}
                   <div className="relative h-64 md:h-72 overflow-hidden bg-gray-200">
-                    <img
+                    <Picture
                       src={project.image}
                       alt={project.alt}
                       className="w-full h-full object-cover transition-transform duration-300 ease-in-out"
@@ -252,7 +253,7 @@ export default function Gallery() {
             className="max-w-6xl max-h-[90vh] w-full flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Picture
               src={filteredProjects[currentImageIndex].image}
               alt={filteredProjects[currentImageIndex].alt}
               className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"

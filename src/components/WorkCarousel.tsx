@@ -3,6 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { carouselProjects } from '../data/projects';
+import Picture from './Picture';
 
 export default function WorkCarousel() {
   const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
@@ -28,11 +29,11 @@ export default function WorkCarousel() {
               aria-roledescription="slide"
               aria-label={`${idx + 1} of ${carouselProjects.length}`}
             >
-              <img
+              <Picture
                 src={project.image}
                 alt={project.alt}
                 className="w-full h-full object-cover"
-                loading={idx === 0 ? 'eager' : 'lazy'}
+                loading="lazy"
               />
 
               {/* Persistent title/location overlay */}

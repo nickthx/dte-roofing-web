@@ -19,7 +19,6 @@ interface SEOProps {
 export default function SEO({
   title,
   description,
-  keywords,
   ogTitle,
   ogDescription,
   ogImage,
@@ -37,7 +36,6 @@ export default function SEO({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
 
       {/* Open Graph */}
       <meta property="og:title" content={finalOgTitle} />
@@ -65,6 +63,7 @@ export default function SEO({
           rel="preload"
           as="image"
           href={preloadImage}
+          type={preloadImage.endsWith('.webp') ? 'image/webp' : preloadImage.endsWith('.avif') ? 'image/avif' : undefined}
           {...({ fetchpriority: 'high' } as Record<string, string>)}
         />
       )}

@@ -5,6 +5,7 @@ import reviewStats from '../data/review-stats.json';
 import { LOCATIONS } from '../data/locations';
 import BbbLogo from './logos/BbbLogo';
 import NextdoorLogo from './logos/NextdoorLogo';
+import Picture from './Picture';
 
 export default function Footer() {
   const { reviewData } = useReviewData();
@@ -13,13 +14,14 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-5 gap-8 mb-8">
           <div>
-            <img
+            <Picture
               src="/images/DTE-Roofing-Logo-two-Men.png"
               alt="DTE Roofing - Professional Roofing Services in Columbus OH"
               className="h-12 w-auto mb-4 brightness-0 invert"
               loading="lazy"
-              width="100"
-              height="48"
+              width={100}
+              height={48}
+              avif={false}
             />
             <p className="text-gray-400">
               Locally owned and operated by Donovan & Mitchell. Premium craftsmanship. Honest pricing.

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X, Phone, Calculator, DollarSign } from 'lucide-react';
+import Picture from './Picture';
 
 export default function Navigation() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -44,12 +45,14 @@ export default function Navigation() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img
+            <Picture
               src="/images/DTE-Roofing-Logo-two-Men.png"
               alt="DTE Roofing - Columbus Ohio Roofing Contractor"
               className="h-16 w-auto"
-              width="120"
-              height="64"
+              width={120}
+              height={64}
+              loading="eager"
+              avif={false}
             />
           </Link>
 

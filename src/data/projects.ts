@@ -13,7 +13,7 @@ export const projects: Project[] = [
     title: 'Residential Roof Replacement',
     category: 'installations',
     location: 'Columbus, OH',
-    image: '/images/IMG_20240614_162239.jpg',
+    image: '/images/columbus-residential-roof-replacement.jpg',
     alt: 'Completed residential roof with dark architectural shingles, aerial view'
   },
   {
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: 'Premium Asphalt Shingles',
     category: 'installations',
     location: 'Dublin, OH',
-    image: '/images/PXL_20240910_193642307.jpg',
+    image: '/images/dublin-premium-asphalt-shingles.jpg',
     alt: 'Close-up view of high-quality dark architectural shingle installation'
   },
   {
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: 'Ridge Cap Installation',
     category: 'installations',
     location: 'Westerville, OH',
-    image: '/images/PXL_20240223_174412521.jpg',
+    image: '/images/westerville-ridge-cap-installation.jpg',
     alt: 'Professional ridge cap and flashing work on residential roof'
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: 'Architectural Shingle Design',
     category: 'installations',
     location: 'Powell, OH',
-    image: '/images/PXL_20241117_184811431.jpg',
+    image: '/images/powell-architectural-shingle-design.jpg',
     alt: 'Multi-tone architectural shingles showing dimensional pattern'
   },
   {
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: 'Roof Repair & Maintenance',
     category: 'repairs',
     location: 'New Albany, OH',
-    image: '/images/PXL_20241123_193437816.jpg',
+    image: '/images/new-albany-roof-repair-and-maintenance.jpg',
     alt: 'Professional roof inspection and repair services'
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     title: 'Premium Designer Shingles',
     category: 'installations',
     location: 'Gahanna, OH',
-    image: '/images/PXL_20241126_192222147.jpg',
+    image: '/images/gahanna-premium-designer-shingles.jpg',
     alt: 'High-end blue-tinted architectural shingle installation'
   },
   {
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     title: 'Full Roof Replacement',
     category: 'installations',
     location: 'Hilliard, OH',
-    image: '/images/imgi_29_AF1QipOuPz8UVysxJDgW3Yup2-QjoJB02OgbbnW5hB9J=s762-k-no.jpg',
+    image: '/images/hilliard-full-roof-replacement.jpg',
     alt: 'Full roof replacement completed on residential home in Hilliard OH'
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     title: 'Architectural Shingle Install',
     category: 'installations',
     location: 'Dublin, OH',
-    image: '/images/imgi_45_AF1QipPlwkiPGm-cFsOsqtz3YT7akGFgyYuDsODsrkKB=s762-k-no.jpg',
+    image: '/images/dublin-architectural-shingle-install.jpg',
     alt: 'Architectural shingle installation on Dublin OH home'
   },
   {
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     title: 'Storm Damage Repair',
     category: 'repairs',
     location: 'Westerville, OH',
-    image: '/images/imgi_63_AF1QipOZAlwajZgcY4UxTJrwNOP9joiu6s1br3F6YHGJ=s762-k-no.jpg',
+    image: '/images/westerville-storm-damage-repair.jpg',
     alt: 'Storm damage roof repair in Westerville OH'
   },
   {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     title: 'Ridge Cap & Flashing',
     category: 'installations',
     location: 'Grove City, OH',
-    image: '/images/imgi_79_AF1QipOkCOVWNg1COWEAcKLnx2UsnNTKZldm8O5acnK9=s572-k-no.jpg',
+    image: '/images/grove-city-ridge-cap-and-flashing.jpg',
     alt: 'Ridge cap and flashing installation in Grove City OH'
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     title: 'Premium Shingle Upgrade',
     category: 'installations',
     location: 'Upper Arlington, OH',
-    image: '/images/imgi_95_AF1QipPfbx2bLtEjeIu168TbuOGorOcSmN0Mk6J-DAS9=s762-k-no.jpg',
+    image: '/images/upper-arlington-premium-shingle-upgrade.jpg',
     alt: 'Premium shingle upgrade on Upper Arlington OH residence'
   },
   {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     title: 'Emergency Roof Repair',
     category: 'repairs',
     location: 'Columbus, OH',
-    image: '/images/imgi_113_AF1QipOI0dc8G7qFtN0xn2vOw-7bEl2l2RRQY06zGvtC=s762-k-no.jpg',
+    image: '/images/columbus-emergency-roof-repair.jpg',
     alt: 'Emergency roof repair completed in Columbus OH'
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     title: 'Residential Re-Roof',
     category: 'installations',
     location: 'Worthington, OH',
-    image: '/images/imgi_129_AF1QipPLoerWYAehP08JHS41YC1wd6DzptFDVbCFMc3o=s572-k-no.jpg',
+    image: '/images/worthington-residential-re-roof.jpg',
     alt: 'Residential re-roofing project in Worthington OH'
   },
   {
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     title: 'Shingle & Deck Replacement',
     category: 'installations',
     location: 'Pickerington, OH',
-    image: '/images/imgi_145_AF1QipMaFMPJY-n_UjIB2Bq3xB9ePKCuha9Lx1BVXnC4=s762-k-no.jpg',
+    image: '/images/pickerington-shingle-and-deck-replacement.jpg',
     alt: 'Shingle and deck replacement in Pickerington OH'
   },
   {
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     title: 'Leak Repair & Waterproofing',
     category: 'repairs',
     location: 'New Albany, OH',
-    image: '/images/imgi_163_AF1QipN-wdiBwS5L6ZtoIvDHp4b3Ii8p4ltaIclhsqPu=s762-k-no.jpg',
+    image: '/images/new-albany-leak-repair-and-waterproofing.jpg',
     alt: 'Leak repair and waterproofing on New Albany OH home'
   },
   {
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     title: 'Complete Roof Overhaul',
     category: 'installations',
     location: 'Powell, OH',
-    image: '/images/imgi_185_AF1QipM6lMrOJSQwMB9J3TWHWRMHvkFnpMElSf-SQ9Pi=s762-k-no.jpg',
+    image: '/images/powell-complete-roof-overhaul.jpg',
     alt: 'Complete roof overhaul on Powell OH residence'
   },
   {
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     title: 'Designer Shingle Install',
     category: 'installations',
     location: 'Gahanna, OH',
-    image: '/images/imgi_203_AF1QipMe0TbnuXMZSS7uuTo2wTtpZtTluo2SHG7Q30jd=s762-k-no.jpg',
+    image: '/images/gahanna-designer-shingle-install.jpg',
     alt: 'Designer shingle installation in Gahanna OH'
   },
   {
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     title: 'Hail Damage Restoration',
     category: 'repairs',
     location: 'Reynoldsburg, OH',
-    image: '/images/imgi_221_AF1QipMn1VbhvHMehsFmQ5M4O_cZD7hxwPC0NixfhkTh=s762-k-no.jpg',
+    image: '/images/reynoldsburg-hail-damage-restoration.jpg',
     alt: 'Hail damage roof restoration in Reynoldsburg OH'
   },
   {
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     title: 'Flat Roof Installation',
     category: 'installations',
     location: 'Columbus, OH',
-    image: '/images/imgi_237_AF1QipPrkB9l1jq9RS6iBOq8E8UBsV0s3uD0r2wSwfGL=s762-k-no.jpg',
+    image: '/images/columbus-flat-roof-installation.jpg',
     alt: 'Flat roof installation in Columbus OH'
   },
   {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     title: 'Multi-Layer Tear-Off',
     category: 'repairs',
     location: 'Lewis Center, OH',
-    image: '/images/imgi_253_AF1QipPNX2ylcoXLisOBmeztQnPnCNtU8Lt46lZW2RUA=s762-k-no.jpg',
+    image: '/images/lewis-center-multi-layer-tear-off.jpg',
     alt: 'Multi-layer tear-off and roof replacement in Lewis Center OH'
   },
   {
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     title: 'GAF Timberline Install',
     category: 'installations',
     location: 'Plain City, OH',
-    image: '/images/imgi_271_AF1QipNp0Zl7qHVp1bY1HvG1w2h6sja-X1iROTh95lpR=s762-k-no.jpg',
+    image: '/images/plain-city-gaf-timberline-install.jpg',
     alt: 'GAF Timberline shingle installation in Plain City OH'
   },
   {
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     title: 'Ventilation & Shingle Job',
     category: 'installations',
     location: 'Hilliard, OH',
-    image: '/images/imgi_289_AF1QipMHhHxRkRbW5f-q8gEXi1EFWj3iJsySsCOyIeZi=s762-k-no.jpg',
+    image: '/images/hilliard-ventilation-and-shingle-job.jpg',
     alt: 'Roof ventilation and shingle installation in Hilliard OH'
   },
   {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     title: 'Wind Damage Repair',
     category: 'repairs',
     location: 'Westerville, OH',
-    image: '/images/imgi_307_AF1QipN7OYvL0WlceMnxsa8XDtZN_cXQAR2mDTb2abhk=s762-k-no.jpg',
+    image: '/images/westerville-wind-damage-repair.jpg',
     alt: 'Wind damage roof repair in Westerville OH'
   },
   {
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     title: 'Steep Slope Re-Roof',
     category: 'installations',
     location: 'Grandview Heights, OH',
-    image: '/images/imgi_326_AF1QipPufUZ8UNOQ0WI09vQtUlR7FQUTECMVe83zy_ih=s762-k-no.jpg',
+    image: '/images/grandview-heights-steep-slope-re-roof.jpg',
     alt: 'Steep slope re-roofing project in Grandview Heights OH'
   },
   {
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     title: 'Storm Shingle Replacement',
     category: 'repairs',
     location: 'Dublin, OH',
-    image: '/images/imgi_344_AF1QipNM45Gj7ySJLBOLNFUEcouhC31hW6fipQnFDARI=s762-k-no.jpg',
+    image: '/images/dublin-storm-shingle-replacement.jpg',
     alt: 'Storm damaged shingle replacement in Dublin OH'
   },
   {
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     title: 'New Construction Roof',
     category: 'installations',
     location: 'Grove City, OH',
-    image: '/images/imgi_365_AF1QipOs4nsAVYw5t3YWkWR5SxZ1k6HCqywKzrvFExyT=s762-k-no.jpg',
+    image: '/images/grove-city-new-construction-roof.jpg',
     alt: 'New construction roofing project in Grove City OH'
   }
 ];
