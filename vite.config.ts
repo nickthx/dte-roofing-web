@@ -29,7 +29,6 @@ export default defineConfig(({ isSsrBuild }) => ({
               if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler|react-helmet-async)[\\/]/.test(id)) {
                 return 'react-vendor';
               }
-              if (id.includes('@supabase')) return 'supabase';
               if (id.includes('embla-carousel')) return 'embla';
               return undefined;
             },
