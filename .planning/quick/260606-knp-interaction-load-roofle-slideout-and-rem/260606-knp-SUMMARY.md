@@ -50,3 +50,16 @@ Render delay still dominates LCP: render-blocking CSS (~176ms), font loading, an
 - `vite.config.ts` (drop supabase manualChunks)
 - `vercel.json` (CSP connect-src cleanup)
 - `package.json` / `package-lock.json` (uninstall @supabase/supabase-js)
+
+## Post-push live verification (2026-06-06, commits 871e6e4 / adc1133 / afcb88a)
+
+Three live iterations after the initial deploy:
+1. **871e6e4** — placeholder moved to the RIGHT edge (Roofle's launcher anchors right when closed; the left-side reading came from the open-panel state) + poll no longer stops before `open()` is callable.
+2. **adc1133** — retry `open()` until `isSlideOutWidgetOpened` confirms (single early call is swallowed during widget init; reproduced + confirmed via manual `open()` on production).
+3. **afcb88a** — removed the ~5s retry cap; the slideout iframe cold-loads longer than that. Retries run the full 30s poll window.
+
+**Final production verification:**
+- `document.elementFromPoint()` inside the painted tab → returns the placeholder button (real hit-testing correct).
+- Programmatic `.click()` on the placeholder (identical event path to a human click minus `isTrusted`, which nothing checks) → widget loads, panel auto-opens, `RoofQuotePro.isSlideOutWidgetOpened === true`. Screenshot-verified calculator with address input.
+- Hover/warm-up path verified incidentally: extension pointer-moves loaded the widget without opening, placeholder swapped to Roofle's launcher cleanly.
+- Chrome-extension synthetic clicks near the right viewport edge dispatch NO DOM mouse events (instrumented capture listeners proved this — coordinate mapping lands on the scrollbar strip). All "failed click" observations were this automation artifact, not a site bug.
