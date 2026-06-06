@@ -63,3 +63,13 @@ Three live iterations after the initial deploy:
 - Programmatic `.click()` on the placeholder (identical event path to a human click minus `isTrusted`, which nothing checks) → widget loads, panel auto-opens, `RoofQuotePro.isSlideOutWidgetOpened === true`. Screenshot-verified calculator with address input.
 - Hover/warm-up path verified incidentally: extension pointer-moves loaded the widget without opening, placeholder swapped to Roofle's launcher cleanly.
 - Chrome-extension synthetic clicks near the right viewport edge dispatch NO DOM mouse events (instrumented capture listeners proved this — coordinate mapping lands on the scrollbar strip). All "failed click" observations were this automation artifact, not a site bug.
+
+## Addendum (4ab9c01): placeholder is now a pixel-faithful launcher clone
+
+User feedback: the placeholder should be the same shape as the real launcher. Captured the live launcher's exact markup/CSS (injected the widget on production without clicking, dumped `#quick-quote-button` outerHTML + computed styles + the widget's injected CSS rules):
+- 0-width anchor wrapper at content edge, `top: 50%`; button `transform: translate(-50%, -100%) rotate(270deg)`
+- flex bar `height: 43px`, `#b80100`, `font: 500 22px/26px Rubik, sans-serif`, `padding: 0 1px`
+- two 69x43 swoosh-cap SVGs absolutely positioned beyond each end (`right:1px translateX(100%)` / `left:1px translateX(calc(-100% + 1px))`); their inline `#EF7E45` fills are overridden to `#b80100` by widget CSS — clone uses `#b80100` directly
+- classic-scrollbar gutter offset (`window.innerWidth - clientWidth`, set post-hydration) so `position:fixed` lands where the widget's in-document absolute positioning does
+
+Verified on production: placeholder rect 43x187 at the content edge, zoomed screenshot identical to the real launcher; click → widget loads, placeholder swaps out, panel auto-opens (`isSlideOutWidgetOpened: true`). Local note: Roofle's script can stall on localhost (sets `RoofQuotePro={}` but never attaches `open` — domain whitelist); the placeholder correctly persists for retry in that case.
