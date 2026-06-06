@@ -13,8 +13,8 @@ export default function Westerville() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Westerville, OH | DTE Roofing — Owner-Led Inspections, Columbus HQ"
-        description="DTE Roofing serves Westerville, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, hail damage & attic ventilation. Call 614-971-6028."
+        title="Roofers in Westerville, OH | Roofing Experts | DTE Roofing"
+        description="DTE Roofing serves Westerville, OH with owner-led roof repair, replacement, hail damage & attic ventilation. Call 614-971-6028."
         keywords="roofers westerville, roof repair westerville, roof replacement westerville, roofing company westerville, storm damage westerville, gutter services westerville, roofers columbus, roofer near me westerville"
         canonical="https://www.dteroofingllc.com/locations/westerville"
         geoPlacename="Westerville, OH"

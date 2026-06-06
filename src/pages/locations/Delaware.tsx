@@ -13,8 +13,8 @@ export default function Delaware() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Delaware, OH | DTE Roofing — Based in Columbus, Serving Delaware (~30 Miles)"
-        description="DTE Roofing (Columbus HQ) serves Delaware, OH with owner-led roof repair, replacement, storm & wind damage, leak repair and gutter installation. Call 614-971-6028."
+        title="Roofers in Delaware, OH | Roofing Contractor | DTE Roofing"
+        description="DTE Roofing serves Delaware, OH with owner-led roof repair, replacement, storm & wind damage and gutter installation. Call 614-971-6028."
         keywords="roofers delaware oh, roofers near delaware, best roofers in delaware, roof repair delaware, roof replacement delaware, delaware ohio roofing contractor, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/delaware"
         geoPlacename="Delaware, OH"

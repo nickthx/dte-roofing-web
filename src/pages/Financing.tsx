@@ -133,8 +133,8 @@ export default function Financing() {
   return (
     <>
       <SEO
-        title="DTE Consumer Credit Center | Financing for Roofing — DTE Roofing"
-        description="DTE Roofing's Consumer Credit Center offers affordable financing solutions for roof repair and replacement. 0% promotional options, personal loans, secured loans, and second-look programs. See if you qualify today."
+        title="Consumer Credit Center | Roofing Financing | DTE Roofing"
+        description="DTE Roofing offers affordable financing for roof repair and replacement: 0% promotional options, personal loans, and second-look programs. See if you qualify."
         keywords="roofing financing, roof replacement financing, roofing payment plans, consumer credit center, affordable roofing, roof loan columbus ohio"
         canonical="https://www.dteroofingllc.com/financing"
       />

@@ -13,8 +13,8 @@ export default function UpperArlington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Upper Arlington, OH | DTE Roofing — Owner-Led Inspections, Columbus HQ"
-        description="DTE Roofing serves Upper Arlington, OH from our Columbus HQ with owner-led roof repair, inspections, gutter services, hail damage & insurance claim help. Call 614-971-6028."
+        title="Roofers in Upper Arlington, OH | Roof Repair | DTE Roofing"
+        description="DTE Roofing serves Upper Arlington, OH with owner-led roof repair, inspections, gutters & hail damage claim help. Call 614-971-6028."
         keywords="roofers upper arlington, roof repair upper arlington, roof replacement upper arlington, roofing company upper arlington, storm damage upper arlington, gutter services upper arlington, roofers columbus, roofer near me upper arlington"
         canonical="https://www.dteroofingllc.com/locations/upper-arlington"
         geoPlacename="Upper Arlington, OH"

@@ -13,8 +13,8 @@ export default function Reynoldsburg() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Reynoldsburg, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Reynoldsburg, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, gutter installation & storm damage. Call 614-971-6028."
+        title="Roofers in Reynoldsburg, OH | Roof Repair | DTE Roofing"
+        description="DTE Roofing serves Reynoldsburg, OH with owner-led roof repair, replacement, gutters & storm damage. Free inspections. Call 614-971-6028."
         keywords="roofers reynoldsburg, roof repair reynoldsburg, roof replacement reynoldsburg, roofing company reynoldsburg, storm damage reynoldsburg, gutter services reynoldsburg, roofer near me reynoldsburg, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/reynoldsburg"
         geoPlacename="Reynoldsburg, OH"

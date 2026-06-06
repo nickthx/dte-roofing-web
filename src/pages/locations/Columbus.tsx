@@ -14,7 +14,7 @@ export default function Columbus() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofers in Columbus, OH | Repair & Replacement | DTE Roofing"
-        description="DTE Roofing is a Columbus, OH roofing contractor at 615 Hilliard Rome Rd, Columbus, OH 43228. Owner-led roof repair, replacement, storm damage & gutters. Call 614-971-6028."
+        description="DTE Roofing is a Columbus, OH roofing contractor at 615 Hilliard Rome Rd. Owner-led roof repair, replacement, storm damage & gutters. Call 614-971-6028."
         keywords="roofers columbus, roofers columbus oh, roofing company columbus, roof repair columbus, roof replacement columbus, storm damage columbus, gutter services columbus, roofer near me columbus"
         canonical="https://www.dteroofingllc.com/locations/columbus"
         geoPlacename="Columbus, OH"

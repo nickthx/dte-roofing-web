@@ -4,12 +4,20 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+// Mirrors the page's existing visible "Common Questions" FAQ section so the FAQPage JSON-LD matches on-page content.
+const faqs = [
+  { question: "How long does a roof replacement take?", answer: "Most residential roof replacements in Columbus take 1-3 days to complete, depending on roof size, complexity, and weather, and a typical single-family home with a straightforward design usually takes 1-2 days from tear-off to final cleanup. Complex designs with multiple levels, valleys, or dormers, larger square footage, deck repairs found during tear-off, or weather can extend that, and multi-story or steep-pitch homes in Hilliard and Dublin may need an extra day. We work continuous days whenever possible to minimize disruption, keep your home weatherproofed each night, and discuss any unexpected repairs with you before proceeding." },
+  { question: "What's the best time of year for roof replacement in Columbus?", answer: "Late spring through early fall (May through October) is the ideal window in Central Ohio, when moderate temperatures let materials seal properly and longer daylight maximizes productivity. Fall (September-October) is especially popular for its comfortable conditions and getting ahead of winter, though it books up faster. Winter installs are possible, but temperatures below 40°F affect shingle adhesion and snow or ice creates safety concerns, so we use special techniques and extra precautions when storm damage or critical leaks can't wait. Spring and summer both work well, with occasional weather-related scheduling adjustments." },
+  { question: "Do I need a permit for roof replacement?", answer: "Yes, most Central Ohio municipalities, including Columbus, Hilliard, and Dublin, require building permits for roof replacement, with costs typically ranging from $100 to $300 depending on location and scope. We handle all of the permitting for you, submitting applications, providing documentation, and scheduling the required inspections, so you don't have to deal with municipal offices. Approval usually takes 1-3 business days, and a building inspector verifies proper installation and code compliance once work begins. We always pull proper permits, since unpermitted work can complicate home sales, void warranties, and create insurance and fine issues." },
+  { question: "Will insurance cover my roof replacement?", answer: "It depends on the cause of damage. Storm-related damage from wind, hail, fallen trees, or severe weather is typically covered under standard homeowners policies, subject to your deductible, while age-related wear and lack of maintenance generally are not. Columbus-area homes frequently see hail and wind events that qualify. We have extensive experience with insurance claims and document any storm damage with detailed photos and measurements, attend the adjuster's inspection, and communicate directly with your insurer so all damage is properly recorded. Many homeowners don't realize they have covered damage, so after recent severe weather it's worth a free inspection to find hail or wind damage that isn't obvious from the ground." }
+];
+
 export default function RoofReplacement() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roof Replacement in Columbus, OH | DTE Roofing"
-        description="Expert roof replacement in Columbus, OH. Full tear-off with asphalt, metal, or architectural shingles. Financing and GAF warranties available. Free estimates. Call 614-971-6028."
+        title="Columbus Roof Replacement | Full Tear-Off | DTE Roofing"
+        description="Roof replacement in Columbus, OH. Full tear-off with asphalt, metal or architectural shingles. Financing & GAF warranties. Call 614-971-6028."
         keywords="roof replacement Columbus, complete roof replacement, tear off replacement, new roof, roof replacement cost, residential roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/roof-replacement`}
       />
@@ -23,6 +31,7 @@ export default function RoofReplacement() {
         pageTitle="Roof Replacement Columbus OH - Complete Roof Installation"
         pageDescription="Expert roof replacement services in Columbus, OH. Complete tear-off and installation with premium materials. Financing available. Licensed & insured."
         pageUrl="https://www.dteroofingllc.com/services/roof-replacement"
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

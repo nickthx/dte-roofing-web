@@ -4,12 +4,40 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const STORM_FAQS = [
+  {
+    question: 'How do I tell hail damage from wind damage on my roof?',
+    answer:
+      'Hail damage shows up as random, scattered bruises, dented vents, and granule loss with no clear pattern. Wind damage is directional — missing, lifted, or creased shingles concentrated along edges, ridges, and the side the storm hit. Most of the time you need a close-up inspection to tell them apart, because hail bruising is rarely visible from the ground.',
+  },
+  {
+    question: 'Is storm damage roof repair covered by insurance in Ohio?',
+    answer:
+      'Often, yes. Damage from a covered event like hail or high wind is typically covered by your homeowner\'s policy minus your deductible, while normal age and wear is not. We provide free inspections, document the damage to insurer standards, and meet the adjuster on your roof to make sure the claim reflects the full scope.',
+  },
+  {
+    question: 'How quickly should I get my roof inspected after a storm?',
+    answer:
+      'Within a few weeks. Filing promptly while the date of loss is clear makes the claim far easier to prove, and catching damage early prevents a small leak from becoming interior water damage. After any storm with hail or high wind, a free inspection is worth it even if the roof looks fine from the ground.',
+  },
+  {
+    question: 'What is emergency roof tarping and do I need it?',
+    answer:
+      'Emergency tarping is a temporary waterproof cover installed over storm damage to stop water from getting in until permanent repairs are made. You need it any time the roof is breached — missing shingles over the deck, a puncture, or an active leak — because the interior damage from one more rainfall often costs more than the tarp.',
+  },
+  {
+    question: 'Should I pay my deductible, or will the roofer "waive" it?',
+    answer:
+      'You pay your deductible — that is how insurance claims work. Any contractor offering to waive or absorb your deductible is committing insurance fraud and putting you at risk too. A reputable local roofer charges the deductible as the policy requires and handles the rest of the approved scope with your insurer.',
+  },
+];
+
 export default function StormDamage() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Storm Damage Roof Repair in Central Ohio | DTE Roofing"
-        description="Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028."
+        description="Storm, hail & wind damage roof repair across Central Ohio. Free inspections, insurance claim support & emergency tarping. Call 614-971-6028."
         keywords="storm damage repair, hail damage, wind damage, storm roof repair, insurance claims, Columbus storm damage"
         canonical={`${CANONICAL_DOMAIN}/services/storm-damage`}
       />
@@ -23,6 +51,7 @@ export default function StormDamage() {
         pageTitle="Storm Damage Roof Repair in Central Ohio | DTE Roofing"
         pageDescription="Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/storm-damage`}
+        faqs={STORM_FAQS}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -254,6 +283,90 @@ export default function StormDamage() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Hail Damage vs. Wind Damage: How to Tell Them Apart</h2>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              The two most common kinds of storm damage we see in Central Ohio look very different once
+              you're up close. Hail damage is random and scattered — bruised shingles, dented vents and
+              flashing, and granule loss with no real pattern, because hail falls everywhere at once. The
+              tricky part is that hail bruising is rarely visible from the ground, so a roof can look fine
+              from the driveway while it's quietly aged years in a single afternoon.
+            </p>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              Wind damage, on the other hand, is directional. You'll see missing, lifted, or creased
+              shingles concentrated along the edges, ridges, and whichever side took the brunt of the
+              storm. Wind tends to peel shingles back and break their seal, which leaves them flapping and
+              lets water under the next rain. Knowing which one you're dealing with matters, because it
+              changes both the repair and how the damage gets documented for your insurer. When you're not
+              sure, a free <Link to="/services/roof-inspection" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof inspection</Link> settles it quickly.
+            </p>
+
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-6 mt-12">What Ohio's Storm Season Actually Looks Like</h2>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              Central Ohio gets the full menu. Spring and early summer bring the most damaging weather —
+              severe thunderstorms, hail, and the occasional straight-line wind event or derecho that can
+              push 60 to 80 mph gusts across whole counties at once. Summer adds fast-moving storms that
+              drop hail with little warning, and winter piles on with ice, heavy snow load, and the
+              freeze-thaw cycles that pry open any weakness a storm already created.
+            </p>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              Because these events often hit a wide area at the same time, a single storm can damage
+              hundreds of roofs across communities like <Link to="/locations/westerville" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Westerville</Link> and <Link to="/locations/reynoldsburg" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Reynoldsburg</Link> in
+              an afternoon. That's also when out-of-town storm chasers show up knocking on doors, so it
+              pays to work with a local company that will still be here next winter if something needs
+              attention.
+            </p>
+
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-6 mt-12">From Inspection to Insurance Claim to Repair</h2>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              The order you do things in makes a real difference to how a claim turns out. We start with a
+              free, thorough inspection and document everything — dated photos, a damage map, and a written
+              report that meets insurer standards. That documentation is what turns "I think my roof is
+              damaged" into a claim an adjuster takes seriously.
+            </p>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              From there you file the claim and the insurer sends an adjuster to inspect the roof. This is
+              the step that decides most claims, so we meet the adjuster on your roof and walk the damage
+              with them — the issues we documented get seen and counted instead of missed. If the insurer's
+              first scope leaves something out, we submit a supplement with the backup to get it corrected.
+              Once the claim is approved, we complete the repairs or full <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof replacement</Link> and
+              handle the final paperwork. We've written a full step-by-step guide to{' '}
+              <Link to="/blog/hail-damage-roof-insurance-claim-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">filing a hail damage insurance claim in Ohio</Link>{' '}
+              if you want the details before you call your insurer.
+            </p>
+
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-6 mt-12">Emergency Tarping: Stopping the Damage Before It Spreads</h2>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              When a storm actually breaches the roof — shingles torn off over the bare deck, a puncture
+              from a fallen branch, or an active leak — waiting even a day or two can be costly. Every
+              rainfall that gets in adds to the interior damage: soaked insulation, stained ceilings, and
+              the start of mold. That's why we offer emergency tarping to cover the breach with a
+              waterproof barrier and buy time until permanent repairs can be scheduled.
+            </p>
+            <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
+              Tarping is a temporary fix, not the repair itself, but it protects what's underneath and
+              often costs far less than the water damage it prevents. If a tree or limb came through, a
+              fast emergency response paired with a proper <Link to="/services/roof-repair" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof repair</Link> afterward
+              keeps a bad night from turning into a much bigger project.
+            </p>
+
+            <section aria-labelledby="storm-faq-heading" className="mt-12 pt-8 border-t border-gray-200">
+              <h2 id="storm-faq-heading" className="text-3xl font-bold text-charcoal-900 mb-8">Storm Damage FAQ</h2>
+              <div className="space-y-8">
+                {STORM_FAQS.map((faq) => (
+                  <div key={faq.question}>
+                    <h3 className="text-xl font-bold text-charcoal-900 mb-2">{faq.question}</h3>
+                    <p className="text-lg text-charcoal-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       </section>

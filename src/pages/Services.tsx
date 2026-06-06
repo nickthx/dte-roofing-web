@@ -52,7 +52,7 @@ export default function Services() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Roofing Services in Columbus, OH | DTE Roofing"
-        description="Complete roofing services in Columbus, OH. Roof repair, replacement, installation, inspections, emergency services. Residential & commercial. Licensed professionals. Free estimates available."
+        description="Complete roofing services in Columbus, OH: repair, replacement, installation, inspections & emergency service. Residential & commercial. Free estimates."
         keywords="roofing services Columbus, roof repair services, roof replacement, roof installation, commercial roofing, residential roofing, emergency roof repair, roof inspection"
         canonical="https://www.dteroofingllc.com/services"
       />

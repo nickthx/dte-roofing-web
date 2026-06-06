@@ -13,8 +13,8 @@ export default function Pickerington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Pickerington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Pickerington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, storm damage & hail repair. Call 614-971-6028."
+        title="Roofers in Pickerington, OH | Roof Repair | DTE Roofing"
+        description="DTE Roofing serves Pickerington, OH with owner-led roof repair, replacement, gutters, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers pickerington, roof repair pickerington, roof replacement pickerington, roofing company pickerington, storm damage pickerington, gutter services pickerington, roofer near me pickerington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/pickerington"
         geoPlacename="Pickerington, OH"

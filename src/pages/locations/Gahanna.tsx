@@ -13,8 +13,8 @@ export default function Gahanna() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Gahanna, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Gahanna, OH from our Columbus HQ with owner-led roof repair, commercial roofing, gutter installation, storm damage & hail repair. Call 614-971-6028."
+        title="Roofers in Gahanna, OH | Repair & Replacement | DTE Roofing"
+        description="DTE Roofing serves Gahanna, OH with owner-led roof repair, gutters, storm damage & hail repair. Free inspections. Call 614-971-6028."
         keywords="roofers gahanna, roof repair gahanna, roof replacement gahanna, roofing company gahanna, storm damage gahanna, gutter services gahanna, roofer near me gahanna, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/gahanna"
         geoPlacename="Gahanna, OH"

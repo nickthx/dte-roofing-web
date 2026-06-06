@@ -13,8 +13,8 @@ export default function Dublin() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Dublin, OH | DTE Roofing — Columbus HQ, Serving Dublin"
-        description="DTE Roofing serves Dublin, OH from our Columbus HQ with owner-led roof repair, replacement, commercial roofing, metal shingles & gutter services. Call 614-971-6028."
+        title="Roofers in Dublin, OH | Repair & Replacement | DTE Roofing"
+        description="DTE Roofing serves Dublin, OH with owner-led roof repair, replacement, metal shingles & gutter services. Free inspections. Call 614-971-6028."
         keywords="roofers dublin oh, roofers near dublin, best roofers in dublin, roof repair dublin, roof replacement dublin, storm damage dublin, gutter services dublin, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/dublin"
         geoPlacename="Dublin, OH"

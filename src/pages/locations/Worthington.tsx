@@ -13,8 +13,8 @@ export default function Worthington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Worthington, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Worthington, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
+        title="Roofers in Worthington, OH | Roofing Experts | DTE Roofing"
+        description="DTE Roofing serves Worthington, OH with owner-led roof repair, replacement, gutters, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers worthington, roof repair worthington, roof replacement worthington, roofing company worthington, storm damage worthington, gutter services worthington, roofer near me worthington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/worthington"
         geoPlacename="Worthington, OH"

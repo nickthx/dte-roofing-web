@@ -28,7 +28,7 @@ export default function InstantQuote() {
     <>
       <SEO
         title="Get an Instant Roof Quote | DTE Roofing Columbus, OH"
-        description="Get an instant roof replacement quote in under 60 seconds using satellite imagery. Accurate estimates with no inspection needed to get started. Serving Central Ohio."
+        description="Get an instant roof replacement quote in under 60 seconds using satellite imagery. Accurate estimates with no inspection needed. Serving Central Ohio."
         keywords="instant roof quote, roof cost calculator, roof estimate, roof replacement cost, free roof quote"
         canonical="https://www.dteroofingllc.com/get-a-quote-consultation"
       />

@@ -4,12 +4,20 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const faqs = [
+  { question: "Is a roof inspection from DTE Roofing really free?", answer: "Yes, our roof inspections in Columbus and across Central Ohio are free with no obligation. We look at your whole roofing system, from the shingles down to the deck and attic, then give you the honest facts. There's no pressure to buy anything afterward. Call 614-971-6028 to set one up." },
+  { question: "What do I get after the inspection is finished?", answer: "You get a detailed written report with photos of anything we find, along with clear recommendations and any estimates. We walk you through it so you understand the condition of your roof and what, if anything, needs attention. The photos are useful documentation if you're filing an insurance claim or selling your home." },
+  { question: "Should I get my roof checked after a Central Ohio storm?", answer: "Yes. After any major storm we recommend an inspection so damage gets documented while it's fresh, which helps with insurance claims and emergency repairs. Our owners Donovan and Mitchell are personally involved, so you get an experienced eye on the roof, not a sales pitch. We're a licensed, bonded, and insured Ohio contractor, and we offer 24/7 emergency service and tarping if something's leaking now." },
+  { question: "Do you inspect roofs before I buy a house?", answer: "We do. A pre-purchase inspection gives you a clear picture of the roof's condition and remaining life before you close, so there are no surprises. You get the same photo report and honest assessment we give every homeowner, which is helpful information during negotiations. It's free, so call 614-971-6028 to schedule before your closing date." },
+  { question: "How often should I have my roof inspected in Ohio?", answer: "We recommend a professional inspection at least once a year, plus after any major storm. Catching small problems early usually keeps repairs affordable and can add years to your roof. Annual checkups also keep you in line with manufacturer and installer warranty requirements, and if work is needed down the road, financing is available." }
+];
+
 export default function RoofInspection() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Free Roof Inspection in Central Ohio | DTE Roofing"
-        description="Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028."
+        description="Free roof inspections across Central Ohio. Pre-purchase, post-storm & insurance reports with photos and honest assessments. Call 614-971-6028."
         keywords="roof inspection Columbus, roof inspection service, home inspection, pre-purchase inspection, insurance roof inspection, annual roof inspection"
         canonical={`${CANONICAL_DOMAIN}/services/roof-inspection`}
       />
@@ -23,6 +31,7 @@ export default function RoofInspection() {
         pageTitle="Free Roof Inspection in Central Ohio | DTE Roofing"
         pageDescription="Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/roof-inspection`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -233,6 +242,25 @@ export default function RoofInspection() {
               major storm. Regular inspections can save you thousands in emergency repairs and extend your
               roof's lifespan by decades.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <details key={index} className="bg-white p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

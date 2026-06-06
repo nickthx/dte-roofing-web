@@ -4,12 +4,19 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+// Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
+const faqs = [
+  { question: "How long does commercial roofing last?", answer: "Commercial roof lifespan depends primarily on the roofing system installed, installation quality, maintenance practices, and Central Ohio's weather exposure. EPDM rubber membranes typically last 20-30 years with proper maintenance, making them a reliable mid-term solution for Columbus businesses. TPO roofing systems provide 15-30 year lifespans, and newer TPO formulations show improved durability compared to earlier generations. Modified bitumen systems deliver 15-25 years of dependable protection, particularly effective for high-traffic roofs with regular equipment access. Metal roofing represents the longevity champion, with properly installed standing seam systems lasting 40-70 years and often outlasting the building itself. Built-up roofing (BUR) provides a 15-30 year lifespan depending on the number of plies and maintenance, and roof coating systems extend aging commercial roofs by 10-15 years when applied correctly. Regular bi-annual inspections, prompt minor repairs, and proper drainage make a real difference in our freeze-thaw climate." },
+  { question: "Can you work around our business hours?", answer: "Yes. Minimizing disruption to your Columbus business operations is fundamental to our approach, so project scheduling is planned around your operational requirements rather than just our crew availability. Many of our commercial projects occur during evenings, overnight hours, or weekends when your business is closed or operating at reduced capacity. Retail establishments often get overnight work to avoid disrupting foot traffic, restaurants prefer Monday closures or post-dinner start times, and warehouses schedule around receiving and shipping peaks. For extensive projects we often phase the work to maintain partial operations, completing one section before moving to the next. Emergency repairs receive an immediate response regardless of time, and our 24/7 emergency availability ensures Columbus businesses get help when unexpected roof failures occur." },
+  { question: "Do you handle roof inspections for property managers?", answer: "Yes, property managers represent a significant portion of our Columbus commercial client base. We conduct comprehensive roof inspections that provide the detailed documentation property managers need for ownership reporting, capital planning, and maintenance decisions. Our reports include photo documentation showing roof condition, written assessments of remaining useful life, identification of immediate concerns, and long-term recommendations with budget estimates. For multi-property portfolios we inspect on a coordinated schedule and provide consolidated reporting across your entire portfolio, helping you prioritize capital expenditures effectively. For property acquisitions or due diligence, we also provide independent roof assessments evaluating condition, estimating remaining life, identifying deferred maintenance, and projecting replacement costs." }
+];
+
 export default function CommercialRoofing() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Commercial Roofing Contractor Columbus, OH | DTE Roofing"
-        description="Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate."
+        description="Commercial roofing in Columbus, OH. TPO, EPDM, metal & flat roof repair plus maintenance programs. Licensed and insured. Call 614-971-6028."
         keywords="commercial roofing Columbus, business roofing, flat roof repair, TPO roofing, EPDM roofing, commercial roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
       />
@@ -23,6 +30,7 @@ export default function CommercialRoofing() {
         pageTitle="Commercial Roofing Contractor Columbus, OH | DTE Roofing"
         pageDescription="Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate."
         pageUrl={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

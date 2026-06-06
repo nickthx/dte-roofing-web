@@ -13,8 +13,8 @@ export default function GroveCity() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Grove City, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Grove City, OH from our Columbus HQ with owner-led roof repair, replacement, gutter installation, gutter guards & storm damage. Call 614-971-6028."
+        title="Roofers in Grove City, OH | Roofing Experts | DTE Roofing"
+        description="DTE Roofing serves Grove City, OH with owner-led roof repair, replacement, gutters, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers grove city, roof repair grove city, roof replacement grove city, roofing company grove city, storm damage grove city, gutter services grove city, roofer near me grove city, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/grove-city"
         geoPlacename="Grove City, OH"

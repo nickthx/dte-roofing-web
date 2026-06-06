@@ -4,12 +4,19 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+// Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
+const faqs = [
+  { question: "How long does siding typically last?", answer: "Siding lifespan depends primarily on material choice and maintenance. Vinyl siding typically lasts 20-40 years with minimal maintenance, making it the most popular choice for Columbus homeowners seeking long-term value. Fiber cement siding (James Hardie) offers exceptional durability with a lifespan of 30-50 years when properly maintained, including repainting every 10-15 years. Engineered wood siding like LP SmartSide can last 30-40 years with periodic painting and proper care. Natural wood siding varies considerably; with diligent maintenance (painting or staining every 3-7 years), cedar can last 20-40 years, but neglect significantly shortens lifespan. Central Ohio's climate impacts all materials through temperature extremes, humidity, and storm exposure. Regular inspections, prompt repairs, and keeping gutters clean extend any siding's effective lifespan. If your Columbus home's siding approaches 20+ years and shows deterioration signs, replacement typically offers better value than continued repairs." },
+  { question: "Can you install siding in winter?", answer: "Yes, we install siding year-round in Columbus, though winter installations require additional considerations. Most modern siding materials can be installed in cold weather with proper techniques. Vinyl siding requires special attention: when temperatures drop below 40°F, vinyl becomes more brittle and requires careful handling to prevent cracking during cutting and nailing, so we allow it to acclimate to outdoor temperatures and adjust fastening techniques for cold-weather expansion. Fiber cement and engineered wood install well in winter since these materials don't become brittle in cold temperatures, though extremely cold days (below 20°F) or frozen ground may require schedule adjustments. Winter advantages include shorter lead times since it's our slower season and typically lower humidity reducing moisture-related delays. Spring and fall remain ideal for Columbus siding projects, but winter installation is certainly viable when proper cold-weather protocols are followed." },
+  { question: "Should I replace siding and roof at the same time?", answer: "Coordinating siding and roofing projects offers significant advantages for Columbus homeowners. If both need replacement within a few years of each other, simultaneous installation makes practical and financial sense. Bundling projects often reduces overall costs through shared mobilization, equipment, and labor efficiency, and it lets you coordinate complementary colors and styles for a cohesive exterior. Doing both at once also minimizes disruption versus two separate projects. The trade-offs are a larger upfront investment and a longer project timeline. If your Columbus home's roof and siding are both aging (15-20+ years old), showing deterioration, or you're planning to sell within a few years, simultaneous replacement maximizes ROI and creates a completely refreshed exterior. We offer comprehensive exterior assessments to evaluate both your roof and siding condition and help you make informed decisions about timing." }
+];
+
 export default function Siding() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Siding Installation & Repair in Central Ohio | DTE Roofing"
-        description="Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028."
+        description="Siding installation & repair across Central Ohio. Vinyl, fiber cement & composite siding plus storm damage repair. Call 614-971-6028."
         keywords="siding installation Columbus, vinyl siding, LP Smart Siding, siding repair, siding replacement, Columbus siding contractor"
         canonical={`${CANONICAL_DOMAIN}/services/siding`}
       />
@@ -23,6 +30,7 @@ export default function Siding() {
         pageTitle="Siding Installation & Repair in Central Ohio | DTE Roofing"
         pageDescription="Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/siding`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

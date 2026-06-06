@@ -4,12 +4,20 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const faqs = [
+  { question: "How often should I have my roof inspected in Central Ohio?", answer: "It depends on the age of your roof. A newer roof in good shape usually needs an annual inspection, while roofs past 15 years do better with bi-annual or even quarterly checks as the materials age. Ohio weather runs hard on roofs, so we'd rather look twice a year and catch a problem early than wait for a leak. Call us at 614-971-6028 and we'll set up a free inspection to see where your roof stands." },
+  { question: "What does a roof maintenance visit actually include?", answer: "We do a full inspection of the shingles, flashing, vent boots, chimney seals, and valleys, plus we clean out and check the gutters and downspouts. You get photo documentation and a written condition report so you can see exactly what we found. Minor repairs like a loose shingle or worn sealant are handled during the visit, and we keep records that help with warranty compliance. It's the same owner-led crew on your roof, so nothing gets glossed over." },
+  { question: "Can preventative maintenance really make my roof last longer?", answer: "Yes. Staying on top of small issues, keeping water moving off the roof, and making sure the attic ventilates properly can add years to a roof's life. Proper maintenance can stretch a roof's lifespan by 5 to 10 years, which usually means pushing back the cost of a full replacement. That's the whole point of catching things early instead of paying for emergency work later." },
+  { question: "Why do clogged gutters matter for my roof and home?", answer: "When gutters and downspouts clog up, water backs up and stops draining the way it should. That standing water can work its way under shingles and flashing, and overflow at the foundation can lead to bigger structural problems down the line. During a maintenance visit we clean the gutters, clear roof debris, and check the drainage so water keeps moving away from the house. It's a small thing that prevents some of the most expensive damage we see." },
+  { question: "Do you offer maintenance plans, and is financing available?", answer: "We offer regular maintenance on a schedule that fits your roof, whether that's an annual visit or a bi-annual one for older roofs. Every plan includes the inspection, gutter cleaning, minor repairs, and documentation, plus priority scheduling if larger work ever comes up. Financing is available if you'd rather spread out a bigger repair, and we're licensed, bonded, and insured here in Ohio. Reach us at 614-971-6028 or experience@dteroofing.com to talk through what makes sense for your roof." }
+];
+
 export default function PreventativeMaintenance() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Preventative Roof Maintenance Columbus OH | DTE Roofing"
-        description="Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028."
+        description="Preventative roof maintenance in Central Ohio. Annual plans, seasonal inspections, gutter & vent care. Catch issues early. Call 614-971-6028."
         keywords="preventative maintenance, preventive roof care, roof maintenance program, annual roof service, proactive roof care"
         canonical={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
       />
@@ -23,6 +31,7 @@ export default function PreventativeMaintenance() {
         pageTitle="Preventative Roof Maintenance Columbus OH | DTE Roofing"
         pageDescription="Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -312,6 +321,25 @@ export default function PreventativeMaintenance() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <details key={index} className="bg-white p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </div>

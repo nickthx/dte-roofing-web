@@ -12,7 +12,7 @@ export default function Contact() {
       <div className="min-h-screen bg-white">
       <SEO
         title="Contact DTE Roofing | Free Estimates in Columbus, OH"
-        description="Contact DTE Roofing for a free roofing estimate in Columbus and Central Ohio. Located at 615 Hilliard Rome Rd. Call 614-971-6028 or email for 24/7 emergency service."
+        description="Contact DTE Roofing for a free roofing estimate in Columbus and Central Ohio. Based at 615 Hilliard Rome Rd. Call 614-971-6028 for 24/7 service."
         keywords="contact roofer Columbus, free roof estimate, Columbus roofing company, Hilliard roofer, emergency roof repair, roofing contractor near me"
         canonical="https://www.dteroofingllc.com/contact"
       />

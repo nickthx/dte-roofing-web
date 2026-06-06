@@ -74,7 +74,7 @@ export default function Reviews() {
     <>
       <SEO
         title="DTE Roofing Reviews | Central Ohio Homeowners Speak Out"
-        description="Read verified reviews from DTE Roofing customers across Columbus and Central Ohio. Real feedback on roof repairs, replacements, and installations from local homeowners."
+        description="Read verified 5-star reviews from DTE Roofing customers across Columbus and Central Ohio on roof repairs, replacements, and installations."
         keywords="DTE Roofing reviews, Columbus roofing reviews, customer testimonials, five-star roofer"
         canonical="https://www.dteroofingllc.com/reviews"
       />

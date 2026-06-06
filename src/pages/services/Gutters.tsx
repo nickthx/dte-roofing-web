@@ -4,12 +4,20 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const faqs = [
+  { question: "What makes seamless gutters better than sectional gutters for my home?", answer: "Sectional gutters are joined together in pieces, and those seams are exactly where leaks tend to start over time. We fabricate seamless aluminum gutters on-site to fit your home, so there are no joints to fail and water gets carried cleanly away from your foundation and siding. They also hold up stronger and last longer than the sectional kind you'd buy off a shelf." },
+  { question: "Do you install gutter guards, and which type works best?", answer: "Yes, we install mesh screens, reverse curve guards, and foam insert guards, and the right one depends on the trees around your house and your budget. Mesh is a solid all-around choice for leaves, reverse curve handles heavy rain well, and foam inserts are the budget-friendly option that also helps with ice dams. Donovan or Mitchell will look at your setup during the free inspection and tell you honestly which makes sense, no upselling." },
+  { question: "What gutter colors can I choose from to match my house?", answer: "We carry a wide range of colors including white, black, brown, clay, gray, bronze, almond, and a few others, all with a baked-on enamel finish that resists fading and weathering. During the free consultation we measure your home and go over the color options so the gutters complement your trim and siding. If you're not sure what looks right, we'll help you narrow it down." },
+  { question: "Can you repair my existing gutters instead of replacing them?", answer: "In a lot of cases, yes. If the problem is loose mounting, bad pitch, a few damaged sections, or downspouts that aren't draining right, a repair is often the smarter call than a full replacement. We'll take a look during the free inspection and give you a straight answer on whether a repair will hold up or whether new seamless gutters are the better investment. Call us at 614-971-6028 to set it up." },
+  { question: "Are your gutter installations covered by a warranty?", answer: "They are. Your gutters are backed by our workmanship warranty plus the manufacturer's material warranty on the aluminum, so both the install and the product itself are covered. We're a licensed, bonded, and insured Ohio contractor, and financing is available if you'd rather spread the cost out. The owners are personally involved in the work, so the people standing behind that warranty are the same brothers who run the company." }
+];
+
 export default function Gutters() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="Gutter Installation & Repair in Columbus, OH | DTE Roofing"
-        description="Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028."
+        description="Seamless gutter installation, repair & gutter guards in Columbus, OH. Custom colors, downspouts, fascia & soffit repair. Call 614-971-6028."
         keywords="gutters Columbus, seamless gutters, gutter installation, gutter guards, custom gutters, aluminum gutters"
         canonical={`${CANONICAL_DOMAIN}/services/gutters`}
       />
@@ -23,6 +31,7 @@ export default function Gutters() {
         pageTitle="Gutter Installation & Repair in Columbus, OH | DTE Roofing"
         pageDescription="Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/gutters`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -268,6 +277,25 @@ export default function Gutters() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <details key={index} className="bg-white p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </div>

@@ -4,12 +4,19 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+// Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
+const faqs = [
+  { question: "How long does a typical roof installation take?", answer: "Most residential roof installations in Columbus take 2-4 days from start to completion. A typical 1,500-2,500 square foot home with standard complexity usually requires 2-3 days. Factors that extend timelines include larger homes (3,000+ sq ft may take 4-5 days), complex roof designs with multiple levels and valleys, steep pitches requiring additional safety measures, extensive deck repairs discovered during tear-off, and weather delays. Metal roofing installations typically add 1-2 days compared to asphalt shingles due to more precise installation requirements. We provide project-specific timelines during your estimate and keep you informed of progress throughout. For urgent situations requiring immediate protection, we also offer emergency roofing services." },
+  { question: "What warranties should I expect with a new roof?", answer: "Quality roof installations include two types of warranties. First, manufacturer material warranties cover defects in the roofing materials themselves. These vary by product: standard asphalt shingles typically carry 20-30 year warranties, architectural shingles offer 30-50 year coverage, and metal roofing often includes 50-year to lifetime material warranties. These warranties protect against manufacturing defects, premature granule loss, and material failure. Second, our workmanship warranty covers installation quality, ensuring that labor-related issues are addressed at no cost to you. We offer comprehensive workmanship warranties that typically range from 5-10 years depending on the project scope. This covers installation errors, improper flashing, ventilation issues, and other installation-related concerns. Some premium manufacturers offer enhanced warranties when installations meet their certification requirements, and we're certified installers for leading brands who can help you access these extended protections. All warranties are fully explained and provided in writing before your project begins." },
+  { question: "What's the optimal time of year for roof installation in Ohio?", answer: "Late spring through early fall (May through October) offers the most favorable conditions for roof installation in Central Ohio. Late spring (May-June) provides moderate temperatures ideal for shingle adhesive activation, typically dry weather reducing delay risks, and comfortable working conditions for optimal craftsmanship. Early fall (September-October) similarly offers mild temperatures, lower humidity, and reduced storm frequency compared to summer months. Summer installations (July-August) are certainly possible and we complete many projects during these months, but extreme heat can make materials more pliable and working conditions more challenging. We can install roofs year-round in Columbus, including winter months, using cold-weather techniques and specialized materials when necessary, though temperatures below 40°F affect shingle adhesive properties and may require hand-sealing until warmer weather allows proper bonding. Our busiest seasons are spring and fall, so scheduling 3-4 weeks in advance during these peak periods ensures your preferred timeline." }
+];
+
 export default function RoofInstallation() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="New Roof Installation in Columbus, OH | DTE Roofing"
-        description="Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028."
+        description="New roof installation in Columbus, OH. Asphalt, metal & flat systems for homes and businesses. Warranty-backed installs. Call 614-971-6028."
         keywords="roof installation Columbus, new roof installation, residential roof installation, commercial roof installation, asphalt shingle installation, metal roof installation"
         canonical={`${CANONICAL_DOMAIN}/services/roof-installation`}
       />
@@ -23,6 +30,7 @@ export default function RoofInstallation() {
         pageTitle="New Roof Installation in Columbus, OH | DTE Roofing"
         pageDescription="Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028."
         pageUrl={`${CANONICAL_DOMAIN}/services/roof-installation`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

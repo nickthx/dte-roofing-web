@@ -4,12 +4,20 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const faqs = [
+  { question: "Do you really answer emergency roofing calls 24/7?", answer: "Yes. Roof emergencies don't wait for business hours, and neither do we, so you can reach us any time at 614-971-6028, including nights, weekends, and holidays. When you call, we answer and get a crew dispatched quickly to assess the damage. In most cases we can get out the same day to protect your home before things get worse." },
+  { question: "A tree fell on my roof, what should I do first?", answer: "Call us right away at 614-971-6028 and move any valuables away from the area, but stay off the roof yourself. We'll safely remove the tree, stabilize the structure if it's compromised, and tarp the opening to keep water out until permanent repairs are done. We also photograph everything for your insurance claim while we're there." },
+  { question: "Can you tarp my roof tonight to stop a leak?", answer: "In most cases, yes. Emergency tarping is one of the first things we do to stop an active leak and prevent interior water damage until we can make a permanent fix. Our trucks are stocked to handle that on the spot, so call 614-971-6028 and we'll get a crew out as fast as we can." },
+  { question: "Will you help me file a storm damage insurance claim?", answer: "We do. During the emergency visit we take full photo documentation of the damage so you have a clear record for your claim. We've worked with adjusters before and can walk you through what they'll need. As a licensed, bonded, and insured Ohio contractor, we'll handle the repair properly once your claim is approved." },
+  { question: "Is emergency roof repair more expensive after hours?", answer: "We charge honest emergency rates and don't gouge people when they're in a tough spot. The inspection itself is free, and we'll give you a straight answer on what the situation needs before any work starts. If a larger repair or replacement comes out of it, we offer financing, and the work is backed by our workmanship warranty." }
+];
+
 export default function EmergencyServices() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
         title="24/7 Emergency Roof Repair in Central Ohio | DTE Roofing"
-        description="24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now."
+        description="24/7 emergency roof repair across Central Ohio. Fast response for storm damage, leaks & urgent issues. Same-day service. Call 614-971-6028."
         keywords="emergency roof repair, 24/7 roofing, storm damage, emergency leak repair, urgent roof repair, Columbus emergency roofing"
         canonical={`${CANONICAL_DOMAIN}/services/emergency-services`}
       />
@@ -23,6 +31,7 @@ export default function EmergencyServices() {
         pageTitle="24/7 Emergency Roof Repair in Central Ohio | DTE Roofing"
         pageDescription="24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now."
         pageUrl={`${CANONICAL_DOMAIN}/services/emergency-services`}
+        faqs={faqs}
       />
 
       <section className="relative bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white py-20">
@@ -263,6 +272,25 @@ export default function EmergencyServices() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <details key={index} className="bg-white p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </div>

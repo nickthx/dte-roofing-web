@@ -79,6 +79,41 @@ const BUSINESS_INFO = {
   ]
 };
 
+// Real, verified 5-star customer reviews (also displayed on /reviews) used to back the
+// aggregateRating so it is policy-compliant and eligible for review stars.
+const BUSINESS_REVIEWS = [
+  {
+    author: 'Sarah M.',
+    datePublished: '2025-11-01',
+    reviewBody:
+      "Andrew was fantastic! He went above and beyond inspecting the cause of my leak on my roof. We weren't able to replace the roof at this time but he was more than willing to fix all areas of concern. Would high recommend them to do any roof work!"
+  },
+  {
+    author: 'Ryan R.',
+    datePublished: '2025-11-01',
+    reviewBody:
+      "Wonderful experience with DTE and Mitch! The whole process was seamless start to finish. It's hard to make a decision when choosing a Roofing company and I am extremely happy I chose DTE. Would recommend to anyone who needs an honest opinion on anything on the exterior of your home."
+  },
+  {
+    author: 'Ron M.',
+    datePublished: '2025-11-01',
+    reviewBody:
+      'I had Mitch and Chandler from DTE roofing company come and do a free roof inspection. I had a new roof installed 2 years ago, they let me know what problems they have found. I am so glad I was able to get them repaired before it became a bigger problem. Thanks for your help.'
+  },
+  {
+    author: 'Tim H.',
+    datePublished: '2025-09-01',
+    reviewBody:
+      'I had an excellent experience with DTE Roofing. Very good communication, helped with Insurance claim and overall very knowledgeable and professional. Andrew is honest and hardworking, would definitely use them again.'
+  },
+  {
+    author: 'Kortnie Y.',
+    datePublished: '2025-09-01',
+    reviewBody:
+      'I had the pleasure of working with DTE and I cannot recommend them enough. They are a company that provides top notch customer service, quality work, and educates along the way. We will use their services again while selecting our next home.'
+  }
+];
+
 export default function SchemaMarkup({
   type,
   service,
@@ -142,6 +177,19 @@ export default function SchemaMarkup({
       worstRating: reviewStats.worstRating.toString()
     };
 
+    schema.review = BUSINESS_REVIEWS.map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      datePublished: r.datePublished,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      reviewBody: r.reviewBody
+    }));
+
     return schema;
   };
 
@@ -184,7 +232,8 @@ export default function SchemaMarkup({
   };
 
   const generateBreadcrumbSchema = () => {
-    if (!pageUrl || !pageTitle) return null;
+    // The homepage is the breadcrumb root; a crumb here would self-reference Home → Home.
+    if (!pageUrl || !pageTitle || type === 'home') return null;
 
     const breadcrumbItems = [
       {

@@ -56,8 +56,8 @@ export default function Powell() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers Powell, OH | DTE Roofing — Owner-Led Roof Inspections"
-        description="DTE Roofing serves Powell, OH from our Columbus HQ with owner-led roof repair, replacement, inspections, gutter installation & storm damage help. 614-971-6028."
+        title="Roofers in Powell, OH | Repair & Replacement | DTE Roofing"
+        description="DTE Roofing serves Powell, OH with owner-led roof repair, replacement, inspections, gutters & storm damage help. Call 614-971-6028."
         keywords="roofers powell, roof repair powell, roof replacement powell, roofing company powell, storm damage powell, gutter services powell, roofer near me powell, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/powell"
         geoPlacename="Powell, OH"
