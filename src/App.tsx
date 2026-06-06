@@ -46,6 +46,7 @@ const Delaware = lazy(() => import('./pages/locations/Delaware'));
 const Powell = lazy(() => import('./pages/locations/Powell'));
 const InstantQuote = lazy(() => import('./pages/InstantQuote'));
 const Financing = lazy(() => import('./pages/Financing'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader(): JSX.Element {
   return (
@@ -100,6 +101,7 @@ function App() {
               <Route path="/locations/delaware" element={<Delaware />} />
               <Route path="/locations/powell" element={<Powell />} />
               <Route path="/get-a-quote-consultation" element={<InstantQuote />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>

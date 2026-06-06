@@ -14,6 +14,8 @@ interface SEOProps {
   canonical?: string;
   geoPlacename?: string;
   preloadImage?: string;
+  /** Emit a noindex robots meta (e.g. the 404 page). Overrides the template's index,follow. */
+  noindex?: boolean;
 }
 
 export default function SEO({
@@ -26,6 +28,7 @@ export default function SEO({
   canonical,
   geoPlacename,
   preloadImage,
+  noindex,
 }: SEOProps): JSX.Element {
   const finalOgTitle = ogTitle || title;
   const finalOgDescription = ogDescription || description;
@@ -36,6 +39,7 @@ export default function SEO({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Open Graph */}
       <meta property="og:title" content={finalOgTitle} />

@@ -58,3 +58,9 @@ export const ROUTES = [
 ];
 
 export const PRERENDER_ROUTES = ROUTES.filter((r) => r.prerender).map((r) => r.path);
+
+// Branded 404. Deliberately NOT in ROUTES: the sitemap maps all of ROUTES and a
+// 404 page must never be listed there. The prerender script renders this through
+// the App's catch-all route and writes it to dist/404.html — the root-level file
+// Vercel serves (with a 404 status) for any unmatched path.
+export const NOT_FOUND_ROUTE = { path: '/404', source: 'src/pages/NotFound.tsx' };

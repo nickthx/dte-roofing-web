@@ -11,7 +11,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { ROUTES, PRERENDER_ROUTES } from '../src/routes.config.mjs';
+import { ROUTES, PRERENDER_ROUTES, NOT_FOUND_ROUTE } from '../src/routes.config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -26,6 +26,7 @@ const template = readFileSync(TEMPLATE_PATH, 'utf8');
 // route path -> source module (the SSOT already used by the sitemap generator),
 // so we can find each route's chunk in the client manifest.
 const sourceByPath = new Map(ROUTES.map((r) => [r.path, r.source]));
+sourceByPath.set(NOT_FOUND_ROUTE.path, NOT_FOUND_ROUTE.source);
 
 // Load the client manifest. Preload hints are an optimization, so a missing
 // manifest degrades gracefully (routes still work, just with the small waterfall).
@@ -60,11 +61,7 @@ function preloadLinksFor(routePath) {
     .join('\n    ');
 }
 
-const written = [];
-
-for (const route of PRERENDER_ROUTES) {
-  if (route.includes(':')) continue; // defensive skip of dynamic routes
-
+async function buildPage(route, { stripRobots = false } = {}) {
   const { html, helmet } = await render(route);
 
   const headTags = [
@@ -81,6 +78,9 @@ for (const route of PRERENDER_ROUTES) {
   // so helmet's title/description tags are the only ones in the head.
   let page = template.replace(/<title>[^<]*<\/title>/i, '');
   page = page.replace(/<meta name="description"[^>]*>/i, '');
+  // The 404 page emits its own noindex robots meta — drop the template's
+  // static index,follow so the signals don't conflict.
+  if (stripRobots) page = page.replace(/<meta name="robots"[^>]*>/i, '');
   page = page.replace('</head>', `    ${headTags}\n  </head>`);
 
   // Inject SSR body into the root container.
@@ -89,12 +89,27 @@ for (const route of PRERENDER_ROUTES) {
     `<div id="root">${html}</div>`
   );
 
-  const outDir = route === '/' ? DIST : resolve(DIST, '.' + route);
-  mkdirSync(outDir, { recursive: true });
-  const outFile = resolve(outDir, 'index.html');
+  return page;
+}
+
+const written = [];
+
+function writePage(outFile, page) {
+  mkdirSync(dirname(outFile), { recursive: true });
   writeFileSync(outFile, page, 'utf8');
   written.push(outFile.replace(ROOT + '\\', '').replace(ROOT + '/', ''));
 }
+
+for (const route of PRERENDER_ROUTES) {
+  if (route.includes(':')) continue; // defensive skip of dynamic routes
+  const outDir = route === '/' ? DIST : resolve(DIST, '.' + route);
+  writePage(resolve(outDir, 'index.html'), await buildPage(route));
+}
+
+// Branded 404: rendered through the App's catch-all route, written to the
+// root-level dist/404.html that Vercel serves (with a 404 status) for any
+// unmatched path. Not in ROUTES, so it never enters the sitemap.
+writePage(resolve(DIST, '404.html'), await buildPage(NOT_FOUND_ROUTE.path, { stripRobots: true }));
 
 console.log(`\nPrerendered ${written.length} routes:`);
 for (const f of written) console.log('  ' + f);
