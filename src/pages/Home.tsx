@@ -101,7 +101,7 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Picture
-                  src="/images/DTE-Roofing-Logo-two-Men.png"
+                  src="/images/DTE-Roofing-Logo-two-Men-large.png"
                   alt="DTE Roofing founders Donovan and Mitchell inspecting roofs in Columbus OH"
                   className="w-full h-auto"
                   loading="lazy"

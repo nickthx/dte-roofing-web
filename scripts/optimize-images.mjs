@@ -77,7 +77,12 @@ while ((mm = projRe.exec(projSrc))) {
 
 // Hero & logo keep their base filenames (OG/schema references stay valid).
 jobs.push({ file: 'hero-roofing-professional.jpg', slug: 'hero-roofing-professional', formats: ['webp', 'jpg'], maxWidth: 1920, q: { webp: 60, jpg: 72 } });
-jobs.push({ file: 'DTE-Roofing-Logo-two-Men.png', slug: 'DTE-Roofing-Logo-two-Men', formats: ['webp', 'png'], maxWidth: 800, q: { lossless: true } });
+// Logo ships in two sizes: -large (500px, Home founders section renders it ~600px
+// wide in a md:grid-cols-2 column) and the base name at 232px (nav h-16 @2x retina;
+// also the schema logo URL — stays ≥ Google's 112px minimum). Both jobs read from
+// the -large file so re-runs never upscale from the shrunken base.
+jobs.push({ file: 'DTE-Roofing-Logo-two-Men-large.png', slug: 'DTE-Roofing-Logo-two-Men-large', formats: ['webp', 'png'], maxWidth: 500, q: { lossless: true } });
+jobs.push({ file: 'DTE-Roofing-Logo-two-Men-large.png', slug: 'DTE-Roofing-Logo-two-Men', formats: ['webp', 'png'], maxWidth: 232, q: { lossless: true } });
 
 // About: team headshots (renamed), one extra job-site webp, two GBP-only photos.
 jobs.push({ file: 'Screenshot 2025-11-17 204715.png', slug: 'donovan-davis-dte-roofing', formats: ['webp', 'jpg'], maxWidth: 480, q: { webp: 82, jpg: 84 } });
