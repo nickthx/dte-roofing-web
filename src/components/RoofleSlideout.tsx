@@ -4,7 +4,7 @@ const SLIDEOUT_SRC = 'https://app.roofle.com/roof-quote-pro-widget.js?id=zEGtbFp
 
 declare global {
   interface Window {
-    RoofQuotePro?: { open?: () => void };
+    RoofQuotePro?: { open?: () => void; isSlideOutWidgetOpened?: boolean };
   }
 }
 
@@ -38,32 +38,38 @@ export default function RoofleSlideout() {
     pollingRef.current = true;
     injectScript();
     const startedAt = Date.now();
+    let openAttempts = 0;
     const poll = window.setInterval(() => {
+      const rq = window.RoofQuotePro;
       const widgetReady = document.getElementById('quick-quote-button-wrapper') !== null;
-      const apiReady = typeof window.RoofQuotePro?.open === 'function';
+      const apiReady = typeof rq?.open === 'function';
       // Hand the UI over as soon as the real launcher exists…
       if (widgetReady) {
         setHidden(true);
         setLoading(false);
       }
-      // …but keep polling until the API is callable so a click still opens.
-      if (apiReady) {
-        window.clearInterval(poll);
-        pollingRef.current = false;
-        if (clickedRef.current && !openedRef.current) {
+      // …and after a click, retry open() until the widget confirms it opened.
+      // open() exists before the widget finishes initializing — a single early
+      // call gets swallowed (verified on production), so re-call until
+      // isSlideOutWidgetOpened flips true (max ~5s of attempts).
+      if (apiReady && clickedRef.current && !openedRef.current) {
+        if (rq!.isSlideOutWidgetOpened === true || openAttempts >= 16) {
           openedRef.current = true;
-          window.RoofQuotePro!.open!();
+        } else {
+          openAttempts++;
+          rq!.open!();
         }
-        setHidden(true);
-        setLoading(false);
-      } else if (Date.now() - startedAt > 15000) {
-        // Widget never came up (offline/blocked) — stop polling. If not even
-        // the launcher rendered, keep the placeholder so a click can retry.
+      }
+      const done = apiReady && (!clickedRef.current || openedRef.current);
+      if (done || Date.now() - startedAt > 20000) {
+        // On timeout without even a launcher (offline/blocked), keep the
+        // placeholder so a click can retry.
         window.clearInterval(poll);
         pollingRef.current = false;
         setLoading(false);
+        if (widgetReady || apiReady) setHidden(true);
       }
-    }, 150);
+    }, 300);
   }, []);
 
   const handleClick = useCallback(() => {
