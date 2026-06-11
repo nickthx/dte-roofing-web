@@ -3,6 +3,6 @@
   "averageRating": 5,
   "bestRating": 5,
   "worstRating": 1,
-  "lastUpdated": "2026-06-06",
+  "lastUpdated": "2026-06-11",
   "_comment": "Updated weekly by n8n workflow CSykgVSWffnede1W. Do not edit by hand unless n8n is offline. The website schema reads this file at build time; the on-page UI continues to read useReviewData for live values."
 }
