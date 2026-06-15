@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { imageVariants } from '../data/imageVariants';
 
 const DEFAULT_OG_IMAGE = 'https://www.dteroofingllc.com/images/hero-roofing-professional.jpg';
 const DEFAULT_OG_IMAGE_ALT = 'DTE Roofing — professional roofing services in Central Ohio';
@@ -14,8 +15,15 @@ interface SEOProps {
   canonical?: string;
   geoPlacename?: string;
   preloadImage?: string;
+  /** `sizes` for the preloaded hero (must match the hero <Picture> sizes). Default "100vw". */
+  preloadImageSizes?: string;
   /** Emit a noindex robots meta (e.g. the 404 page). Overrides the template's index,follow. */
   noindex?: boolean;
+}
+
+// /images/foo.jpg + 800 -> /images/foo-800.webp
+function heroWebpVariant(jpgKey: string, w: number): string {
+  return jpgKey.replace(/\.jpg$/i, `-${w}.webp`);
 }
 
 export default function SEO({
@@ -28,12 +36,34 @@ export default function SEO({
   canonical,
   geoPlacename,
   preloadImage,
+  preloadImageSizes,
   noindex,
 }: SEOProps): JSX.Element {
   const finalOgTitle = ogTitle || title;
   const finalOgDescription = ogDescription || description;
   const finalOgImage = ogImage || DEFAULT_OG_IMAGE;
   const finalOgImageAlt = ogImageAlt || DEFAULT_OG_IMAGE_ALT;
+
+  // Responsive hero preload: when the preloaded image has generated webp variants,
+  // preload via imagesrcset/imagesizes so the scanner fetches the SAME variant the
+  // <picture> <source> picks (no double-download — protects LCP). Lowercase attrs
+  // via spread (same proven path as fetchpriority) so react-helmet-async passes
+  // them through. Falls back to the legacy single-file preload otherwise.
+  const preloadJpgKey = preloadImage ? preloadImage.replace(/\.(jpe?g|png|webp|avif)$/i, '.jpg') : undefined;
+  const preloadVariant = preloadJpgKey ? imageVariants[preloadJpgKey] : undefined;
+  const useResponsivePreload = !!(preloadVariant && preloadVariant.formats.includes('webp'));
+
+  let heroImageSrcSet = '';
+  let heroFallbackHref = '';
+  if (useResponsivePreload && preloadVariant && preloadJpgKey) {
+    heroImageSrcSet = [
+      ...preloadVariant.widths.map((w) => `${heroWebpVariant(preloadJpgKey, w)} ${w}w`),
+      `${preloadJpgKey.replace(/\.jpg$/i, '.webp')} ${preloadVariant.intrinsicWidth}w`,
+    ].join(', ');
+    heroFallbackHref = preloadVariant.widths.length
+      ? heroWebpVariant(preloadJpgKey, preloadVariant.widths[Math.floor(preloadVariant.widths.length / 2)])
+      : preloadJpgKey.replace(/\.jpg$/i, '.webp');
+  }
 
   return (
     <Helmet>
@@ -62,7 +92,20 @@ export default function SEO({
       {canonical && <link rel="canonical" href={canonical} />}
       <meta name="geo.placename" content={geoPlacename || "Columbus, OH"} />
 
-      {preloadImage && (
+      {preloadImage && useResponsivePreload && (
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href={heroFallbackHref}
+          {...({
+            imagesrcset: heroImageSrcSet,
+            imagesizes: preloadImageSizes || '100vw',
+            fetchpriority: 'high',
+          } as Record<string, string>)}
+        />
+      )}
+      {preloadImage && !useResponsivePreload && (
         <link
           rel="preload"
           as="image"
