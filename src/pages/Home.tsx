@@ -25,6 +25,7 @@ export default function Home() {
         keywords="roof inspection Columbus OH, Columbus roofing company, roof repair near me, roofing contractor Columbus, roof repair Columbus, roof replacement Columbus, residential roofing, commercial roofing, emergency roof repair"
         canonical={`${CANONICAL_DOMAIN}/`}
         preloadImage="/images/hero-roofing-professional.webp"
+        preloadImageSizes="100vw"
       />
       <SchemaMarkup
         type="home"
@@ -42,6 +43,7 @@ export default function Home() {
           loading="eager"
           fetchPriority="high"
           avif={false}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">

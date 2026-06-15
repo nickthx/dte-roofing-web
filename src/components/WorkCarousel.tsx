@@ -34,6 +34,7 @@ export default function WorkCarousel() {
                 alt={project.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                sizes="(min-width: 896px) 896px, 100vw"
               />
 
               {/* Persistent title/location overlay */}

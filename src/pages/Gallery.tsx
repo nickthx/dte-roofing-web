@@ -143,6 +143,7 @@ export default function Gallery() {
                       alt={project.alt}
                       className="w-full h-full object-cover transition-transform duration-300 ease-in-out"
                       loading="lazy"
+                      sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
                     />
 
                     {/* Hover Overlay with Content */}
