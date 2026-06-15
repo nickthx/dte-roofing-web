@@ -7,6 +7,7 @@
     "dev": "vite",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "reencode-webp": "node scripts/reencode-webp.mjs",
     "build": "npm run generate-sitemap && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
