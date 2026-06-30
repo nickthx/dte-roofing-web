@@ -10,6 +10,45 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Westerville() {
   const { reviewData } = useReviewData();
 
+  const westervilleFaqs = [
+    {
+      question: "Do you serve Westerville if your HQ is in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and Westerville is typically 15-30 minutes away depending on traffic and route. We serve Westerville regularly and understand the community's mix of historic Uptown architecture, mature neighborhoods, and diverse housing stock. Distance has never been an issue, and our scheduling is efficient and reliable for all Westerville areas."
+    },
+    {
+      question: "How do you protect landscaping and driveways during work?",
+      answer: "We use tarps to protect landscaping, position dumpsters on driveways with protective boards underneath, and conduct thorough cleanup with magnetic rollers to collect nails and debris. We make multiple passes across your driveway, walkways, and yard before we leave. Clean job sites and property protection are part of our detail-first approach—you shouldn't have to worry about damage to your landscaping or nails in your driveway after we're done."
+    },
+    {
+      question: "Do you work with HOAs or community standards?",
+      answer: "Yes. Some Westerville neighborhoods have HOA requirements or architectural guidelines for exterior work. We're experienced in matching existing shingle styles and colors, providing documentation for HOA submissions where needed, and ensuring work meets community standards. We can help you understand what approvals may be required and provide the information necessary. Our goal is to make the process smooth while respecting Westerville's community character."
+    },
+    {
+      question: "What causes chimney and step flashing leaks?",
+      answer: "Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Many older Westerville homes have original flashing from decades ago that has lost its seal. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection."
+    },
+    {
+      question: "Is ice and water shield worth it in this climate?",
+      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams, especially on north-facing slopes or homes with inadequate ventilation. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage."
+    },
+    {
+      question: "Do you document storm damage for insurance?",
+      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and explain the claims process. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. We work with all major insurance companies."
+    },
+    {
+      question: "Do you offer emergency tarping and response?",
+      answer: "Yes. We provide 24/7 emergency services including temporary tarping after storms or sudden damage. If you experience a leak or visible damage, call 614-971-6028 immediately. We prioritize emergency calls and often respond same-day for active leaks. Emergency tarping prevents additional water intrusion while permanent repairs are scheduled, protecting your home's interior and valuable belongings from further damage."
+    },
+    {
+      question: "Do you handle gutters and fascia/soffit?",
+      answer: "Yes. Westerville's mature tree canopy means constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively."
+    },
+    {
+      question: "What's the fastest way to schedule?",
+      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +65,7 @@ export default function Westerville() {
         pageTitle="Roofers in Westerville, OH | DTE Roofing"
         pageDescription="Serving Westerville, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/westerville"
+        faqs={westervilleFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -254,95 +294,17 @@ export default function Westerville() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Westerville Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you serve Westerville if your HQ is in Columbus?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and Westerville is typically 15-30 minutes away depending on traffic and route. We serve Westerville regularly and understand the community's mix of historic Uptown architecture, mature neighborhoods, and diverse housing stock. Distance has never been an issue, and our scheduling is efficient and reliable for all Westerville areas.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How do you protect landscaping and driveways during work?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We use tarps to protect landscaping, position dumpsters on driveways with protective boards underneath, and conduct thorough cleanup with magnetic rollers to collect nails and debris. We make multiple passes across your driveway, walkways, and yard before we leave. Clean job sites and property protection are part of our detail-first approach—you shouldn't have to worry about damage to your landscaping or nails in your driveway after we're done.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you work with HOAs or community standards?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Some Westerville neighborhoods have HOA requirements or architectural guidelines for exterior work. We're experienced in matching existing shingle styles and colors, providing documentation for HOA submissions where needed, and ensuring work meets community standards. We can help you understand what approvals may be required and provide the information necessary. Our goal is to make the process smooth while respecting Westerville's community character.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What causes chimney and step flashing leaks?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Many older Westerville homes have original flashing from decades ago that has lost its seal. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Is ice and water shield worth it in this climate?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams, especially on north-facing slopes or homes with inadequate ventilation. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you document storm damage for insurance?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and explain the claims process. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. We work with all major insurance companies.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you offer emergency tarping and response?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. We provide 24/7 emergency services including temporary tarping after storms or sudden damage. If you experience a leak or visible damage, call 614-971-6028 immediately. We prioritize emergency calls and often respond same-day for active leaks. Emergency tarping prevents additional water intrusion while permanent repairs are scheduled, protecting your home's interior and valuable belongings from further damage.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle gutters and fascia/soffit?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Westerville's mature tree canopy means constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What's the fastest way to schedule?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response.
-                </p>
-              </details>
+              {westervilleFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 

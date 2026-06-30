@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function NewAlbany() {
   const { reviewData } = useReviewData();
 
+  const newAlbanyFaqs = [
+    {
+      question: "Do you serve New Albany if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and New Albany is approximately 20 miles away—roughly 25-35 minutes depending on route and traffic. We serve New Albany regularly and understand the community's architectural standards, HOA requirements, and permitting processes. Distance has never been an issue, and our scheduling is efficient and reliable for all New Albany neighborhoods."
+    },
+    {
+      question: "Can you work with HOAs in New Albany neighborhoods?",
+      answer: "Yes. New Albany has some of the most active and detailed architectural review processes in Central Ohio. Many neighborhoods require submissions showing material specifications, color samples, manufacturer information, and installation plans before approval. We're experienced in navigating these requirements, recommending pre-approved materials, preparing comprehensive submission packages, and ensuring installations meet approved specifications exactly. We can handle the paperwork and communication with your HOA or architectural review board to streamline the process."
+    },
+    {
+      question: "Do you schedule around Founders Day / Farmers Market / parade traffic?",
+      answer: "Yes. We understand that events like New Albany Founders Day at Rose Run Park, the Healthy New Albany Farmers Market at Market Square, and the Independence Day Parade create traffic congestion and parking challenges. We schedule around these event weeks when possible, coordinate arrival times carefully, keep job sites organized, and avoid blocking driveways or creating unnecessary disruption. We work with you to find the best timing for your project."
+    },
+    {
+      question: "Are architectural shingles preferred in New Albany communities?",
+      answer: "Yes. New Albany's luxury home market typically demands premium architectural shingles or designer roofing products that complement high-end construction and meet architectural review standards. Basic three-tab shingles are rarely appropriate. We recommend premium manufacturers' top-tier collections featuring impact resistance (Class 4 hail protection), distinctive dimensional profiles, sophisticated color palettes, and extended warranties (30-50 year or lifetime coverage) appropriate for luxury property investments. During your consultation, we'll recommend specific products matching your home's architecture and meeting review board standards."
+    },
+    {
+      question: "What's the most common cause of leaks on newer homes?",
+      answer: "In newer New Albany homes, leaks most commonly occur around flashing—especially at chimneys, skylights, dormers, and where different roof planes meet. Complex architectural designs with multiple roof planes, custom features, and steep pitches require expert flashing installation. Wind-driven rain, freeze-thaw cycles, and aging sealant all contribute to flashing failures. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that last."
+    },
+    {
+      question: "Do you help with insurance claim documentation?",
+      answer: "Absolutely. With insurers tightening claim rules in 2025–2026, thorough documentation is critical. We take detailed photos, collect shingle samples showing hail impact, measure damaged areas, and provide written reports. We can also meet with your adjuster on-site if needed and speak directly with your insurance company. Proper documentation improves your chances of claim approval and fair settlement, which is especially important for New Albany's premium properties."
+    },
+    {
+      question: "Do you offer emergency tarping?",
+      answer: "Yes. We provide 24/7 emergency services including temporary tarping to prevent further damage after storms. If you experience a leak or visible damage, call us at 614-971-6028 immediately. We'll respond quickly, assess the damage, install temporary protection, and schedule permanent repairs as soon as possible. Emergency tarping prevents water intrusion from causing additional damage to your home's interior and valuable belongings."
+    },
+    {
+      question: "How do you protect landscaping and driveways?",
+      answer: "New Albany homes typically feature premium landscaping and hardscaping that require careful protection. We use tarps to protect plantings, install plywood walkways over delicate areas, position dumpsters on driveways with protective boards underneath, and conduct thorough cleanup with magnetic rollers to collect nails and debris. We treat every property with respect and understand that protecting your investment extends beyond the roof itself."
+    },
+    {
+      question: "Do you do gutters and fascia/soffit?",
+      answer: "Yes. We handle complete gutter installation, replacement, cleaning, and fascia/soffit repair. Premium gutter systems are essential for protecting your roof, siding, and foundation from water damage. We install high-quality gutters that complement New Albany's architectural standards and provide reliable performance for years."
+    },
+    {
+      question: "How do I book the fastest inspection?",
+      answer: "Call us at 614-971-6028 or visit our Contact page. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics. Most inspections are scheduled within 2-3 days, and emergency situations get priority response."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function NewAlbany() {
         pageTitle="Roofers in New Albany, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves New Albany, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Expert roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/new-albany"
+        faqs={newAlbanyFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

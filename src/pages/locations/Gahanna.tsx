@@ -10,6 +10,41 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Gahanna() {
   const { reviewData } = useReviewData();
 
+  const gahannaFaqs = [
+    {
+      question: "Do you serve Gahanna if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Gahanna regularly on the northeast side of Columbus. Distance has never been an issue—we know the routes (I-270, I-670, SR-161, East Broad corridors) and respond efficiently to all Gahanna areas from Creekside to Old Gahanna to neighborhoods near the airport."
+    },
+    {
+      question: "How fast can you inspect after wind/hail damage?",
+      answer: "We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Gahanna, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims."
+    },
+    {
+      question: "Do you help with insurance documentation for storm damage?",
+      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and explain the claims process. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important."
+    },
+    {
+      question: "What causes leaks around chimneys and step flashing?",
+      answer: "Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection."
+    },
+    {
+      question: "Is ice and water shield worth it in this climate?",
+      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage."
+    },
+    {
+      question: "Do you handle gutters and drainage issues?",
+      answer: "Yes. Mature trees in many Gahanna neighborhoods mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively."
+    },
+    {
+      question: "Do you work with HOAs or community standards?",
+      answer: "Yes. Some Gahanna neighborhoods have HOA requirements or architectural guidelines for exterior work. We're experienced in matching existing shingle styles and colors, providing documentation for HOA submissions where needed, and ensuring work meets community standards. We can help you understand what approvals may be required and provide the information necessary. Our goal is to make the process smooth while respecting Gahanna's community character."
+    },
+    {
+      question: "What's the fastest way to schedule an inspection?",
+      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +61,7 @@ export default function Gahanna() {
         pageTitle="Roofers in Gahanna, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Gahanna, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/gahanna"
+        faqs={gahannaFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -255,85 +291,17 @@ export default function Gahanna() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Gahanna Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you serve Gahanna if you're based in Columbus?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Gahanna regularly on the northeast side of Columbus. Distance has never been an issue—we know the routes (I-270, I-670, SR-161, East Broad corridors) and respond efficiently to all Gahanna areas from Creekside to Old Gahanna to neighborhoods near the airport.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How fast can you inspect after wind/hail damage?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Gahanna, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you help with insurance documentation for storm damage?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and explain the claims process. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What causes leaks around chimneys and step flashing?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Is ice and water shield worth it in this climate?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle gutters and drainage issues?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Mature trees in many Gahanna neighborhoods mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you work with HOAs or community standards?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Some Gahanna neighborhoods have HOA requirements or architectural guidelines for exterior work. We're experienced in matching existing shingle styles and colors, providing documentation for HOA submissions where needed, and ensuring work meets community standards. We can help you understand what approvals may be required and provide the information necessary. Our goal is to make the process smooth while respecting Gahanna's community character.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What's the fastest way to schedule an inspection?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response.
-                </p>
-              </details>
+              {gahannaFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 

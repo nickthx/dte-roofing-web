@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Hilliard() {
   const { reviewData } = useReviewData();
 
+  const hilliardFaqs = [
+    {
+      question: "Do you serve Hilliard if your address shows Columbus?",
+      answer: "Absolutely. Our office is at 615 Hilliard Rome Rd with a Columbus mailing address (43228 zip code), but we're right on the west side, minutes from Old Hilliard, Britton Farms, Scioto Reserve, and all Hilliard neighborhoods. Both founders are Hilliard Davidson graduates—this is our hometown. We serve Hilliard regularly with the same detail-first approach we bring to every customer conversation."
+    },
+    {
+      question: "Can you schedule around Center Street Market weekends or Freedom Fest traffic?",
+      answer: "Yes. We're locals who know that parking around Station Park and Old Hilliard gets tight during Center Street Market weekends, and that Freedom Fest at Roger A. Reynolds Municipal Park draws big crowds. We plan service schedules to work around community events and minimize disruption to your neighborhood. Just let us know your timing preferences when you call."
+    },
+    {
+      question: "Do you work with HOAs in Hilliard subdivisions?",
+      answer: "Yes, we're experienced with HOA requirements in Hilliard neighborhoods. Many subdivisions have specific rules about shingle colors, architectural styles, and approval processes. We help you understand what approvals are needed and can provide documentation to your HOA board. We've worked successfully with HOAs throughout Heritage Lakes, Crossing at Scioto, Hayden Run, and other communities."
+    },
+    {
+      question: "What causes leaks around chimneys and step flashing in older homes?",
+      answer: "Flashing around chimneys, skylights, and along dormers (step flashing) is meant to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure, especially with wind-driven rain common in Hilliard. Older homes in Old Hilliard and neighborhoods like Britton Farms often have original flashing that has lost its seal. We inspect flashing carefully during every roof assessment and repair or replace it with high-quality materials that last."
+    },
+    {
+      question: "Is ice and water shield worth it here in Hilliard?",
+      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring freeze-thaw cycles that can cause ice dams, especially on north-facing slopes. Ice and water shield provides extra protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage."
+    },
+    {
+      question: "How fast can you inspect after wind or hail?",
+      answer: "We prioritize storm response for Hilliard customers. After major storms, we typically respond within 24-48 hours. If there's active leaking or emergency damage, we can often come same-day for temporary repairs or tarping. Once on-site, one of our owners inspects your roof thoroughly, documents any storm damage with photos for insurance purposes, and explains your options clearly. Call 614-971-6028 as soon as you suspect storm damage."
+    },
+    {
+      question: "Do you handle gutters because of tree debris?",
+      answer: "Yes. Hilliard's mature tree canopy is beautiful but causes constant debris in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and even foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your roof or gutters, we assess and repair all related issues in one visit."
+    },
+    {
+      question: "How do you keep nails out of driveways?",
+      answer: "We take cleanup seriously. During tear-off, we use tarps and magnetic sweepers to catch nails and debris. After the job, we make multiple passes with rolling magnets across your driveway, walkways, and yard. We inspect the entire property before we leave. Clean jobsites are part of our detail-first approach—you shouldn't have to worry about nails in your tires or your kids' feet."
+    },
+    {
+      question: "Do you help with insurance documentation in 2025-2026?",
+      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos and measurements, meet with adjusters on-site if needed, and provide written estimates that match insurance requirements. We explain the claims process and help you understand your policy coverage. We work with all major insurance companies and make the process as smooth as possible."
+    },
+    {
+      question: "What's the fastest way to schedule?",
+      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function Hilliard() {
         pageTitle="Roofers in Hilliard, OH | DTE Roofing"
         pageDescription="Serving Hilliard, OH from our office on Hilliard Rome Rd (615 Hilliard Rome Rd, Columbus, OH 43228 mailing address). Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/hilliard"
+        faqs={hilliardFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -250,105 +294,17 @@ export default function Hilliard() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Hilliard Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you serve Hilliard if your address shows Columbus?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Our office is at 615 Hilliard Rome Rd with a Columbus mailing address (43228 zip code), but we're right on the west side, minutes from Old Hilliard, Britton Farms, Scioto Reserve, and all Hilliard neighborhoods. Both founders are Hilliard Davidson graduates—this is our hometown. We serve Hilliard regularly with the same detail-first approach we bring to every customer conversation.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Can you schedule around Center Street Market weekends or Freedom Fest traffic?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. We're locals who know that parking around Station Park and Old Hilliard gets tight during Center Street Market weekends, and that Freedom Fest at Roger A. Reynolds Municipal Park draws big crowds. We plan service schedules to work around community events and minimize disruption to your neighborhood. Just let us know your timing preferences when you call.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you work with HOAs in Hilliard subdivisions?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes, we're experienced with HOA requirements in Hilliard neighborhoods. Many subdivisions have specific rules about shingle colors, architectural styles, and approval processes. We help you understand what approvals are needed and can provide documentation to your HOA board. We've worked successfully with HOAs throughout Heritage Lakes, Crossing at Scioto, Hayden Run, and other communities.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What causes leaks around chimneys and step flashing in older homes?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Flashing around chimneys, skylights, and along dormers (step flashing) is meant to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure, especially with wind-driven rain common in Hilliard. Older homes in Old Hilliard and neighborhoods like Britton Farms often have original flashing that has lost its seal. We inspect flashing carefully during every roof assessment and repair or replace it with high-quality materials that last.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Is ice and water shield worth it here in Hilliard?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring freeze-thaw cycles that can cause ice dams, especially on north-facing slopes. Ice and water shield provides extra protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How fast can you inspect after wind or hail?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We prioritize storm response for Hilliard customers. After major storms, we typically respond within 24-48 hours. If there's active leaking or emergency damage, we can often come same-day for temporary repairs or tarping. Once on-site, one of our owners inspects your roof thoroughly, documents any storm damage with photos for insurance purposes, and explains your options clearly. Call 614-971-6028 as soon as you suspect storm damage.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle gutters because of tree debris?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Hilliard's mature tree canopy is beautiful but causes constant debris in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and even foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your roof or gutters, we assess and repair all related issues in one visit.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How do you keep nails out of driveways?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We take cleanup seriously. During tear-off, we use tarps and magnetic sweepers to catch nails and debris. After the job, we make multiple passes with rolling magnets across your driveway, walkways, and yard. We inspect the entire property before we leave. Clean jobsites are part of our detail-first approach—you shouldn't have to worry about nails in your tires or your kids' feet.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you help with insurance documentation in 2025-2026?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos and measurements, meet with adjusters on-site if needed, and provide written estimates that match insurance requirements. We explain the claims process and help you understand your policy coverage. We work with all major insurance companies and make the process as smooth as possible.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What's the fastest way to schedule?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority.
-                </p>
-              </details>
+              {hilliardFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 

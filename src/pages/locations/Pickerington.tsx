@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Pickerington() {
   const { reviewData } = useReviewData();
 
+  const pickeringtonFaqs = [
+    {
+      question: "Do you serve Pickerington if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. Distance has never been an issue—we know the routes (I-270 outerbelt, US-33, I-70, OH-256) and respond efficiently to all Pickerington areas from Olde Pickerington Village to Sycamore Creek to Pickerington Ponds and neighborhoods throughout the area."
+    },
+    {
+      question: "How fast can you inspect after wind/hail damage?",
+      answer: "We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Pickerington and the east side, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades."
+    },
+    {
+      question: "Do you help with insurance documentation for storm damage?",
+      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important for protecting your investment."
+    },
+    {
+      question: "What causes leaks around chimneys and step flashing?",
+      answer: "Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection."
+    },
+    {
+      question: "Is ice and water shield worth it in this climate?",
+      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan."
+    },
+    {
+      question: "Do you handle gutters and drainage issues?",
+      answer: "Yes. Mature trees in many Pickerington neighborhoods—especially near Sycamore Creek and wooded areas—mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively."
+    },
+    {
+      question: "What about newer subdivisions with builder-grade materials?",
+      answer: "Many Pickerington subdivisions built during rapid growth periods feature builder-grade roofing materials that may show premature wear after 15-20 years. We assess whether repairs can extend lifespan or if replacement with upgraded materials proves more cost-effective. When replacing builder-grade roofs, we typically recommend premium architectural shingles with better warranties, enhanced wind ratings, and superior algae resistance. We help you make informed decisions about whether to match existing materials or upgrade to longer-lasting options."
+    },
+    {
+      question: "What's the fastest way to schedule an inspection?",
+      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response."
+    },
+    {
+      question: "Should I repair or replace my aging roof?",
+      answer: "The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments—sometimes recommending repairs that extend serviceable lifespan 5-10 years, other times advising replacement when repairs prove false economy. Our recommendations prioritize your long-term interests over maximizing short-term revenue."
+    },
+    {
+      question: "How long does a typical roof replacement take?",
+      answer: "Most residential roof replacements in Pickerington complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with multiple dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project with tarps and magnetic tools to collect nails, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function Pickerington() {
         pageTitle="Roofers in Pickerington, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Pickerington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/pickerington"
+        faqs={pickeringtonFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -256,105 +300,17 @@ export default function Pickerington() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Pickerington Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you serve Pickerington if you're based in Columbus?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. Distance has never been an issue—we know the routes (I-270 outerbelt, US-33, I-70, OH-256) and respond efficiently to all Pickerington areas from Olde Pickerington Village to Sycamore Creek to Pickerington Ponds and neighborhoods throughout the area.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How fast can you inspect after wind/hail damage?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Pickerington and the east side, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you help with insurance documentation for storm damage?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important for protecting your investment.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What causes leaks around chimneys and step flashing?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Is ice and water shield worth it in this climate?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle gutters and drainage issues?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Mature trees in many Pickerington neighborhoods—especially near Sycamore Creek and wooded areas—mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What about newer subdivisions with builder-grade materials?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Many Pickerington subdivisions built during rapid growth periods feature builder-grade roofing materials that may show premature wear after 15-20 years. We assess whether repairs can extend lifespan or if replacement with upgraded materials proves more cost-effective. When replacing builder-grade roofs, we typically recommend premium architectural shingles with better warranties, enhanced wind ratings, and superior algae resistance. We help you make informed decisions about whether to match existing materials or upgrade to longer-lasting options.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What's the fastest way to schedule an inspection?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Should I repair or replace my aging roof?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments—sometimes recommending repairs that extend serviceable lifespan 5-10 years, other times advising replacement when repairs prove false economy. Our recommendations prioritize your long-term interests over maximizing short-term revenue.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How long does a typical roof replacement take?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Most residential roof replacements in Pickerington complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with multiple dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project with tarps and magnetic tools to collect nails, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight.
-                </p>
-              </details>
+              {pickeringtonFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 

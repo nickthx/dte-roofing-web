@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Worthington() {
   const { reviewData } = useReviewData();
 
+  const worthingtonFaqs = [
+    {
+      question: "Do you serve Worthington if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly to the north. Distance has never been an issue—we know the routes (I-270, US-23, High Street) and respond efficiently to all Worthington areas from Historic Old Worthington and Village Green to Wilson Hill and neighborhoods throughout the area. We treat every Worthington project with the same care and attention to detail as we do for all our customers."
+    },
+    {
+      question: "What causes leaks around chimneys and step flashing in older homes?",
+      answer: "Chimney flashing (the metal barrier between brick and shingles) and step flashing along wall intersections and dormers are designed to direct water away from these vulnerable roof penetrations. Over time, flashing seals degrade from weather exposure—caulking dries out, metal fatigues, and seams separate. Wind-driven rain common in Central Ohio forces water under compromised seals, leading to leaks that damage interior ceilings and walls. Many older Worthington homes have complex rooflines with multiple leak points. We inspect all flashing carefully during assessments and repair or replace with high-quality materials that provide decades of protection."
+    },
+    {
+      question: "Do you handle storm damage and insurance documentation?",
+      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, measurements, shingle samples showing wind or hail damage, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. Call 614-971-6028 immediately after storm events, and we'll schedule you as quickly as possible to document damage before evidence fades."
+    },
+    {
+      question: "Do you handle gutters and drainage issues?",
+      answer: "Yes. Worthington's mature tree canopy means constant leaf and debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy tree debris. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively. Regular gutter maintenance is essential in tree-heavy neighborhoods throughout Worthington."
+    },
+    {
+      question: "Is ice and water shield worth it in this climate?",
+      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting on the roof. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan. This is especially important for older Worthington homes where ventilation may not be optimal."
+    },
+    {
+      question: "How fast can you inspect after storms?",
+      answer: "We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Worthington and the Columbus area, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades. Emergency situations always get priority response."
+    },
+    {
+      question: "Do you work clean around tight lots and mature landscaping?",
+      answer: "Yes. Many Worthington neighborhoods feature mature landscaping, tight lot lines, and property that homeowners have invested years cultivating. We protect landscaping with tarps and plywood, use magnetic tools to collect nails and metal debris, and ensure thorough cleanup before considering the job complete. We respect your property as we would our own. Detailed cleanup isn't just professional courtesy—it's a reflection of the care we bring to every aspect of the work. Clean job sites are part of our commitment to quality craftsmanship."
+    },
+    {
+      question: "What's the fastest way to schedule an inspection?",
+      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response. Direct communication means faster service and better outcomes."
+    },
+    {
+      question: "Should I repair or replace my aging roof?",
+      answer: "The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs that can extend serviceable lifespan 5-10 years. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments and explain the reasoning behind our recommendations—sometimes repairs are the right call, other times replacement proves better value. Our recommendations prioritize your long-term interests over maximizing short-term revenue."
+    },
+    {
+      question: "How long does a typical roof replacement take?",
+      answer: "Most residential roof replacements in Worthington complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight—we take all necessary precautions to protect your home and belongings."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function Worthington() {
         pageTitle="Roofers in Worthington, OH | DTE Roofing"
         pageDescription="DTE Roofing serves Worthington, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/worthington"
+        faqs={worthingtonFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -256,105 +300,17 @@ export default function Worthington() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Worthington Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you serve Worthington if you're based in Columbus?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Worthington regularly to the north. Distance has never been an issue—we know the routes (I-270, US-23, High Street) and respond efficiently to all Worthington areas from Historic Old Worthington and Village Green to Wilson Hill and neighborhoods throughout the area. We treat every Worthington project with the same care and attention to detail as we do for all our customers.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What causes leaks around chimneys and step flashing in older homes?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Chimney flashing (the metal barrier between brick and shingles) and step flashing along wall intersections and dormers are designed to direct water away from these vulnerable roof penetrations. Over time, flashing seals degrade from weather exposure—caulking dries out, metal fatigues, and seams separate. Wind-driven rain common in Central Ohio forces water under compromised seals, leading to leaks that damage interior ceilings and walls. Many older Worthington homes have complex rooflines with multiple leak points. We inspect all flashing carefully during assessments and repair or replace with high-quality materials that provide decades of protection.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle storm damage and insurance documentation?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, measurements, shingle samples showing wind or hail damage, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. Call 614-971-6028 immediately after storm events, and we'll schedule you as quickly as possible to document damage before evidence fades.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you handle gutters and drainage issues?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Worthington's mature tree canopy means constant leaf and debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy tree debris. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively. Regular gutter maintenance is essential in tree-heavy neighborhoods throughout Worthington.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Is ice and water shield worth it in this climate?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting on the roof. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan. This is especially important for older Worthington homes where ventilation may not be optimal.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How fast can you inspect after storms?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Worthington and the Columbus area, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades. Emergency situations always get priority response.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Do you work clean around tight lots and mature landscaping?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Yes. Many Worthington neighborhoods feature mature landscaping, tight lot lines, and property that homeowners have invested years cultivating. We protect landscaping with tarps and plywood, use magnetic tools to collect nails and metal debris, and ensure thorough cleanup before considering the job complete. We respect your property as we would our own. Detailed cleanup isn't just professional courtesy—it's a reflection of the care we bring to every aspect of the work. Clean job sites are part of our commitment to quality craftsmanship.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>What's the fastest way to schedule an inspection?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response. Direct communication means faster service and better outcomes.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>Should I repair or replace my aging roof?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs that can extend serviceable lifespan 5-10 years. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments and explain the reasoning behind our recommendations—sometimes repairs are the right call, other times replacement proves better value. Our recommendations prioritize your long-term interests over maximizing short-term revenue.
-                </p>
-              </details>
-
-              <details className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
-                <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
-                  <span>How long does a typical roof replacement take?</span>
-                  <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="text-charcoal-600 mt-4 leading-relaxed">
-                  Most residential roof replacements in Worthington complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight—we take all necessary precautions to protect your home and belongings.
-                </p>
-              </details>
+              {worthingtonFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 

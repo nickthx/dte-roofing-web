@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Delaware() {
   const { reviewData } = useReviewData();
 
+  const delawareFaqs = [
+    {
+      question: "Do you actually serve Delaware if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and Delaware is about 30 miles north via US-23. We routinely serve Delaware homeowners, from Historic Downtown to OWU to the newer neighborhoods. Distance has never been an issue, and our scheduling is efficient and reliable."
+    },
+    {
+      question: "How do you handle roofing during Delaware County Fair / Little Brown Jug week?",
+      answer: "We schedule around major Delaware events when traffic increases and parking becomes tight. Our team coordinates arrival times, keeps job sites organized, and avoids blocking driveways or creating unnecessary disruption. We understand that community events are important, and we work with you to find the best timing."
+    },
+    {
+      question: "What causes leaks near chimneys in older Downtown Delaware homes?",
+      answer: "Chimney flashing is a common leak point, especially in Historic Downtown's older homes. Wind-driven rain, freeze-thaw cycles, and aging sealant all contribute. We inspect the step flashing, counter flashing, and cricket (if present), then replace or repair as needed. Proper flashing installation prevents future leaks and protects your masonry."
+    },
+    {
+      question: "Is ice dam protection worth it in Delaware?",
+      answer: "Yes. Delaware's northern location means heavier snow and longer freezing periods, increasing ice dam risk. We install ice and water shield along eaves and valleys, ensure proper attic ventilation, and check insulation levels. These measures prevent melt-water from backing up under shingles and leaking into your home."
+    },
+    {
+      question: "Do you help document storm damage for insurance?",
+      answer: "Absolutely. With insurers tightening claim rules in 2025–2026, thorough documentation is critical. We take detailed photos, collect shingle samples showing hail impact, measure damaged areas, and provide written reports. We can also speak directly with your adjuster if needed. Proper documentation improves your chances of claim approval."
+    },
+    {
+      question: "How soon can you inspect after a storm?",
+      answer: "We prioritize storm response. Call us at 614-971-6028, and we'll schedule an inspection as quickly as possible—often within 24–48 hours. If you have active leaks, we offer emergency tarping to prevent further interior damage while we assess the full scope of repairs needed."
+    },
+    {
+      question: "Do you replace gutters too?",
+      answer: "Yes. We handle gutter installation, replacement, cleaning, and fascia/soffit repair. Delaware's mature trees mean gutters fill with debris fast. Properly functioning gutters protect your roof, siding, and foundation from water damage."
+    },
+    {
+      question: "Do you work on historic/older homes near Downtown/OWU?",
+      answer: "Yes. Historic and older homes require specialized approaches—matching shingle profiles, working with existing ventilation limitations, and respecting architectural details. We've worked on Victorian-era properties Downtown and near Ohio Wesleyan University, and we understand the balance between preservation and modern performance."
+    },
+    {
+      question: "How do you keep nails out of driveways?",
+      answer: "We use magnetic rollers and conduct multiple cleanup passes during and after the job. Our team sweeps driveways, walkways, and landscaping thoroughly. Clean job sites aren't just professional—they're essential for safety and protecting your property. Attention to detail includes cleanup, not just installation."
+    },
+    {
+      question: "What's the best way to schedule a roof inspection?",
+      answer: "Call us at 614-971-6028 or visit our Contact page. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function Delaware() {
         pageTitle="Roofers in Delaware, OH | DTE Roofing (Columbus HQ at 615 Hilliard Rome Rd)"
         pageDescription="DTE Roofing serves Delaware, OH (~30 miles) from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/delaware"
+        faqs={delawareFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

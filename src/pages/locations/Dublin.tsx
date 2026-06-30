@@ -10,6 +10,49 @@ import NearbyAreas from '../../components/NearbyAreas';
 export default function Dublin() {
   const { reviewData } = useReviewData();
 
+  const dublinFaqs = [
+    {
+      question: "Do you serve Dublin if you're based in Columbus?",
+      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and Dublin is easily accessible via I-270, US-33, and Riverside Drive. We routinely serve Dublin homeowners throughout Bridge Park, Historic Dublin, Muirfield Village, and all Dublin neighborhoods. Distance has never been an issue, and our scheduling is efficient and reliable."
+    },
+    {
+      question: "How do you schedule around Memorial Tournament / Irish Festival weeks?",
+      answer: "We understand that major Dublin events like the Memorial Tournament at Muirfield Village and the Dublin Irish Festival at Coffman Park create traffic congestion and parking challenges. We schedule around these event weeks when possible, coordinate arrival times carefully, keep job sites organized, and avoid blocking driveways or creating unnecessary disruption. We work with you to find the best timing for your project."
+    },
+    {
+      question: "Do you work with HOAs in Dublin communities?",
+      answer: "Yes. Many Dublin neighborhoods have active HOAs with specific architectural requirements. We're experienced in navigating HOA approval processes, matching existing shingle styles and colors, and ensuring all work meets community guidelines. We can handle the paperwork and communication with your HOA to make the process smooth for you."
+    },
+    {
+      question: "Can you keep noise down near Bridge Park / dense neighborhoods?",
+      answer: "We're mindful of noise in dense residential areas and near commercial districts like Bridge Park. While roofing work inherently involves some noise, we schedule appropriately, work efficiently to minimize disruption, and communicate with neighbors as needed. We respect Dublin's community-oriented atmosphere and work to be good temporary neighbors during your project."
+    },
+    {
+      question: "What causes leaks around chimneys and step flashing?",
+      answer: "Chimney flashing is a common leak point, especially in Historic Dublin's older homes. Wind-driven rain, freeze-thaw cycles, and aging sealant all contribute. We inspect the step flashing, counter flashing, and cricket (if present), then replace or repair as needed. Proper flashing installation prevents future leaks and protects your masonry."
+    },
+    {
+      question: "Is ice & water shield worth it in Dublin winters?",
+      answer: "Yes. Dublin experiences cold winters with snow accumulation and ice dam risk. We install ice and water shield along eaves and valleys, ensure proper attic ventilation, and check insulation levels. These measures prevent melt-water from backing up under shingles and leaking into your home. It's a smart investment for long-term protection."
+    },
+    {
+      question: "Do you help document storm damage for insurance?",
+      answer: "Absolutely. With insurers tightening claim rules in 2025–2026, thorough documentation is critical. We take detailed photos, collect shingle samples showing hail impact, measure damaged areas, and provide written reports. We can also speak directly with your adjuster if needed. Proper documentation improves your chances of claim approval and fair settlement."
+    },
+    {
+      question: "How do you keep nails out of driveways and sidewalks?",
+      answer: "We use magnetic rollers and conduct multiple cleanup passes during and after the job. Our team sweeps driveways, walkways, landscaping, and surrounding areas thoroughly. Clean job sites aren't just professional—they're essential for safety and protecting your property. Attention to detail includes cleanup, not just installation."
+    },
+    {
+      question: "Do you replace gutters too?",
+      answer: "Yes. We handle gutter installation, replacement, cleaning, and fascia/soffit repair. Dublin's mature trees mean gutters fill with debris quickly. Properly functioning gutters protect your roof, siding, and foundation from water damage."
+    },
+    {
+      question: "What's the fastest way to schedule an inspection?",
+      answer: "Call us at 614-971-6028 or visit our Contact page. Our team ensures direct communication from the start. We'll schedule a convenient time, inspect your roof thoroughly, and provide a detailed estimate with no pressure or sales tactics."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -26,6 +69,7 @@ export default function Dublin() {
         pageTitle="Roofers in Dublin, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves Dublin, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Detail-first roof repair and replacement with owners personally involved in every project."
         pageUrl="https://www.dteroofingllc.com/locations/dublin"
+        faqs={dublinFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
