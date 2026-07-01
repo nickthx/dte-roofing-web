@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 
-const API_KEY = 'AIzaSyC1iVbN_Un4Dr30YKacyclT-cDZBMHOS4g';
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 interface CityMarker {
   name: string;
@@ -28,6 +28,10 @@ const CITIES: CityMarker[] = [
 
 function loadGoogleMaps(): Promise<void> {
   return new Promise((resolve, reject) => {
+    if (!API_KEY) {
+      reject(new Error('VITE_GOOGLE_MAPS_API_KEY is not set — skipping Google Maps load'));
+      return;
+    }
     if (window.google?.maps) {
       resolve();
       return;
@@ -47,7 +51,7 @@ function loadGoogleMaps(): Promise<void> {
   });
 }
 
-export default function ServiceAreaMap(): JSX.Element {
+export default function ServiceAreaMap(): JSX.Element | null {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<google.maps.Map | null>(null);
 
@@ -127,6 +131,8 @@ export default function ServiceAreaMap(): JSX.Element {
   useEffect(() => {
     loadGoogleMaps().then(initMap).catch(console.error);
   }, [initMap]);
+
+  if (!API_KEY) return null;
 
   return (
     <div className="rounded-xl overflow-hidden border-2 border-gray-200 shadow-sm">
