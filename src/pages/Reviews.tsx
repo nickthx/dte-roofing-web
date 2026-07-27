@@ -223,7 +223,7 @@ export default function Reviews() {
               </a>
 
               <a
-                href="https://g.page/r/CUPMfU2NGh3dEBM/review"
+                href="https://search.google.com/local/writereview?placeid=ChIJvyCPVMOXOIgRQ898TY2hHd0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-charcoal-900 border-2 border-charcoal-900 text-white px-8 py-4 rounded-lg hover:bg-charcoal-800 transition-all font-bold text-lg inline-flex items-center justify-center shadow-xl"
