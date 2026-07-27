@@ -24,3 +24,5 @@ dist-ssr
 
 # Claude Code agent worktrees (never commit)
 .claude/worktrees/
+
+.vercel
