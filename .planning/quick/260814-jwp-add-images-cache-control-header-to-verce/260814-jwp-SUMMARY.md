@@ -2,7 +2,7 @@
 quick_id: 260814-jwp
 status: complete
 date: 2026-08-14
-commit: 7977922
+commit: c6c6d93
 ---
 
 # Quick Task 260814-jwp — Summary
@@ -28,9 +28,13 @@ Nothing else in the file changed.
 
 - `JSON.parse(vercel.json)` — clean, 3 header rules (`/images/`, `/assets/`, `/(.*)`).
 - `npm run build` — succeeded, all 40+ routes prerendered.
-- Header behavior itself is only observable after deploy (Vercel applies `vercel.json` at the
-  edge, not at build time). Confirm post-deploy with:
-  `curl -sI https://www.dteroofingllc.com/images/columbus-residential-roof-replacement.webp | grep -i cache-control`
+- **Deployed and verified live 2026-08-14.** Before pushing, rebased the two local commits onto
+  remote `4b80c57` (n8n weekly review-count bump to 114, `src/data/review-stats.json` only — no
+  conflict) and re-ran the build clean. Deployment `dpl_GTVgyATEkdSqb5sAkoganHnkNpAR` reached
+  `READY`, target production, aliased to `www.dteroofingllc.com` + `dteroofingllc.com`.
+- Live header confirmed:
+  `curl -sI https://www.dteroofingllc.com/images/columbus-residential-roof-replacement.webp`
+  → `Cache-Control: public, max-age=2592000, stale-while-revalidate=86400`
 
 ## Decisions
 
