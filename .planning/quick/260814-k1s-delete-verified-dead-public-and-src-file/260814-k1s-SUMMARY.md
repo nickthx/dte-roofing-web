@@ -70,3 +70,23 @@ deploy on the `dte-roofing-demo` Vercel project.
   replacing it with the existing 803-byte `favicon.svg` is the obvious follow-up.
 - Root clutter (`repo-context.txt`, two `.docx` audits, `.bolt/`, `memory/`,
   the one-off `scripts/verify-phase-02|03|04.sh`) — identified, not yet removed.
+
+## Deploy (2026-08-14)
+
+Pushed `662e44b..ed5e125` to `main`. Vercel deployment
+`dpl_9kmRYbqAYdbbCypu78rjGHG6UmkU` — READY, target production, aliased to
+`www.dteroofingllc.com` and `dteroofingllc.com`.
+
+Live verification against production:
+
+- All 6 deleted `public/` paths return 404. The two `.html` ones return 308
+  first — `cleanUrls: true` in `vercel.json` strips the extension — then 404 at
+  the extensionless path.
+- `favicon.svg`, `apple-touch-icon.svg`, `dte_favicon.png`, `site.webmanifest`,
+  `sitemap.xml`, `robots.txt` all 200.
+- Both `google*.html` GSC tokens still serve their verification string.
+- `/`, `/blog`, `/get-a-quote-consultation`, `/locations/columbus`,
+  `/services/roof-repair`, `/reviews` all 200.
+- Roofle slideout launcher present in live homepage HTML;
+  `#roof-quote-pro-embedded` present on `/get-a-quote-consultation`.
+- Favicon, apple-touch-icon, and manifest `<link>` tags intact in live `<head>`.
