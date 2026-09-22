@@ -37,6 +37,7 @@ interface SchemaMarkupProps {
 const BUSINESS_INFO = {
   name: 'DTE Roofing',
   legalName: 'DTE Roofing LLC',
+  foundingDate: '2023',
   url: 'https://www.dteroofingllc.com',
   logo: 'https://www.dteroofingllc.com/images/DTE-Roofing-Logo-two-Men.png',
   telephone: '+16149716028',
@@ -141,6 +142,7 @@ export default function SchemaMarkup({
       '@id': `${BUSINESS_INFO.url}#business`,
       name: BUSINESS_INFO.name,
       legalName: BUSINESS_INFO.legalName,
+      foundingDate: BUSINESS_INFO.foundingDate,
       url: BUSINESS_INFO.url,
       logo: BUSINESS_INFO.logo,
       image: BUSINESS_INFO.logo,
