@@ -29,7 +29,7 @@ export default function Home() {
       />
       <SchemaMarkup
         type="home"
-        pageTitle="DTE Roofing - Columbus's Highest-Rated Roofing Contractor"
+        pageTitle="Roof Repair and Replacement in Columbus, OH | DTE Roofing"
         pageDescription={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewStats.reviewCount} five-star rating.`}
         pageUrl={`${CANONICAL_DOMAIN}/`}
       />
