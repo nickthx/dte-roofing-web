@@ -94,3 +94,10 @@ NOT pushed. Per project convention, a push to `main` is a live production deploy
 - Commit `5d46b54` — FOUND in `git log`
 - Post-commit deletion check — no files deleted
 - Untracked files after commit — none
+
+
+## Deploy verification (orchestrator, 2026-09-22)
+
+- Pushed `1b77b74..d6a42e5` to `origin/main`.
+- Vercel deployment `dpl_Afv5GNfahPoMyWCLUAKCkNM1cinw` (commit d6a42e5) READY on production, aliased to www.dteroofingllc.com.
+- Live check: `"name":"Roof Repair and Replacement in Columbus, OH | DTE Roofing"` appears exactly once in the homepage HTML; `grep -c "Highest-Rated"` returns 0.
