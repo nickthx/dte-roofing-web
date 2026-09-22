@@ -81,12 +81,14 @@ async function buildPage(route, { stripRobots = false } = {}) {
   // The 404 page emits its own noindex robots meta — drop the template's
   // static index,follow so the signals don't conflict.
   if (stripRobots) page = page.replace(/<meta name="robots"[^>]*>/i, '');
-  page = page.replace('</head>', `    ${headTags}\n  </head>`);
+  // Replacer functions: a string replacement treats `$$` in the injected
+  // markup as an escape for `$`, which silently mangled priceRange "$$".
+  page = page.replace('</head>', () => `    ${headTags}\n  </head>`);
 
   // Inject SSR body into the root container.
   page = page.replace(
     '<div id="root"></div>',
-    `<div id="root">${html}</div>`
+    () => `<div id="root">${html}</div>`
   );
 
   return page;

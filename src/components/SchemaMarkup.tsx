@@ -37,7 +37,7 @@ interface SchemaMarkupProps {
 const BUSINESS_INFO = {
   name: 'DTE Roofing',
   legalName: 'DTE Roofing LLC',
-  foundingDate: '2023',
+  foundingDate: '2023-10',
   url: 'https://www.dteroofingllc.com',
   logo: 'https://www.dteroofingllc.com/images/DTE-Roofing-Logo-two-Men.png',
   telephone: '+16149716028',
