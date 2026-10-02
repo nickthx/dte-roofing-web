@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Shield, Droplets, Home } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Gutter Installation & Repair in Columbus, OH | DTE Roofing';
@@ -303,6 +304,14 @@ export default function Gutters() {
           </div>
         </div>
       </section>
+
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <ServiceAreaLinks />
+          </div>
+        </div>
+      </div>
 
       <section className="py-20 bg-primary-700 text-white">
         <div className="container mx-auto px-4 text-center">

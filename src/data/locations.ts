@@ -12,7 +12,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'columbus',
     cityName: 'Columbus',
     stateAbbr: 'OH',
-    neighbors: ['hilliard', 'dublin', 'upper-arlington', 'westerville', 'gahanna', 'reynoldsburg', 'grove-city', 'worthington'],
+    neighbors: ['hilliard', 'upper-arlington', 'worthington', 'gahanna', 'grove-city'],
     description: "Central Ohio's capital city",
     highlight: 'Downtown & Surrounding Areas',
   },
@@ -28,7 +28,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'dublin',
     cityName: 'Dublin',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'hilliard', 'powell', 'worthington', 'upper-arlington'],
+    neighbors: ['hilliard', 'powell', 'worthington', 'upper-arlington', 'columbus'],
     description: 'Northwest Columbus suburbs',
     highlight: 'Premier Neighborhoods',
   },
@@ -36,7 +36,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'new-albany',
     cityName: 'New Albany',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'westerville', 'gahanna'],
+    neighbors: ['gahanna', 'westerville', 'columbus', 'reynoldsburg', 'pickerington'],
     description: 'Upscale eastern community',
     highlight: 'Luxury Home Specialists',
   },
@@ -52,7 +52,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'westerville',
     cityName: 'Westerville',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'powell', 'gahanna', 'worthington', 'new-albany'],
+    neighbors: ['worthington', 'new-albany', 'gahanna', 'powell', 'delaware'],
     description: 'Northeastern Columbus area',
     highlight: 'Tree-Lined Communities',
   },
@@ -60,7 +60,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'gahanna',
     cityName: 'Gahanna',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'westerville', 'new-albany', 'reynoldsburg'],
+    neighbors: ['columbus', 'new-albany', 'westerville', 'reynoldsburg', 'pickerington'],
     description: 'City of Character',
     highlight: 'Creek Corridor Specialists',
   },
@@ -68,7 +68,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'reynoldsburg',
     cityName: 'Reynoldsburg',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'gahanna', 'pickerington'],
+    neighbors: ['gahanna', 'pickerington', 'columbus', 'new-albany'],
     description: 'Eastern Franklin County',
     highlight: 'Storm Protection Experts',
   },
@@ -76,7 +76,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'grove-city',
     cityName: 'Grove City',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'hilliard', 'pickerington'],
+    neighbors: ['columbus', 'hilliard', 'upper-arlington'],
     description: 'Southwest Columbus suburbs',
     highlight: 'Rapid Growth Area',
   },
@@ -84,7 +84,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'pickerington',
     cityName: 'Pickerington',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'reynoldsburg', 'grove-city', 'gahanna'],
+    neighbors: ['reynoldsburg', 'gahanna', 'columbus', 'new-albany'],
     description: 'Southeast suburbs',
     highlight: 'Dual-County Service',
   },
@@ -92,7 +92,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'worthington',
     cityName: 'Worthington',
     stateAbbr: 'OH',
-    neighbors: ['columbus', 'dublin', 'powell', 'westerville', 'upper-arlington'],
+    neighbors: ['columbus', 'dublin', 'westerville', 'powell', 'delaware'],
     description: 'Historic northern suburb',
     highlight: 'Preservation Specialists',
   },
@@ -108,7 +108,7 @@ export const LOCATIONS: LocationConfig[] = [
     slug: 'powell',
     cityName: 'Powell',
     stateAbbr: 'OH',
-    neighbors: ['dublin', 'westerville', 'delaware', 'worthington'],
+    neighbors: ['dublin', 'worthington', 'delaware', 'westerville'],
     description: 'Growing northern community',
     highlight: 'Premium Developments',
   },
@@ -116,6 +116,12 @@ export const LOCATIONS: LocationConfig[] = [
 
 export const getLocationBySlug = (slug: string): LocationConfig | undefined =>
   LOCATIONS.find((loc) => loc.slug === slug);
+
+// Project labels look like "Hilliard, OH"; drop the state suffix before matching the city name.
+export const getLocationByCityLabel = (label: string): LocationConfig | undefined => {
+  const city = label.replace(/,\s*[A-Za-z]{2}\s*$/, '').trim().toLowerCase();
+  return LOCATIONS.find((loc) => loc.cityName.toLowerCase() === city);
+};
 
 export const getAreaServedForLocation = (slug: string): LocationConfig[] => {
   const primary = LOCATIONS.find((loc) => loc.slug === slug);

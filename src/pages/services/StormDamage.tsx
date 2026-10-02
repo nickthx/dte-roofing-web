@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Phone, Cloud, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Storm Damage Roof Repair in Central Ohio | DTE Roofing';
@@ -373,6 +374,14 @@ export default function StormDamage() {
           </div>
         </div>
       </section>
+
+      <div className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <ServiceAreaLinks />
+          </div>
+        </div>
+      </div>
 
       <section className="py-20 bg-primary-700 text-white">
         <div className="container mx-auto px-4 text-center">

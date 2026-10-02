@@ -26,6 +26,7 @@ export const roofReplacementCostColumbus: BlogPost = {
   image:
     'https://www.dteroofingllc.com/images/columbus-residential-roof-replacement.jpg',
   readingMinutes: 8,
+  relatedAreas: ['columbus', 'hilliard', 'dublin', 'upper-arlington'],
   content: () => (
     <>
       <p>

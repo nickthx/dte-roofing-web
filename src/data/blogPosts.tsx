@@ -30,6 +30,7 @@ export interface BlogPost {
   readingMinutes: number;
   content: () => ReactNode;
   faqs: BlogFAQ[];
+  relatedAreas?: string[];
 }
 
 const signsYouNeedANewRoof: BlogPost = {
@@ -56,6 +57,7 @@ const signsYouNeedANewRoof: BlogPost = {
   status: 'published',
   image: 'https://www.dteroofingllc.com/images/hero-roofing-professional.jpg',
   readingMinutes: 7,
+  relatedAreas: ['columbus', 'hilliard', 'dublin', 'powell'],
   content: () => (
     <>
       <p>

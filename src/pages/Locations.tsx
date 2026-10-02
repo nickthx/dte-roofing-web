@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import ServiceAreaMap from '../components/ServiceAreaMap';
 import { LOCATIONS } from '../data/locations';
+import { SERVICES } from '../data/services';
 
 const DOCUMENT_TITLE = 'Areas We Serve in Central Ohio | DTE Roofing Service Areas';
 
@@ -77,7 +78,6 @@ export default function Locations() {
                 key={location.slug}
                 to={`/locations/${location.slug}`}
                 className="group bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary-700 hover:shadow-xl transition-all duration-300"
-                aria-label={`View ${location.cityName} roofing services`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -126,21 +126,14 @@ export default function Locations() {
                   Services We Provide
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    { name: 'Roof Replacement', link: '/services/roof-replacement' },
-                    { name: 'Roof Repair', link: '/services/roof-repair' },
-                    { name: 'Roof Installation', link: '/services/roof-installation' },
-                    { name: 'Storm Damage Repair', link: '/services/storm-damage' },
-                    { name: 'Emergency Services', link: '/services/emergency-services' },
-                    { name: 'Maintenance Programs', link: '/services/preventative-maintenance' }
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
+                  {SERVICES.map((service) => (
+                    <li key={service.slug} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
                       <Link
-                        to={item.link}
+                        to={service.path}
                         className="text-charcoal-700 hover:text-primary-700 transition-colors"
                       >
-                        {item.name}
+                        {service.name}
                       </Link>
                     </li>
                   ))}

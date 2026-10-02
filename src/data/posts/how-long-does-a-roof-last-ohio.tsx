@@ -26,6 +26,7 @@ export const howLongDoesARoofLastOhio: BlogPost = {
   image:
     'https://www.dteroofingllc.com/images/worthington-residential-re-roof.jpg',
   readingMinutes: 7,
+  relatedAreas: ['columbus', 'hilliard', 'delaware', 'grove-city'],
   content: () => (
     <>
       <p>

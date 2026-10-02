@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Calendar, ArrowLeft, MapPin, User, Clock, Phone, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
+import RelatedAreas from '../components/RelatedAreas';
 import { getPostBySlug, formatPostDate } from '../data/blogPosts';
 
 const SITE_URL = 'https://www.dteroofingllc.com';
@@ -187,6 +188,12 @@ export default function BlogPostPage() {
                 </div>
               </div>
             </div>
+
+            {post.relatedAreas && post.relatedAreas.length > 0 && (
+              <div className="mt-12">
+                <RelatedAreas slugs={post.relatedAreas} />
+              </div>
+            )}
 
             {/* Back to Blog */}
             <div className="mt-12 text-center">
