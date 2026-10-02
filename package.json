@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "verify-schema": "node scripts/verify-schema.mjs"
+    "verify-schema": "node scripts/verify-schema.mjs",
+    "verify-links": "node scripts/verify-links.mjs"
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0",
