@@ -2,21 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X, Phone, Calculator, DollarSign } from 'lucide-react';
 import Picture from './Picture';
+import { SERVICES } from '../data/services';
 
 export default function Navigation() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const services = [
-    { name: 'Roof Repair', path: '/services/roof-repair' },
-    { name: 'Roof Replacement', path: '/services/roof-replacement' },
-    { name: 'Storm Damage Restoration', path: '/services/storm-damage' },
-    { name: 'Preventative Maintenance', path: '/services/preventative-maintenance' },
-    { name: 'Siding', path: '/services/siding' },
-    { name: 'Gutters', path: '/services/gutters' },
-    { name: 'Commercial Roofing', path: '/services/commercial-roofing' },
-  ];
 
   const handleMouseEnter = () => {
     if (closeTimeoutRef.current) {
@@ -75,38 +66,41 @@ export default function Navigation() {
               3. Used pt-2 padding inside dropdown wrapper to create hoverable bridge area
               4. Added useRef and setTimeout for proper delay handling
               5. Cleanup timeout on unmount to prevent memory leaks
+              6. Dropdown stays in the DOM (display:none when closed) so the prerendered HTML carries the service links for crawlers
             */}
             <div
               className="relative"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="text-charcoal-700 hover:text-primary-700 font-medium transition-colors flex items-center">
+              <button
+                className="text-charcoal-700 hover:text-primary-700 font-medium transition-colors flex items-center"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+              >
                 Services <ChevronDown className="ml-1 w-4 h-4" />
               </button>
 
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 pt-2">
-                  <div className="w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+              <div className={`${isServicesOpen ? 'block' : 'hidden'} absolute top-full left-0 pt-2`}>
+                <div className="w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2 text-charcoal-700 hover:bg-primary-50 hover:text-primary-700 font-medium"
+                  >
+                    All Services
+                  </Link>
+                  <div className="border-t border-gray-200 my-2"></div>
+                  {SERVICES.map((service) => (
                     <Link
-                      to="/services"
-                      className="block px-4 py-2 text-charcoal-700 hover:bg-primary-50 hover:text-primary-700 font-medium"
+                      key={service.path}
+                      to={service.path}
+                      className="block px-4 py-2 text-charcoal-700 hover:bg-primary-50 hover:text-primary-700 transition-colors"
                     >
-                      All Services
+                      {service.name}
                     </Link>
-                    <div className="border-t border-gray-200 my-2"></div>
-                    {services.map((service) => (
-                      <Link
-                        key={service.path}
-                        to={service.path}
-                        className="block px-4 py-2 text-charcoal-700 hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
 
             <Link to="/gallery" className="text-charcoal-700 hover:text-primary-700 font-medium transition-colors">
@@ -143,6 +137,8 @@ export default function Navigation() {
           <button
             className="lg:hidden text-charcoal-700"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -166,26 +162,26 @@ export default function Navigation() {
                 <button
                   className="text-charcoal-700 hover:text-primary-700 font-medium transition-colors flex items-center py-2 w-full"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
                 >
                   Services <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {isServicesOpen && (
-                  <div className="pl-4 space-y-2 mt-2">
-                    <Link to="/services" className="block text-charcoal-700 hover:text-primary-700 py-1" onClick={() => setIsMobileMenuOpen(false)}>
-                      All Services
+                <div className={`${isServicesOpen ? 'block' : 'hidden'} pl-4 space-y-2 mt-2`}>
+                  <Link to="/services" className="block text-charcoal-700 hover:text-primary-700 py-1" onClick={() => setIsMobileMenuOpen(false)}>
+                    All Services
+                  </Link>
+                  {SERVICES.map((service) => (
+                    <Link
+                      key={service.path}
+                      to={service.path}
+                      className="block text-charcoal-700 hover:text-primary-700 py-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {service.name}
                     </Link>
-                    {services.map((service) => (
-                      <Link
-                        key={service.path}
-                        to={service.path}
-                        className="block text-charcoal-700 hover:text-primary-700 py-1"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                  ))}
+                </div>
               </div>
 
               <Link to="/gallery" className="text-charcoal-700 hover:text-primary-700 font-medium transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
