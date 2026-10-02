@@ -38,8 +38,8 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 ### Active
 
 - [x] Hub page H1 differentiated from /locations/columbus (no cannibalization) — Validated in Phase 1
-- [x] Hub page has its own RoofingContractor JSON-LD schema with all 13 cities — Validated in Phase 1
-- [x] Each subpage has page-specific areaServed (primary city + 2-3 neighbors) — Validated in Phase 1
+- [x] Hub page has its own RoofingContractor JSON-LD schema with all 13 cities — Validated in Phase 1 — superseded 2026-10-02 by quick tasks 261002-fqk / 261002-j0z (hub is a CollectionPage whose mainEntity is a 13-item ItemList of the city pages; the single `#business` entity, emitted on every page, carries all 13 cities in areaServed)
+- [x] Each subpage has page-specific areaServed (primary city + 2-3 neighbors) — Validated in Phase 1 — superseded 2026-10-02 by quick tasks 261002-fqk / 261002-j0z (city pages carry WebPage `spatialCoverage` (the city) + `mentions` (its neighbors) + 7 city-scoped Service nodes, all provided by the single `#business` entity)
 - [x] Each subpage has unique @id in schema — Validated in Phase 1 — superseded 2026-10-02 by quick task 261002-fqk (single business @id)
 - [x] No non-page cities in any areaServed array (only the 13 with pages) — Validated in Phase 1
 - [x] Breadcrumb / "back to hub" link on all 13 subpages — Validated in Phase 2
@@ -119,7 +119,7 @@ Establish DTE Roofing as the authoritative local roofing contractor across all 1
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Page-specific areaServed (primary + 2-3 neighbors) | Avoids diluting local relevance with 23-city generic list | ✓ Phase 1 |
+| ~~Page-specific areaServed (primary + 2-3 neighbors)~~ → One `https://www.dteroofingllc.com/#business` entity on every page; city pages carry WebPage `spatialCoverage` + `mentions` + 7 Service nodes; hub is CollectionPage + 13-item ItemList (2026-10-02, quick tasks 261002-fqk / 261002-j0z) | City relevance lives on each page's WebPage and Service nodes, so one business entity serves all 13 cities without duplicate contractors | ✓ 261002-fqk / 261002-j0z (supersedes Phase 1) |
 | Remove 10 non-page cities from schema | Only cities with dedicated pages should be in areaServed | ✓ Phase 1 |
 | Hub H1 → "Areas We Serve in Central Ohio" | Stops cannibalization of /locations/columbus keyword | ✓ Phase 1 |
 | ~~Unique @id per subpage schema~~ → Single `https://www.dteroofingllc.com/#business` entity on every page (reversed 2026-10-02, quick task 261002-fqk) | Per-page @ids made 15 business entities for one company, and city pages referenced an undefined `#business` node | ✓ 261002-fqk (supersedes Phase 1) |
