@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Pickerington, OH | Roof Repair | DTE Roofing';
+
 export default function Pickerington() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Pickerington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Pickerington, OH | Roof Repair | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Pickerington, OH with owner-led roof repair, replacement, gutters, storm damage & hail repair. Call 614-971-6028."
         keywords="roofers pickerington, roof repair pickerington, roof replacement pickerington, roofing company pickerington, storm damage pickerington, gutter services pickerington, roofer near me pickerington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/pickerington"
@@ -64,6 +66,7 @@ export default function Pickerington() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="pickerington"
         locationName="Pickerington"
         pageTitle="Roofers in Pickerington, OH | DTE Roofing"

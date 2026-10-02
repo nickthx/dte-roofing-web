@@ -12,7 +12,8 @@
     "build": "npm run generate-sitemap && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "verify-schema": "node scripts/verify-schema.mjs"
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0",

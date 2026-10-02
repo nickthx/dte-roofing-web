@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in New Albany, OH | Roofing Experts | DTE Roofing';
+
 export default function NewAlbany() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function NewAlbany() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in New Albany, OH | Roofing Experts | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves New Albany, OH with owner-led roof replacement, premium shingles, gutters & storm damage repair. Call 614-971-6028."
         keywords="roofers new albany oh, roofers near new albany, best roofers in new albany, roof repair new albany, roof replacement new albany, storm damage new albany, gutter services new albany, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/new-albany"
@@ -64,6 +66,7 @@ export default function NewAlbany() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="new-albany"
         locationName="New Albany"
         pageTitle="Roofers in New Albany, OH | DTE Roofing (Columbus HQ)"

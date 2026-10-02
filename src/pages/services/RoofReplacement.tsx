@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Columbus Roof Replacement | Full Tear-Off | DTE Roofing';
+
 // Mirrors the page's existing visible "Common Questions" FAQ section so the FAQPage JSON-LD matches on-page content.
 const faqs = [
   { question: "How long does a roof replacement take?", answer: "Most residential roof replacements in Columbus take 1-3 days to complete, depending on roof size, complexity, and weather, and a typical single-family home with a straightforward design usually takes 1-2 days from tear-off to final cleanup. Complex designs with multiple levels, valleys, or dormers, larger square footage, deck repairs found during tear-off, or weather can extend that, and multi-story or steep-pitch homes in Hilliard and Dublin may need an extra day. We work continuous days whenever possible to minimize disruption, keep your home weatherproofed each night, and discuss any unexpected repairs with you before proceeding." },
@@ -16,13 +18,14 @@ export default function RoofReplacement() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Columbus Roof Replacement | Full Tear-Off | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Roof replacement in Columbus, OH. Full tear-off with asphalt, metal or architectural shingles. Financing & GAF warranties. Call 614-971-6028."
         keywords="roof replacement Columbus, complete roof replacement, tear off replacement, new roof, roof replacement cost, residential roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/roof-replacement`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: 'Roof Replacement',
           description: 'Complete roof replacement services in Columbus, OH. Professional tear-off and installation with premium materials. Transform your property with a new roof built to last decades. Licensed, insured, and financing available.',

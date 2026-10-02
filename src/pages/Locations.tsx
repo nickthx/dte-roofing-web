@@ -5,17 +5,21 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import ServiceAreaMap from '../components/ServiceAreaMap';
 import { LOCATIONS } from '../data/locations';
 
+const DOCUMENT_TITLE = 'Areas We Serve in Central Ohio | DTE Roofing Service Areas';
+
 export default function Locations() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Areas We Serve in Central Ohio | DTE Roofing Service Areas"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves 13+ Central Ohio communities including Columbus, Hilliard, Dublin, New Albany, Westerville, and Gahanna. Find your local roofers."
         keywords="roofing Central Ohio, Columbus area roofer, roofing service areas, local roofing contractor, Ohio roofing locations"
         canonical="https://www.dteroofingllc.com/locations"
       />
       <SchemaMarkup
         type="hub"
+        webPageType="CollectionPage"
+        documentTitle={DOCUMENT_TITLE}
         locationName="Central Ohio"
         pageTitle="Areas We Serve in Central Ohio | DTE Roofing Service Areas"
         pageDescription="DTE Roofing serves 13 Central Ohio communities including Columbus, Hilliard, Dublin, New Albany, Westerville, Gahanna, and more. Find your local roofing experts."

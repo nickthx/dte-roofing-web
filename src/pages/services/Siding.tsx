@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Siding Installation & Repair in Central Ohio | DTE Roofing';
+
 // Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
 const faqs = [
   { question: "How long does siding typically last?", answer: "Siding lifespan depends primarily on material choice and maintenance. Vinyl siding typically lasts 20-40 years with minimal maintenance, making it the most popular choice for Columbus homeowners seeking long-term value. Fiber cement siding (James Hardie) offers exceptional durability with a lifespan of 30-50 years when properly maintained, including repainting every 10-15 years. Engineered wood siding like LP SmartSide can last 30-40 years with periodic painting and proper care. Natural wood siding varies considerably; with diligent maintenance (painting or staining every 3-7 years), cedar can last 20-40 years, but neglect significantly shortens lifespan. Central Ohio's climate impacts all materials through temperature extremes, humidity, and storm exposure. Regular inspections, prompt repairs, and keeping gutters clean extend any siding's effective lifespan. If your Columbus home's siding approaches 20+ years and shows deterioration signs, replacement typically offers better value than continued repairs." },
@@ -15,13 +17,14 @@ export default function Siding() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Siding Installation & Repair in Central Ohio | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Siding installation & repair across Central Ohio. Vinyl, fiber cement & composite siding plus storm damage repair. Call 614-971-6028."
         keywords="siding installation Columbus, vinyl siding, LP Smart Siding, siding repair, siding replacement, Columbus siding contractor"
         canonical={`${CANONICAL_DOMAIN}/services/siding`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Siding Installation & Repair",
           description: "Siding installation and repair across Central Ohio. Vinyl, fiber cement, and composite siding, plus storm damage repair and complete exterior packages. Call 614-971-6028.",

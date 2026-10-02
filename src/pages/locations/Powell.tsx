@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Powell, OH | Repair & Replacement | DTE Roofing';
+
 export default function Powell() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Powell() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Powell, OH | Repair & Replacement | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Powell, OH with owner-led roof repair, replacement, inspections, gutters & storm damage help. Call 614-971-6028."
         keywords="roofers powell, roof repair powell, roof replacement powell, roofing company powell, storm damage powell, gutter services powell, roofer near me powell, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/powell"
@@ -64,6 +66,7 @@ export default function Powell() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="powell"
         locationName="Powell"
         pageTitle="Roofers in Powell, OH | DTE Roofing"

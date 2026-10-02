@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Westerville, OH | Roofing Experts | DTE Roofing';
+
 export default function Westerville() {
   const { reviewData } = useReviewData();
 
@@ -52,7 +54,7 @@ export default function Westerville() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Westerville, OH | Roofing Experts | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Westerville, OH with owner-led roof repair, replacement, hail damage & attic ventilation. Call 614-971-6028."
         keywords="roofers westerville, roof repair westerville, roof replacement westerville, roofing company westerville, storm damage westerville, gutter services westerville, roofers columbus, roofer near me westerville"
         canonical="https://www.dteroofingllc.com/locations/westerville"
@@ -60,6 +62,7 @@ export default function Westerville() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="westerville"
         locationName="Westerville"
         pageTitle="Roofers in Westerville, OH | DTE Roofing"

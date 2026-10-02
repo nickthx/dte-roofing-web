@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Worthington, OH | Roofing Experts | DTE Roofing';
+
 export default function Worthington() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Worthington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Worthington, OH | Roofing Experts | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Worthington, OH with owner-led roof repair, replacement, gutters, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers worthington, roof repair worthington, roof replacement worthington, roofing company worthington, storm damage worthington, gutter services worthington, roofer near me worthington, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/worthington"
@@ -64,6 +66,7 @@ export default function Worthington() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="worthington"
         locationName="Worthington"
         pageTitle="Roofers in Worthington, OH | DTE Roofing"

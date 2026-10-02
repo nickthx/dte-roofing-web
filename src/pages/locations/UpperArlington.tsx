@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Upper Arlington, OH | Roof Repair | DTE Roofing';
+
 export default function UpperArlington() {
   const { reviewData } = useReviewData();
 
@@ -52,7 +54,7 @@ export default function UpperArlington() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Upper Arlington, OH | Roof Repair | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Upper Arlington, OH with owner-led roof repair, inspections, gutters & hail damage claim help. Call 614-971-6028."
         keywords="roofers upper arlington, roof repair upper arlington, roof replacement upper arlington, roofing company upper arlington, storm damage upper arlington, gutter services upper arlington, roofers columbus, roofer near me upper arlington"
         canonical="https://www.dteroofingllc.com/locations/upper-arlington"
@@ -60,6 +62,7 @@ export default function UpperArlington() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="upper-arlington"
         locationName="Upper Arlington"
         pageTitle="Roofers in Upper Arlington, OH | DTE Roofing"

@@ -2,18 +2,30 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Award, Users, Target, Heart, ChevronRight, Mail } from 'lucide-react';
 import MobileStickyCall from '../components/MobileStickyCall';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import BbbLogo from '../components/logos/BbbLogo';
 import NextdoorLogo from '../components/logos/NextdoorLogo';
 import Picture from '../components/Picture';
+
+const DOCUMENT_TITLE = 'About DTE Roofing | Family-Owned Roofer in Columbus, OH';
+const DOCUMENT_DESCRIPTION = 'Meet DTE Roofing, a family-owned roofing company serving Columbus and Central Ohio. Licensed, insured, and built on honest, quality workmanship.';
 
 export default function About() {
   return (
     <>
       <SEO
-        title="About DTE Roofing | Family-Owned Roofer in Columbus, OH"
-        description="Meet DTE Roofing, a family-owned roofing company serving Columbus and Central Ohio. Licensed, insured, and built on honest, quality workmanship."
+        title={DOCUMENT_TITLE}
+        description={DOCUMENT_DESCRIPTION}
         keywords="about DTE Roofing, Columbus roofing company, local roofer, family-owned roofing business"
         canonical="https://www.dteroofingllc.com/about"
+      />
+      <SchemaMarkup
+        type="general"
+        webPageType="AboutPage"
+        documentTitle={DOCUMENT_TITLE}
+        pageTitle="About DTE Roofing"
+        pageDescription={DOCUMENT_DESCRIPTION}
+        pageUrl="https://www.dteroofingllc.com/about"
       />
       <MobileStickyCall />
       <div className="min-h-screen bg-white">

@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = '24/7 Emergency Roof Repair in Central Ohio | DTE Roofing';
+
 const faqs = [
   { question: "Do you really answer emergency roofing calls 24/7?", answer: "Yes. Roof emergencies don't wait for business hours, and neither do we, so you can reach us any time at 614-971-6028, including nights, weekends, and holidays. When you call, we answer and get a crew dispatched quickly to assess the damage. In most cases we can get out the same day to protect your home before things get worse." },
   { question: "A tree fell on my roof, what should I do first?", answer: "Call us right away at 614-971-6028 and move any valuables away from the area, but stay off the roof yourself. We'll safely remove the tree, stabilize the structure if it's compromised, and tarp the opening to keep water out until permanent repairs are done. We also photograph everything for your insurance claim while we're there." },
@@ -16,13 +18,14 @@ export default function EmergencyServices() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="24/7 Emergency Roof Repair in Central Ohio | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="24/7 emergency roof repair across Central Ohio. Fast response for storm damage, leaks & urgent issues. Same-day service. Call 614-971-6028."
         keywords="emergency roof repair, 24/7 roofing, storm damage, emergency leak repair, urgent roof repair, Columbus emergency roofing"
         canonical={`${CANONICAL_DOMAIN}/services/emergency-services`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Emergency Roofing Services",
           description: "24/7 emergency roof repair across Central Ohio. Immediate response for storm damage, leaks, and urgent roofing issues. Same-day service available. Call 614-971-6028 now.",

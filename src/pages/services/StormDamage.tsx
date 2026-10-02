@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Storm Damage Roof Repair in Central Ohio | DTE Roofing';
+
 const STORM_FAQS = [
   {
     question: 'How do I tell hail damage from wind damage on my roof?',
@@ -36,13 +38,14 @@ export default function StormDamage() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Storm Damage Roof Repair in Central Ohio | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Storm, hail & wind damage roof repair across Central Ohio. Free inspections, insurance claim support & emergency tarping. Call 614-971-6028."
         keywords="storm damage repair, hail damage, wind damage, storm roof repair, insurance claims, Columbus storm damage"
         canonical={`${CANONICAL_DOMAIN}/services/storm-damage`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Storm Damage Repair",
           description: "Storm, hail, and wind damage roof repair across Central Ohio. Free inspections, insurance claim support, and emergency tarping. Licensed and insured. Call 614-971-6028.",

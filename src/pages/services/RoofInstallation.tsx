@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'New Roof Installation in Columbus, OH | DTE Roofing';
+
 // Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
 const faqs = [
   { question: "How long does a typical roof installation take?", answer: "Most residential roof installations in Columbus take 2-4 days from start to completion. A typical 1,500-2,500 square foot home with standard complexity usually requires 2-3 days. Factors that extend timelines include larger homes (3,000+ sq ft may take 4-5 days), complex roof designs with multiple levels and valleys, steep pitches requiring additional safety measures, extensive deck repairs discovered during tear-off, and weather delays. Metal roofing installations typically add 1-2 days compared to asphalt shingles due to more precise installation requirements. We provide project-specific timelines during your estimate and keep you informed of progress throughout. For urgent situations requiring immediate protection, we also offer emergency roofing services." },
@@ -15,13 +17,14 @@ export default function RoofInstallation() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="New Roof Installation in Columbus, OH | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="New roof installation in Columbus, OH. Asphalt, metal & flat systems for homes and businesses. Warranty-backed installs. Call 614-971-6028."
         keywords="roof installation Columbus, new roof installation, residential roof installation, commercial roof installation, asphalt shingle installation, metal roof installation"
         canonical={`${CANONICAL_DOMAIN}/services/roof-installation`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "New Roof Installation",
           description: "Expert new roof installation in Columbus, OH. Asphalt, metal, and flat roofing systems for residential and commercial projects. Warranty-backed installs. Call 614-971-6028.",

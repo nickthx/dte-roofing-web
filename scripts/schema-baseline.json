@@ -1,0 +1,210 @@
+{
+  "baselineCommit": "db754d0",
+  "routes": {
+    "/": {
+      "jsonLdBlocks": 2,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/about": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/services": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/services/roof-installation": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 3,
+      "breadcrumbItems": 3
+    },
+    "/services/roof-repair": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 9,
+      "breadcrumbItems": 3
+    },
+    "/services/roof-replacement": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 4,
+      "breadcrumbItems": 3
+    },
+    "/services/roof-inspection": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/services/gutters": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/services/emergency-services": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/services/storm-damage": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/services/preventative-maintenance": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/services/siding": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 3,
+      "breadcrumbItems": 3
+    },
+    "/services/commercial-roofing": {
+      "jsonLdBlocks": 5,
+      "faqQuestions": 3,
+      "breadcrumbItems": 3
+    },
+    "/gallery": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/reviews": {
+      "jsonLdBlocks": 3,
+      "faqQuestions": 0,
+      "breadcrumbItems": 2
+    },
+    "/blog": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/blog/signs-you-need-a-new-roof": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/roof-replacement-cost-columbus-ohio": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/asphalt-vs-metal-roofing-ohio": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/hail-damage-roof-insurance-claim-ohio": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/how-long-does-a-roof-last-ohio": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/roof-repair-vs-replacement": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/blog/what-to-look-for-columbus-roofing-contractor": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 5,
+      "breadcrumbItems": 3
+    },
+    "/faq": {
+      "jsonLdBlocks": 3,
+      "faqQuestions": 15,
+      "breadcrumbItems": 2
+    },
+    "/financing": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    },
+    "/contact": {
+      "jsonLdBlocks": 3,
+      "faqQuestions": 0,
+      "breadcrumbItems": 2
+    },
+    "/locations": {
+      "jsonLdBlocks": 3,
+      "faqQuestions": 0,
+      "breadcrumbItems": 2
+    },
+    "/locations/columbus": {
+      "jsonLdBlocks": 3,
+      "faqQuestions": 0,
+      "breadcrumbItems": 3
+    },
+    "/locations/hilliard": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/dublin": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/new-albany": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/upper-arlington": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 9,
+      "breadcrumbItems": 3
+    },
+    "/locations/westerville": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 9,
+      "breadcrumbItems": 3
+    },
+    "/locations/gahanna": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 8,
+      "breadcrumbItems": 3
+    },
+    "/locations/reynoldsburg": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/grove-city": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/pickerington": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/worthington": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/delaware": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/locations/powell": {
+      "jsonLdBlocks": 4,
+      "faqQuestions": 10,
+      "breadcrumbItems": 3
+    },
+    "/get-a-quote-consultation": {
+      "jsonLdBlocks": 0,
+      "faqQuestions": 0,
+      "breadcrumbItems": 0
+    }
+  }
+}

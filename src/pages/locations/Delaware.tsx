@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Delaware, OH | Roofing Contractor | DTE Roofing';
+
 export default function Delaware() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Delaware() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Delaware, OH | Roofing Contractor | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Delaware, OH with owner-led roof repair, replacement, storm & wind damage and gutter installation. Call 614-971-6028."
         keywords="roofers delaware oh, roofers near delaware, best roofers in delaware, roof repair delaware, roof replacement delaware, delaware ohio roofing contractor, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/delaware"
@@ -64,6 +66,7 @@ export default function Delaware() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="delaware"
         locationName="Delaware"
         pageTitle="Roofers in Delaware, OH | DTE Roofing (Columbus HQ at 615 Hilliard Rome Rd)"

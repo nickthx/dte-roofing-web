@@ -5,6 +5,8 @@ import reviewStats from '../data/review-stats.json';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 
+const DOCUMENT_TITLE = 'DTE Roofing Reviews | Central Ohio Homeowners Speak Out';
+
 export default function Reviews() {
   const { reviewData } = useReviewData();
   const reviews = [
@@ -73,13 +75,14 @@ export default function Reviews() {
   return (
     <>
       <SEO
-        title="DTE Roofing Reviews | Central Ohio Homeowners Speak Out"
+        title={DOCUMENT_TITLE}
         description="Read verified 5-star reviews from DTE Roofing customers across Columbus and Central Ohio on roof repairs, replacements, and installations."
         keywords="DTE Roofing reviews, Columbus roofing reviews, customer testimonials, five-star roofer"
         canonical="https://www.dteroofingllc.com/reviews"
       />
       <SchemaMarkup
         type="general"
+        documentTitle={DOCUMENT_TITLE}
         pageTitle="DTE Roofing Reviews | Central Ohio Homeowners Speak Out"
         pageDescription="Read verified reviews from DTE Roofing customers across Columbus and Central Ohio."
         pageUrl="https://www.dteroofingllc.com/reviews"
