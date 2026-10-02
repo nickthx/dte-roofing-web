@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import MobileStickyCall from '../components/MobileStickyCall';
 import { projects } from '../data/projects';
+import { getLocationByCityLabel } from '../data/locations';
 import Picture from '../components/Picture';
 
 export default function Gallery() {
@@ -23,6 +24,10 @@ export default function Gallery() {
     if (selectedCategory === 'all') return true;
     return project.category === selectedCategory;
   });
+
+  const filteredCitySlugs: (string | undefined)[] = filteredProjects.map(
+    (project) => getLocationByCityLabel(project.location)?.slug
+  );
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -154,7 +159,18 @@ export default function Gallery() {
                         </h3>
                         <div className="flex items-center justify-center text-white/90">
                           <MapPin className="w-5 h-5 mr-2" />
-                          <span className="text-lg font-medium">{project.location}</span>
+                          {filteredCitySlugs[index] ? (
+                            <Link
+                              to={`/locations/${filteredCitySlugs[index]}`}
+                              className="text-lg font-medium hover:underline"
+                              onClick={(e) => e.stopPropagation()}
+                              onKeyDown={(e) => e.stopPropagation()}
+                            >
+                              {project.location}
+                            </Link>
+                          ) : (
+                            <span className="text-lg font-medium">{project.location}</span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -169,7 +185,18 @@ export default function Gallery() {
                     {/* Location Badge */}
                     <div className="flex items-center text-charcoal-600">
                       <MapPin className="w-4 h-4 mr-2 text-primary-700" />
-                      <span className="text-sm font-medium">{project.location}</span>
+                      {filteredCitySlugs[index] ? (
+                        <Link
+                          to={`/locations/${filteredCitySlugs[index]}`}
+                          className="text-sm font-medium hover:underline"
+                          onClick={(e) => e.stopPropagation()}
+                          onKeyDown={(e) => e.stopPropagation()}
+                        >
+                          {project.location}
+                        </Link>
+                      ) : (
+                        <span className="text-sm font-medium">{project.location}</span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -268,7 +295,17 @@ export default function Gallery() {
               </h3>
               <div className="flex items-center justify-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>{filteredProjects[currentImageIndex].location}</span>
+                {filteredCitySlugs[currentImageIndex] ? (
+                  <Link
+                    to={`/locations/${filteredCitySlugs[currentImageIndex]}`}
+                    className="hover:underline"
+                    onClick={closeLightbox}
+                  >
+                    {filteredProjects[currentImageIndex].location}
+                  </Link>
+                ) : (
+                  <span>{filteredProjects[currentImageIndex].location}</span>
+                )}
               </div>
               <p className="text-sm text-gray-400 mt-3">
                 {currentImageIndex + 1} / {filteredProjects.length}
