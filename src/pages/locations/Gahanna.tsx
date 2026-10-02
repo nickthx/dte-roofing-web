@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Gahanna, OH | Repair & Replacement | DTE Roofing';
+
 export default function Gahanna() {
   const { reviewData } = useReviewData();
 
@@ -48,7 +50,7 @@ export default function Gahanna() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Gahanna, OH | Repair & Replacement | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Gahanna, OH with owner-led roof repair, gutters, storm damage & hail repair. Free inspections. Call 614-971-6028."
         keywords="roofers gahanna, roof repair gahanna, roof replacement gahanna, roofing company gahanna, storm damage gahanna, gutter services gahanna, roofer near me gahanna, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/gahanna"
@@ -56,6 +58,7 @@ export default function Gahanna() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="gahanna"
         locationName="Gahanna"
         pageTitle="Roofers in Gahanna, OH | DTE Roofing"

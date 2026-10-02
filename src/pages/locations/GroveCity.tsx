@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Grove City, OH | Roofing Experts | DTE Roofing';
+
 export default function GroveCity() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function GroveCity() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Grove City, OH | Roofing Experts | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Grove City, OH with owner-led roof repair, replacement, gutters, gutter guards & storm damage. Call 614-971-6028."
         keywords="roofers grove city, roof repair grove city, roof replacement grove city, roofing company grove city, storm damage grove city, gutter services grove city, roofer near me grove city, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/grove-city"
@@ -64,6 +66,7 @@ export default function GroveCity() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="grove-city"
         locationName="Grove City"
         pageTitle="Roofers in Grove City, OH | DTE Roofing"

@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Reynoldsburg, OH | Roof Repair | DTE Roofing';
+
 export default function Reynoldsburg() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Reynoldsburg() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Reynoldsburg, OH | Roof Repair | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Reynoldsburg, OH with owner-led roof repair, replacement, gutters & storm damage. Free inspections. Call 614-971-6028."
         keywords="roofers reynoldsburg, roof repair reynoldsburg, roof replacement reynoldsburg, roofing company reynoldsburg, storm damage reynoldsburg, gutter services reynoldsburg, roofer near me reynoldsburg, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/reynoldsburg"
@@ -64,6 +66,7 @@ export default function Reynoldsburg() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="reynoldsburg"
         locationName="Reynoldsburg"
         pageTitle="Roofers in Reynoldsburg, OH | DTE Roofing"

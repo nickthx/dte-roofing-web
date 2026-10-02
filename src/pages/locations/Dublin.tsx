@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Dublin, OH | Repair & Replacement | DTE Roofing';
+
 export default function Dublin() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Dublin() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Dublin, OH | Repair & Replacement | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing serves Dublin, OH with owner-led roof repair, replacement, metal shingles & gutter services. Free inspections. Call 614-971-6028."
         keywords="roofers dublin oh, roofers near dublin, best roofers in dublin, roof repair dublin, roof replacement dublin, storm damage dublin, gutter services dublin, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/dublin"
@@ -64,6 +66,7 @@ export default function Dublin() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="dublin"
         locationName="Dublin"
         pageTitle="Roofers in Dublin, OH | DTE Roofing (Columbus HQ)"

@@ -7,6 +7,8 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 
+const DOCUMENT_TITLE = 'Roofers in Hilliard, OH | Roofing Contractor | DTE Roofing';
+
 export default function Hilliard() {
   const { reviewData } = useReviewData();
 
@@ -56,7 +58,7 @@ export default function Hilliard() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofers in Hilliard, OH | Roofing Contractor | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="DTE Roofing is based right by Hilliard, OH. Owner-led roof repair, replacement, gutters, siding & storm damage. Free inspections. Call 614-971-6028."
         keywords="roofers hilliard, roof repair hilliard, roof replacement hilliard, roofing company hilliard, roofers near hilliard, storm damage hilliard, gutter services hilliard, roofers columbus"
         canonical="https://www.dteroofingllc.com/locations/hilliard"
@@ -64,6 +66,7 @@ export default function Hilliard() {
       />
       <SchemaMarkup
         type="location"
+        documentTitle={DOCUMENT_TITLE}
         locationSlug="hilliard"
         locationName="Hilliard"
         pageTitle="Roofers in Hilliard, OH | DTE Roofing"
