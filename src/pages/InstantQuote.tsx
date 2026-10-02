@@ -1,8 +1,12 @@
 import { useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import { Calculator, CheckCircle, Clock, Shield } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 import reviewStats from '../data/review-stats.json';
+
+const DOCUMENT_TITLE = 'Get an Instant Roof Quote | DTE Roofing Columbus, OH';
+const DOCUMENT_DESCRIPTION = 'Get an instant roof replacement quote in under 60 seconds using satellite imagery. Accurate estimates with no inspection needed. Serving Central Ohio.';
 
 export default function InstantQuote() {
   const { reviewData } = useReviewData();
@@ -27,10 +31,17 @@ export default function InstantQuote() {
   return (
     <>
       <SEO
-        title="Get an Instant Roof Quote | DTE Roofing Columbus, OH"
-        description="Get an instant roof replacement quote in under 60 seconds using satellite imagery. Accurate estimates with no inspection needed. Serving Central Ohio."
+        title={DOCUMENT_TITLE}
+        description={DOCUMENT_DESCRIPTION}
         keywords="instant roof quote, roof cost calculator, roof estimate, roof replacement cost, free roof quote"
         canonical="https://www.dteroofingllc.com/get-a-quote-consultation"
+      />
+      <SchemaMarkup
+        type="general"
+        documentTitle={DOCUMENT_TITLE}
+        pageTitle="Instant Quote"
+        pageDescription={DOCUMENT_DESCRIPTION}
+        pageUrl="https://www.dteroofingllc.com/get-a-quote-consultation"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">

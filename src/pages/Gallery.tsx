@@ -2,10 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronRight, X, MapPin, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import MobileStickyCall from '../components/MobileStickyCall';
 import { projects } from '../data/projects';
 import { getLocationByCityLabel } from '../data/locations';
 import Picture from '../components/Picture';
+
+const DOCUMENT_TITLE = 'Roofing Project Gallery | DTE Roofing Columbus, OH';
+const DOCUMENT_DESCRIPTION = 'Browse completed roof replacements, repairs, and commercial projects across Columbus, Dublin, Hilliard, and Central Ohio from DTE Roofing.';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -82,10 +86,18 @@ export default function Gallery() {
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
         <SEO
-          title="Roofing Project Gallery | DTE Roofing Columbus, OH"
-          description="Browse completed roof replacements, repairs, and commercial projects across Columbus, Dublin, Hilliard, and Central Ohio from DTE Roofing."
+          title={DOCUMENT_TITLE}
+          description={DOCUMENT_DESCRIPTION}
           keywords="roofing gallery Columbus, roof installation photos, before after roofing, Columbus roofing projects, DTE Roofing portfolio"
           canonical="https://www.dteroofingllc.com/gallery"
+        />
+        <SchemaMarkup
+          type="general"
+          webPageType="CollectionPage"
+          documentTitle={DOCUMENT_TITLE}
+          pageTitle="Gallery"
+          pageDescription={DOCUMENT_DESCRIPTION}
+          pageUrl="https://www.dteroofingllc.com/gallery"
         />
 
         {/* Hero Section */}
