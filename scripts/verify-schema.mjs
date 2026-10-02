@@ -1,4 +1,4 @@
-// JSON-LD gate over the prerendered dist/ output.
+// JSON-LD gate over the prerendered dist/ output or, with --base, the live site.
 //
 // Reads what crawlers actually receive (dist/<route>/index.html), not the React
 // source, so a lazy/Suspense regression that drops helmet output from the
@@ -7,6 +7,10 @@
 // Usage:
 //   node scripts/verify-schema.mjs             check every PRERENDER_ROUTES page
 //   node scripts/verify-schema.mjs --snapshot  write scripts/schema-baseline.json
+//   node scripts/verify-schema.mjs --base <url>  run the same checks against <url><route> (live mode)
+//
+// --snapshot is refused together with --base: the baseline must only ever come
+// from a local pre-change build, never from whatever a live site happens to serve.
 //
 // Zero dependencies on purpose: it must run on any checkout with only Node.
 
@@ -109,10 +113,8 @@ function readCityNames() {
   return cities;
 }
 
-function loadPage(route) {
-  const file = htmlPathFor(route);
-  if (!existsSync(file)) return { missing: file };
-  const html = readFileSync(file, 'utf8');
+// Shared by dist and live mode so both run exactly the same extraction and checks.
+function parseHtml(html) {
   const blocks = [...html.matchAll(JSON_LD_RE)].map((m) => m[1]);
   const parsed = [];
   const parseErrors = [];
@@ -128,6 +130,31 @@ function loadPage(route) {
   const topLevel = parsed.flatMap(topLevelNodes);
   const objects = collectObjects(parsed);
   return { blockCount: blocks.length, parseErrors, title, topLevel, objects };
+}
+
+function loadPage(route) {
+  const file = htmlPathFor(route);
+  if (!existsSync(file)) return { missing: file };
+  return parseHtml(readFileSync(file, 'utf8'));
+}
+
+// Live mode reads what production actually serves, which catches deploy or CDN
+// drift that a local dist/ build cannot show. Any failure is a per-page row, never a crash.
+async function fetchPage(base, route) {
+  const url = route === '/' ? `${base}/` : `${base}${route}`;
+  try {
+    const res = await fetch(url, {
+      redirect: 'follow',
+      headers: { 'cache-control': 'no-cache' },
+      signal: AbortSignal.timeout(30000),
+    });
+    if (res.status !== 200) return { fetchError: `fetch: ${res.status}` };
+    return parseHtml(await res.text());
+  } catch (err) {
+    // undici reports most network failures as a bare "fetch failed"; the cause says why.
+    const why = err?.cause?.code ?? err?.cause?.message;
+    return { fetchError: `fetch: ${err?.message}${why ? ` (${why})` : ''}` };
+  }
 }
 
 function countFaqQuestions(objects) {
@@ -292,7 +319,7 @@ function checkPage(route, page, cities, baseline) {
   return { failures, notes };
 }
 
-function runCheck() {
+async function runCheck(base) {
   if (!existsSync(BASELINE_PATH)) {
     console.error('no scripts/schema-baseline.json: run --snapshot on the pre-change build first');
     process.exit(1);
@@ -311,7 +338,12 @@ function runCheck() {
 
   const rows = [];
   for (const route of PRERENDER_ROUTES) {
-    const page = loadPage(route);
+    // Sequential on purpose: one request at a time keeps production load trivial and the table order stable.
+    const page = base ? await fetchPage(base, route) : loadPage(route);
+    if (page.fetchError) {
+      rows.push({ route, nodes: 0, status: 'FAIL', details: page.fetchError });
+      continue;
+    }
     if (page.missing) {
       rows.push({ route, nodes: 0, status: 'FAIL', details: `missing: ${page.missing}` });
       continue;
@@ -350,8 +382,33 @@ function runCheck() {
   process.exit(fail > 0 ? 1 : 0);
 }
 
-if (process.argv.includes('--snapshot')) {
+const USAGE = 'usage: node scripts/verify-schema.mjs [--snapshot | --base <http(s)-url>]';
+
+// Returns the base without trailing slashes, or null so a typo can never silently fall back to dist mode.
+function parseBase(value) {
+  if (value === undefined || value.startsWith('--')) return null;
+  try {
+    const { protocol } = new URL(value);
+    return protocol === 'http:' || protocol === 'https:' ? value.replace(/\/+$/, '') : null;
+  } catch {
+    return null;
+  }
+}
+
+const baseIndex = process.argv.indexOf('--base');
+if (baseIndex !== -1) {
+  const base = parseBase(process.argv[baseIndex + 1]);
+  if (base === null) {
+    console.error(USAGE);
+    process.exit(1);
+  }
+  if (process.argv.includes('--snapshot')) {
+    console.error('--snapshot cannot be combined with --base: the baseline must only ever come from a local pre-change build');
+    process.exit(1);
+  }
+  await runCheck(base);
+} else if (process.argv.includes('--snapshot')) {
   runSnapshot();
 } else {
-  runCheck();
+  await runCheck(null);
 }
