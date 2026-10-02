@@ -38,9 +38,10 @@ const EXPECTED_SAME_AS = [
 ];
 const WEB_PAGE_TYPES = ['WebPage', 'AboutPage', 'ContactPage', 'CollectionPage'];
 
-// These routes render no <SchemaMarkup> by design. Listing them explicitly means
-// any OTHER route with zero JSON-LD is treated as a regression, not a pass.
-const NO_SCHEMA_ROUTES = ['/services', '/gallery', '/blog', '/financing', '/get-a-quote-consultation'];
+// Since 261002-j0z every prerendered route must emit JSON-LD. The empty list is kept
+// so that any future exception has to be added here explicitly; a route with zero
+// JSON-LD that is not listed is a regression, not a pass.
+const NO_SCHEMA_ROUTES = [];
 
 const JSON_LD_RE = /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g;
 const TITLE_RE = /<title[^>]*>([\s\S]*?)<\/title>/;
@@ -283,6 +284,12 @@ function checkPage(route, page, cities, baseline) {
     if (!lists.some((l) => Array.isArray(l.itemListElement) && l.itemListElement.length === 13)) {
       const sizes = lists.map((l) => listLength(l.itemListElement));
       failures.push(`f: no ItemList with 13 items (found ${sizes.length ? sizes.join(',') : 'none'})`);
+    }
+  } else if (route === '/services') {
+    const lists = objects.filter((o) => hasType(o, 'ItemList'));
+    if (!lists.some((l) => Array.isArray(l.itemListElement) && l.itemListElement.length === 10)) {
+      const sizes = lists.map((l) => listLength(l.itemListElement));
+      failures.push(`f: no ItemList with 10 items (found ${sizes.length ? sizes.join(',') : 'none'})`);
     }
   } else if (route === '/about') {
     if (!topLevel.some((n) => hasType(n, 'AboutPage'))) failures.push('f: no top-level AboutPage');
