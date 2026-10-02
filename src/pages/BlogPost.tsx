@@ -32,11 +32,12 @@ export default function BlogPostPage() {
   }
 
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
+  const documentTitle = `${post.title} | DTE Roofing Blog`;
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title={`${post.title} | DTE Roofing Blog`}
+        title={documentTitle}
         description={post.metaDescription}
         keywords={post.keywords.join(', ')}
         canonical={pageUrl}
@@ -44,6 +45,7 @@ export default function BlogPostPage() {
       />
       <SchemaMarkup
         type="blog"
+        documentTitle={documentTitle}
         faqs={post.faqs}
         pageTitle={post.title}
         pageDescription={post.metaDescription}

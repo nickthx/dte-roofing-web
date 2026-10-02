@@ -4,6 +4,8 @@ import { ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 
+const DOCUMENT_TITLE = 'Roofing FAQs | Questions Answered by DTE Roofing Columbus';
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -104,13 +106,14 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofing FAQs | Questions Answered by DTE Roofing Columbus"
+        title={DOCUMENT_TITLE}
         description="Answers to common roofing questions on cost, timelines, warranties, insurance claims & materials from DTE Roofing in Columbus, OH. Call 614-971-6028."
         keywords="roofing FAQ, roof repair questions, roof cost, roofing warranty, insurance claims, how long does roof last, Columbus roofer FAQ"
         canonical="https://www.dteroofingllc.com/faq"
       />
       <SchemaMarkup
         type="faq"
+        documentTitle={DOCUMENT_TITLE}
         faqs={allFAQs}
         pageTitle="Frequently Asked Questions"
         pageDescription="Get answers to common roofing questions. Learn about costs, timelines, warranties, insurance claims, and more."

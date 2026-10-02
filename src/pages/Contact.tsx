@@ -5,19 +5,23 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import MobileStickyCall from '../components/MobileStickyCall';
 import MultiStepLeadForm from '../components/lead-form/MultiStepLeadForm';
 
+const DOCUMENT_TITLE = 'Contact DTE Roofing | Free Estimates in Columbus, OH';
+
 export default function Contact() {
   return (
     <>
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
       <SEO
-        title="Contact DTE Roofing | Free Estimates in Columbus, OH"
+        title={DOCUMENT_TITLE}
         description="Contact DTE Roofing for a free roofing estimate in Columbus and Central Ohio. Based at 615 Hilliard Rome Rd. Call 614-971-6028 for 24/7 service."
         keywords="contact roofer Columbus, free roof estimate, Columbus roofing company, Hilliard roofer, emergency roof repair, roofing contractor near me"
         canonical="https://www.dteroofingllc.com/contact"
       />
       <SchemaMarkup
         type="general"
+        webPageType="ContactPage"
+        documentTitle={DOCUMENT_TITLE}
         pageTitle="Contact DTE Roofing"
         pageDescription="Contact DTE Roofing for free estimates on roof repair, replacement & installation. Located at 615 Hilliard Rome Rd, Columbus OH."
         pageUrl="https://www.dteroofingllc.com/contact"
