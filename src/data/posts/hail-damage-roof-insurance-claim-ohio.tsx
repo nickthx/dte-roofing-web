@@ -26,6 +26,7 @@ export const hailDamageInsuranceClaimOhio: BlogPost = {
   image:
     'https://www.dteroofingllc.com/images/reynoldsburg-hail-damage-restoration.jpg',
   readingMinutes: 9,
+  relatedAreas: ['reynoldsburg', 'pickerington', 'gahanna', 'westerville'],
   content: () => (
     <>
       <p>

@@ -25,6 +25,7 @@ export const columbusRoofingContractor: BlogPost = {
   status: 'published',
   image: 'https://www.dteroofingllc.com/images/dte-roofing-job-site-columbus.jpg',
   readingMinutes: 8,
+  relatedAreas: ['columbus', 'hilliard', 'grove-city', 'westerville'],
   content: () => (
     <>
       <p>
