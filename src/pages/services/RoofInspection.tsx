@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Free Roof Inspection in Central Ohio | DTE Roofing';
+
 const faqs = [
   { question: "Is a roof inspection from DTE Roofing really free?", answer: "Yes, our roof inspections in Columbus and across Central Ohio are free with no obligation. We look at your whole roofing system, from the shingles down to the deck and attic, then give you the honest facts. There's no pressure to buy anything afterward. Call 614-971-6028 to set one up." },
   { question: "What do I get after the inspection is finished?", answer: "You get a detailed written report with photos of anything we find, along with clear recommendations and any estimates. We walk you through it so you understand the condition of your roof and what, if anything, needs attention. The photos are useful documentation if you're filing an insurance claim or selling your home." },
@@ -16,13 +18,14 @@ export default function RoofInspection() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Free Roof Inspection in Central Ohio | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Free roof inspections across Central Ohio. Pre-purchase, post-storm & insurance reports with photos and honest assessments. Call 614-971-6028."
         keywords="roof inspection Columbus, roof inspection service, home inspection, pre-purchase inspection, insurance roof inspection, annual roof inspection"
         canonical={`${CANONICAL_DOMAIN}/services/roof-inspection`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Free Roof Inspection",
           description: "Free, thorough roof inspections across Central Ohio. Pre-purchase, post-storm, and insurance claim reports with photos and honest assessments. Call DTE Roofing at 614-971-6028.",

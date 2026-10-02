@@ -3,6 +3,8 @@ import ServicePageTemplate from '../../components/ServicePageTemplate';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import reviewStats from '../../data/review-stats.json';
 
+const DOCUMENT_TITLE = 'Columbus Roof Repair | Leak & Storm Damage | DTE Roofing';
+
 const faqs = [
   {
     question: 'How much does roof repair cost in Columbus?',
@@ -47,6 +49,7 @@ export default function RoofRepair() {
     <>
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: 'Roof Repair',
           description: 'Professional roof repair services in Columbus, OH. We provide honest diagnostics, precision repairs for leaks, storm damage, missing shingles, and all roofing issues. Emergency repairs available.',
@@ -59,7 +62,7 @@ export default function RoofRepair() {
       />
       <ServicePageTemplate
         serviceName="Roof Repair"
-        title="Columbus Roof Repair | Leak & Storm Damage | DTE Roofing"
+        title={DOCUMENT_TITLE}
         headline="Roof Repair in Columbus, OH — Honest Repairs That Last"
         slug="roof-repair"
         subheadline="Honest diagnostics by hands-on experts."

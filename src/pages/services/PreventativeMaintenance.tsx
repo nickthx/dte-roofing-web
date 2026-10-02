@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Preventative Roof Maintenance Columbus OH | DTE Roofing';
+
 const faqs = [
   { question: "How often should I have my roof inspected in Central Ohio?", answer: "It depends on the age of your roof. A newer roof in good shape usually needs an annual inspection, while roofs past 15 years do better with bi-annual or even quarterly checks as the materials age. Ohio weather runs hard on roofs, so we'd rather look twice a year and catch a problem early than wait for a leak. Call us at 614-971-6028 and we'll set up a free inspection to see where your roof stands." },
   { question: "What does a roof maintenance visit actually include?", answer: "We do a full inspection of the shingles, flashing, vent boots, chimney seals, and valleys, plus we clean out and check the gutters and downspouts. You get photo documentation and a written condition report so you can see exactly what we found. Minor repairs like a loose shingle or worn sealant are handled during the visit, and we keep records that help with warranty compliance. It's the same owner-led crew on your roof, so nothing gets glossed over." },
@@ -16,13 +18,14 @@ export default function PreventativeMaintenance() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Preventative Roof Maintenance Columbus OH | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Preventative roof maintenance in Central Ohio. Annual plans, seasonal inspections, gutter & vent care. Catch issues early. Call 614-971-6028."
         keywords="preventative maintenance, preventive roof care, roof maintenance program, annual roof service, proactive roof care"
         canonical={`${CANONICAL_DOMAIN}/services/preventative-maintenance`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Preventative Maintenance",
           description: "Preventative roof maintenance in Columbus and Central Ohio. Annual plans, seasonal inspections, gutter and vent care. Catch issues early and save money. Call 614-971-6028.",

@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Commercial Roofing Contractor Columbus, OH | DTE Roofing';
+
 // Mirrors the page's existing visible FAQ section so the FAQPage JSON-LD matches on-page content.
 const faqs = [
   { question: "How long does commercial roofing last?", answer: "Commercial roof lifespan depends primarily on the roofing system installed, installation quality, maintenance practices, and Central Ohio's weather exposure. EPDM rubber membranes typically last 20-30 years with proper maintenance, making them a reliable mid-term solution for Columbus businesses. TPO roofing systems provide 15-30 year lifespans, and newer TPO formulations show improved durability compared to earlier generations. Modified bitumen systems deliver 15-25 years of dependable protection, particularly effective for high-traffic roofs with regular equipment access. Metal roofing represents the longevity champion, with properly installed standing seam systems lasting 40-70 years and often outlasting the building itself. Built-up roofing (BUR) provides a 15-30 year lifespan depending on the number of plies and maintenance, and roof coating systems extend aging commercial roofs by 10-15 years when applied correctly. Regular bi-annual inspections, prompt minor repairs, and proper drainage make a real difference in our freeze-thaw climate." },
@@ -15,13 +17,14 @@ export default function CommercialRoofing() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Commercial Roofing Contractor Columbus, OH | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Commercial roofing in Columbus, OH. TPO, EPDM, metal & flat roof repair plus maintenance programs. Licensed and insured. Call 614-971-6028."
         keywords="commercial roofing Columbus, business roofing, flat roof repair, TPO roofing, EPDM roofing, commercial roof replacement"
         canonical={`${CANONICAL_DOMAIN}/services/commercial-roofing`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Commercial Roofing",
           description: "Expert commercial roofing in Columbus, OH. TPO, EPDM, metal roofing, flat roof repair, and maintenance programs. Licensed and insured. Call 614-971-6028 for a free estimate.",

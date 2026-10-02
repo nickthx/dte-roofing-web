@@ -4,6 +4,8 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
+const DOCUMENT_TITLE = 'Gutter Installation & Repair in Columbus, OH | DTE Roofing';
+
 const faqs = [
   { question: "What makes seamless gutters better than sectional gutters for my home?", answer: "Sectional gutters are joined together in pieces, and those seams are exactly where leaks tend to start over time. We fabricate seamless aluminum gutters on-site to fit your home, so there are no joints to fail and water gets carried cleanly away from your foundation and siding. They also hold up stronger and last longer than the sectional kind you'd buy off a shelf." },
   { question: "Do you install gutter guards, and which type works best?", answer: "Yes, we install mesh screens, reverse curve guards, and foam insert guards, and the right one depends on the trees around your house and your budget. Mesh is a solid all-around choice for leaves, reverse curve handles heavy rain well, and foam inserts are the budget-friendly option that also helps with ice dams. Donovan or Mitchell will look at your setup during the free inspection and tell you honestly which makes sense, no upselling." },
@@ -16,13 +18,14 @@ export default function Gutters() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Gutter Installation & Repair in Columbus, OH | DTE Roofing"
+        title={DOCUMENT_TITLE}
         description="Seamless gutter installation, repair & gutter guards in Columbus, OH. Custom colors, downspouts, fascia & soffit repair. Call 614-971-6028."
         keywords="gutters Columbus, seamless gutters, gutter installation, gutter guards, custom gutters, aluminum gutters"
         canonical={`${CANONICAL_DOMAIN}/services/gutters`}
       />
       <SchemaMarkup
         type="service"
+        documentTitle={DOCUMENT_TITLE}
         service={{
           name: "Gutter Installation & Repair",
           description: "Seamless gutter installation, repair, and gutter guards in Columbus, OH. Custom colors, downspout extensions, fascia and soffit repair. Licensed and insured. Call 614-971-6028.",
