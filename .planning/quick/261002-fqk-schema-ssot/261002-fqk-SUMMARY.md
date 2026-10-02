@@ -802,3 +802,15 @@ None.
 - Task 3 verify: verify-schema exit 0 (`checked 41, pass 36, fail 0, skip 5`); 30 `documentTitle=` call sites; `git status --porcelain -- src scripts package.json public` is empty; PROJECT.md contains 261002-fqk.
 - Out-of-scope files are unchanged vs db754d0: ServicePageTemplate.tsx, review-stats.json, index.html, vercel.json, public/sitemap.xml, package-lock.json. package.json diff is the verify-schema script line only.
 - Completed 2026-10-02T15:47Z (about 12 min after the 15:35:49Z start).
+
+## Shipped
+
+Shipped by quick task 261002-h43 on 2026-10-02.
+
+- **PR:** #2, https://github.com/nickthx/dte-roofing-web/pull/2 (merged with `--merge`; `feat/schema-ssot` kept locally and on origin)
+- **Merge commit:** `f214c446f1d2d918f296b725bca97e7a318a4bcd` (parents `db754d0` + `8d88c8b`). All 7 commit hashes in section (6), plus `8d88c8b`, are ancestors of `main`, unchanged (no rebase was needed)
+- **Merged at:** 2026-10-02T16:28:37Z (12:28:37 EDT)
+- **Production flip:** 2026-10-02T16:29:23Z (12:29:23 EDT), 46.7 s after the merge (poll attempt 2; NTP-corrected, local clock is 14.1 s slow). `/locations/hilliard` serves `"@id":"https://www.dteroofingllc.com/#business"` and no `aggregateRating`
+- **Deployment:** Vercel `EPxnT9YghNixTNFaKsAfBHJaixwF`, https://dte-roofing-demo-47by687jq-nick-whitsetts-projects.vercel.app (Production, Ready; GitHub deployment 6813160157)
+- **Live verify:** `node scripts/verify-schema.mjs --base https://www.dteroofingllc.com`, `checked 41, pass 36, fail 0, skip 5`, exit 0, table byte-identical to the dist run in section (2)
+- **Parity:** `<title>` and meta description on `/`, `/locations` and `/locations/hilliard` are byte-identical before and after the deploy (6/6 MATCH)
