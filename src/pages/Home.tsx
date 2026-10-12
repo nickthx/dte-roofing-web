@@ -9,6 +9,7 @@ import LazyMapEmbed from '../components/LazyMapEmbed';
 import Picture from '../components/Picture';
 import { useReviewData } from '../hooks/useReviewData';
 import reviewStats from '../data/review-stats.json';
+import { LOCATIONS } from '../data/locations';
 import { CANONICAL_DOMAIN } from '../seo/constants';
 import BbbLogo from '../components/logos/BbbLogo';
 import NextdoorLogo from '../components/logos/NextdoorLogo';
@@ -587,36 +588,11 @@ export default function Home() {
             <div className="mt-8">
               <h3 className="text-2xl font-bold text-charcoal-900 mb-4">Areas We Serve</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Hilliard
-                </Link>
-                <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Dublin
-                </Link>
-                <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Columbus
-                </Link>
-                <Link to="/locations/westerville" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Westerville
-                </Link>
-                <Link to="/locations/powell" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Powell
-                </Link>
-                <Link to="/locations/delaware" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Delaware
-                </Link>
-                <Link to="/locations/gahanna" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Gahanna
-                </Link>
-                <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Grove City
-                </Link>
-                <Link to="/locations/new-albany" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  New Albany
-                </Link>
-                <Link to="/locations/worthington" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Worthington
-                </Link>
+                {LOCATIONS.map((loc) => (
+                  <Link key={loc.slug} to={`/locations/${loc.slug}`} className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
+                    {loc.cityName}
+                  </Link>
+                ))}
                 <Link to="/locations" className="text-primary-700 hover:text-primary-800 font-bold hover:underline transition-colors">
                   View All Central Ohio Service Areas →
                 </Link>

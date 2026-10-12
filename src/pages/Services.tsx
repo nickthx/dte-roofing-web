@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { SERVICES } from '../data/services';
+import { CANONICAL_DOMAIN } from '../seo/constants';
+
+const DOCUMENT_TITLE = 'Roofing Services in Columbus, OH | DTE Roofing';
+const DOCUMENT_DESCRIPTION = 'Complete roofing services in Columbus, OH: repair, replacement, installation, inspections & emergency service. Residential & commercial. Free estimates.';
+const SERVICES_ITEM_LIST = SERVICES.map((svc) => ({ name: svc.name, url: `${CANONICAL_DOMAIN}${svc.path}` }));
 
 export default function Services() {
   const services = [
@@ -51,10 +58,19 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofing Services in Columbus, OH | DTE Roofing"
-        description="Complete roofing services in Columbus, OH: repair, replacement, installation, inspections & emergency service. Residential & commercial. Free estimates."
+        title={DOCUMENT_TITLE}
+        description={DOCUMENT_DESCRIPTION}
         keywords="roofing services Columbus, roof repair services, roof replacement, roof installation, commercial roofing, residential roofing, emergency roof repair, roof inspection"
         canonical="https://www.dteroofingllc.com/services"
+      />
+      <SchemaMarkup
+        type="general"
+        webPageType="CollectionPage"
+        documentTitle={DOCUMENT_TITLE}
+        pageTitle="Services"
+        pageDescription={DOCUMENT_DESCRIPTION}
+        pageUrl="https://www.dteroofingllc.com/services"
+        itemList={SERVICES_ITEM_LIST}
       />
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
         <div className="container mx-auto px-4">

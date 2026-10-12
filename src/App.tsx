@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import RoofleSlideout from './components/RoofleSlideout';
+import RouteErrorBoundary from './components/RouteErrorBoundary';
 
 // Route components are lazy-loaded so each page ships as its own chunk instead of
 // bundling all 35 routes into one initial download. The prerender step
@@ -64,46 +65,48 @@ function App() {
       <div className="min-h-screen bg-white flex flex-col">
         <Navigation />
         <main className="flex-grow">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/roof-installation" element={<RoofInstallation />} />
-              <Route path="/services/roof-repair" element={<RoofRepair />} />
-              <Route path="/services/roof-replacement" element={<RoofReplacement />} />
-              <Route path="/services/roof-inspection" element={<RoofInspection />} />
-              <Route path="/services/gutters" element={<Gutters />} />
-              <Route path="/services/emergency-services" element={<EmergencyServices />} />
-              <Route path="/services/storm-damage" element={<StormDamage />} />
-              <Route path="/services/preventative-maintenance" element={<PreventativeMaintenance />} />
-              <Route path="/services/siding" element={<Siding />} />
-              <Route path="/services/commercial-roofing" element={<CommercialRoofing />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/financing" element={<Financing />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route path="/locations/columbus" element={<Columbus />} />
-              <Route path="/locations/hilliard" element={<Hilliard />} />
-              <Route path="/locations/dublin" element={<Dublin />} />
-              <Route path="/locations/new-albany" element={<NewAlbany />} />
-              <Route path="/locations/upper-arlington" element={<UpperArlington />} />
-              <Route path="/locations/westerville" element={<Westerville />} />
-              <Route path="/locations/gahanna" element={<Gahanna />} />
-              <Route path="/locations/reynoldsburg" element={<Reynoldsburg />} />
-              <Route path="/locations/grove-city" element={<GroveCity />} />
-              <Route path="/locations/pickerington" element={<Pickerington />} />
-              <Route path="/locations/worthington" element={<Worthington />} />
-              <Route path="/locations/delaware" element={<Delaware />} />
-              <Route path="/locations/powell" element={<Powell />} />
-              <Route path="/get-a-quote-consultation" element={<InstantQuote />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <RouteErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/services/roof-installation" element={<RoofInstallation />} />
+                <Route path="/services/roof-repair" element={<RoofRepair />} />
+                <Route path="/services/roof-replacement" element={<RoofReplacement />} />
+                <Route path="/services/roof-inspection" element={<RoofInspection />} />
+                <Route path="/services/gutters" element={<Gutters />} />
+                <Route path="/services/emergency-services" element={<EmergencyServices />} />
+                <Route path="/services/storm-damage" element={<StormDamage />} />
+                <Route path="/services/preventative-maintenance" element={<PreventativeMaintenance />} />
+                <Route path="/services/siding" element={<Siding />} />
+                <Route path="/services/commercial-roofing" element={<CommercialRoofing />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/financing" element={<Financing />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/locations" element={<Locations />} />
+                <Route path="/locations/columbus" element={<Columbus />} />
+                <Route path="/locations/hilliard" element={<Hilliard />} />
+                <Route path="/locations/dublin" element={<Dublin />} />
+                <Route path="/locations/new-albany" element={<NewAlbany />} />
+                <Route path="/locations/upper-arlington" element={<UpperArlington />} />
+                <Route path="/locations/westerville" element={<Westerville />} />
+                <Route path="/locations/gahanna" element={<Gahanna />} />
+                <Route path="/locations/reynoldsburg" element={<Reynoldsburg />} />
+                <Route path="/locations/grove-city" element={<GroveCity />} />
+                <Route path="/locations/pickerington" element={<Pickerington />} />
+                <Route path="/locations/worthington" element={<Worthington />} />
+                <Route path="/locations/delaware" element={<Delaware />} />
+                <Route path="/locations/powell" element={<Powell />} />
+                <Route path="/get-a-quote-consultation" element={<InstantQuote />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </RouteErrorBoundary>
         </main>
         <Footer />
       </div>

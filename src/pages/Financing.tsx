@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { CheckCircle, DollarSign, Shield, Clock, TrendingDown, Users, Loader2, AlertCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import { useLeadTracking } from '../hooks/useLeadTracking';
 import { validateEmail, validatePhone, validateRequired } from '../utils/formValidation';
 
 const WEBHOOK_URL = 'https://n8n.whitflow.com/webhook/dte-financing-submissions';
+const DOCUMENT_TITLE = 'Consumer Credit Center | Roofing Financing | DTE Roofing';
+const DOCUMENT_DESCRIPTION = 'DTE Roofing offers affordable financing for roof repair and replacement: 0% promotional options, personal loans, and second-look programs. See if you qualify.';
 
 const financingProducts = [
   { value: 'Promotional Financing', label: 'Promotional Financing', tagline: '0% for 12–24 months' },
@@ -133,10 +136,17 @@ export default function Financing() {
   return (
     <>
       <SEO
-        title="Consumer Credit Center | Roofing Financing | DTE Roofing"
-        description="DTE Roofing offers affordable financing for roof repair and replacement: 0% promotional options, personal loans, and second-look programs. See if you qualify."
+        title={DOCUMENT_TITLE}
+        description={DOCUMENT_DESCRIPTION}
         keywords="roofing financing, roof replacement financing, roofing payment plans, consumer credit center, affordable roofing, roof loan columbus ohio"
         canonical="https://www.dteroofingllc.com/financing"
+      />
+      <SchemaMarkup
+        type="general"
+        documentTitle={DOCUMENT_TITLE}
+        pageTitle="Financing"
+        pageDescription={DOCUMENT_DESCRIPTION}
+        pageUrl="https://www.dteroofingllc.com/financing"
       />
 
       {/* Hero */}

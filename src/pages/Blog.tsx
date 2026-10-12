@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, User, Tag } from 'lucide-react';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import { getPublishedPosts, formatPostDate } from '../data/blogPosts';
+
+const DOCUMENT_TITLE = 'Roofing Tips & News | DTE Roofing Blog';
+const DOCUMENT_DESCRIPTION = 'Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights.';
 
 export default function Blog() {
   const blogPosts = getPublishedPosts();
@@ -9,10 +13,18 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Roofing Tips & News | DTE Roofing Blog"
-        description="Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights."
+        title={DOCUMENT_TITLE}
+        description={DOCUMENT_DESCRIPTION}
         keywords="roofing blog, roof maintenance tips, Ohio roofing advice, Columbus roofing blog"
         canonical="https://www.dteroofingllc.com/blog"
+      />
+      <SchemaMarkup
+        type="general"
+        webPageType="CollectionPage"
+        documentTitle={DOCUMENT_TITLE}
+        pageTitle="Blog"
+        pageDescription={DOCUMENT_DESCRIPTION}
+        pageUrl="https://www.dteroofingllc.com/blog"
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">

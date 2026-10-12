@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Shield, Award, Star, Clock } from 'lucide-react';
+import { Shield, Award, Star, Clock, Facebook, Instagram } from 'lucide-react';
 import { useReviewData } from '../hooks/useReviewData';
 import reviewStats from '../data/review-stats.json';
 import { LOCATIONS } from '../data/locations';
+import { SERVICES } from '../data/services';
 import BbbLogo from './logos/BbbLogo';
 import NextdoorLogo from './logos/NextdoorLogo';
 import Picture from './Picture';
+
+const FACEBOOK_URL = 'https://www.facebook.com/people/DTE-Roofing/61556271692460/';
+const INSTAGRAM_URL = 'https://www.instagram.com/dte_roofing/';
+const BBB_URL = 'https://www.bbb.org/us/oh/columbus/profile/roofing-contractors/dte-roofing-llc-0302-70165482';
 
 export default function Footer() {
   const { reviewData } = useReviewData();
@@ -31,14 +36,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/services/roof-installation" className="hover:text-white transition-colors">Roof Installation</Link></li>
-              <li><Link to="/services/roof-repair" className="hover:text-white transition-colors">Roof Repair</Link></li>
-              <li><Link to="/services/roof-inspection" className="hover:text-white transition-colors">Inspections</Link></li>
-              <li><Link to="/services/emergency-services" className="hover:text-white transition-colors">Emergency Services</Link></li>
-              <li><Link to="/services/storm-damage" className="hover:text-white transition-colors">Storm Damage</Link></li>
-              <li><Link to="/services/gutters" className="hover:text-white transition-colors">Gutters</Link></li>
-              <li><Link to="/services/commercial-roofing" className="hover:text-white transition-colors">Commercial Roofing</Link></li>
-              <li><Link to="/services/preventative-maintenance" className="hover:text-white transition-colors">Preventative Maintenance</Link></li>
+              {SERVICES.map((service) => (
+                <li key={service.slug}><Link to={service.path} className="hover:text-white transition-colors">{service.name}</Link></li>
+              ))}
+              <li><Link to="/services" className="hover:text-white transition-colors">All Services</Link></li>
             </ul>
           </div>
 
@@ -134,11 +135,18 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-start gap-3 text-gray-400">
-              <BbbLogo className="w-6 h-6 flex-shrink-0 mt-1" />
-              <div>
-                <h5 className="font-bold text-white text-sm mb-1">BBB Accredited</h5>
-                <p className="text-sm">Better Business Bureau</p>
-              </div>
+              <a
+                href={BBB_URL}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 hover:text-white transition-colors group"
+              >
+                <BbbLogo className="w-6 h-6 flex-shrink-0 mt-1" />
+                <div>
+                  <h5 className="font-bold text-white text-sm mb-1">BBB Accredited</h5>
+                  <p className="text-sm">Better Business Bureau</p>
+                </div>
+              </a>
             </div>
             <div className="flex items-start gap-3 text-gray-400">
               <NextdoorLogo className="w-6 h-6 flex-shrink-0 mt-1" />
@@ -146,6 +154,34 @@ export default function Footer() {
                 <h5 className="font-bold text-white text-sm mb-1">Nextdoor Verified</h5>
                 <p className="text-sm">Neighborhood recommended</p>
               </div>
+            </div>
+            <div className="flex items-start gap-3 text-gray-400">
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 hover:text-white transition-colors group"
+              >
+                <Facebook className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h5 className="font-bold text-white text-sm mb-1">Facebook</h5>
+                  <p className="text-sm">Follow us on Facebook</p>
+                </div>
+              </a>
+            </div>
+            <div className="flex items-start gap-3 text-gray-400">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 hover:text-white transition-colors group"
+              >
+                <Instagram className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h5 className="font-bold text-white text-sm mb-1">Instagram</h5>
+                  <p className="text-sm">Follow us on Instagram</p>
+                </div>
+              </a>
             </div>
           </div>
           <div className="text-center text-gray-400">

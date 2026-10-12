@@ -23,6 +23,11 @@ interface BlogMeta {
   url: string;
 }
 
+interface ItemListEntry {
+  name: string;
+  url: string;
+}
+
 type WebPageType = 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
 
 interface SchemaMarkupProps {
@@ -37,6 +42,7 @@ interface SchemaMarkupProps {
   blog?: BlogMeta;
   webPageType?: WebPageType;
   documentTitle?: string;
+  itemList?: ItemListEntry[];
 }
 
 type JsonLdNode = Record<string, unknown>;
@@ -193,7 +199,8 @@ export default function SchemaMarkup({
   pageUrl,
   blog,
   webPageType = 'WebPage',
-  documentTitle
+  documentTitle,
+  itemList
 }: SchemaMarkupProps): JSX.Element {
   const location = locationSlug ? getLocationBySlug(locationSlug) : undefined;
   const locationCityNode = location
@@ -392,7 +399,20 @@ export default function SchemaMarkup({
             mentions: getAreaServedForLocation(locationSlug).slice(1).map(cityNode)
           }
         : {}),
-      ...(type === 'hub' ? { mainEntity: HUB_ITEM_LIST } : {})
+      ...(type === 'hub' ? { mainEntity: HUB_ITEM_LIST } : {}),
+      ...(type !== 'hub' && itemList && itemList.length > 0
+        ? {
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: itemList.map((item, i) => ({
+                '@type': 'ListItem',
+                position: i + 1,
+                name: item.name,
+                url: item.url
+              }))
+            }
+          }
+        : {})
     };
   };
 

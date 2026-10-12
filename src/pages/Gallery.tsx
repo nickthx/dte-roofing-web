@@ -2,9 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronRight, X, MapPin, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import MobileStickyCall from '../components/MobileStickyCall';
 import { projects } from '../data/projects';
+import { getLocationByCityLabel } from '../data/locations';
 import Picture from '../components/Picture';
+
+const DOCUMENT_TITLE = 'Roofing Project Gallery | DTE Roofing Columbus, OH';
+const DOCUMENT_DESCRIPTION = 'Browse completed roof replacements, repairs, and commercial projects across Columbus, Dublin, Hilliard, and Central Ohio from DTE Roofing.';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,6 +28,10 @@ export default function Gallery() {
     if (selectedCategory === 'all') return true;
     return project.category === selectedCategory;
   });
+
+  const filteredCitySlugs: (string | undefined)[] = filteredProjects.map(
+    (project) => getLocationByCityLabel(project.location)?.slug
+  );
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -77,10 +86,18 @@ export default function Gallery() {
       <MobileStickyCall />
       <div className="min-h-screen bg-white">
         <SEO
-          title="Roofing Project Gallery | DTE Roofing Columbus, OH"
-          description="Browse completed roof replacements, repairs, and commercial projects across Columbus, Dublin, Hilliard, and Central Ohio from DTE Roofing."
+          title={DOCUMENT_TITLE}
+          description={DOCUMENT_DESCRIPTION}
           keywords="roofing gallery Columbus, roof installation photos, before after roofing, Columbus roofing projects, DTE Roofing portfolio"
           canonical="https://www.dteroofingllc.com/gallery"
+        />
+        <SchemaMarkup
+          type="general"
+          webPageType="CollectionPage"
+          documentTitle={DOCUMENT_TITLE}
+          pageTitle="Gallery"
+          pageDescription={DOCUMENT_DESCRIPTION}
+          pageUrl="https://www.dteroofingllc.com/gallery"
         />
 
         {/* Hero Section */}
@@ -154,7 +171,18 @@ export default function Gallery() {
                         </h3>
                         <div className="flex items-center justify-center text-white/90">
                           <MapPin className="w-5 h-5 mr-2" />
-                          <span className="text-lg font-medium">{project.location}</span>
+                          {filteredCitySlugs[index] ? (
+                            <Link
+                              to={`/locations/${filteredCitySlugs[index]}`}
+                              className="text-lg font-medium hover:underline"
+                              onClick={(e) => e.stopPropagation()}
+                              onKeyDown={(e) => e.stopPropagation()}
+                            >
+                              {project.location}
+                            </Link>
+                          ) : (
+                            <span className="text-lg font-medium">{project.location}</span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -169,7 +197,18 @@ export default function Gallery() {
                     {/* Location Badge */}
                     <div className="flex items-center text-charcoal-600">
                       <MapPin className="w-4 h-4 mr-2 text-primary-700" />
-                      <span className="text-sm font-medium">{project.location}</span>
+                      {filteredCitySlugs[index] ? (
+                        <Link
+                          to={`/locations/${filteredCitySlugs[index]}`}
+                          className="text-sm font-medium hover:underline"
+                          onClick={(e) => e.stopPropagation()}
+                          onKeyDown={(e) => e.stopPropagation()}
+                        >
+                          {project.location}
+                        </Link>
+                      ) : (
+                        <span className="text-sm font-medium">{project.location}</span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -268,7 +307,17 @@ export default function Gallery() {
               </h3>
               <div className="flex items-center justify-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>{filteredProjects[currentImageIndex].location}</span>
+                {filteredCitySlugs[currentImageIndex] ? (
+                  <Link
+                    to={`/locations/${filteredCitySlugs[currentImageIndex]}`}
+                    className="hover:underline"
+                    onClick={closeLightbox}
+                  >
+                    {filteredProjects[currentImageIndex].location}
+                  </Link>
+                ) : (
+                  <span>{filteredProjects[currentImageIndex].location}</span>
+                )}
               </div>
               <p className="text-sm text-gray-400 mt-3">
                 {currentImageIndex + 1} / {filteredProjects.length}

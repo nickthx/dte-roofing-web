@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import MobileStickyCall from '../components/MobileStickyCall';
 import MultiStepLeadForm from '../components/lead-form/MultiStepLeadForm';
+import { LOCATIONS } from '../data/locations';
 
 const DOCUMENT_TITLE = 'Contact DTE Roofing | Free Estimates in Columbus, OH';
 
@@ -202,36 +203,11 @@ export default function Contact() {
                 DTE Roofing proudly serves homeowners and businesses throughout the Columbus metropolitan area.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Hilliard
-                </Link>
-                <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Dublin
-                </Link>
-                <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Columbus
-                </Link>
-                <Link to="/locations/westerville" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Westerville
-                </Link>
-                <Link to="/locations/powell" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Powell
-                </Link>
-                <Link to="/locations/delaware" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Delaware
-                </Link>
-                <Link to="/locations/gahanna" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Gahanna
-                </Link>
-                <Link to="/locations/grove-city" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Grove City
-                </Link>
-                <Link to="/locations/new-albany" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  New Albany
-                </Link>
-                <Link to="/locations/worthington" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
-                  Worthington
-                </Link>
+                {LOCATIONS.map((loc) => (
+                  <Link key={loc.slug} to={`/locations/${loc.slug}`} className="text-primary-700 hover:text-primary-800 font-semibold hover:underline transition-colors">
+                    {loc.cityName}
+                  </Link>
+                ))}
                 <Link to="/locations" className="text-primary-700 hover:text-primary-800 font-bold hover:underline transition-colors">
                   View All Central Ohio Service Areas →
                 </Link>

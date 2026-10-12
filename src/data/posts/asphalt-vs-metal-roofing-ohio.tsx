@@ -26,6 +26,7 @@ export const asphaltVsMetalRoofingOhio: BlogPost = {
   image:
     'https://www.dteroofingllc.com/images/dublin-premium-asphalt-shingles.jpg',
   readingMinutes: 8,
+  relatedAreas: ['dublin', 'powell', 'new-albany', 'worthington'],
   content: () => (
     <>
       <p>
