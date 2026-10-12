@@ -1,5 +1,5 @@
 ---
-status: diagnosed
+status: passed
 phase: 04-location-descriptions-h1-h2
 source:
   - 04-02-SUMMARY.md
@@ -23,7 +23,7 @@ result: [pass] All 13 pages carry a `{Secondary services} in {City}` H2 (e.g. Du
 
 ### 3. Unique meta descriptions per city
 expected: View-source on 2-3 location pages shows distinct <meta name="description"> text (140-200 chars), matching approved copy — no duplicates across cities.
-result: [issue] Uniqueness holds (13 distinct). Length and match do not. Commit b9a514f (2026-06-06, "Title/meta refinements across service and location pages") rewrote all 13 descriptions after 04-02 had applied the approved packet. Live lengths 127-152 chars; 10 of 13 under 140: westerville 127, powell 131, gahanna 132, grove-city 132, pickerington 132, upper-arlington 132, worthington 133, new-albany 134, delaware 136, reynoldsburg 137. Columbus 152, Hilliard 148, Dublin 141 clear the floor. "from our Columbus HQ" and the full street address were dropped; several gained "Free inspections."
+result: [pass] Accepted by user 2026-10-12: the shorter descriptions stand as a deliberate choice to stay under the ~155-char SERP truncation point; the 140-char floor from 04-01 is retired. Facts for the record: uniqueness holds (13 distinct). Length and match to the approved packet do not. Commit b9a514f (2026-06-06, "Title/meta refinements across service and location pages") rewrote all 13 descriptions after 04-02 had applied the approved packet. Live lengths 127-152 chars; 10 of 13 under 140: westerville 127, powell 131, gahanna 132, grove-city 132, pickerington 132, upper-arlington 132, worthington 133, new-albany 134, delaware 136, reynoldsburg 137. Columbus 152, Hilliard 148, Dublin 141 clear the floor. "from our Columbus HQ" and the full street address were dropped; several gained "Free inspections."
 
 ### 4. No superlatives in visible copy
 expected: Scan any 2-3 location pages. No "best", "#1", "most trusted", "highest-rated" wording in H1/H2/description.
@@ -36,17 +36,11 @@ result: [pass] Live sitemap shows /locations/* entries at 2026-06-30 (12 pages) 
 ## Summary
 
 total: 5
-passed: 4
-issues: 1
+passed: 5
+issues: 0
 pending: 0
 skipped: 0
 
 ## Gaps
 
-### Gap 1: Location descriptions shortened below the approved 140-char floor
-severity: minor
-root_cause: commit b9a514f (2026-06-06) rewrote all 13 location descriptions outside the Phase 4 approval gate; no length rationale recorded in the commit or any planning artifact.
-evidence: 04-01-SUMMARY.md "Verification" section; live check 2026-10-12.
-options:
-  - accept: treat sub-155-char descriptions as a deliberate SERP-truncation choice; mark test 3 [pass] with that note and set status: passed.
-  - fix: restore the 04-COPY-APPROVED.md descriptions, or lengthen the current ones to 140-160 chars, through a quick task with the approval gate.
+[none — Gap 1 (descriptions under the 140-char floor after b9a514f) accepted by user 2026-10-12; see test 3]
