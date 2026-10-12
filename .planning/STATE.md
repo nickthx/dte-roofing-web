@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: — Per-Page SEO Metadata Overhaul
-status: complete
-stopped_at: Milestone v1.1 complete
-last_updated: "2026-08-14"
-last_activity: 2026-08-14 -- Completed quick task 260814-k1s: deleted 9 verified-dead paths (6 unreferenced files served from public/, plus SeoSchema.tsx, routes.config.ts, dead-code/)
+status: Awaiting next milestone
+stopped_at: "Milestone v1.1 archived 2026-10-12; next step /gsd:new-milestone. Historical note (2026-08-14): 260814-jwp and 260814-k1s both DEPLOYED and verified live on production (jwp: c6c6d93, 662e44b; k1s: fc7dffa, a5de0b5, ed5e125 — all pushed 2026-08-14). Local main is level with origin/main; working tree clean apart from `.claude/settings.local.json`. Earlier context — two quick tasks done 2026-06-15, all local-only on main, NOT pushed (push to main = live deploy). g1y commits: 0d2d5e1, e6eb836, 89db986, a9717c1. flf commits: afed6bf, 722960c, ef21681, 58a823a. Note: the gsd-executor for g1y crashed on a transient API overload after generating the variants; the orchestrator verified the output (no upscales/width-lies, idempotent) and finished the component + wiring tasks directly. Remaining deferred audit follow-up: keyed PSI/CrUX + Rich Results field verification (PSI keyless API is quota-0 — couldn't run from CLI). Prior open content items unchanged: C1 (Columbus content), P4 (hub word count), P5 (Home H1 reorder — needs owner input), I4/I5 (image/filename SEO)."
+last_updated: "2026-10-12T20:13:24.735Z"
+last_activity: 2026-10-12 — Milestone v1.1 completed and archived
 progress:
   total_phases: 5
   completed_phases: 5
@@ -18,17 +18,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-08)
+See: .planning/PROJECT.md (updated 2026-10-12 after v1.1 milestone close)
 
-**Core value:** Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, and page structure.
-**Current focus:** Milestone v1.1 complete
+**Core value:** Establish DTE Roofing as the authoritative local roofing contractor across all 13 Central Ohio service areas through proper schema, cross-linking, page structure and per-page metadata.
+**Current focus:** Planning next milestone — run `/gsd:new-milestone`. Candidate scope listed in ROADMAP.md.
 
 ## Current Position
 
-Phase: 05 (blog-ssr-fix-final-verification) — COMPLETE
-Plan: 2 of 2 — All plans executed
-Status: Milestone v1.1 complete — deployed to Vercel production
-Last activity: 2026-04-10 -- Phase 5 deployed and verified on production
+Phase: Between milestones (v1.0 and v1.1 shipped and archived; no active phases)
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-10-12 — Milestone v1.1 archived (ROADMAP, REQUIREMENTS, audit, 5 phase dirs → milestones/); PROJECT.md reviewed; RETROSPECTIVE.md started; MILESTONES.md created with v1.1 and back-filled v1.0 entries
 
 ## Performance Metrics
 
@@ -86,8 +86,21 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Research]: Service area map implementation (Phase 3) may need a research spike for lightweight options (static SVG vs interactive)
-- [Research]: aggregateRating async fetch may miss Googlebot render -- low priority, deferred to v2
+- [Research]: aggregateRating async fetch may miss Googlebot render -- low priority, deferred to a future milestone
+- [Ops]: Old exposed Google Maps key still needs rotating/restricting in Cloud Console (env var side done 2026-07-27, quick task 260701-p47)
+- [Tooling]: `npm run typecheck` and `npm run lint` are pre-existing red; `npm run build` is the gate
+
+## Deferred Items
+
+Items acknowledged and deferred at milestone v1.1 close on 2026-10-12 (from `gsd-sdk query audit-open`):
+
+| Category | Item | Status |
+|----------|------|--------|
+| quick_task | 25 quick-task SUMMARY.md files report `status: missing` to the audit tool. All 25 are finished and listed in "Quick Tasks Completed" below; 20 lack a `status:` frontmatter key or use free-text ("completed", "complete (NOT pushed — ...)"). Two carry stale notes superseded by later work: 260407-m8b ("awaiting T3 human verification" — verified by the Phase 5 production deploy) and 260606-knp ("NOT pushed" — later pushed, commits 4ab9c01 / 6732c2a on main). | acknowledged, no action |
+| uat_gap | 04-UAT.md listed with 0 open scenarios, status passed | closed 2026-10-12 |
+| audit | v1.1-MILESTONE-AUDIT.md (2026-04-09) status `gaps_found`, run before Phases 4-5; superseded by 05-02 verification. Moved to milestones/. | acknowledged, stale |
+| git_tag | `v1.1` tag already used 2026-03-21 for a Home carousel change (local 126eadb, remote 0358b33); milestone not tagged. Decide: move/rename the old tag, or tag the milestone as e.g. `v1.1-seo-metadata` at 1eb5d70. | user decision |
+| cosmetic | Week 2B preview review items: ServiceAreaLinks spacing on 9 service pages, 7-tile footer trust row wraps, blog related-area cards gray-on-gray, gallery hover city link on touch | next milestone candidate |
 
 ### Quick Tasks Completed
 
@@ -152,3 +165,7 @@ Earlier: 2026-07-27 - Completed quick task 260727-fji: fixed the broken "Leave U
 Earlier: 2026-06-15 - Completed quick task 260615-g1y: responsive srcset/sizes for the LCP hero + large on-page photos (homepage WorkCarousel, Gallery, About job-site grid). New sharp variant generator + typed manifest (178 files), responsive Picture + responsive hero preload (imagesrcset/imagesizes matches the <source> exactly — LCP-safe), layout-derived sizes wired; headshots/logos/lightbox untouched. Build clean. Earlier today: 260615-flf (dead preconnect removal, sitemap refresh, webp re-encode ~2.29 MB saved). NOT pushed — pending user review.
 Stopped at: 260814-jwp and 260814-k1s both DEPLOYED and verified live on production (jwp: c6c6d93, 662e44b; k1s: fc7dffa, a5de0b5, ed5e125 — all pushed 2026-08-14). Local main is level with origin/main; working tree clean apart from `.claude/settings.local.json`. Earlier context — two quick tasks done 2026-06-15, all local-only on main, NOT pushed (push to main = live deploy). g1y commits: 0d2d5e1, e6eb836, 89db986, a9717c1. flf commits: afed6bf, 722960c, ef21681, 58a823a. Note: the gsd-executor for g1y crashed on a transient API overload after generating the variants; the orchestrator verified the output (no upscales/width-lies, idempotent) and finished the component + wiring tasks directly. Remaining deferred audit follow-up: keyed PSI/CrUX + Rich Results field verification (PSI keyless API is quota-0 — couldn't run from CLI). Prior open content items unchanged: C1 (Columbus content), P4 (hub word count), P5 (Home H1 reorder — needs owner input), I4/I5 (image/filename SEO).
 Resume file: None
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd-new-milestone

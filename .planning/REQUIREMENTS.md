@@ -16,10 +16,10 @@
 
 ### Heading Structure (H1/H2 Rewrite)
 
-- [ ] **HEAD-01**: Every location page H1 follows the format `Primary Service Category + City` (e.g., "Roof Repair & Replacement in Hilliard, OH") — overrides the v1.0 "do not modify content" constraint for headings only
-- [ ] **HEAD-02**: Every service page H1 follows the format `Primary Service + Columbus Region` (e.g., "Roof Repair in Columbus, OH")
-- [ ] **HEAD-03**: Every location/service page has H2s listing secondary categories + most pertinent services, informed by competitor Google Business Profile research
-- [ ] **HEAD-04**: Competitor GBP Services/Categories scraped from top 3 competitors per city using `claude-in-chrome` MCP, stored in `.planning/research/v1.1-gbp-competitors.md`
+- [x] **HEAD-01**: Every location page H1 follows the format `Primary Service Category + City` (e.g., "Roof Repair & Replacement in Hilliard, OH") — overrides the v1.0 "do not modify content" constraint for headings only (Phase 4, 04-02; re-verified live on all 13 pages 2026-10-12, 04-UAT.md)
+- [x] **HEAD-02**: Every service page H1 follows the format `Primary Service + Columbus Region` (e.g., "Roof Repair in Columbus, OH") (Phase 2, 02-02)
+- [x] **HEAD-03**: Every location/service page has H2s listing secondary categories + most pertinent services, informed by competitor Google Business Profile research (Phase 2 service pages, Phase 4 location pages; location H2s re-verified live 2026-10-12)
+- [x] **HEAD-04**: Competitor GBP Services/Categories scraped from top 3 competitors per city using `claude-in-chrome` MCP, stored in `.planning/research/v1.1-gbp-competitors.md` (Phase 1, 01-02 — 8 firms, 15 city-competitor assignments, 5 researched cities + extrapolation map for 8)
 
 ### `/blog` SSR Fix
 
@@ -122,7 +122,15 @@
 | LINK-03 | Phase 2 | Complete |
 | LINK-04 | Phase 3 | Complete |
 | HUB-03 | Phase 3 | Complete |
+| META-01 | Phases 2, 3, 5 | Complete |
+| META-02 | Phases 2, 3, 4, 5 | Complete |
 | META-03 | Phase 5 | Complete |
+| META-04 | Phases 2, 3, 4 | Complete |
+| META-05 | Phases 2, 3, 4 | Complete (location descriptions later shortened to 127-152 chars by b9a514f; accepted 2026-10-12, see 04-UAT.md) |
+| HEAD-01 | Phase 4 | Complete |
+| HEAD-02 | Phase 2 | Complete |
+| HEAD-03 | Phases 2, 4 | Complete |
+| HEAD-04 | Phase 1 | Complete |
 | BLOG-01 | Phase 5 | Complete |
 | BLOG-02 | Phase 5 | Complete |
 | BLOG-03 | Phase 5 | Complete |
@@ -134,9 +142,9 @@
 
 **Coverage:**
 - v1 requirements: 16 total — all mapped and complete
-- v1.1 requirements: 17 total — all mapped and complete
+- v1.1 requirements: 17 total — all mapped and complete (HEAD-01..04 checkboxes and META/HEAD traceability rows were back-filled 2026-10-12 at milestone close; the work shipped 2026-04-08 → 2026-04-10)
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 after initial definition*
+*Last updated: 2026-10-12 at v1.1 milestone close*
