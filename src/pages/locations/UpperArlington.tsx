@@ -6,6 +6,7 @@ import { useReviewData } from '../../hooks/useReviewData';
 import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
+import RecentWork from '../../components/RecentWork';
 
 const DOCUMENT_TITLE = 'Roofers in Upper Arlington, OH | Roof Repair | DTE Roofing';
 
@@ -292,6 +293,7 @@ export default function UpperArlington() {
             </div>
           </div>
 
+          <RecentWork projectIds={[11, 24, 1]} heading="Recent Roofing Work Near Upper Arlington" className="mb-16" />
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Upper Arlington Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">

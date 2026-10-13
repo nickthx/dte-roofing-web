@@ -6,6 +6,7 @@ import { useReviewData } from '../../hooks/useReviewData';
 import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
+import RecentWork from '../../components/RecentWork';
 
 const DOCUMENT_TITLE = 'Roofers in Delaware, OH | Roofing Contractor | DTE Roofing';
 
@@ -390,6 +391,7 @@ export default function Delaware() {
             </div>
           </div>
 
+          <RecentWork projectIds={[20, 16, 4]} heading="Recent Roofing Work Near Delaware" className="mb-16" />
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Delaware Roofing FAQs</h2>
             <div className="space-y-4">
