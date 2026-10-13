@@ -7,6 +7,7 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 import RecentWork from '../../components/RecentWork';
+import { HQ_MAP_EMBED_SRC } from '../../data/business';
 
 const DOCUMENT_TITLE = 'Roofers in Reynoldsburg, OH | Roof Repair | DTE Roofing';
 
@@ -286,7 +287,7 @@ export default function Reynoldsburg() {
             <div className="bg-gray-50 p-4 rounded-xl border-2 border-gray-200">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.8779986954747!2d-83.16920092346665!3d39.99827597151532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388e4a4b0be8a3%3A0x6a7a18f7f4b7e8a0!2s615%20Hilliard%20Rome%20Rd%2C%20Columbus%2C%20OH%2043228!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                  src={HQ_MAP_EMBED_SRC}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

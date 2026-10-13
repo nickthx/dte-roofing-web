@@ -7,6 +7,7 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 import RecentWork from '../../components/RecentWork';
+import { HQ_MAP_EMBED_SRC } from '../../data/business';
 
 const DOCUMENT_TITLE = 'Roofers in Dublin, OH | Repair & Replacement | DTE Roofing';
 
@@ -374,14 +375,14 @@ export default function Dublin() {
             <div className="bg-gray-50 p-4 rounded-xl border border-gray-200">
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d98580.45321567892!2d-83.1577!3d40.0992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x883889e3e3e3e3e3%3A0x3e3e3e3e3e3e3e3e!2sDublin%2C%20OH!3m2!1d40.0992!2d-83.1140!4m5!1s0x8838f36c5f8d7f45%3A0x7b4d8f8f8f8f8f8f!2s615%20Hilliard%20Rome%20Rd%2C%20Columbus%2C%20OH%2043228!3m2!1d39.957915!2d-83.1577!5e0!3m2!1sen!2sus!4v1642000000000!5m2!1sen!2sus"
+                  src={HQ_MAP_EMBED_SRC}
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Map showing route from Dublin, OH to DTE Roofing headquarters at 615 Hilliard Rome Rd, Columbus, OH 43228"
+                  title="Map showing DTE Roofing headquarters at 615 Hilliard Rome Rd, Columbus, OH 43228, serving Dublin, OH"
                   className="rounded-lg"
                 ></iframe>
               </div>

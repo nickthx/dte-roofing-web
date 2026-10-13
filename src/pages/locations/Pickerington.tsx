@@ -7,6 +7,7 @@ import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
 import RecentWork from '../../components/RecentWork';
+import { HQ_MAP_EMBED_SRC } from '../../data/business';
 
 const DOCUMENT_TITLE = 'Roofers in Pickerington, OH | Roof Repair | DTE Roofing';
 
@@ -285,7 +286,7 @@ export default function Pickerington() {
             <div className="bg-gray-50 p-4 rounded-xl border-2 border-gray-200">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.google.com/maps?q=615+Hilliard+Rome+Rd,+Columbus,+OH+43228&output=embed"
+                  src={HQ_MAP_EMBED_SRC}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
