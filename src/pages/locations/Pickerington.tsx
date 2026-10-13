@@ -14,44 +14,44 @@ export default function Pickerington() {
 
   const pickeringtonFaqs = [
     {
-      question: "Do you serve Pickerington if you're based in Columbus?",
-      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. Distance has never been an issue—we know the routes (I-270 outerbelt, US-33, I-70, OH-256) and respond efficiently to all Pickerington areas from Olde Pickerington Village to Sycamore Creek to Pickerington Ponds and neighborhoods throughout the area."
+      question: "Why does my Pickerington home leak around a valley or dormer when the shingles look fine?",
+      answer: "Because the shingles are rarely the problem in those spots. Leaks on complex rooflines usually start where two planes meet or where a wall rises through the roof. If the valley was cut short, its membrane was skipped, or step flashing along a dormer has no counter flashing, water can travel several feet before it shows inside. We trace the stain to its source and fix that detail."
     },
     {
-      question: "How fast can you inspect after wind/hail damage?",
-      answer: "We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Pickerington and the east side, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades."
+      question: "Do I need a permit in Pickerington or Violet Township for a new roof?",
+      answer: "It depends on where your house sits. Pickerington is surrounded by Violet Township, and many homes with a Pickerington mailing address are actually in the township. Whether a permit is needed, and which office issues it, differs on each side of that line. We confirm your jurisdiction from the parcel record, pull any permit that is required and schedule inspections, so you never have to call the offices yourself."
     },
     {
-      question: "Do you help with insurance documentation for storm damage?",
-      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important for protecting your investment."
+      question: "Should I replace my skylights when I replace the roof?",
+      answer: "If they are original to a 1990s or 2000s home, it is usually the right time. Skylight seals and flashing kits wear out, and replacing a skylight later means cutting into a brand-new roof. We check the glass, the frame and any staining on the drywall around the shaft. Sound units get new flashing kits. Worn ones are replaced, or the opening is closed if you no longer want it."
     },
     {
-      question: "What causes leaks around chimneys and step flashing?",
-      answer: "Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection."
+      question: "How do I know if my two-story attic is ventilated properly?",
+      answer: "Warning signs include an upstairs that is hard to cool, frost or dark staining on the underside of the roof deck in winter, shingles that blister on the back slopes, and heavy icicles at the eaves. We go into the attic, measure intake and exhaust openings, make sure insulation is not blocking the soffit vents, and look for bath fans venting into the attic instead of outdoors."
     },
     {
-      question: "Is ice and water shield worth it in this climate?",
-      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan."
+      question: "My builder-grade roof is around 15 to 20 years old. What should I expect?",
+      answer: "That is when entry-level shingles start to show their age. Look for granules in the gutters, edges that curl or cup, bare patches on the sunniest slope, and tabs that lift in the wind. On a two-story home, valleys and flashing may leak before the field shingles look tired. Some roofs have a few more years with targeted repairs, and others are better replaced before winter. You see the photos either way."
     },
     {
-      question: "Do you handle gutters and drainage issues?",
-      answer: "Yes. Mature trees in many Pickerington neighborhoods—especially near Sycamore Creek and wooded areas—mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively."
+      question: "Are open-metal valleys or closed-cut valleys better?",
+      answer: "Both work when installed over ice and water shield. In a closed-cut valley, shingles from one side run through and the other side is trimmed along a chalk line, which gives a clean look common in Pickerington subdivisions. An open-metal valley uses a strip of prefinished metal down the center, shedding leaves and heavy runoff faster. We recommend one based on pitch, tree cover and how much upper roof drains into it."
     },
     {
-      question: "What about newer subdivisions with builder-grade materials?",
-      answer: "Many Pickerington subdivisions built during rapid growth periods feature builder-grade roofing materials that may show premature wear after 15-20 years. We assess whether repairs can extend lifespan or if replacement with upgraded materials proves more cost-effective. When replacing builder-grade roofs, we typically recommend premium architectural shingles with better warranties, enhanced wind ratings, and superior algae resistance. We help you make informed decisions about whether to match existing materials or upgrade to longer-lasting options."
+      question: "How do trees along Sycamore Creek affect my roof?",
+      answer: "Creek-side lots get more leaves, seeds and shade than the open subdivisions. Debris settles in valleys and behind chimneys and holds water against the shingles, gutters overflow onto the fascia, and damp north slopes grow moss. Branches that reach the roof scuff shingles whenever the wind blows. We clean valleys and gutters, treat moss, and point out which limbs to trim."
     },
     {
-      question: "What's the fastest way to schedule an inspection?",
-      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response."
+      question: "Can you replace just the flashing without a whole new roof?",
+      answer: "Often, yes. If the shingles have useful life left, we remove the courses around a chimney, wall or dormer, install new step and counter flashing, and weave matching shingles back in. Sometimes a course of siding has to come off so the flashing can tuck behind it. If the shingles are brittle enough to crack when lifted, we tell you, because new flashing on a failing roof will not hold up for long."
     },
     {
-      question: "Should I repair or replace my aging roof?",
-      answer: "The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments—sometimes recommending repairs that extend serviceable lifespan 5-10 years, other times advising replacement when repairs prove false economy. Our recommendations prioritize your long-term interests over maximizing short-term revenue."
+      question: "Do you work on homes near the Canal Winchester border and in Violet Township?",
+      answer: "Yes. Our Pickerington trips cover subdivisions south toward Canal Winchester, rural Violet Township properties and homes along Refugee Road on the Franklin County side. Larger lots outside the city sometimes include outbuildings or detached garages, and we can look at those roofs during the same visit. Scheduling and pricing stay the same no matter which side of a city or county line you live on."
     },
     {
-      question: "How long does a typical roof replacement take?",
-      answer: "Most residential roof replacements in Pickerington complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with multiple dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project with tarps and magnetic tools to collect nails, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight."
+      question: "What happens on the day of a roof replacement on a two-story home?",
+      answer: "We start by covering landscaping, laying tarps along the foundation and placing the dumpster where it will not damage the driveway. The crew tears off one section at a time and dries it in before moving on, so the house is never left open. Two-story homes need extra fall protection, and roofs with several valleys can run into a second day. At the end, we sweep with magnets and an owner walks the finished roof with you."
     }
   ];
 
@@ -84,7 +84,7 @@ export default function Pickerington() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Pickerington, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Pickerington homeowners—from Olde Pickerington Village to Sycamore Creek, Pickerington Ponds to Hill Road neighborhoods. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
+              Valley, flashing and full roof replacement work for Pickerington's two-story homes, from Olde Pickerington Village to the subdivisions off Hill Road, Refugee Road and OH-256. We know where the city ends and Violet Township begins, and we fix the complicated rooflines where leaks usually start.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || reviewStats.reviewCount} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -108,13 +108,13 @@ export default function Pickerington() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Storm Damage, Hail Damage & Insurance Claims in Pickerington</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Pickerington regularly on the east side of Columbus. With easy access via <strong>I-270</strong> outerbelt, <strong>I-70</strong>, <strong>US-33</strong>, and <strong>OH-256</strong>, we reach Pickerington efficiently—from <strong>Olde Pickerington Village</strong> to <strong>Sycamore Creek</strong> neighborhoods, from <strong>Pickerington Ponds Metro Park</strong> areas to <strong>Hill Road</strong> and <strong>OH-256</strong> corridors. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
+                Pickerington is a Fairfield County city with a portion in Franklin County, and it is surrounded by <strong>Violet Township</strong>, so two houses on the same road can answer to different offices. Crews leaving our <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong> shop arrive by <strong>I-270</strong>, <strong>I-70</strong> or <strong>US-33</strong> and <strong>OH-256</strong>, working in <strong>Olde Pickerington Village</strong>, along <strong>Hill Road</strong> and <strong>Refugee Road</strong>, near <strong>Pickerington Ponds Metro Park</strong> and down to the <strong>Canal Winchester</strong> border.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Pickerington features diverse housing—established neighborhoods from the 1990s and 2000s alongside newer subdivisions throughout the north and south areas. This architectural variety creates specific roofing challenges: wind-driven rain stressing step flashing, valleys, and chimney flashing on older homes, hail and severe thunderstorms common to the east side of Columbus requiring careful inspection and documentation for insurance, mature tree debris near Sycamore Creek and wooded areas clogging gutters and causing overflow damage to fascia and soffit, and harsh winter freeze-thaw cycles that require proper ventilation and ice and water shield to prevent ice dams.
+                Most local housing went up between the 1990s and the 2010s, and much of it is two stories with busy rooflines: several valleys, dormers over bonus rooms, skylights, and walls meeting the roof at a dozen points. Each of those intersections depends on flashing. As builder-grade shingles reach 15 to 20 years, those spots fail first, often before the open field of the roof looks worn.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Many Pickerington subdivisions feature builder-grade materials from the rapid growth period that may need upgrading or replacement after 15-20 years. Our detail-first approach means thorough cleanup, property protection, and meticulous craftsmanship on every project. Whether you need emergency storm repairs, honest diagnostics on repair vs replacement decisions, or a planned roof replacement, we treat your home with the same care we'd expect for our own. We help homeowners make the right call—sometimes a targeted repair extends serviceable lifespan 5-10 years, other times replacement proves more cost-effective than ongoing repair cycles.
+                Two-story attics also run hot, especially over vaulted ceilings and bonus rooms that leave little space for air to move. Weak ventilation ages shingles from underneath and feeds ice dams at the eaves. Add the wooded lots along <strong>Sycamore Creek</strong>, where leaves settle into valleys, and you have the three things we check first on every Pickerington roof: valleys and flashing, attic airflow, and debris.
               </p>
 
               <div className="bg-primary-50 p-6 rounded-xl border-2 border-primary-200">
@@ -124,16 +124,14 @@ export default function Pickerington() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners personally involved in every project",
-                    "Based in Columbus—serving Pickerington regularly",
-                    "Great attention to detail on every project",
-                    "Experience with wind-driven rain and flashing issues",
-                    "Expert at documenting hail/storm damage for insurance",
-                    "Understanding of tree debris and gutter challenges",
-                    "Knowledge of freeze-thaw cycles and ventilation needs",
-                    "Honest diagnostics—repair vs replacement guidance",
-                    "Experience with newer subdivisions and builder-grade materials",
-                    "Licensed, insured, and committed to quality craftsmanship"
+                    "Owners inspect every valley, dormer and skylight up close",
+                    "Step, counter and chimney flashing rebuilt instead of caulked",
+                    "Closed-cut and open-metal valley options for complex rooflines",
+                    "Skylight resealing or replacement during reroofing",
+                    "Attic ventilation checks on two-story and bonus-room homes",
+                    "Permits handled inside city limits and in Violet Township",
+                    "Valley and gutter clean-outs for wooded Sycamore Creek lots",
+                    "Straight talk on builder-grade shingles at 15 to 20 years"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
@@ -174,7 +172,7 @@ export default function Pickerington() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  Our owners personally oversee every roofing project in Pickerington—just honest assessments and fair pricing.
+                  Seeing a stain below a valley or skylight? An owner will trace the leak to its source and give you a written price to fix it, free of charge.
                 </p>
                 <Link
                   to="/contact"
@@ -220,27 +218,27 @@ export default function Pickerington() {
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Common Roofing Issues in Pickerington</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Wind-Driven Rain and Flashing Failures</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Valley Leaks on Complex Two-Story Rooflines</h3>
                 <p className="text-charcoal-600">
-                  Central Ohio's weather patterns bring frequent wind-driven rain that stresses roof seals, especially around chimneys, skylights, and dormers. Step flashing along rooflines and wall intersections, valley flashing, and chimney flashing are particularly vulnerable on older homes. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials designed for decades of protection against Pickerington's variable weather conditions.
+                  Valleys carry more water than any other part of a roof, and on a Pickerington two-story with several intersecting gables they also catch leaves. If the valley shingles were cut short or the membrane underneath was thin, water travels sideways and appears as a stain on an upstairs ceiling. We open the valley, check the ice and water shield, and rebuild it closed-cut or open-metal to suit the pitch.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Hail/Severe Thunderstorms: Insurance Documentation</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Step Flashing, Dormers and Skylights</h3>
                 <p className="text-charcoal-600">
-                  Pickerington experiences frequent hail and severe thunderstorms as part of east side storm patterns common to Central Ohio. After storm events, roofs require thorough documentation for successful insurance claims. We provide detailed photo evidence, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. We help navigate the claims process and advocate for fair settlements covering all legitimate damage.
+                  Wherever a wall, dormer or skylight meets the roof, the seal depends on flashing layered correctly the day it went in. On many 1990s and 2000s homes, counter flashing was skipped or skylight kits were sealed with caulk alone. Those shortcuts hold for a while and then leak. We open up the trim needed to reach the flashing, replace it piece by piece, and reseal or replace aging skylights.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Tree Debris and Gutter Overflow</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Hot Attics in Two-Story Homes</h3>
                 <p className="text-charcoal-600">
-                  Many established Pickerington neighborhoods—particularly near Sycamore Creek and wooded areas—feature mature trees that drop constant debris into gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. Dense shade also encourages moss and algae growth on north-facing slopes. We address these challenges through algae-resistant shingles, gutter maintenance and cleaning, gutter guard installation in high-debris areas, and regular preventative maintenance programs. If tree debris has caused damage to fascia or soffit, we assess and repair all related issues comprehensively.
+                  Bonus rooms, vaulted ceilings and hip roofs leave little room for air to move through a Pickerington attic. Without enough intake at the soffits and exhaust at the ridge, heat builds in summer and moisture condenses in winter. Shingles blister and curl early, the deck underside grows mold, and ice dams form at the eaves. We measure the vent area you have against what the attic needs and correct it.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Winter Freeze-Thaw and Ice Dam Prevention</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Creek-Side Trees and Pickerington Ponds Debris</h3>
                 <p className="text-charcoal-600">
-                  Ohio winters bring harsh freeze-thaw cycles that stress roofing systems. Poor attic ventilation—common in older homes and some builder-grade construction—causes warm air to melt snow unevenly, leading to ice dams at eaves and water backup under shingles. We assess ventilation during every inspection, install ice and water shield at vulnerable areas during replacements, and recommend ventilation improvements when needed. Proper ventilation prevents winter damage, reduces energy costs, and extends shingle lifespan year-round. This is especially important in Pickerington's diverse housing stock.
+                  Lots along Sycamore Creek and near Pickerington Ponds Metro Park are shadier than the open subdivisions. Leaves and seeds collect in valleys and behind chimneys, shade keeps north slopes damp, and branches rub shingles in the wind. We clear valleys and gutters, recommend guards where the leaf load is heavy, treat moss and algae, and flag branches that should be cut back.
                 </p>
               </div>
             </div>
@@ -258,7 +256,7 @@ export default function Pickerington() {
                   <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong>
                 </p>
                 <p className="text-lg text-charcoal-600 mb-6">
-                  We're based on the west side of Columbus and serve Pickerington regularly on the east side. Access from Pickerington: I-270 outerbelt to east side, US-33 corridors, I-70 routes, or OH-256 connections. Whether you're in Olde Pickerington Village, Sycamore Creek, near Pickerington Ponds, or anywhere in the Pickerington area, we provide prompt, professional service.
+                  From Hilliard Rome Road we take I-270 around the south side or I-70 east, then US-33 or OH-256 into Pickerington without crossing downtown. Violet Township homes and those near the Canal Winchester line are on the same trip. Before starting, we confirm whether your address is inside city limits so the right permit is in place.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -324,31 +322,31 @@ export default function Pickerington() {
                 {[
                   {
                     title: "Owner-Led Inspections",
-                    description: "One of our owners personally inspects every roof and speaks with every customer"
+                    description: "An owner gets up close to every valley, dormer and skylight before writing your estimate"
                   },
                   {
                     title: "Local Knowledge",
-                    description: "Understanding of Pickerington's neighborhoods, weather patterns, and housing characteristics"
+                    description: "We know Pickerington's two-story subdivisions and where the township line falls"
                   },
                   {
                     title: "Honest Diagnostics",
-                    description: "We only recommend repairs that are actually needed—no upselling or unnecessary replacements"
+                    description: "If one rebuilt flashing detail stops the leak, that is all we quote"
                   },
                   {
                     title: "Quality Materials",
-                    description: "Premium materials appropriate for Central Ohio weather and Pickerington homes"
+                    description: "Ice and water shield in every valley and new metal flashing on every job"
                   },
                   {
                     title: "Attention to Detail",
-                    description: "Thorough cleanup, property protection, and meticulous craftsmanship on every project"
+                    description: "Flashing layered the right way, valleys cut clean, landscaping protected"
                   },
                   {
                     title: "Storm Damage Expertise",
-                    description: "We help document hail/wind damage and work with your insurance company for fair settlements"
+                    description: "Clear hail and wind documentation across every slope of a large, cut-up roof"
                   },
                   {
                     title: "Emergency Response",
-                    description: "24/7 availability for urgent repairs and storm damage"
+                    description: "Quick tarping when a storm opens up a valley or skylight"
                   }
                 ].map((item, index) => (
                   <div key={index}>
@@ -398,7 +396,7 @@ export default function Pickerington() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Protect Your Pickerington Home</h2>
               <p className="text-xl mb-4">
-                Join satisfied Pickerington homeowners who trust DTE Roofing for quality roofing and exceptional service.
+                Stop chasing the same stain on your ceiling. Have an owner check the valleys, flashing and attic on your Pickerington home.
               </p>
               <p className="text-lg mb-2 opacity-90">
                 Serving Pickerington from 615 Hilliard Rome Rd, Columbus, OH 43228
@@ -434,7 +432,7 @@ export default function Pickerington() {
             Schedule Your Pickerington Roof Inspection
           </h2>
           <p className="text-xl text-charcoal-600 mb-4 max-w-2xl mx-auto">
-            Contact DTE Roofing today for expert roofing services in Pickerington
+            Free valley, flashing and ventilation check for Pickerington homeowners
           </p>
           <p className="text-lg text-charcoal-600 mb-8 max-w-2xl mx-auto">
             Based at 615 Hilliard Rome Rd, Columbus, OH 43228 • Call 614-971-6028

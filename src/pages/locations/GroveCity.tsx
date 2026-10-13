@@ -108,7 +108,7 @@ export default function GroveCity() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Gutter Guards, Storm Damage & Hail Repair in Grove City</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Grove City lies southwest of downtown in Jackson Township, Franklin County. From our shop at <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong> it is a quick trip down the <strong>I-270</strong> south loop or <strong>I-71</strong>, with <strong>US-62</strong> and <strong>Stringtown Road</strong> taking us to <strong>Hoover Road</strong>, <strong>Buckeye Parkway</strong>, <strong>Fryer Park</strong> and the streets out toward <strong>Scioto Grove Metro Park</strong>.
+                Grove City lies southwest of downtown in Jackson Township, Franklin County. Our home base, <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong>, is a quick drive away by the <strong>I-270</strong> south loop or <strong>I-71</strong>, with <strong>US-62</strong> and <strong>Stringtown Road</strong> taking us to <strong>Hoover Road</strong>, <strong>Buckeye Parkway</strong>, <strong>Fryer Park</strong> and the streets out toward <strong>Scioto Grove Metro Park</strong>.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 The city has two distinct kinds of housing. Around the historic <strong>Town Center on Broadway</strong> are 1950s through 1970s ranches, many with plank decking, small attics and low-slope additions. Beyond that core, Grove City grew quickly: Hoover Crossing, Indian Run, Derby Hill and the Pinnacle golf community filled in during the 2000s and 2010s, and the former Beulah Park racetrack site is now being redeveloped.
@@ -257,7 +257,7 @@ export default function GroveCity() {
                   <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong>
                 </p>
                 <p className="text-lg text-charcoal-600 mb-6">
-                  From Hilliard Rome Road we head south on I-270 and exit at Stringtown Road or US-62. Broadway and the Town Center are a few minutes from there, and Hoover Road and Buckeye Parkway lead to the newer subdivisions. Homes near Scioto Grove and the south end of town come off I-71.
+                  The trip to Grove City is a run south on I-270 to the Stringtown Road or US-62 exit. Broadway and the Town Center are a few minutes from there, and Hoover Road and Buckeye Parkway lead to the newer subdivisions. Homes near Scioto Grove and the south end of town come off I-71.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
