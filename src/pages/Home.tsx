@@ -14,7 +14,7 @@ import { CANONICAL_DOMAIN } from '../seo/constants';
 import BbbLogo from '../components/logos/BbbLogo';
 import NextdoorLogo from '../components/logos/NextdoorLogo';
 
-const DOCUMENT_TITLE = 'Roof Repair and Replacement in Columbus, OH | DTE Roofing';
+const DOCUMENT_TITLE = 'Roofing Contractor in Columbus, OH | DTE Roofing';
 
 export default function Home() {
   const { reviewData } = useReviewData();
@@ -33,7 +33,7 @@ export default function Home() {
       <SchemaMarkup
         type="home"
         documentTitle={DOCUMENT_TITLE}
-        pageTitle="Roof Repair and Replacement in Columbus, OH | DTE Roofing"
+        pageTitle={DOCUMENT_TITLE}
         pageDescription={`Founded by two brothers from Hilliard, Ohio. Honest inspections, precision repairs, and a perfect ${reviewStats.reviewCount} five-star rating.`}
         pageUrl={`${CANONICAL_DOMAIN}/`}
       />
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
-              DTE Roofing | Roofing Contractor in Columbus OH You Can Trust
+              The Roofing Contractor in Columbus, OH You Can Trust
             </h1>
             <div className="w-24 h-1 bg-primary-600 mb-6"></div>
             <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white drop-shadow-md font-light">
