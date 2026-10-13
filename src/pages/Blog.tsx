@@ -2,10 +2,21 @@ import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, User, Tag } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
+import Picture from '../components/Picture';
 import { getPublishedPosts, formatPostDate } from '../data/blogPosts';
+import { getProjectByImage } from '../data/projects';
 
 const DOCUMENT_TITLE = 'Roofing Tips & News | DTE Roofing Blog';
 const DOCUMENT_DESCRIPTION = 'Expert roofing advice for Central Ohio homeowners. Roof maintenance tips, winter prep guides, storm damage resources, and industry insights.';
+
+function getCardImageAlt(imagePath: string): string {
+  const project = getProjectByImage(imagePath);
+  if (project) return project.alt;
+  if (imagePath.endsWith('dte-roofing-job-site-columbus.jpg')) {
+    return 'DTE Roofing crew working on a residential roofing job site in Columbus, OH';
+  }
+  return 'Completed DTE Roofing architectural shingle roof on a Central Ohio home';
+}
 
 export default function Blog() {
   const blogPosts = getPublishedPosts();
@@ -57,7 +68,13 @@ export default function Blog() {
                     className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary-300 transition-all duration-300 group"
                   >
                     <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary-700 to-primary-900 flex items-center justify-center">
-                      <div className="text-white text-6xl opacity-20">🏠</div>
+                      <Picture
+                        src={post.image.replace(/^https?:\/\/[^/]+/, '')}
+                        alt={getCardImageAlt(post.image.replace(/^https?:\/\/[^/]+/, ''))}
+                        sizes="(min-width:768px) 50vw, 100vw"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
                       <div className="absolute top-4 left-4">
                         <span className="bg-white text-primary-700 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                           {post.tags?.[0] || 'Roofing'}

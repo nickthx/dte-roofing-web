@@ -3,7 +3,9 @@ import { Calendar, ArrowLeft, MapPin, User, Clock, Phone, ChevronRight } from 'l
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import RelatedAreas from '../components/RelatedAreas';
+import Picture from '../components/Picture';
 import { getPostBySlug, getRelatedPosts, formatPostDate } from '../data/blogPosts';
+import { getProjectByImage } from '../data/projects';
 
 const SITE_URL = 'https://www.dteroofingllc.com';
 
@@ -33,6 +35,13 @@ export default function BlogPostPage() {
   }
 
   const relatedPosts = getRelatedPosts(post);
+  const imagePath = post.image.replace(/^https?:\/\/[^/]+/, '');
+  const imageProject = getProjectByImage(imagePath);
+  const imageAlt = imageProject
+    ? imageProject.alt
+    : imagePath.endsWith('dte-roofing-job-site-columbus.jpg')
+      ? 'DTE Roofing crew working on a residential roofing job site in Columbus, OH'
+      : 'Completed DTE Roofing architectural shingle roof on a Central Ohio home';
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
   const documentTitle = `${post.title} | DTE Roofing Blog`;
 
@@ -123,6 +132,19 @@ export default function BlogPostPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 lg:p-12">
               <div className="article-content">
+                <figure className="mb-8">
+                  <Picture
+                    src={imagePath}
+                    alt={imageAlt}
+                    sizes="(min-width:1024px) 896px, 100vw"
+                    loading="eager"
+                    fetchPriority="high"
+                    className="w-full rounded-xl object-cover aspect-video"
+                  />
+                  {imageProject && (
+                    <figcaption className="text-sm text-charcoal-500 mt-2">{imageProject.title} — {imageProject.location}</figcaption>
+                  )}
+                </figure>
                 {post.content()}
 
                 {post.faqs.length > 0 && (
