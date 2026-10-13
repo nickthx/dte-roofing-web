@@ -14,44 +14,44 @@ export default function GroveCity() {
 
   const groveCityFaqs = [
     {
-      question: "Do you serve Grove City if you're based in Columbus?",
-      answer: "Absolutely. We're based at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Grove City regularly on the southwest side of Columbus. Distance has never been an issue—we know the routes (I-270, I-71, US-62, Stringtown Road corridors) and respond efficiently to all Grove City areas from Historic Downtown Broadway to Fryer Park to Scioto Grove and neighborhoods throughout the area."
+      question: "My Grove City subdivision roof is the same age as my neighbors'. Does mine need replacing too?",
+      answer: "Not necessarily. Houses built in the same phase often share a shingle, but they do not age at the same rate. A south-facing back slope bakes faster, a poorly vented attic cooks shingles from below, and a lot backing open fields takes more wind. We inspect your roof and attic on their own and photograph the worst areas. If minor repairs buy you a few good years, we tell you."
     },
     {
-      question: "How fast can you inspect after wind/hail damage?",
-      answer: "We prioritize emergency calls and storm damage inspections. For active leaks or visible damage, we often respond same-day or next-day. After major storm events affecting Grove City, we work through our queue as quickly as possible—typically within 2-3 days. Call 614-971-6028 immediately after storms, and we'll schedule you as soon as possible to document damage for insurance claims before evidence fades."
+      question: "Will you handle HOA approval for a new roof?",
+      answer: "We do most of it. We check your HOA's approved shingle list, bring samples to the house, and prepare the product sheet, color name and manufacturer details that committees usually want. You submit or sign the request if the HOA requires the homeowner to do so, and we wait for approval before scheduling. In Hoover Crossing, Indian Run, Derby Hill and Pinnacle this is routine for us."
     },
     {
-      question: "Do you help with insurance documentation for storm damage?",
-      answer: "Yes. If your roof damage is from wind, hail, or storm events, your homeowner's insurance may cover repairs or replacement. We document storm damage with detailed photos, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. We can meet with adjusters on-site if needed and advocate for fair settlements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important for protecting your investment."
+      question: "Can you match the shingles on the rest of my roof after a repair?",
+      answer: "We can usually get close with Grove City builder-grade shingles, because the color names stay in production for years. Shingles fade in the sun, though, so a new bundle looks brighter than a roof that has weathered for a decade or more. If you kept spares in the garage or attic, we use them. If a near match is not possible, we tell you before starting and look for a less visible place to work."
     },
     {
-      question: "What causes leaks around chimneys and step flashing?",
-      answer: "Flashing around chimneys, skylights, and dormers (step flashing) is designed to direct water away from these vulnerable intersections. Over time, flashing seals degrade from weather exposure—especially wind-driven rain common in Central Ohio. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials that provide decades of protection."
+      question: "Why do shingles keep blowing off the back of my house?",
+      answer: "It is usually exposure plus installation. Lots backing farmland catch wind with nothing to slow it, and the back slope takes the brunt. Builder-grade shingles nailed too high, or whose seal strips never bonded, lift first. We replace the missing pieces, hand-seal loose tabs nearby and check the nailing. If the nailing is the real problem, repairs will keep recurring, and a wind-rated replacement is the better fix."
     },
     {
-      question: "Is ice and water shield worth it in this climate?",
-      answer: "Absolutely. Ice and water shield is a self-sealing underlayment installed at vulnerable areas like eaves, valleys, and around penetrations. Ohio winters bring harsh freeze-thaw cycles that can cause ice dams when poor ventilation allows uneven snow melting. Ice and water shield provides critical protection against water backup under shingles. We recommend it for all roof replacements in this climate—it's an affordable upgrade that prevents expensive water damage and extends roof lifespan."
+      question: "Do older ranches near the Broadway Town Center need special treatment?",
+      answer: "Often, yes. Many were built with plank decking, few attic vents and, in some cases, low-slope additions that were shingled at a pitch too flat for shingles. On replacement we check every board and replace damaged sections with plywood, add soffit and ridge venting where the framing allows, and put a proper membrane on flat sections. These homes are solid, but they reward a careful tear-off."
     },
     {
-      question: "Do you handle gutters and drainage issues?",
-      answer: "Yes. Mature trees in many Grove City neighborhoods mean constant debris accumulation in gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. We provide gutter cleaning, repairs, and full gutter replacement. We can also install gutter guards in areas with heavy leaf accumulation. If tree debris has caused damage to your fascia or soffit, we assess and repair all related issues comprehensively."
+      question: "Do newer Grove City homes need ice and water shield on a replacement?",
+      answer: "Yes. Many builder roofs had ice and water shield only where code required it, with felt everywhere else. On a replacement we install it along the eaves, in every valley and around vents and chimneys, then lay synthetic underlayment over the rest. On low-pitch porch roofs and additions we often cover the whole section. It is an inexpensive layer that does a lot to stop winter leaks."
     },
     {
-      question: "Do you work with HOAs in newer subdivisions?",
-      answer: "Yes. Many newer Grove City subdivisions have HOA requirements or architectural guidelines for exterior work. We're experienced in matching existing shingle styles and colors, providing documentation for HOA submissions where needed, and ensuring work meets community standards. We can help you understand what approvals may be required and provide the information necessary. Our goal is to make the process smooth while respecting Grove City's community character."
+      question: "What does builder-grade mean, and should I upgrade when I replace?",
+      answer: "Builder-grade usually means the entry-level shingle, felt underlayment and the minimum ventilation needed to pass inspection when the house was built. It is not defective, just chosen for cost. When you replace, you can step up to a thicker architectural shingle with a higher wind rating, synthetic underlayment and balanced vents. We price each upgrade separately so you can choose what is worth it to you."
     },
     {
-      question: "What's the fastest way to schedule an inspection?",
-      answer: "Call us directly at 614-971-6028. You'll speak with one of our owners—no phone trees or call centers. We'll ask a few questions about your roof, schedule an inspection at your convenience, and one of our owners will come personally to assess your roof and discuss your options. Most inspections are scheduled within 2-3 days, and emergency situations get same-day or next-day priority response."
+      question: "Do you install gutters and guards on newer Grove City homes?",
+      answer: "Yes. Builder gutters in many newer subdivisions were sized for the minimum and overflow at inside corners where two roof planes empty into one run. We replace them with larger seamless gutters and downspouts, add guards where trees are close, and carry water away from the foundation. Doing gutters with a roof replacement saves a second setup and lets us tie the drip edge in properly."
     },
     {
-      question: "Should I repair or replace my aging roof?",
-      answer: "The repair vs replacement decision depends on roof age, extent of damage, overall condition, and cost-effectiveness. Roofs under 15 years with isolated damage often benefit from targeted repairs. Roofs approaching or exceeding 20 years, showing widespread deterioration, or requiring repeated repairs often prove more cost-effective to replace entirely. We provide honest assessments—sometimes recommending repairs that extend serviceable lifespan 5-10 years, other times advising replacement when repairs prove false economy. Our recommendations prioritize your long-term interests over maximizing short-term revenue."
+      question: "How do I know if hail hit my roof in Grove City?",
+      answer: "From the ground, look for dents in gutters, downspouts, mailbox lids and the metal vents on the roof, and for piles of granules at downspout outlets. Those signs suggest the shingles took hits as well. Bruised shingles often look normal from below, so the only reliable check is a close inspection. We mark and photograph impacts on every slope and tell you plainly whether a claim makes sense."
     },
     {
-      question: "How long does a typical roof replacement take?",
-      answer: "Most residential roof replacements in Grove City complete in 1-3 days, depending on home size, roof complexity, and weather conditions. A typical single-story ranch might complete in one long day, while a two-story home with multiple dormers, valleys, or complex features may require 2-3 days. We protect your property throughout the project with tarps and magnetic tools to collect nails, work efficiently to minimize disruption, and ensure thorough cleanup before considering the job complete. Emergency weather situations never leave your home exposed overnight."
+      question: "What is the best way to reach DTE Roofing from Grove City?",
+      answer: "Call 614-971-6028 and an owner picks up, not a call center. We ask about your roof, your HOA and anything you have noticed, then set a time to come out. If you prefer, send a request through our contact page. Inspections and written estimates are free, and the person who inspects your roof is the same person who explains the quote and answers questions later."
     }
   ];
 
@@ -84,7 +84,7 @@ export default function GroveCity() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Roof Repair & Replacement in Grove City, OH</h1>
             <p className="text-xl text-gray-200 mb-6">
-              Expert roof repair, replacement, and storm damage services for Grove City homeowners—from Historic Downtown Broadway to Stringtown Road, Fryer Park to Scioto Grove areas. Based at 615 Hilliard Rome Rd, Columbus, OH 43228, our owners work with every customer and deliver detail-first craftsmanship.
+              Roof replacement and repair across Grove City, from the older ranches near the Broadway Town Center to Hoover Crossing, Indian Run, Derby Hill and Pinnacle, where first roofs are wearing out on the same timetable. We match HOA colors, prepare the approval paperwork and fasten shingles to hold against wind off the open fields.
             </p>
             <p className="text-lg text-gray-300 mb-6">
               ⭐ {reviewData?.totalReviews || reviewStats.reviewCount} verified reviews • {reviewData?.averageRating?.toFixed(1) || '5.0'} average rating
@@ -108,13 +108,13 @@ export default function GroveCity() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Gutter Installation, Gutter Guards, Storm Damage & Hail Repair in Grove City</h2>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                We're based in Columbus at 615 Hilliard Rome Rd, Columbus, OH 43228, and serve Grove City regularly on the southwest side of Columbus. With easy access via <strong>I-71</strong>, <strong>I-270</strong>, and <strong>US-62</strong>, we reach Grove City efficiently—from <strong>Historic Downtown Grove City and Broadway</strong> to <strong>Stringtown Road</strong> corridors, from <strong>Fryer Park</strong> neighborhoods to areas near <strong>Scioto Grove Metro Park</strong>. Our owners are personally involved in every project—ensuring quality and direct communication throughout.
+                Grove City lies southwest of downtown in Jackson Township, Franklin County. From our shop at <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong> it is a quick trip down the <strong>I-270</strong> south loop or <strong>I-71</strong>, with <strong>US-62</strong> and <strong>Stringtown Road</strong> taking us to <strong>Hoover Road</strong>, <strong>Buckeye Parkway</strong>, <strong>Fryer Park</strong> and the streets out toward <strong>Scioto Grove Metro Park</strong>.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Grove City features diverse housing—from older established homes to modern subdivisions throughout the area. This architectural variety creates specific roofing challenges: wind-driven rain stressing step flashing, valleys, and chimney flashing on older homes, hail and severe thunderstorms common to Central Ohio requiring careful inspection and documentation, mature tree debris clogging gutters and causing overflow damage to fascia and soffit, and harsh winter freeze-thaw cycles that require proper ventilation and ice and water shield to prevent ice dams.
+                The city has two distinct kinds of housing. Around the historic <strong>Town Center on Broadway</strong> are 1950s through 1970s ranches, many with plank decking, small attics and low-slope additions. Beyond that core, Grove City grew quickly: Hoover Crossing, Indian Run, Derby Hill and the Pinnacle golf community filled in during the 2000s and 2010s, and the former Beulah Park racetrack site is now being redeveloped.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
-                Many newer Grove City subdivisions feature builder-grade materials that may need upgrading or replacement after 15-20 years. Our detail-first approach means thorough cleanup, property protection, and meticulous craftsmanship on every project. Whether you need emergency storm repairs, honest diagnostics on repair vs replacement decisions, or a planned roof replacement, we treat your home with the same care we'd expect for our own. We help homeowners make the right call—sometimes a targeted repair extends serviceable lifespan 5-10 years, other times replacement proves more cost-effective than ongoing repair cycles.
+                That growth left whole streets with roofs from the same builders, the same entry-level shingles and the same install dates, now aging out together. Replacing them well comes down to matching the color your HOA approved, getting the paperwork in before work starts, and nailing properly on lots that back up to farmland where nothing breaks the wind. An owner handles those details on every Grove City job.
               </p>
 
               <div className="bg-primary-50 p-6 rounded-xl border-2 border-primary-200">
@@ -124,16 +124,15 @@ export default function GroveCity() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Owners personally involved in every project",
-                    "Based in Columbus—serving Grove City regularly",
-                    "Great attention to detail on every project",
-                    "Experience with wind-driven rain and flashing issues",
-                    "Expert at documenting hail/storm damage for insurance",
-                    "Understanding of mature tree debris and gutter challenges",
-                    "Knowledge of freeze-thaw cycles and ventilation needs",
-                    "Honest diagnostics—repair vs replacement guidance",
-                    "Experience with HOAs in newer subdivisions",
-                    "Licensed, insured, and committed to quality craftsmanship"
+                    "Owners write every estimate and stay involved through cleanup",
+                    "Color and profile matching for Grove City subdivisions",
+                    "Samples and product sheets prepared for your HOA",
+                    "Wind-rated shingles and careful edge nailing on exposed lots",
+                    "Upgrades over builder-grade underlayment and attic vents",
+                    "Experience with older ranches and additions near Broadway",
+                    "Free roof checks after hail and wind on the southwest side",
+                    "Gutters and guards sized for two-story subdivision homes",
+                    "Quotes that separate needed work from optional upgrades"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
@@ -174,7 +173,7 @@ export default function GroveCity() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <h3 className="font-bold text-charcoal-900 mb-2 text-lg">Free Roofing Estimates</h3>
                 <p className="text-charcoal-700 mb-4">
-                  Our owners personally oversee every roofing project in Grove City—just honest assessments and fair pricing.
+                  Wondering if your subdivision roof is due? An owner will look it over, check what your HOA allows and give you a written quote at no charge.
                 </p>
                 <Link
                   to="/contact"
@@ -220,27 +219,27 @@ export default function GroveCity() {
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Common Roofing Issues in Grove City</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Wind-Driven Rain and Flashing Failures</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Subdivision Roofs Aging Out Together</h3>
                 <p className="text-charcoal-600">
-                  Central Ohio's weather patterns bring frequent wind-driven rain that stresses roof seals, especially around chimneys, skylights, and dormers. Step flashing along rooflines and wall intersections, valley flashing, and chimney flashing are particularly vulnerable on older homes. Wind forces water under compromised seals, leading to leaks that damage interior ceilings and walls. We inspect flashing carefully during every assessment and repair or replace it with high-quality materials designed for decades of protection against Grove City's variable weather conditions.
+                  Hoover Crossing, Indian Run, Derby Hill and Pinnacle were built over a fairly short span, so many roofs went on with similar builder-grade shingles at about the same time. Those shingles are now losing granules and letting go of their seal strips. We still inspect each house on its own, because orientation, attic venting and tree cover make identical homes age differently.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Hail/Severe Thunderstorms: Insurance Documentation</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">HOA Color Matching and Approval Paperwork</h3>
                 <p className="text-charcoal-600">
-                  Grove City experiences frequent hail and severe thunderstorms as part of Central Ohio's weather patterns. After storm events, roofs require thorough documentation for successful insurance claims. We provide detailed photo evidence, shingle samples showing hail impact, measurements, and written reports that meet insurance requirements. With insurers tightening claim requirements in 2025-2026, proper documentation has never been more important. We help navigate the claims process and advocate for fair settlements covering all legitimate damage.
+                  Most Grove City subdivisions have rules on shingle color, style and sometimes brand, and getting it wrong can mean a violation letter after the roof is on. Before scheduling, we check the approved list, bring physical samples and prepare the product sheets the architectural committee asks for.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Mature Tree Debris and Gutter Overflow</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Wind Lift on Lots Backing Farmland</h3>
                 <p className="text-charcoal-600">
-                  Many established Grove City neighborhoods feature mature trees that drop constant debris into gutters. Clogged gutters overflow during rains, damaging fascia, soffit, and foundation drainage. Dense shade also encourages moss and algae growth on north-facing slopes. We address these challenges through algae-resistant shingles, gutter maintenance and cleaning, gutter guard installation in high-debris areas, and regular preventative maintenance programs. If tree debris has caused damage to fascia or soffit, we assess and repair all related issues comprehensively.
+                  Plenty of newer Grove City streets end where the farm fields begin. Wind crosses that open ground without a break and hits the back slopes of the first row of houses hardest, creasing tabs and peeling shingles along ridges and rakes. We replace blow-offs with matching product, hand-seal loose tabs, and on full replacements use wind-rated shingles and starter strips nailed to the manufacturer's pattern.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Winter Freeze-Thaw and Ice Dam Prevention</h3>
+                <h3 className="text-xl font-bold text-charcoal-900 mb-3">Older Ranches and Low-Slope Additions Near Broadway</h3>
                 <p className="text-charcoal-600">
-                  Ohio winters bring harsh freeze-thaw cycles that stress roofing systems. Poor attic ventilation—common in older homes—causes warm air to melt snow unevenly, leading to ice dams at eaves and water backup under shingles. We assess ventilation during every inspection, install ice and water shield at vulnerable areas during replacements, and recommend ventilation improvements when needed. Proper ventilation prevents winter damage, reduces energy costs, and extends shingle lifespan year-round. This is especially important in Grove City's mixed housing stock.
+                  The ranches around the Town Center predate current ventilation standards, and many have porches, sunrooms or garage conversions added with very little pitch. Shingles do not shed water well on those sections, so leaks start where the addition meets the main roof. We check the decking, add intake and exhaust vents where the attic allows, and use a low-slope membrane where shingles do not belong.
                 </p>
               </div>
             </div>
@@ -258,7 +257,7 @@ export default function GroveCity() {
                   <strong>615 Hilliard Rome Rd, Columbus, OH 43228</strong>
                 </p>
                 <p className="text-lg text-charcoal-600 mb-6">
-                  We're based on the west side of Columbus and serve Grove City regularly on the southwest side. Access from Grove City: I-270 west/south loops, I-71 south corridors, US-62 connections, or Stringtown Road routes. Whether you're near Historic Downtown Broadway, Fryer Park, Scioto Grove, or anywhere in the Grove City area, we provide prompt, professional service.
+                  From Hilliard Rome Road we head south on I-270 and exit at Stringtown Road or US-62. Broadway and the Town Center are a few minutes from there, and Hoover Road and Buckeye Parkway lead to the newer subdivisions. Homes near Scioto Grove and the south end of town come off I-71.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -324,31 +323,31 @@ export default function GroveCity() {
                 {[
                   {
                     title: "Owner-Led Inspections",
-                    description: "One of our owners personally inspects every roof and speaks with every customer"
+                    description: "An owner measures your roof, checks the attic and explains the quote in person"
                   },
                   {
                     title: "Local Knowledge",
-                    description: "Understanding of Grove City's neighborhoods, weather patterns, and housing characteristics"
+                    description: "We know the Grove City subdivisions and their HOA color rules"
                   },
                   {
                     title: "Honest Diagnostics",
-                    description: "We only recommend repairs that are actually needed—no upselling or unnecessary replacements"
+                    description: "Your roof is judged on its condition, not on the fact that the house next door was replaced"
                   },
                   {
                     title: "Quality Materials",
-                    description: "Premium materials appropriate for Central Ohio weather and Grove City homes"
+                    description: "Architectural and wind-rated shingles in HOA-approved colors over upgraded underlayment"
                   },
                   {
                     title: "Attention to Detail",
-                    description: "Thorough cleanup, property protection, and meticulous craftsmanship on every project"
+                    description: "Straight rake edges, matched ridge caps and a yard swept for nails"
                   },
                   {
                     title: "Storm Damage Expertise",
-                    description: "We help document hail/wind damage and work with your insurance company for fair settlements"
+                    description: "Photo reports after hail or wind so your insurer sees what the storm did"
                   },
                   {
                     title: "Emergency Response",
-                    description: "24/7 availability for urgent repairs and storm damage"
+                    description: "Fast tarping when wind strips shingles off an exposed back slope"
                   }
                 ].map((item, index) => (
                   <div key={index}>
@@ -398,7 +397,7 @@ export default function GroveCity() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Protect Your Grove City Home</h2>
               <p className="text-xl mb-4">
-                Join satisfied Grove City homeowners who trust DTE Roofing for quality roofing and exceptional service.
+                If your subdivision roof is showing its age, get an owner's opinion and an HOA-ready quote before the next windstorm.
               </p>
               <p className="text-lg mb-2 opacity-90">
                 Serving Grove City from 615 Hilliard Rome Rd, Columbus, OH 43228
@@ -434,7 +433,7 @@ export default function GroveCity() {
             Schedule Your Grove City Roof Inspection
           </h2>
           <p className="text-xl text-charcoal-600 mb-4 max-w-2xl mx-auto">
-            Contact DTE Roofing today for expert roofing services in Grove City
+            Get a free, no-pressure roof assessment for your Grove City home
           </p>
           <p className="text-lg text-charcoal-600 mb-8 max-w-2xl mx-auto">
             Based at 615 Hilliard Rome Rd, Columbus, OH 43228 • Call 614-971-6028
