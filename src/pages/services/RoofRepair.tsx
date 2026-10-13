@@ -62,6 +62,7 @@ export default function RoofRepair() {
       />
       <ServicePageTemplate
         serviceName="Roof Repair"
+        recentWorkIds={[12, 15, 5]}
         title={DOCUMENT_TITLE}
         headline="Roof Repair in Columbus, OH — Honest Repairs That Last"
         slug="roof-repair"

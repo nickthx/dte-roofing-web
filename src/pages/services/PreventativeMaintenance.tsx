@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Shield, TrendingUp, DollarSign } from 'lucide-
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Preventative Roof Maintenance Columbus OH | DTE Roofing';
@@ -331,6 +332,14 @@ export default function PreventativeMaintenance() {
           </div>
         </div>
       </section>
+
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <RecentWork projectIds={[5, 22, 3]} heading="Recent Maintenance & Ventilation Work" />
+          </div>
+        </div>
+      </div>
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

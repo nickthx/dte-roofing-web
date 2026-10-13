@@ -5,6 +5,7 @@ import ServiceLeadForm from './ServiceLeadForm';
 import SidebarTrustBadges from './SidebarTrustBadges';
 import MobileStickyCall from './MobileStickyCall';
 import ServiceAreaLinks from './ServiceAreaLinks';
+import RecentWork from './RecentWork';
 import { useReviewData } from '../hooks/useReviewData';
 import reviewStats from '../data/review-stats.json';
 
@@ -33,6 +34,8 @@ interface ServicePageProps {
   processSteps: ProcessStep[];
   faqs: FAQ[];
   relatedServices?: { name: string; link: string }[];
+  recentWorkIds?: number[];
+  recentWorkHeading?: string;
 }
 
 export default function ServicePageTemplate({
@@ -48,7 +51,9 @@ export default function ServicePageTemplate({
   whatWeDo,
   processSteps,
   faqs,
-  relatedServices = []
+  relatedServices = [],
+  recentWorkIds = [12, 15, 5],
+  recentWorkHeading = 'Recent Roof Repairs'
 }: ServicePageProps) {
   const { reviewData } = useReviewData();
   const scrollToForm = () => {
@@ -175,32 +180,7 @@ export default function ServicePageTemplate({
             </section>
 
             {/* Our Recent Work — job site photos */}
-            <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
-                Our Recent Work
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {/* TODO: Replace placeholders with actual job site photos */}
-                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
-                  <div className="text-center text-charcoal-400">
-                    <div className="text-3xl mb-1">📷</div>
-                    <div className="text-xs font-medium">Photo coming soon</div>
-                  </div>
-                </div>
-                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
-                  <div className="text-center text-charcoal-400">
-                    <div className="text-3xl mb-1">📷</div>
-                    <div className="text-xs font-medium">Photo coming soon</div>
-                  </div>
-                </div>
-                <div className="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-100 flex items-center justify-center">
-                  <div className="text-center text-charcoal-400">
-                    <div className="text-3xl mb-1">📷</div>
-                    <div className="text-xs font-medium">Photo coming soon</div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <RecentWork projectIds={recentWorkIds} heading={recentWorkHeading} />
 
             <section>
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">

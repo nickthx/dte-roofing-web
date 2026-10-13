@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Phone, Clock, AlertTriangle } from 'lucide-rea
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = '24/7 Emergency Roof Repair in Central Ohio | DTE Roofing';
@@ -282,6 +283,14 @@ export default function EmergencyServices() {
           </div>
         </div>
       </section>
+
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <RecentWork projectIds={[12, 9, 23]} heading="Recent Emergency Repairs" />
+          </div>
+        </div>
+      </div>
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Home, DollarSign, Calendar } from 'lucide-reac
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Columbus Roof Replacement | Full Tear-Off | DTE Roofing';
@@ -467,6 +468,8 @@ export default function RoofReplacement() {
               ))}
             </div>
           </div>
+
+          <RecentWork projectIds={[1, 7, 13]} heading="Recent Roof Replacements" className="mb-16" />
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Common Questions About Roof Replacement</h2>

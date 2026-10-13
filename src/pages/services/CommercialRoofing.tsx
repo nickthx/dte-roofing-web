@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Building2, Clock, Shield } from 'lucide-react'
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Commercial Roofing Contractor Columbus, OH | DTE Roofing';
@@ -737,6 +738,8 @@ export default function CommercialRoofing() {
               </div>
             </div>
           </div>
+
+          <RecentWork projectIds={[19, 20, 24]} heading="Recent Commercial & Complex Roof Projects" className="mb-16" />
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Frequently Asked Questions</h2>

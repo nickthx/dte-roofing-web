@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Phone, Cloud, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Storm Damage Roof Repair in Central Ohio | DTE Roofing';
@@ -360,6 +361,8 @@ export default function StormDamage() {
               fast emergency response paired with a proper <Link to="/services/roof-repair" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof repair</Link> afterward
               keeps a bad night from turning into a much bigger project.
             </p>
+
+            <RecentWork projectIds={[18, 25, 23]} heading="Recent Storm Damage Repairs" className="mt-12" />
 
             <section aria-labelledby="storm-faq-heading" className="mt-12 pt-8 border-t border-gray-200">
               <h2 id="storm-faq-heading" className="text-3xl font-bold text-charcoal-900 mb-8">Storm Damage FAQ</h2>

@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, Home, Palette, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import ServiceAreaLinks from '../../components/ServiceAreaLinks';
+import RecentWork from '../../components/RecentWork';
 import { CANONICAL_DOMAIN } from '../../seo/constants';
 
 const DOCUMENT_TITLE = 'Siding Installation & Repair in Central Ohio | DTE Roofing';
@@ -59,6 +60,7 @@ export default function Siding() {
                 your home's first line of defense against Ohio's unpredictable weather, from summer storms to
                 winter cold. Quality siding protects your home, improves energy efficiency, and significantly
                 boosts curb appeal and property value.
+                Before you hire, review <Link to="/blog/what-to-look-for-columbus-roofing-contractor" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">what to look for in a Columbus roofing contractor</Link>.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Whether you're ready for a complete exterior makeover, need storm damage repairs, or want to
@@ -571,6 +573,8 @@ export default function Siding() {
             </div>
           </div>
 
+          <RecentWork projectIds={[16, 11, 24]} heading="Recent Exterior Projects" className="mb-16" />
+
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Frequently Asked Questions About Siding</h2>
             <div className="space-y-4">
@@ -600,7 +604,7 @@ export default function Siding() {
                   <ArrowRight className="w-5 h-5 text-primary-700 transform group-open:rotate-90 transition-transform" />
                 </summary>
                 <p className="text-charcoal-700 leading-relaxed mt-4">
-                  Coordinating siding and roofing projects offers significant advantages for Columbus homeowners. If both need replacement within a few years of each other, simultaneous installation makes practical and financial sense. Key benefits include cost savings—bundling projects often reduces overall costs through shared mobilization, equipment, and labor efficiency. You'll also achieve aesthetic coordination by selecting complementary colors and styles for a cohesive exterior transformation. Project efficiency is another advantage—completing both at once minimizes disruption to your daily life versus two separate projects. There's also potential for improved warranties when the same contractor handles comprehensive exterior work. However, considerations include larger upfront investment requiring more significant financing, and extended project timelines compared to single projects. If your Columbus home's roof and siding are both aging (15-20+ years old), showing deterioration, or you're planning to sell within a few years, simultaneous replacement maximizes ROI and creates a completely refreshed exterior. We offer comprehensive exterior assessments to evaluate both your <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold">roof</Link> and siding condition, helping you make informed decisions about timing and prioritization. Many Hilliard and Dublin homeowners choose complete exterior makeovers that include roof, siding, and gutters for maximum impact and value. Before you hire, review <Link to="/blog/what-to-look-for-columbus-roofing-contractor" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">what to look for in a Columbus roofing contractor</Link>.
+                  Coordinating siding and roofing projects offers significant advantages for Columbus homeowners. If both need replacement within a few years of each other, simultaneous installation makes practical and financial sense. Key benefits include cost savings—bundling projects often reduces overall costs through shared mobilization, equipment, and labor efficiency. You'll also achieve aesthetic coordination by selecting complementary colors and styles for a cohesive exterior transformation. Project efficiency is another advantage—completing both at once minimizes disruption to your daily life versus two separate projects. There's also potential for improved warranties when the same contractor handles comprehensive exterior work. However, considerations include larger upfront investment requiring more significant financing, and extended project timelines compared to single projects. If your Columbus home's roof and siding are both aging (15-20+ years old), showing deterioration, or you're planning to sell within a few years, simultaneous replacement maximizes ROI and creates a completely refreshed exterior. We offer comprehensive exterior assessments to evaluate both your <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold">roof</Link> and siding condition, helping you make informed decisions about timing and prioritization. Many Hilliard and Dublin homeowners choose complete exterior makeovers that include roof, siding, and gutters for maximum impact and value.
                 </p>
               </details>
             </div>
