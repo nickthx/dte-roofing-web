@@ -90,7 +90,7 @@ Gutter-Related Damage: Clogged or damaged gutters cause water to back up under s
 {'\n\n'}
 REPAIR VS. REPLACEMENT: MAKING THE RIGHT DECISION
 {'\n\n'}
-One of the most important decisions Columbus homeowners face is whether to repair or replace their roof. Understanding the key factors helps you make an informed choice.
+One of the most important decisions Columbus homeowners face is whether to repair or replace their roof. Understanding the key factors helps you make an informed choice. Our guide to <Link to="/blog/roof-repair-vs-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof repair vs. replacement</Link> walks through the decision in more detail.
 {'\n\n'}
 When Repairs Are Sufficient:
 {'\n'}
@@ -121,6 +121,8 @@ Warning Signs That Indicate Replacement:
 • Previous repairs have failed or new problems continue emerging
 {'\n'}
 • Energy bills have increased due to poor insulation and ventilation
+{'\n\n'}
+For the full checklist, read <Link to="/blog/signs-you-need-a-new-roof" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">7 signs you need a new roof in Ohio</Link>.
 {'\n\n'}
 Cost-Benefit Analysis: In Central Ohio, a minor repair might cost $500-$1,500, while a major repair could run $2,000-$4,000. If your roof is nearing the end of its lifespan and requires repairs approaching 30% of replacement cost, replacement becomes more cost-effective. We provide honest assessments comparing repair costs to replacement benefits, helping you make the best long-term decision.
 {'\n\n'}

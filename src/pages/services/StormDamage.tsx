@@ -342,7 +342,8 @@ export default function StormDamage() {
               Once the claim is approved, we complete the repairs or full <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof replacement</Link> and
               handle the final paperwork. We've written a full step-by-step guide to{' '}
               <Link to="/blog/hail-damage-roof-insurance-claim-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">filing a hail damage insurance claim in Ohio</Link>{' '}
-              if you want the details before you call your insurer.
+              if you want the details before you call your insurer. Not sure whether storm damage calls for a
+              patch or a new roof? Our guide to <Link to="/blog/roof-repair-vs-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof repair vs. replacement</Link> explains how to decide.
             </p>
 
             <h2 className="text-3xl font-bold text-charcoal-900 mb-6 mt-12">Emergency Tarping: Stopping the Damage Before It Spreads</h2>

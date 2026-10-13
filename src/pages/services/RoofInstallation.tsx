@@ -172,7 +172,8 @@ export default function RoofInstallation() {
             <p className="text-lg text-charcoal-600 mb-8 leading-relaxed max-w-4xl">
               Central Ohio's climate demands roofing materials that withstand temperature extremes, severe summer storms,
               winter ice, and high humidity. Choosing the right material for your Columbus home involves balancing
-              performance, aesthetics, longevity, and budget considerations.
+              performance, aesthetics, longevity, and budget considerations. Our comparison of{' '}
+              <Link to="/blog/asphalt-vs-metal-roofing-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">asphalt vs. metal roofing in Ohio</Link> explains how the two hold up here.
             </p>
 
             <div className="space-y-8">
@@ -488,7 +489,8 @@ export default function RoofInstallation() {
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Understanding Installation Costs in Central Ohio</h2>
             <p className="text-lg text-charcoal-600 mb-8 leading-relaxed">
               Roof installation represents a significant investment in your home's protection and value. Several
-              factors influence project costs for Columbus-area homeowners.
+              factors influence project costs for Columbus-area homeowners. For current price ranges, see our guide to{' '}
+              <Link to="/blog/roof-replacement-cost-columbus-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof replacement cost in Columbus</Link>.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">

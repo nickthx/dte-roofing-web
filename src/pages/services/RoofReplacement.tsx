@@ -120,6 +120,7 @@ export default function RoofReplacement() {
               residential roof replacement typically ranges from $8,000 to $25,000 or more, depending on several key factors.
               Understanding these variables helps you budget appropriately and make informed decisions about your investment.
               Homeowners in <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Columbus</Link> and <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Dublin</Link> consistently choose DTE Roofing for reliable replacement work backed by comprehensive warranties.
+              For a deeper breakdown, read our guide to <Link to="/blog/roof-replacement-cost-columbus-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof replacement cost in Columbus</Link>.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -219,7 +220,8 @@ export default function RoofReplacement() {
               summers with temperatures reaching the 90s, cold winters that can drop below zero, significant temperature
               fluctuations between seasons, and severe weather including hail storms, high winds, and heavy snow loads.
               Choosing the right material means selecting one that can handle all these conditions while providing decades
-              of reliable protection.
+              of reliable protection. Our comparison of <Link to="/blog/asphalt-vs-metal-roofing-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">asphalt vs. metal roofing in Ohio</Link> covers
+              the trade-offs in more detail.
             </p>
 
             <div className="space-y-8">
@@ -561,7 +563,8 @@ export default function RoofReplacement() {
                   Age-related wear, gradual deterioration, and lack of maintenance are generally not covered.
                   Insurance companies expect homeowners to maintain their roofs and replace them at the end of their
                   useful life as a normal ownership expense. However, if recent storm damage has compromised a roof
-                  already nearing replacement age, you may still have valid claim potential.
+                  already nearing replacement age, you may still have valid claim potential. If you're weighing a
+                  claim against an aging roof, our guide to <Link to="/blog/roof-repair-vs-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof repair vs. replacement</Link> can help you decide.
                 </p>
                 <p className="text-charcoal-600 mb-4 leading-relaxed">
                   We have extensive experience working with insurance companies and can help you navigate the claims

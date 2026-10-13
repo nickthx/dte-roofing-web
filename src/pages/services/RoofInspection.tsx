@@ -59,7 +59,7 @@ export default function RoofInspection() {
                 inspections that help local homeowners make informed decisions about their biggest investment.
                 Regular inspections catch minor problems before they become costly emergencies, extend your roof's
                 lifespan, and provide critical documentation for insurance claims, home sales, or warranty
-                compliance.
+                compliance. Before you book, review the <Link to="/blog/signs-you-need-a-new-roof" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">7 signs you need a new roof in Ohio</Link>.
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Our experienced inspectors examine every aspect of your roofing system—from shingles to structure—
@@ -244,7 +244,7 @@ export default function RoofInspection() {
             <p className="text-charcoal-700">
               We recommend having your roof professionally inspected at least once per year, and after any
               major storm. Regular inspections can save you thousands in emergency repairs and extend your
-              roof's lifespan by decades.
+              roof's lifespan by decades. Learn <Link to="/blog/how-long-does-a-roof-last-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">how long a roof lasts in Ohio's climate</Link>.
             </p>
           </div>
         </div>

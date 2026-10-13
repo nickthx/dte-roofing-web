@@ -69,7 +69,9 @@ export default function EmergencyServices() {
                 <h3 className="font-bold text-charcoal-900 mb-2 text-xl">Available 24 Hours a Day, 7 Days a Week</h3>
                 <p className="text-charcoal-700 text-lg">
                   Roof emergencies don't wait for business hours. Neither do we. Whether you're <Link to="/locations/pickerington" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">in Pickerington</Link>, <Link to="/locations/reynoldsburg" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Reynoldsburg</Link>, or <Link to="/locations/upper-arlington" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">Upper Arlington</Link>, our team is standing by
-                  around the clock to respond to your emergency roofing needs.
+                  around the clock to respond to your emergency roofing needs. Once the emergency is handled, our guides to{' '}
+                  <Link to="/blog/hail-damage-roof-insurance-claim-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">filing a hail damage insurance claim in Ohio</Link> and the{' '}
+                  <Link to="/blog/signs-you-need-a-new-roof" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">7 signs you need a new roof</Link> help you plan next steps.
                 </p>
               </div>
             </div>

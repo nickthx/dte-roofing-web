@@ -60,6 +60,7 @@ export default function PreventativeMaintenance() {
               their investment through regular maintenance. Ohio's harsh weather—from winter ice to summer
               storms—takes a toll on roofs. Our proactive approach catches small issues before they become
               expensive emergencies, extending your roof's lifespan and saving you thousands in the long run.
+              Learn <Link to="/blog/how-long-does-a-roof-last-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">how long a roof lasts in Ohio</Link> and what shortens it.
             </p>
           </div>
 
@@ -93,7 +94,8 @@ export default function PreventativeMaintenance() {
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 Many homeowners wait until there's a visible problem before calling a roofer. By then,
                 what could have been a simple $200 repair has turned into thousands in water damage,
-                structural issues, and emergency service costs.
+                structural issues, and emergency service costs. Knowing the{' '}
+                <Link to="/blog/signs-you-need-a-new-roof" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">7 signs you need a new roof</Link> helps you catch trouble early.
               </p>
               <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-6">
                 <h3 className="font-bold text-charcoal-900 mb-3">Common Scenarios Without Maintenance:</h3>

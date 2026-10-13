@@ -113,7 +113,7 @@ export default function CommercialRoofing() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Commercial Roofing Systems for Central Ohio Businesses</h2>
             <p className="text-lg text-charcoal-600 mb-8 leading-relaxed max-w-4xl">
-              Selecting the right commercial roofing system for your Columbus business requires understanding how each material performs in Central Ohio's demanding climate—hot, humid summers, cold winters with freeze-thaw cycles, heavy snow loads, and severe storm exposure. We'll help you choose the optimal system for your building type, budget, and operational requirements.
+              Selecting the right commercial roofing system for your Columbus business requires understanding how each material performs in Central Ohio's demanding climate—hot, humid summers, cold winters with freeze-thaw cycles, heavy snow loads, and severe storm exposure. We'll help you choose the optimal system for your building type, budget, and operational requirements. Our checklist of <Link to="/blog/what-to-look-for-columbus-roofing-contractor" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">what to look for in a Columbus roofing contractor</Link> applies just as much to commercial projects.
             </p>
 
             <div className="space-y-8">
@@ -680,7 +680,7 @@ export default function CommercialRoofing() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Commercial Roofing Costs and Pricing Factors</h2>
             <p className="text-lg text-charcoal-600 mb-8 leading-relaxed">
-              Commercial roofing investments vary significantly based on multiple project-specific factors. Understanding what influences costs helps Columbus business owners and property managers budget appropriately and make informed decisions that balance upfront expense with long-term value.
+              Commercial roofing investments vary significantly based on multiple project-specific factors. Understanding what influences costs helps Columbus business owners and property managers budget appropriately and make informed decisions that balance upfront expense with long-term value. For residential pricing benchmarks, see our guide to <Link to="/blog/roof-replacement-cost-columbus-ohio" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">roof replacement cost in Columbus</Link>.
             </p>
 
             <div className="space-y-6">
