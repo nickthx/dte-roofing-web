@@ -219,3 +219,13 @@ export const projects: Project[] = [
 ];
 
 export const carouselProjects = projects.slice(0, 12);
+
+export function getProjectsByIds(ids: number[]): Project[] {
+  return ids
+    .map((id) => projects.find((p) => p.id === id))
+    .filter((p): p is Project => p !== undefined);
+}
+
+export function getProjectByImage(path: string): Project | undefined {
+  return projects.find((p) => p.image === path);
+}
