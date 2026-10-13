@@ -27,6 +27,7 @@ export const hailDamageInsuranceClaimOhio: BlogPost = {
     'https://www.dteroofingllc.com/images/reynoldsburg-hail-damage-restoration.jpg',
   readingMinutes: 9,
   relatedAreas: ['reynoldsburg', 'pickerington', 'gahanna', 'westerville'],
+  relatedPosts: ['roof-repair-vs-replacement', 'what-to-look-for-columbus-roofing-contractor', 'roof-replacement-cost-columbus-ohio'],
   content: () => (
     <>
       <p>

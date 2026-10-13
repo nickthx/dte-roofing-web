@@ -27,6 +27,7 @@ export const asphaltVsMetalRoofingOhio: BlogPost = {
     'https://www.dteroofingllc.com/images/dublin-premium-asphalt-shingles.jpg',
   readingMinutes: 8,
   relatedAreas: ['dublin', 'powell', 'new-albany', 'worthington'],
+  relatedPosts: ['roof-replacement-cost-columbus-ohio', 'how-long-does-a-roof-last-ohio', 'signs-you-need-a-new-roof'],
   content: () => (
     <>
       <p>

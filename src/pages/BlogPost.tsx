@@ -3,7 +3,7 @@ import { Calendar, ArrowLeft, MapPin, User, Clock, Phone, ChevronRight } from 'l
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import RelatedAreas from '../components/RelatedAreas';
-import { getPostBySlug, formatPostDate } from '../data/blogPosts';
+import { getPostBySlug, getRelatedPosts, formatPostDate } from '../data/blogPosts';
 
 const SITE_URL = 'https://www.dteroofingllc.com';
 
@@ -32,6 +32,7 @@ export default function BlogPostPage() {
     );
   }
 
+  const relatedPosts = getRelatedPosts(post);
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
   const documentTitle = `${post.title} | DTE Roofing Blog`;
 
@@ -188,6 +189,25 @@ export default function BlogPostPage() {
                 </div>
               </div>
             </div>
+
+            {relatedPosts.length > 0 && (
+              <section aria-labelledby="related-posts-heading" className="mt-12">
+                <h2 id="related-posts-heading" className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Related Articles</h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {relatedPosts.map((related) => (
+                    <article key={related.slug} className="bg-white rounded-xl border-2 border-gray-200 hover:border-primary-600 p-6 transition-colors">
+                      <h3 className="text-lg font-bold text-charcoal-900 mb-3">
+                        <Link to={`/blog/${related.slug}`} className="hover:text-primary-700">{related.title}</Link>
+                      </h3>
+                      <p className="text-charcoal-600 text-sm mb-4 line-clamp-3">{related.excerpt}</p>
+                      <Link to={`/blog/${related.slug}`} className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold">
+                        Read article <ChevronRight className="w-4 h-4 ml-1" />
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {post.relatedAreas && post.relatedAreas.length > 0 && (
               <div className="mt-12">

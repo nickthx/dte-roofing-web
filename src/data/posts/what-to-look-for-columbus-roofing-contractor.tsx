@@ -26,6 +26,7 @@ export const columbusRoofingContractor: BlogPost = {
   image: 'https://www.dteroofingllc.com/images/dte-roofing-job-site-columbus.jpg',
   readingMinutes: 8,
   relatedAreas: ['columbus', 'hilliard', 'grove-city', 'westerville'],
+  relatedPosts: ['roof-replacement-cost-columbus-ohio', 'hail-damage-roof-insurance-claim-ohio', 'roof-repair-vs-replacement'],
   content: () => (
     <>
       <p>

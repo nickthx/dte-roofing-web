@@ -31,6 +31,7 @@ export interface BlogPost {
   content: () => ReactNode;
   faqs: BlogFAQ[];
   relatedAreas?: string[];
+  relatedPosts?: string[];
 }
 
 const signsYouNeedANewRoof: BlogPost = {
@@ -58,6 +59,7 @@ const signsYouNeedANewRoof: BlogPost = {
   image: 'https://www.dteroofingllc.com/images/hero-roofing-professional.jpg',
   readingMinutes: 7,
   relatedAreas: ['columbus', 'hilliard', 'dublin', 'powell'],
+  relatedPosts: ['roof-repair-vs-replacement', 'how-long-does-a-roof-last-ohio', 'hail-damage-roof-insurance-claim-ohio'],
   content: () => (
     <>
       <p>
@@ -303,6 +305,14 @@ export function getPublishedPosts(): BlogPost[] {
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug && p.status === 'published');
+}
+
+export function getRelatedPosts(post: BlogPost, limit = 3): BlogPost[] {
+  return (post.relatedPosts ?? [])
+    .map((slug) => getPostBySlug(slug))
+    .filter((related): related is BlogPost => related !== undefined)
+    .filter((related) => related.slug !== post.slug)
+    .slice(0, limit);
 }
 
 /**

@@ -27,6 +27,7 @@ export const roofRepairVsReplacement: BlogPost = {
     'https://www.dteroofingllc.com/images/new-albany-roof-repair-and-maintenance.jpg',
   readingMinutes: 7,
   relatedAreas: ['hilliard', 'columbus', 'westerville', 'gahanna'],
+  relatedPosts: ['signs-you-need-a-new-roof', 'roof-replacement-cost-columbus-ohio', 'hail-damage-roof-insurance-claim-ohio'],
   content: () => (
     <>
       <p>

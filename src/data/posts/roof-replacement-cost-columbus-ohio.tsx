@@ -27,6 +27,7 @@ export const roofReplacementCostColumbus: BlogPost = {
     'https://www.dteroofingllc.com/images/columbus-residential-roof-replacement.jpg',
   readingMinutes: 8,
   relatedAreas: ['columbus', 'hilliard', 'dublin', 'upper-arlington'],
+  relatedPosts: ['asphalt-vs-metal-roofing-ohio', 'roof-repair-vs-replacement', 'what-to-look-for-columbus-roofing-contractor'],
   content: () => (
     <>
       <p>

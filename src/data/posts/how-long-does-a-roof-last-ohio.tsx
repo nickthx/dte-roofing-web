@@ -27,6 +27,7 @@ export const howLongDoesARoofLastOhio: BlogPost = {
     'https://www.dteroofingllc.com/images/worthington-residential-re-roof.jpg',
   readingMinutes: 7,
   relatedAreas: ['columbus', 'hilliard', 'delaware', 'grove-city'],
+  relatedPosts: ['asphalt-vs-metal-roofing-ohio', 'signs-you-need-a-new-roof', 'roof-repair-vs-replacement'],
   content: () => (
     <>
       <p>
