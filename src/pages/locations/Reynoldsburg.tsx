@@ -6,6 +6,7 @@ import { useReviewData } from '../../hooks/useReviewData';
 import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
+import RecentWork from '../../components/RecentWork';
 
 const DOCUMENT_TITLE = 'Roofers in Reynoldsburg, OH | Roof Repair | DTE Roofing';
 
@@ -299,6 +300,7 @@ export default function Reynoldsburg() {
             </div>
           </div>
 
+          <RecentWork projectIds={[18, 14, 6]} heading="Recent Roofing Work Near Reynoldsburg" className="mb-16" />
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Reynoldsburg Roofing FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
