@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
+import { HQ_GEO } from '../data/business';
 
 const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -7,11 +8,10 @@ interface CityMarker {
   slug: string;
   lat: number;
   lng: number;
-  isHQ?: boolean;
 }
 
 const CITIES: CityMarker[] = [
-  { name: 'Hilliard',        slug: 'hilliard',        lat: 40.0334, lng: -83.1585, isHQ: true },
+  { name: 'Hilliard',        slug: 'hilliard',        lat: 40.0334, lng: -83.1585 },
   { name: 'Columbus',        slug: 'columbus',        lat: 39.9612, lng: -82.9988 },
   { name: 'Dublin',          slug: 'dublin',          lat: 40.0992, lng: -83.1141 },
   { name: 'Powell',          slug: 'powell',          lat: 40.1578, lng: -83.0752 },
@@ -92,25 +92,21 @@ export default function ServiceAreaMap(): JSX.Element | null {
       const marker = new google.maps.Marker({
         position,
         map,
-        title: city.isHQ ? `${city.name} — Headquarters` : city.name,
+        title: city.name,
         icon: {
           path: google.maps.SymbolPath.CIRCLE,
-          scale: city.isHQ ? 10 : 7,
-          fillColor: city.isHQ ? '#991b1b' : '#b91c1c',
+          scale: 7,
+          fillColor: '#b91c1c',
           fillOpacity: 1,
           strokeColor: '#ffffff',
           strokeWeight: 2,
         },
-        label: city.isHQ
-          ? { text: '★', color: '#ffffff', fontSize: '12px', fontWeight: 'bold' }
-          : undefined,
       });
 
       const infoWindow = new google.maps.InfoWindow({
         content: `
           <div style="padding:4px 8px;font-family:system-ui,sans-serif;">
             <strong style="font-size:14px;color:#3d3d3d;">${city.name}</strong>
-            ${city.isHQ ? '<div style="font-size:11px;color:#991b1b;font-weight:600;">★ Headquarters</div>' : ''}
             <a href="/locations/${city.slug}" style="font-size:12px;color:#b91c1c;text-decoration:none;font-weight:500;">
               View Services →
             </a>
@@ -123,6 +119,43 @@ export default function ServiceAreaMap(): JSX.Element | null {
         infoWindow.open(map, marker);
         activeInfoWindow = infoWindow;
       });
+    });
+
+    const hqPosition = { lat: HQ_GEO.lat, lng: HQ_GEO.lng };
+    bounds.extend(hqPosition);
+
+    const hqMarker = new google.maps.Marker({
+      position: hqPosition,
+      map,
+      title: 'DTE Roofing — Headquarters',
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10,
+        fillColor: '#991b1b',
+        fillOpacity: 1,
+        strokeColor: '#ffffff',
+        strokeWeight: 2,
+      },
+      label: { text: '★', color: '#ffffff', fontSize: '12px', fontWeight: 'bold' },
+    });
+
+    const hqInfoWindow = new google.maps.InfoWindow({
+      content: `
+        <div style="padding:4px 8px;font-family:system-ui,sans-serif;">
+          <strong style="font-size:14px;color:#3d3d3d;">DTE Roofing</strong>
+          <div style="font-size:11px;color:#991b1b;font-weight:600;">★ Headquarters</div>
+          <div style="font-size:12px;color:#3d3d3d;">615 Hilliard Rome Rd, Columbus, OH 43228</div>
+          <a href="/contact" style="font-size:12px;color:#b91c1c;text-decoration:none;font-weight:500;">
+            Contact Us →
+          </a>
+        </div>
+      `,
+    });
+
+    hqMarker.addListener('click', () => {
+      if (activeInfoWindow) activeInfoWindow.close();
+      hqInfoWindow.open(map, hqMarker);
+      activeInfoWindow = hqInfoWindow;
     });
 
     map.fitBounds(bounds, { top: 30, right: 30, bottom: 30, left: 30 });
