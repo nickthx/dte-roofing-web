@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 import { installChunkReloadHandler } from './utils/chunkReload';
+import { capturePrerenderedMain } from './utils/prerenderSnapshot';
 
 installChunkReloadHandler();
 
@@ -22,6 +23,7 @@ const tree = (
 // Prerendered routes ship with SSR HTML already in #root — hydrate those.
 // Routes served from the SPA shell (dynamic/blog) have an empty #root — render fresh.
 if (container.hasChildNodes()) {
+  capturePrerenderedMain(container);
   hydrateRoot(container, tree);
 } else {
   createRoot(container).render(tree);

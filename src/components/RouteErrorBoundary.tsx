@@ -1,16 +1,21 @@
 import { Component } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { getPrerenderedMain } from '../utils/prerenderSnapshot';
 
 interface RouteErrorBoundaryProps {
   children: ReactNode;
+}
+
+interface RouteErrorBoundaryInnerProps extends RouteErrorBoundaryProps {
+  pathname: string;
 }
 
 interface BoundaryState {
   hasError: boolean;
 }
 
-class RouteErrorBoundaryInner extends Component<RouteErrorBoundaryProps, BoundaryState> {
+class RouteErrorBoundaryInner extends Component<RouteErrorBoundaryInnerProps, BoundaryState> {
   state: BoundaryState = { hasError: false };
 
   static getDerivedStateFromError(): BoundaryState {
@@ -24,6 +29,26 @@ class RouteErrorBoundaryInner extends Component<RouteErrorBoundaryProps, Boundar
   render(): ReactNode {
     if (!this.state.hasError) {
       return this.props.children;
+    }
+
+    const snapshot = getPrerenderedMain(this.props.pathname);
+    if (snapshot !== null) {
+      return (
+        <>
+          <div role="status" className="bg-charcoal-900 text-white px-4 py-3 text-center text-sm sm:text-base">
+            Part of this page didn&apos;t load.
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="ml-1 underline font-semibold hover:text-primary-200"
+            >
+              Reload
+            </button>
+          </div>
+          {/* Our own prerendered markup captured from #root before hydration, not user input. */}
+          <div dangerouslySetInnerHTML={{ __html: snapshot }} />
+        </>
+      );
     }
 
     return (
@@ -62,5 +87,5 @@ class RouteErrorBoundaryInner extends Component<RouteErrorBoundaryProps, Boundar
 
 export default function RouteErrorBoundary({ children }: RouteErrorBoundaryProps): JSX.Element {
   const { pathname } = useLocation();
-  return <RouteErrorBoundaryInner key={pathname}>{children}</RouteErrorBoundaryInner>;
+  return <RouteErrorBoundaryInner key={pathname} pathname={pathname}>{children}</RouteErrorBoundaryInner>;
 }
