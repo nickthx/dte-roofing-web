@@ -138,7 +138,7 @@
     },
     "/locations/columbus": {
       "jsonLdBlocks": 3,
-      "faqQuestions": 0,
+      "faqQuestions": 10,
       "breadcrumbItems": 3
     },
     "/locations/hilliard": {

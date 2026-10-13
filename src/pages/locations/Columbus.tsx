@@ -1,16 +1,60 @@
 import { Link } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Phone, MapPin, Shield } from 'lucide-react';
+import { CheckCircle, ArrowRight, Phone, MapPin, Shield, Home, Wrench, CloudRain, Droplets } from 'lucide-react';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import { useReviewData } from '../../hooks/useReviewData';
 import reviewStats from '../../data/review-stats.json';
 import LocationBreadcrumb from '../../components/LocationBreadcrumb';
 import NearbyAreas from '../../components/NearbyAreas';
+import RecentWork from '../../components/RecentWork';
 
 const DOCUMENT_TITLE = 'Roofers in Columbus, OH | Repair & Replacement | DTE Roofing';
 
 export default function Columbus() {
   const { reviewData } = useReviewData();
+
+  const columbusFaqs = [
+    {
+      question: "Where is DTE Roofing located in Columbus, and which areas do you reach fastest?",
+      answer: "Our headquarters is at 615 Hilliard Rome Rd, Columbus, OH 43228, on the west side of Columbus near I-270. That puts our crews close to Hilltop, Westgate, Franklinton, Grandview Heights and Upper Arlington, with a short drive on I-70 or I-670 to downtown, German Village and the Short North. We serve every Columbus neighborhood and the surrounding Franklin County suburbs, so call to confirm scheduling for your street."
+    },
+    {
+      question: "Do you pull City of Columbus permits for a roof replacement?",
+      answer: "Yes. When a re-roof requires a permit from the City of Columbus, we pull it under our company and schedule the required inspections, so you do not have to handle the paperwork yourself. Suburbs such as Bexley, Upper Arlington and Grandview Heights run their own building departments with their own rules, and we follow whichever jurisdiction your address falls in. Permit and inspection records stay with your project file."
+    },
+    {
+      question: "Can you replace a roof in German Village, Italian Village or Victorian Village?",
+      answer: "Yes. These are historic districts, and exterior changes there, including some roofing work, may need approval from the historic commission that oversees the district before work starts. We help by photographing the existing roof, specifying materials that match its original look and profile, and preparing the details commissions typically ask for. Contact the commission early, because approval timing can affect when your project can begin."
+    },
+    {
+      question: "Do you work on rental properties near Ohio State and the University District?",
+      answer: "We do. Many University District, Weinland Park and Old North Columbus homes are tenant-occupied, so we coordinate access with landlords and property managers, give tenants advance notice and clear driveways and yards at the end of each day. The turnaround between leases is a good window for a replacement, and we send photos and a written report to owners who live out of town so they can approve work remotely."
+    },
+    {
+      question: "Do you repair flat or low-slope roofs on downtown and older Columbus buildings?",
+      answer: "Yes. Older mixed-use buildings downtown, in the Short North and along corridors such as High Street often have flat or low-slope sections that drain very differently from a pitched roof. Ponding water, open seams and worn flashing at parapet walls are the usual trouble spots. We inspect drainage, membrane condition and flashing, then recommend a targeted repair or a replacement through our commercial roofing service."
+    },
+    {
+      question: "Why do older Columbus homes get ice dams, and how do you fix them?",
+      answer: "Many Columbus houses built between the 1950s and 1970s have thin attic insulation and limited ventilation. Heat escaping into the attic melts snow on the upper roof, and the water refreezes at the colder eaves, backing up under the shingles. The lasting fix is improving attic ventilation and insulation, then installing ice-and-water shield along the eaves when the roof is replaced, instead of chipping away ice every winter."
+    },
+    {
+      question: "What should I do after a hail or wind storm damages my Columbus roof?",
+      answer: "First make sure everyone is safe, stay off the roof and catch any interior leaks with buckets or towels. Take dated photos of visible damage from the ground, then call us for an inspection. We document what we find with photos and a written report, and we can meet your insurance adjuster on the roof so nothing is missed. Be cautious about signing with door-to-door crews that appear right after a storm."
+    },
+    {
+      question: "How long does a roof replacement take in Columbus?",
+      answer: "Most single-family roof replacements take one to a few days, depending on the size and pitch of the roof, how many old layers come off and the weather. If we find rotted decking once the old shingles are removed, replacing those boards adds time, and rain or high wind can pause work. We give you a schedule before we start and keep you updated each day until cleanup is done."
+    },
+    {
+      question: "Should I repair or replace my Columbus roof?",
+      answer: "It depends on the roof's age, how widespread the damage is and whether problems keep coming back. A few missing shingles or one leaking flashing on an otherwise sound roof is usually a repair. Widespread granule loss, curling shingles, soft decking or repeated leaks on an older roof often make replacement the better investment. We show you photos of what we find and only recommend replacement when it is actually necessary."
+    },
+    {
+      question: "What is the fastest way to schedule a roof inspection in Columbus?",
+      answer: "Call us at 614-971-6028 or send a request through our contact form. Roof inspections are free, and we walk you through what we find with photos so you understand your roof's condition before deciding anything. Tell us if you have an active leak or storm damage so we can prioritize your visit. We serve every Columbus neighborhood from our west-side headquarters on Hilliard Rome Rd."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -29,6 +73,7 @@ export default function Columbus() {
         pageTitle="Roofers in Columbus, OH | DTE Roofing (Columbus HQ)"
         pageDescription="DTE Roofing serves Columbus, OH from 615 Hilliard Rome Rd, Columbus, OH 43228. Owners personally involved in every project. Detail-first roof repair, replacement, and storm damage help."
         pageUrl="https://www.dteroofingllc.com/locations/columbus"
+        faqs={columbusFaqs}
       />
 
       <section className="relative bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900 text-white py-20">
@@ -204,6 +249,133 @@ export default function Columbus() {
             </div>
           </div>
 
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8">Roofing Services Tailored to Columbus Homes</h2>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Wrench className="w-8 h-8 text-primary-700" />
+                  <h3 className="text-xl font-bold text-charcoal-900">Roof Repair in Columbus</h3>
+                </div>
+                <p className="text-charcoal-600 mb-4">
+                  Columbus's mix of century-old brick homes and post-war ranches creates its own repair patterns. We handle:
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'Chimney flashing leaks on Clintonville and Old North brick bungalows',
+                    'Steep-slope repairs on German Village and Victorian Village homes',
+                    'Wind-lifted and missing shingles after summer storms',
+                    'Valley, vent boot and skylight leaks',
+                    'Emergency tarping to stop active leaks'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-charcoal-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/services/roof-repair" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold mt-4">
+                  Learn More About Roof Repair <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Home className="w-8 h-8 text-primary-700" />
+                  <h3 className="text-xl font-bold text-charcoal-900">Roof Replacement</h3>
+                </div>
+                <p className="text-charcoal-600 mb-4">
+                  When a Columbus roof is past saving, we replace it with a complete system built for Ohio freeze-thaw winters:
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'Full tear-offs on ranches and split-levels inside the I-270 ring',
+                    'Deck inspection and rotted-board replacement',
+                    'Ice-and-water shield at eaves and valleys',
+                    'Balanced intake and ridge ventilation',
+                    'GAF shingle options with manufacturer warranties'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-charcoal-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/services/roof-replacement" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold mt-4">
+                  Learn More About Roof Replacement <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <CloudRain className="w-8 h-8 text-primary-700" />
+                  <h3 className="text-xl font-bold text-charcoal-900">Storm & Hail Inspections</h3>
+                </div>
+                <p className="text-charcoal-600 mb-4">
+                  Severe Central Ohio storms can leave damage you cannot see from the street. Our storm inspections include:
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'Slope-by-slope check for hail bruising and wind creasing',
+                    'Gutter, downspout and soft-metal damage review',
+                    'Dated photos and a written report for your insurer',
+                    'Meeting your adjuster on the roof',
+                    'Permanent repairs, not just temporary patches'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-charcoal-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/services/storm-damage" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold mt-4">
+                  Learn More About Storm Damage <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Droplets className="w-8 h-8 text-primary-700" />
+                  <h3 className="text-xl font-bold text-charcoal-900">Gutters & Drainage</h3>
+                </div>
+                <p className="text-charcoal-600 mb-4">
+                  Mature trees in Clintonville, Bexley and Olde Towne East fill gutters fast and push water where it does not belong. We provide:
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'Seamless gutters sized for your roof',
+                    'Downspouts routed away from older foundations',
+                    'Gutter guard options for tree-heavy streets',
+                    'Fascia and soffit repair behind failed gutters',
+                    'Drip edge to protect the roof edge'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-charcoal-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/services/gutters" className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold mt-4">
+                  Learn More About Gutters <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-6">Permits, Historic Districts & Columbus Housing Stock</h2>
+            <p className="text-charcoal-600 mb-4 leading-relaxed">
+              Roof replacements inside Columbus city limits fall under City of Columbus building permit rules, and we handle the permit and inspection scheduling as part of the job. Columbus is also home to several historic districts. In German Village, Italian Village and Victorian Village, exterior changes may need approval from the commission that oversees the district, so matching the original materials and providing clear documentation matter before work begins. Whether you need a targeted <Link to="/services/roof-repair" className="text-primary-700 hover:underline font-semibold">historic home roof repair</Link> or a full re-roof, we photograph the existing roof and specify materials that respect the street's character.
+            </p>
+            <p className="text-charcoal-600 mb-4 leading-relaxed">
+              Housing near Ohio State tells a different story. Many University District and campus-area homes are rentals, and landlords need work finished between leases with minimal disruption to tenants. Downtown and along older commercial corridors, mixed-use buildings often have flat or low-slope roofs where ponding water and parapet flashing are the usual problems, and our <Link to="/services/commercial-roofing" className="text-primary-700 hover:underline font-semibold">commercial and low-slope roofing services</Link> cover membrane repair and replacement for those buildings.
+            </p>
+            <p className="text-charcoal-600 mb-4 leading-relaxed">
+              Across the I-270 ring, from Hilltop and Westgate to Northland and the Far East Side, Columbus neighborhoods are full of suburban ranches and two-stories built between the 1950s and 1990s. Many of those roofs are near the end of their service life and are good candidates for a <Link to="/services/roof-replacement" className="text-primary-700 hover:underline font-semibold">complete Columbus roof replacement with upgraded ventilation</Link>. The same neighborhoods take the brunt of spring wind and hail, and our <Link to="/services/storm-damage" className="text-primary-700 hover:underline font-semibold">storm damage inspections and insurance documentation</Link> help homeowners file with confidence.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div className="bg-gray-50 p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-charcoal-900 mb-6">Columbus Weather and Your Roof</h2>
@@ -264,6 +436,23 @@ export default function Columbus() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <RecentWork projectIds={[1, 12, 19]} heading="Recent Roofing Work in Columbus" className="mb-16" />
+
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-900 mb-8 text-center">Columbus Roofing FAQs</h2>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {columbusFaqs.map((faq, index) => (
+                <details key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 group">
+                  <summary className="font-bold text-charcoal-900 cursor-pointer list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <span className="text-primary-700 group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="text-charcoal-600 mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
 
