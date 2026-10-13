@@ -146,7 +146,7 @@ export default function About() {
                 'Excellent customer service from start to finish',
                 'Comprehensive warranty on all work performed',
                 'Local family-owned business serving the community',
-                'Emergency services available 24/7',
+                <><Link to="/services/emergency-services" className="text-primary-700 hover:text-primary-800 font-semibold underline">Emergency services</Link> available 24/7</>,
                 'Free detailed estimates and consultations',
                 'Experienced and professional team members'
               ].map((item, index) => (
@@ -156,6 +156,11 @@ export default function About() {
                 </li>
               ))}
             </ul>
+
+            <p className="mt-6 text-charcoal-700 text-lg">
+              Read what neighbors say in our <Link to="/reviews" className="text-primary-700 hover:text-primary-800 font-semibold underline">customer reviews</Link>, or see{' '}
+              <Link to="/blog/what-to-look-for-columbus-roofing-contractor" className="text-primary-700 hover:text-primary-800 font-semibold underline">what to look for in a Columbus roofing contractor</Link> before you hire anyone.
+            </p>
 
             {/* Accreditation badges */}
             <div className="mt-10 pt-8 border-t border-gray-200">
@@ -209,7 +214,7 @@ export default function About() {
 
             <div className="space-y-6 text-lg text-charcoal-600 leading-relaxed">
               <p>
-                Founded in Columbus, DTE Roofing has grown from a small, family-run operation
+                Founded in <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline">Columbus</Link>, DTE Roofing has grown from a small, family-run operation
                 into one of the area's most trusted roofing companies. We've built our reputation one roof at a time,
                 earning the trust of local homeowners through honest work and exceptional results.
                 Our deep roots in the Columbus community mean we understand the unique challenges that Ohio weather
@@ -227,7 +232,7 @@ export default function About() {
               <p>
                 Transparency and craftsmanship are at the heart of what we do for Columbus homeowners. We provide
                 detailed, honest estimates with no hidden fees, and we'll walk you through every step of the process
-                so you know exactly what to expect. Whether it's a simple repair or a complete roof replacement,
+                so you know exactly what to expect. Whether it's a <Link to="/services/roof-repair" className="text-primary-700 hover:text-primary-800 font-semibold underline">simple repair</Link> or a <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline">complete roof replacement</Link>,
                 you can count on DTE Roofing to deliver quality workmanship, fair pricing, and the kind of
                 personalized service that only a local, family-owned business can provide.
               </p>
@@ -283,7 +288,7 @@ export default function About() {
               <h3 className="text-2xl font-bold text-charcoal-900 mb-2 text-center">Mitchell Davis</h3>
               <p className="text-primary-700 font-semibold mb-4 text-center">Owner & Project Manager</p>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                Mitchell, a proud Hilliard native, co-founded DTE Roofing to bring top-quality roofing solutions to his local community. When he's not climbing steep roofs, he enjoys cooking, riding motorcycles, spending time with family, and helping others achieve their fitness goals. Mitchell's passion for excellence and service drives everything he does at DTE Roofing.
+                Mitchell, a proud <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline">Hilliard</Link> native, co-founded DTE Roofing to bring top-quality roofing solutions to his local community. When he's not climbing steep roofs, he enjoys cooking, riding motorcycles, spending time with family, and helping others achieve their fitness goals. Mitchell's passion for excellence and service drives everything he does at DTE Roofing.
               </p>
               <Link
                 to="/contact"
@@ -327,7 +332,7 @@ export default function About() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-4">See Us In Action</h2>
             <p className="text-lg text-charcoal-600 max-w-2xl mx-auto">
-              From start to finish — real jobs, real craftsmanship, real Columbus homeowners.
+              From start to finish — real jobs, real craftsmanship, real Columbus homeowners. Browse more in our <Link to="/gallery" className="text-primary-700 hover:text-primary-800 font-semibold underline">project gallery</Link>.
             </p>
           </div>
 

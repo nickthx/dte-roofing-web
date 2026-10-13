@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle, DollarSign, Shield, Clock, TrendingDown, Users, Loader2, AlertCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -198,13 +199,13 @@ export default function Financing() {
               Roof Replacement, Installation & Siding Financing Options
             </h2>
             <p className="text-lg text-charcoal-600">
-              Behind the scenes, our Consumer Credit Center is powered by a lending ecosystem of multiple lenders and products. But you never see that complexity — you only see our platform offering you the most affordable solutions for your project.
+              Behind the scenes, our Consumer Credit Center is powered by a lending ecosystem of multiple lenders and products. But you never see that complexity — you only see our platform offering you the most affordable solutions for your project. Financing is available for <Link to="/services/roof-replacement" className="text-green-700 hover:text-green-800 font-semibold underline">roof replacement</Link>, <Link to="/services/roof-installation" className="text-green-700 hover:text-green-800 font-semibold underline">new roof installation</Link> and <Link to="/services/siding" className="text-green-700 hover:text-green-800 font-semibold underline">siding</Link> projects.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             {[
-              { icon: <Clock className="w-7 h-7 text-green-600" />, step: '1', title: 'Get a Quote', desc: 'Start with a free estimate on your roofing project.' },
+              { icon: <Clock className="w-7 h-7 text-green-600" />, step: '1', title: 'Get a Quote', desc: <>Start with a <Link to="/get-a-quote-consultation" className="text-green-700 hover:text-green-800 font-semibold underline">free estimate</Link> on your roofing project.</> },
               { icon: <CheckCircle className="w-7 h-7 text-green-600" />, step: '2', title: 'See Your Options', desc: 'We present affordable payment solutions tailored to you.' },
               { icon: <Shield className="w-7 h-7 text-green-600" />, step: '3', title: 'Protect Your Home', desc: 'Get the work done on a budget that works for your family.' },
             ].map((item) => (
@@ -258,7 +259,7 @@ export default function Financing() {
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-charcoal-900 mb-4">See If You Qualify</h2>
               <p className="text-lg text-charcoal-600">
-                Fill out the form below and a member of our team will reach out to walk you through our affordable payment solutions — no commitment required.
+                Fill out the form below and a member of our team will reach out to walk you through our affordable payment solutions — no commitment required. Not sure what a new roof costs? Read <Link to="/blog/roof-replacement-cost-columbus-ohio" className="text-green-700 hover:text-green-800 font-semibold underline">our Columbus roof replacement cost guide</Link> or <Link to="/contact" className="text-green-700 hover:text-green-800 font-semibold underline">schedule a free inspection</Link>.
               </p>
             </div>
 

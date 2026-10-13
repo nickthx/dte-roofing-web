@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -106,14 +107,20 @@ export default function InstantQuote() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-primary-700 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                    <span>Schedule a free in-person inspection to confirm details</span>
+                    <span>Schedule a <Link to="/services/roof-inspection" className="text-primary-700 hover:text-primary-800 font-semibold underline">free in-person inspection</Link> to confirm details</span>
                   </li>
                 </ol>
               </div>
 
+              <p className="mt-6 text-charcoal-700 leading-relaxed">
+                The instant tool prices full <Link to="/services/roof-replacement" className="text-primary-700 hover:text-primary-800 font-semibold underline">roof replacement</Link>. For repairs, storm damage or gutters,
+                see our <Link to="/services/roof-repair" className="text-primary-700 hover:text-primary-800 font-semibold underline">roof repair services</Link> or <Link to="/services/storm-damage" className="text-primary-700 hover:text-primary-800 font-semibold underline">storm damage repair</Link>, explore{' '}
+                <Link to="/financing" className="text-primary-700 hover:text-primary-800 font-semibold underline">roof financing options</Link>, or <Link to="/contact" className="text-primary-700 hover:text-primary-800 font-semibold underline">contact our team</Link> for a free estimate.
+              </p>
+
               <div className="mt-8 text-center">
                 <p className="text-sm text-charcoal-600 mb-4">
-                  Trusted by homeowners across Columbus, Hilliard, and Dublin
+                  Trusted by homeowners across <Link to="/locations/columbus" className="text-primary-700 hover:text-primary-800 font-semibold underline">Columbus</Link>, <Link to="/locations/hilliard" className="text-primary-700 hover:text-primary-800 font-semibold underline">Hilliard</Link>, and <Link to="/locations/dublin" className="text-primary-700 hover:text-primary-800 font-semibold underline">Dublin</Link>
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 text-sm text-charcoal-700">
                   <div className="flex items-center gap-2">
