@@ -10,6 +10,7 @@ export interface LeadFormData {
   phone: string;
   email: string;
   message: string;
+  company_website: string;
 }
 
 export type FormErrors = Partial<Record<keyof LeadFormData, string>>;
@@ -51,6 +52,7 @@ export function useMultiStepForm(formSource: string) {
     phone: '',
     email: '',
     message: '',
+    company_website: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);

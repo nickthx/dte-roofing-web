@@ -31,6 +31,7 @@ export default function Financing() {
     phone: '',
     financingProduct: '',
     projectDescription: '',
+    company_website: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -372,6 +373,20 @@ export default function Financing() {
                     onChange={handleChange}
                     placeholder="e.g. Full roof replacement needed, storm damage, about 2,000 sq ft home..."
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 text-charcoal-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
+                  />
+                </div>
+
+                {/* Honeypot: hidden from people, filled by bots. n8n drops any submission that sets it. */}
+                <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                  <label htmlFor="company_website">Company website</label>
+                  <input
+                    type="text"
+                    id="company_website"
+                    name="company_website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.company_website}
+                    onChange={handleChange}
                   />
                 </div>
 

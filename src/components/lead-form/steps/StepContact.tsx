@@ -67,6 +67,19 @@ export default function StepContact({ formData, errors, updateField, onSubmit, o
           multiline
           rows={3}
         />
+        {/* Honeypot: hidden from people, filled by bots. n8n drops any submission that sets it. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+          <label htmlFor="company_website">Company website</label>
+          <input
+            type="text"
+            id="company_website"
+            name="company_website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.company_website}
+            onChange={(e) => updateField('company_website', e.target.value)}
+          />
+        </div>
       </div>
 
       <button
