@@ -17,7 +17,7 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen bg-white">
         <SEO
-          title="Post Not Found | DTE Roofing Blog"
+          title="Post Not Found | DTE Roofing"
           description="The blog post you're looking for doesn't exist."
         />
         <div className="flex flex-col items-center justify-center min-h-[60vh]">
@@ -43,7 +43,7 @@ export default function BlogPostPage() {
       ? 'DTE Roofing crew working on a residential roofing job site in Columbus, OH'
       : 'Completed DTE Roofing architectural shingle roof on a Central Ohio home';
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
-  const documentTitle = `${post.title} | DTE Roofing Blog`;
+  const documentTitle = `${post.seoTitle ?? post.title} | DTE Roofing`;
 
   return (
     <div className="min-h-screen bg-gray-50">

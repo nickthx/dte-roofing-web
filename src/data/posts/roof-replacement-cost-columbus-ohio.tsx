@@ -6,6 +6,7 @@ export const roofReplacementCostColumbus: BlogPost = {
   slug: 'roof-replacement-cost-columbus-ohio',
   title: 'How Much Does a Roof Replacement Cost in Columbus, OH? (2026)',
   headline: 'How Much Does a Roof Replacement Cost in Columbus, OH? (2026)',
+  seoTitle: 'Roof Replacement Cost in Columbus, OH (2026)',
   excerpt:
     'A straight breakdown of 2026 roof replacement costs in Columbus — typical price ranges, the factors that move your number up or down, what each shingle tier runs, and when insurance pays.',
   metaDescription:

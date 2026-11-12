@@ -17,6 +17,8 @@ export interface BlogPost {
   slug: string;
   title: string;
   headline: string;
+  // Overrides only the document <title> (and WebPage name); H1 and headline still use title/headline.
+  seoTitle?: string;
   excerpt: string;
   metaDescription: string;
   keywords: string[];
