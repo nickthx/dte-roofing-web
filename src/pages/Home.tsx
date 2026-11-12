@@ -53,11 +53,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white text-shadow-lg">
               The Roofing Contractor in Columbus, OH You Can Trust
             </h1>
             <div className="w-24 h-1 bg-primary-600 mb-6"></div>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white drop-shadow-md font-light">
+            <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white text-shadow-md font-light">
               Founded by two brothers from Hilliard, Ohio who built DTE Roofing to deliver honest diagnostics, precision repairs, and roofs that last.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-6">

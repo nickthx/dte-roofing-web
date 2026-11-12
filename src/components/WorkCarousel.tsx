@@ -39,7 +39,7 @@ export default function WorkCarousel() {
 
               {/* Persistent title/location overlay */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/40 to-transparent px-6 py-6">
-                <h3 className="text-white font-bold text-lg md:text-xl drop-shadow-md">
+                <h3 className="text-white font-bold text-lg md:text-xl text-shadow-md">
                   {project.title}
                 </h3>
                 <div className="flex items-center gap-1 text-primary-300 text-sm mt-1">
