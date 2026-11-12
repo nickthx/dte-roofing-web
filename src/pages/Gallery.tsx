@@ -166,9 +166,9 @@ export default function Gallery() {
                     {/* Hover Overlay with Content */}
                     <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex flex-col items-center justify-center p-6">
                       <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out text-center">
-                        <h3 className="text-white font-bold text-2xl mb-3">
+                        <h2 className="text-white font-bold text-2xl mb-3">
                           {project.title}
-                        </h3>
+                        </h2>
                         <div className="flex items-center justify-center text-white/90">
                           <MapPin className="w-5 h-5 mr-2" />
                           {filteredCitySlugs[index] ? (
@@ -190,9 +190,9 @@ export default function Gallery() {
 
                   {/* Card Content */}
                   <div className="p-4 md:p-5">
-                    <h3 className="text-xl font-bold text-charcoal-900 mb-3 group-hover:text-primary-700 transition-colors">
+                    <h2 className="text-xl font-bold text-charcoal-900 mb-3 group-hover:text-primary-700 transition-colors">
                       {project.title}
-                    </h3>
+                    </h2>
 
                     {/* Location Badge */}
                     <div className="flex items-center text-charcoal-600">

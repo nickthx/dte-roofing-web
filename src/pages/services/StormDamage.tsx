@@ -76,7 +76,7 @@ export default function StormDamage() {
             <div className="flex items-start gap-3">
               <Cloud className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-charcoal-900 mb-2">After the Storm</h3>
+                <h2 className="font-bold text-charcoal-900 mb-2">After the Storm</h2>
                 <p className="text-charcoal-700 mb-3">
                   Recent storm in your area? We offer free storm damage inspections and work directly with
                   insurance companies to streamline your claim process.
