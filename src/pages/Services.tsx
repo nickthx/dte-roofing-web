@@ -105,7 +105,7 @@ export default function Services() {
                   to={service.link}
                   className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold"
                 >
-                  Learn More <ArrowRight className="ml-2 w-5 h-5" />
+                  {`Learn More About ${service.title}`} <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>
             ))}

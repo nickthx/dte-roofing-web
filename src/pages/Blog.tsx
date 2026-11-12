@@ -120,7 +120,7 @@ export default function Blog() {
                           to={`/blog/${post.slug}`}
                           className="bg-primary-700 text-white px-6 py-2 rounded-lg hover:bg-primary-800 transition-all font-semibold inline-flex items-center text-sm shadow-md hover:shadow-lg"
                         >
-                          Read More <ChevronRight className="w-4 h-4 ml-1" />
+                          Read More<span className="sr-only">{`: ${post.title}`}</span> <ChevronRight className="w-4 h-4 ml-1" />
                         </Link>
                       </div>
                     </div>

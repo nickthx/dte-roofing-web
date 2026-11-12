@@ -234,7 +234,7 @@ export default function Home() {
                     to={service.link}
                     className="inline-flex items-center justify-center text-primary-700 hover:text-primary-800 font-semibold transition-colors group-hover:gap-2 gap-1"
                   >
-                    Learn More
+                    {`Learn More About ${service.title}`}
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
