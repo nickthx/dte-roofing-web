@@ -91,7 +91,7 @@ export const roofRepairVsReplacement: BlogPost = {
         Here's a simple test: if a repair costs more than about 30 percent of a full
         replacement, and the roof is already middle-aged, replacement is usually the better
         value. You're no longer comparing a cheap fix to an expensive one — you're comparing a
-        big patch on an old roof to a brand-new roof with a fresh warranty.
+        big patch on an old roof to a <Link to="/services/roof-installation">brand-new roof</Link> with a fresh warranty.
       </p>
       <p>
         It's the same logic as a car. A small repair on a reliable vehicle is smart. A

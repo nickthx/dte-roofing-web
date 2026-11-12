@@ -32,7 +32,7 @@ export const roofReplacementCostColumbus: BlogPost = {
   content: () => (
     <>
       <p>
-        If you're budgeting for a new roof, the first thing you want is a straight answer on
+        If you're budgeting for <Link to="/services/roof-installation">a new roof</Link>, the first thing you want is a straight answer on
         roof replacement cost in Columbus, OH. Here's the honest version: most homeowners in
         Central Ohio spend somewhere between <strong>$8,000 and $20,000</strong> in 2026, and
         where you land inside that range comes down to a handful of things you can actually

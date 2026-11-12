@@ -73,7 +73,7 @@ const signsYouNeedANewRoof: BlogPost = {
       <p>
         Central Ohio is hard on roofs. Hot, humid summers, hailstorms, high winds, and winter
         freeze-thaw cycles all wear down shingles faster than the lifespan printed on the
-        package. So the signs that you need a new roof tend to show up here a few years
+        package. So the signs that you need <Link to="/services/roof-installation">a new roof</Link> tend to show up here a few years
         earlier than they would in a milder climate.
       </p>
       <p>

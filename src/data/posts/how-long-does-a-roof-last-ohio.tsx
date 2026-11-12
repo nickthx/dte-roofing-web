@@ -151,7 +151,7 @@ export const howLongDoesARoofLastOhio: BlogPost = {
       <p>
         It does, and understanding it helps you judge any lifespan claim. A new roof carries two
         warranties: the manufacturer's warranty on the shingles, and the roofer's workmanship
-        warranty on the installation. Manufacturer coverage can run from 25 years to lifetime
+        warranty on <Link to="/services/roof-installation">the installation</Link>. Manufacturer coverage can run from 25 years to lifetime
         depending on the product — but it only pays out if the roof was installed to spec, which
         is exactly why the install matters as much as the material.
       </p>

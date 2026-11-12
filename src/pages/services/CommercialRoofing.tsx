@@ -63,7 +63,7 @@ export default function CommercialRoofing() {
               </p>
               <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">
                 We work around your schedule—including evenings and weekends when needed—to minimize downtime.
-                Our team provides detailed project planning, transparent communication, and expert installation
+                Our team provides detailed project planning, transparent communication, and <Link to="/services/roof-installation" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">expert installation</Link>{' '}
                 of TPO, EPDM, metal roofing, and coating systems designed for Ohio's commercial applications.
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-8">
