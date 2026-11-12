@@ -26,29 +26,66 @@ const CITIES: CityMarker[] = [
   { name: 'Pickerington',    slug: 'pickerington',    lat: 39.8842, lng: -82.7535 },
 ];
 
+let mapsLoadPromise: Promise<void> | null = null;
+const MAPS_CALLBACK = '__dteServiceAreaMapInit';
+const MAPS_POLL_INTERVAL_MS = 100;
+const MAPS_POLL_TIMEOUT_MS = 10000;
+
+function isMapsReady(): boolean {
+  return typeof window !== 'undefined' && !!window.google?.maps?.marker?.AdvancedMarkerElement;
+}
+
 function loadGoogleMaps(): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (!API_KEY) {
-      reject(new Error('VITE_GOOGLE_MAPS_API_KEY is not set — skipping Google Maps load'));
-      return;
-    }
-    if (window.google?.maps) {
+  if (!API_KEY) {
+    return Promise.reject(new Error('VITE_GOOGLE_MAPS_API_KEY is not set — skipping Google Maps load'));
+  }
+  if (isMapsReady()) return Promise.resolve();
+  if (mapsLoadPromise) return mapsLoadPromise;
+
+  mapsLoadPromise = new Promise<void>((resolve, reject) => {
+    (window as unknown as Record<string, unknown>)[MAPS_CALLBACK] = () => {
+      if (isMapsReady()) {
+        resolve();
+        return;
+      }
+      if (window.google?.maps?.importLibrary) {
+        window.google.maps.importLibrary('marker').then(() => resolve(), reject);
+        return;
+      }
       resolve();
-      return;
-    }
+    };
+
+    // A Maps script added elsewhere was not created with our callback, so poll
+    // for readiness instead of trusting its load event (fires too early under
+    // loading=async, and never fires again if the script already loaded).
     const existing = document.querySelector('script[src*="maps.googleapis.com"]');
     if (existing) {
-      existing.addEventListener('load', () => resolve());
+      const startedAt = Date.now();
+      const timer = window.setInterval(() => {
+        if (isMapsReady()) {
+          window.clearInterval(timer);
+          resolve();
+        } else if (Date.now() - startedAt >= MAPS_POLL_TIMEOUT_MS) {
+          window.clearInterval(timer);
+          mapsLoadPromise = null;
+          reject(new Error('Timed out waiting for Google Maps'));
+        }
+      }, MAPS_POLL_INTERVAL_MS);
       return;
     }
+
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=marker`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&loading=async&libraries=marker&callback=${MAPS_CALLBACK}`;
     script.async = true;
-    script.defer = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Failed to load Google Maps'));
+    script.onerror = () => {
+      script.remove();
+      mapsLoadPromise = null;
+      reject(new Error('Failed to load Google Maps'));
+    };
     document.head.appendChild(script);
   });
+
+  return mapsLoadPromise;
 }
 
 export default function ServiceAreaMap(): JSX.Element | null {
@@ -65,20 +102,9 @@ export default function ServiceAreaMap(): JSX.Element | null {
       streetViewControl: false,
       fullscreenControl: false,
       zoomControl: true,
-      styles: [
-        { featureType: 'poi', stylers: [{ visibility: 'off' }] },
-        { featureType: 'transit', stylers: [{ visibility: 'off' }] },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry',
-          stylers: [{ color: '#e2e2e2' }],
-        },
-        {
-          featureType: 'water',
-          elementType: 'geometry.fill',
-          stylers: [{ color: '#dbeafe' }],
-        },
-      ],
+      // Advanced markers require a Map ID. DEMO_MAP_ID is Google's demo ID.
+      // Hiding POIs/transit or tinting water now needs a cloud-styled Map ID.
+      mapId: 'DEMO_MAP_ID',
     });
     mapInstance.current = map;
 
@@ -89,18 +115,19 @@ export default function ServiceAreaMap(): JSX.Element | null {
       const position = { lat: city.lat, lng: city.lng };
       bounds.extend(position);
 
-      const marker = new google.maps.Marker({
-        position,
+      const pin = new google.maps.marker.PinElement({
+        background: '#b91c1c',
+        borderColor: '#ffffff',
+        glyphColor: '#ffffff',
+        scale: 0.8,
+      });
+
+      const marker = new google.maps.marker.AdvancedMarkerElement({
         map,
+        position,
         title: city.name,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 7,
-          fillColor: '#b91c1c',
-          fillOpacity: 1,
-          strokeColor: '#ffffff',
-          strokeWeight: 2,
-        },
+        content: pin.element,
+        gmpClickable: true,
       });
 
       const infoWindow = new google.maps.InfoWindow({
@@ -114,9 +141,9 @@ export default function ServiceAreaMap(): JSX.Element | null {
         `,
       });
 
-      marker.addListener('click', () => {
+      marker.addEventListener('gmp-click', () => {
         if (activeInfoWindow) activeInfoWindow.close();
-        infoWindow.open(map, marker);
+        infoWindow.open({ anchor: marker, map });
         activeInfoWindow = infoWindow;
       });
     });
@@ -124,19 +151,21 @@ export default function ServiceAreaMap(): JSX.Element | null {
     const hqPosition = { lat: HQ_GEO.lat, lng: HQ_GEO.lng };
     bounds.extend(hqPosition);
 
-    const hqMarker = new google.maps.Marker({
-      position: hqPosition,
+    const hqPin = new google.maps.marker.PinElement({
+      background: '#991b1b',
+      borderColor: '#ffffff',
+      glyphText: '★',
+      glyphColor: '#ffffff',
+      scale: 1.2,
+    });
+
+    const hqMarker = new google.maps.marker.AdvancedMarkerElement({
       map,
+      position: hqPosition,
       title: 'DTE Roofing — Headquarters',
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 10,
-        fillColor: '#991b1b',
-        fillOpacity: 1,
-        strokeColor: '#ffffff',
-        strokeWeight: 2,
-      },
-      label: { text: '★', color: '#ffffff', fontSize: '12px', fontWeight: 'bold' },
+      content: hqPin.element,
+      gmpClickable: true,
+      zIndex: 1000,
     });
 
     const hqInfoWindow = new google.maps.InfoWindow({
@@ -152,9 +181,9 @@ export default function ServiceAreaMap(): JSX.Element | null {
       `,
     });
 
-    hqMarker.addListener('click', () => {
+    hqMarker.addEventListener('gmp-click', () => {
       if (activeInfoWindow) activeInfoWindow.close();
-      hqInfoWindow.open(map, hqMarker);
+      hqInfoWindow.open({ anchor: hqMarker, map });
       activeInfoWindow = hqInfoWindow;
     });
 
