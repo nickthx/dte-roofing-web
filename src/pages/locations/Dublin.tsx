@@ -165,7 +165,8 @@ export default function Dublin() {
                     { name: 'Gutter Services', link: '/services/gutters' },
                     { name: 'Siding Installation', link: '/services/siding' },
                     { name: 'Insurance Claims', link: '/contact' },
-                    { name: 'Preventative Maintenance', link: '/services/preventative-maintenance' }
+                    { name: 'Preventative Maintenance', link: '/services/preventative-maintenance' },
+                    { name: 'Commercial Roofing', link: '/services/commercial-roofing' }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-1" />

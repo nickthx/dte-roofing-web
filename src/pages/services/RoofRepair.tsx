@@ -199,7 +199,9 @@ For <Link to="/locations/hilliard" className="text-primary-700 hover:text-primar
         { name: 'Roof Inspection', link: '/services/roof-inspection' },
         { name: 'Roof Replacement', link: '/services/roof-replacement' },
         { name: 'Emergency Services', link: '/services/emergency-services' },
-        { name: 'Storm Damage Repair', link: '/services/storm-damage' }
+        { name: 'Storm Damage Repair', link: '/services/storm-damage' },
+        { name: 'Commercial Roofing', link: '/services/commercial-roofing' },
+        { name: 'Roof Installation', link: '/services/roof-installation' }
       ]}
     />
     </>

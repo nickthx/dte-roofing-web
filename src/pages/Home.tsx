@@ -167,7 +167,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">Roof Repair & Replacement Services in Columbus, OH</h2>
             <p className="text-xl text-charcoal-600 max-w-2xl mx-auto">
-              Comprehensive roofing solutions for residential and commercial properties in Columbus, OH
+              Comprehensive roofing solutions for residential and <Link to="/services/commercial-roofing" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-2 underline-offset-2">commercial properties</Link> in Columbus, OH
             </p>
           </div>
 

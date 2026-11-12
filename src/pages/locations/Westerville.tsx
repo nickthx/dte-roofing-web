@@ -155,7 +155,8 @@ export default function Westerville() {
                     { name: "Siding Installation", link: "/services/siding" },
                     { name: "Preventative Maintenance", link: "/services/preventative-maintenance" },
                     { name: "Ventilation Upgrades", link: "/services/roof-repair" },
-                    { name: "Flashing Repair", link: "/services/roof-repair" }
+                    { name: "Flashing Repair", link: "/services/roof-repair" },
+                    { name: "Commercial Roofing", link: "/services/commercial-roofing" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-1" />
