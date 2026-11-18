@@ -8,7 +8,7 @@
 // would only discover the route chunk after the entry script ran — a hydration
 // request waterfall. The hints let the chunk download in parallel with the entry.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { ROUTES, PRERENDER_ROUTES, NOT_FOUND_ROUTE } from '../src/routes.config.mjs';
@@ -115,3 +115,12 @@ writePage(resolve(DIST, '404.html'), await buildPage(NOT_FOUND_ROUTE.path, { str
 
 console.log(`\nPrerendered ${written.length} routes:`);
 for (const f of written) console.log('  ' + f);
+
+// dist/ is the deploy root, so anything left in it is publicly served. The SSR
+// bundle (plus the copy of public/ that Vite's SSR build emits beside it) and
+// the client manifest are build-time inputs only — remove them once every page
+// is written.
+for (const buildOnly of [resolve(DIST, 'server'), resolve(DIST, '.vite')]) {
+  rmSync(buildOnly, { recursive: true, force: true });
+}
+console.log('\nRemoved build-only output: dist/server, dist/.vite');
