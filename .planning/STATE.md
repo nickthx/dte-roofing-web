@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-10-12 after v1.1 milestone close)
 Phase: Between milestones (v1.0 and v1.1 shipped and archived; no active phases)
 Plan: —
 Status: Awaiting next milestone
-Last activity: 2026-11-20 — Fast task: footer text contrast fixed (text-gray-400 -> text-charcoal-300, 4.27:1 -> ~5.0:1) and Roofle preconnect moved from index.html to the quote page only. Commit 3e1621d, NOT pushed yet. Earlier today: favicon replaced with square PNG icons from the official logo (6795e63, 7789470), pushed and live. Homepage speed investigated, no change needed (real-user mobile LCP P75 708 ms).
+Last activity: 2026-11-20 — Fast task: remaining homepage contrast failures fixed (Our Mission label on Home/About -> text-primary-100, map placeholder -> text-gray-600). Commit b4bf8e9, NOT pushed yet. Earlier today, all pushed and live: favicon from official logo (6795e63, 7789470), footer contrast + quote-page-only Roofle preconnect (3e1621d). Homepage speed investigated, no change needed (real-user mobile LCP P75 708 ms).
 
 ## Performance Metrics
 
@@ -163,7 +163,7 @@ Items acknowledged and deferred at milestone v1.1 close on 2026-10-12 (from `gsd
 
 ## Session Continuity
 
-Last activity: 2026-11-20 — Fast task: footer text contrast fixed (text-gray-400 -> text-charcoal-300, 4.27:1 -> ~5.0:1) and Roofle preconnect moved from index.html to the quote page only. Commit 3e1621d, NOT pushed yet. Earlier today: favicon replaced with square PNG icons from the official logo (6795e63, 7789470), pushed and live. Homepage speed investigated, no change needed (real-user mobile LCP P75 708 ms).
+Last activity: 2026-11-20 — Fast task: remaining homepage contrast failures fixed (Our Mission label on Home/About -> text-primary-100, map placeholder -> text-gray-600). Commit b4bf8e9, NOT pushed yet. Earlier today, all pushed and live: favicon from official logo (6795e63, 7789470), footer contrast + quote-page-only Roofle preconnect (3e1621d). Homepage speed investigated, no change needed (real-user mobile LCP P75 708 ms).
 Previous: 2026-11-12 - Completed quick task 261112-jop: shorter blog post titles (seoTitle override) and descriptive anchors on Home/Services/Blog cards. Rebased + PUSHED as 1e170a4, 916441b, cbc354c (2eac174..cbc354c); verified live.
 Previous: 2026-10-29 - Completed quick task 261029-ltb: added public/llms.txt and committed the regenerated public/sitemap.xml (lastmod now reflects the 2026-10-13 rewrites). Commit f7c6764 on main, local only, NOT pushed (push = live deploy).
 Previous: 2026-10-13 - Completed quick task 261013-j8a: Google Maps embed standardized on all 15 map pages via src/data/business.ts (verified listing embed, place id 0x883897c3548f20bf:0xdd1da18d4d7ccf43) and the /locations hub map got a real HQ marker at 39.9637636,-83.1476323. Commits aa4c895, 1d70162, 8caffee (+ docs bd9ff67) PUSHED to origin/main on 2026-10-13 (23dfeb1..bd9ff67); Vercel deployment dpl_51n3PRVhXiDEtyS4ETxxYRPxaFhR built for production. Build, verify-links 42/42, verify-schema 41/41 pass.
@@ -190,3 +190,4 @@ Resume file: None
 | 2026-11-18 | fast | Remove dist/server and dist/.vite from deploy output (security check, commit 6343b36) | ✅ |
 | 2026-11-20 | fast | Site icons regenerated from the official DTE Roofing logo (user rejected the red-house SVG mark from 261120-hjj); /favicon.svg unlinked from index.html and site.webmanifest (commit 7789470) | ✅ |
 | 2026-11-20 | fast | Footer text contrast to WCAG AA (text-charcoal-300) + Roofle preconnect scoped to /get-a-quote-consultation (commit 3e1621d) | ✅ |
+| 2026-11-20 | fast | Homepage contrast: Our Mission label (Home, About) + map loading placeholder to WCAG AA (commit b4bf8e9) | ✅ |
