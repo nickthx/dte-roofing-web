@@ -5,6 +5,7 @@ export const asphaltVsMetalRoofingOhio: BlogPost = {
   id: 'asphalt-vs-metal-roofing-ohio',
   slug: 'asphalt-vs-metal-roofing-ohio',
   title: 'Asphalt vs. Metal Roofing in Ohio: Which Lasts Longer?',
+  seoTitle: 'Asphalt vs. Metal Roofing in Ohio: Lifespan',
   headline: 'Asphalt vs. Metal Roofing in Ohio: Which Lasts Longer?',
   excerpt:
     'Metal lasts longer on paper, but asphalt wins more Ohio driveways than you might think. A practical comparison of lifespan, cost, noise, resale, and which one actually fits your home and budget.',

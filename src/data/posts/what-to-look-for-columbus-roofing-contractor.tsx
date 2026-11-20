@@ -5,6 +5,7 @@ export const columbusRoofingContractor: BlogPost = {
   id: 'what-to-look-for-columbus-roofing-contractor',
   slug: 'what-to-look-for-columbus-roofing-contractor',
   title: 'What to Look for in a Columbus Roofing Contractor',
+  seoTitle: 'How to Choose a Columbus Roofing Contractor',
   headline: 'What to Look for in a Columbus Roofing Contractor',
   excerpt:
     'Hiring the wrong roofer is an expensive mistake. The credentials that actually matter, the storm-chaser warning signs, the questions to ask before you sign, and how to vet a Columbus roofing contractor.',

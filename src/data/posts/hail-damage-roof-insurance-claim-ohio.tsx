@@ -5,6 +5,7 @@ export const hailDamageInsuranceClaimOhio: BlogPost = {
   id: 'hail-damage-roof-insurance-claim-ohio',
   slug: 'hail-damage-roof-insurance-claim-ohio',
   title: 'How to File a Hail Damage Roof Insurance Claim in Ohio',
+  seoTitle: 'Hail Damage Roof Insurance Claims in Ohio',
   headline: 'How to File a Hail Damage Roof Insurance Claim in Ohio',
   excerpt:
     'A step-by-step walkthrough of filing a hail damage roof insurance claim in Ohio — what to document, the deadlines that matter, how the adjuster meeting works, and the mistakes that get claims denied.',
