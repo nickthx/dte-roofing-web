@@ -95,7 +95,7 @@ export default function Home() {
       {/* Mission Statement strip */}
       <div className="bg-primary-700 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-3">Our Mission</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary-100 mb-3">Our Mission</p>
           <p className="text-white text-lg md:text-xl font-semibold max-w-3xl mx-auto leading-relaxed">
             "To set the standard for the roofing industry by delivering quality you can see, transparency you can feel, and a company culture that lifts people higher — inside and outside our walls."
           </p>

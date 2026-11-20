@@ -206,7 +206,7 @@ export default function About() {
 
             {/* Mission Statement */}
             <div className="relative bg-primary-700 rounded-2xl px-8 py-10 mb-12 text-center shadow-xl">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-4">Our Mission</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-100 mb-4">Our Mission</p>
               <blockquote className="text-xl md:text-2xl font-semibold text-white leading-relaxed">
                 "To set the standard for the roofing industry by delivering quality you can see, transparency you can feel, and a company culture that lifts people higher — inside and outside our walls."
               </blockquote>

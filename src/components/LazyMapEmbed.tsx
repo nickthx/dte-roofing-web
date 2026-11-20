@@ -56,7 +56,7 @@ export default function LazyMapEmbed({ src, title, height = 450 }: LazyMapEmbedP
           aria-hidden="true"
           className="w-full h-full bg-gray-100 flex items-center justify-center"
         >
-          <span className="text-gray-400 text-sm">Loading map…</span>
+          <span className="text-gray-600 text-sm">Loading map…</span>
         </div>
       )}
     </div>
