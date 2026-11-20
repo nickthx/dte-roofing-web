@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { Calculator, CheckCircle, Clock, Shield } from 'lucide-react';
@@ -37,6 +38,10 @@ export default function InstantQuote() {
         keywords="instant roof quote, roof cost calculator, roof estimate, roof replacement cost, free roof quote"
         canonical="https://www.dteroofingllc.com/get-a-quote-consultation"
       />
+      {/* Only this page loads the Roofle widget on mount, so the preconnect lives here, not in index.html. */}
+      <Helmet>
+        <link rel="preconnect" href="https://app.roofle.com" />
+      </Helmet>
       <SchemaMarkup
         type="general"
         documentTitle={DOCUMENT_TITLE}

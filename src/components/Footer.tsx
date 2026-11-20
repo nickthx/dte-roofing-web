@@ -29,14 +29,14 @@ export default function Footer() {
               height={48}
               avif={false}
             />
-            <p className="text-gray-400">
+            <p className="text-charcoal-300">
               Locally owned and operated by Donovan & Mitchell. Premium craftsmanship. Honest pricing.
             </p>
           </div>
 
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-charcoal-300">
               {SERVICES.map((service) => (
                 <li key={service.slug}><Link to={service.path} className="hover:text-white transition-colors">{service.name}</Link></li>
               ))}
@@ -46,7 +46,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold text-lg mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-charcoal-300">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/reviews" className="hover:text-white transition-colors">Reviews</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold text-lg mb-4">Areas We Serve</h4>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-400 text-sm">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-charcoal-300 text-sm">
               {LOCATIONS.map((loc) => (
                 <Link
                   key={loc.slug}
@@ -70,7 +70,7 @@ export default function Footer() {
             </div>
             <Link
               to="/locations"
-              className="text-gray-400 hover:text-white transition-colors text-sm font-bold mt-4 inline-block"
+              className="text-charcoal-300 hover:text-white transition-colors text-sm font-bold mt-4 inline-block"
             >
               All Service Areas &rarr;
             </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold text-lg mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-charcoal-300">
               <li>
                 <a href="tel:6149716028" className="hover:text-white transition-colors">
                   Call/Text: 614-971-6028
@@ -107,21 +107,21 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="grid md:grid-cols-5 gap-6 mb-8">
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <Shield className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">Licensed & Insured</h5>
                 <p className="text-sm">Fully licensed and insured in Ohio</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">GAF Certified</h5>
                 <p className="text-sm">Factory certified contractor</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <a
                 href={HQ_GOOGLE_MAPS_URL}
                 target="_blank"
@@ -135,7 +135,7 @@ export default function Footer() {
                 </div>
               </a>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <a
                 href={BBB_URL}
                 target="_blank"
@@ -149,14 +149,14 @@ export default function Footer() {
                 </div>
               </a>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <NextdoorLogo className="w-6 h-6 flex-shrink-0 mt-1" />
               <div>
                 <h5 className="font-bold text-white text-sm mb-1">Nextdoor Verified</h5>
                 <p className="text-sm">Neighborhood recommended</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <a
                 href={FACEBOOK_URL}
                 target="_blank"
@@ -170,7 +170,7 @@ export default function Footer() {
                 </div>
               </a>
             </div>
-            <div className="flex items-start gap-3 text-gray-400">
+            <div className="flex items-start gap-3 text-charcoal-300">
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
@@ -185,7 +185,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="text-center text-gray-400">
+          <div className="text-center text-charcoal-300">
             <p>&copy; {new Date().getFullYear()} DTE Roofing. All rights reserved.</p>
           </div>
         </div>
