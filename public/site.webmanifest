@@ -4,12 +4,6 @@
   "description": "Professional roofing services in Columbus, OH. Expert roof repair, replacement, and installation.",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
