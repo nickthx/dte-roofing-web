@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-10-12 after v1.1 milestone close)
 Phase: Between milestones (v1.0 and v1.1 shipped and archived; no active phases)
 Plan: —
 Status: Awaiting next milestone
-Last activity: 2026-11-12 — Completed quick task 261112-nb1: sitemap lastmod self-regenerates on Vercel (unshallow + fallback), sitemap refreshed; /locations map on AdvancedMarkerElement + loading=async (DEMO_MAP_ID, custom styles dropped). Commits 88c5ebf, ede7352, 5927a0b. NOT pushed yet.
+Last activity: 2026-11-20 — Completed quick task 261120-hjj: replaced non-square favicon with square SVG + PNG icons (index.html, site.webmanifest). Commit 6795e63. NOT pushed yet.
 
 ## Performance Metrics
 
@@ -155,6 +155,7 @@ Items acknowledged and deferred at milestone v1.1 close on 2026-10-12 (from `gsd
 | 261112-kdp | On-page audit fixes 3-4 (2026-11-12): contextual in-links (inside main) to /services/commercial-roofing 3 → 10 pages and /services/roof-installation 6 → 15 pages — existing words wrapped in links + items added to existing related-services lists (roof-repair; Dublin, Gahanna, Reynoldsburg, Westerville, Worthington); no new copy, FAQ answers untouched. H1→H3 skips fixed on /gallery, /services/emergency-services, /services/storm-damage (h3→h2, classes kept); 0 skips site-wide. Home and /services still have no roof-installation link (would need new copy). Gates: build OK, verify-schema 41/41, verify-links 42/42. Commits f5a66b9, a2d147a, 5e6de63. PUSHED 2026-11-12 (cbc354c..929883f); verified live. | 2026-11-12 | 5e6de63 | [261112-kdp-on-page-seo-internal-links-to-commercial](./quick/261112-kdp-on-page-seo-internal-links-to-commercial/) |
 | 261112-nb1 | Sitemap lastmod frozen at 2026-10-13 fixed: generate-sitemap.mjs unshallows on Vercel (origin, then public GitHub URL, 45s each) and regenerates, else keeps committed file; sitemap regenerated (19 URLs → 2026-11-12). /locations ServiceAreaMap migrated to AdvancedMarkerElement + PinElement with loading=async callback loader; mapId DEMO_MAP_ID so the inline styles array was removed (POIs/transit visible again). Map key also moved 2026-11-12 to the n8n VM Cloud project after BillingNotEnabledMapError. Gate: build OK. Commits 88c5ebf, ede7352, 5927a0b. NOT pushed. | 2026-11-12 | 5927a0b | [261112-nb1-sitemap-lastmod-auto-regeneration-on-ver](./quick/261112-nb1-sitemap-lastmod-auto-regeneration-on-ver/) |
 | 261112-fast | Repo cleanup: removed unused root leftovers (repo-context.txt, empty n8n export, stray hero-roofing-professional-1200x630.jpg, .bolt/, empty dead-code/); moved LOCATION-PAGES-FINAL-DELIVERY.md, NAVIGATION-DROPDOWN-FIX.md, PHOTO-EXPANSION-PLAN.md into docs/. No site code touched. | 2026-11-12 | (this commit) | — |
+| 261120-hjj | Technical SEO check follow-up: non-square favicon replaced. index.html rel=icon now /favicon.svg + 48x48 PNG fallback, apple-touch-icon now a 180x180 PNG; site.webmanifest lists 192/512 PNG icons. Four PNGs rendered from the existing SVGs with sharp. Old 2400x1800 dte_favicon.png (337 KB) kept on disk, unreferenced. Build green; prerendered pages verified. | 2026-11-20 | 6795e63 | [261120-hjj-replace-non-square-favicon-with-square-i](./quick/261120-hjj-replace-non-square-favicon-with-square-i/) |
 
 ### Parking Lot (Path B — content work, out of scope here)
 
@@ -162,7 +163,7 @@ Items acknowledged and deferred at milestone v1.1 close on 2026-10-12 (from `gsd
 
 ## Session Continuity
 
-Last activity: 2026-11-12 — Completed quick task 261112-nb1: sitemap lastmod self-regenerates on Vercel (unshallow + fallback), sitemap refreshed; /locations map on AdvancedMarkerElement + loading=async (DEMO_MAP_ID, custom styles dropped). Commits 88c5ebf, ede7352, 5927a0b. NOT pushed yet.
+Last activity: 2026-11-20 — Completed quick task 261120-hjj: replaced non-square favicon with square SVG + PNG icons (index.html, site.webmanifest). Commit 6795e63. NOT pushed yet.
 Previous: 2026-11-12 - Completed quick task 261112-jop: shorter blog post titles (seoTitle override) and descriptive anchors on Home/Services/Blog cards. Rebased + PUSHED as 1e170a4, 916441b, cbc354c (2eac174..cbc354c); verified live.
 Previous: 2026-10-29 - Completed quick task 261029-ltb: added public/llms.txt and committed the regenerated public/sitemap.xml (lastmod now reflects the 2026-10-13 rewrites). Commit f7c6764 on main, local only, NOT pushed (push = live deploy).
 Previous: 2026-10-13 - Completed quick task 261013-j8a: Google Maps embed standardized on all 15 map pages via src/data/business.ts (verified listing embed, place id 0x883897c3548f20bf:0xdd1da18d4d7ccf43) and the /locations hub map got a real HQ marker at 39.9637636,-83.1476323. Commits aa4c895, 1d70162, 8caffee (+ docs bd9ff67) PUSHED to origin/main on 2026-10-13 (23dfeb1..bd9ff67); Vercel deployment dpl_51n3PRVhXiDEtyS4ETxxYRPxaFhR built for production. Build, verify-links 42/42, verify-schema 41/41 pass.
